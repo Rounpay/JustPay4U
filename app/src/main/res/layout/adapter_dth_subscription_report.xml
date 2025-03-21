@@ -1,0 +1,1198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/_5sdp"
+    android:layout_marginRight="@dimen/_5sdp"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:background="@drawable/rounded_reports_gradient_border"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_3sdp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/openingBalanceLabel"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Opening Balance"
+                android:textColor="@android:color/white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lastbalance"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="\u20B9 230"
+                android:textColor="@android:color/holo_blue_dark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/debitTitle"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Debit Amount"
+                android:textColor="@android:color/white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/debit"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="\u20B9 232"
+                android:textColor="@android:color/holo_red_dark" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/balanceTitle"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Current Balance"
+                android:textColor="@android:color/white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/balance"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="\u20B9 453"
+                android:textColor="@color/green" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/operatorImage"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:src="@drawable/placeholder_square" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_toLeftOf="@+id/amount"
+            android:layout_toRightOf="@+id/operatorImage"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/operatorName"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Airtel"
+                android:textColor="@android:color/white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/packageName"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Airtel"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/amount"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_3sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="\u20B9 232"
+            android:textColor="@color/colorAccent" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_3sdp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/CommissionLabel"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Comm."
+                android:textColor="@android:color/white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/comm"
+                style="@style/TextAppearance.Compat.Notification.Info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="\u20B9 0"
+                android:textColor="@color/green" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/transactionDetailView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_3sdp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Transaction Details :- "
+                    android:textColor="@android:color/white" />
+
+                <LinearLayout
+                    android:id="@+id/transactionIdView"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/transactionIdLabel"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.28"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Transaction Id"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.02"
+                        android:fontFamily="sans-serif-medium"
+                        android:text=":"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txn"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="3527833973972628303983"
+                        android:textColor="@color/color_grey_light"
+                        android:textIsSelectable="true" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/liveIdView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/liveIdLabel"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.28"
+                        android:fontFamily="sans-serif-condensed-medium"
+
+                        android:text="Reference No"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.02"
+                        android:fontFamily="sans-serif-medium"
+                        android:text=":"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/liveID"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="36fgs6372HYJ"
+                        android:textColor="@color/color_grey_light"
+                        android:textIsSelectable="true" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/customerNameView"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/customerNameLabel"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.28"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Customer Name"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.02"
+                        android:fontFamily="sans-serif-medium"
+                        android:text=":"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/customerName"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="3527833973972628303983"
+                        android:textColor="@color/color_grey_light"
+                        android:textIsSelectable="true" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mobileView"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/mobileLabel"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.28"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Mobile Number"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.02"
+                        android:fontFamily="sans-serif-medium"
+                        android:text=":"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/mobile"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="3527833973972628303983"
+                        android:textColor="@color/color_grey_light"
+                        android:textIsSelectable="true" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/addressView"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/addressLabel"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.28"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Address"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.02"
+                        android:fontFamily="sans-serif-medium"
+                        android:text=":"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/address"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="3527833973972628303983"
+                        android:textColor="@color/color_grey_light"
+                        android:textIsSelectable="true" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/installationDetailView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_3sdp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Installation Details :- "
+                    android:textColor="@android:color/white" />
+
+                <LinearLayout
+                    android:id="@+id/techNameView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/techNameLabel"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.28"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Technician Name"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.02"
+                        android:fontFamily="sans-serif-medium"
+                        android:text=":"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/techName"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="dreamseller"
+                        android:textColor="@color/color_grey_light" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/techMobileView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/techMobileLabel"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.28"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Technician Mobile"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.02"
+                        android:fontFamily="sans-serif-medium"
+                        android:text=":"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/techMobile"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="8080808080"
+                        android:textColor="@color/color_grey_light" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/customerIdView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/customerIdLabel"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.28"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Customer Id"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.02"
+                        android:fontFamily="sans-serif-medium"
+                        android:text=":"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/customerId"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="8080808080"
+                        android:textColor="@color/color_grey_light" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/stbIdView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/stbIdLabel"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.28"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="STB ID"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.02"
+                        android:fontFamily="sans-serif-medium"
+                        android:text=":"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/stbId"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="8080808080"
+                        android:textColor="@color/color_grey_light" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/vcView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/vcLabel"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.28"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="VC No"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.02"
+                        android:fontFamily="sans-serif-medium"
+                        android:text=":"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/vc"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="8080808080"
+                        android:textColor="@color/color_grey_light" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/installChargeView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/installChargeLabel"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.28"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Installation Amt."
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.02"
+                        android:fontFamily="sans-serif-medium"
+                        android:text=":"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/installCharge"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="8080808080"
+                        android:textColor="@color/color_grey_light" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/approveTimeView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/approveTimeLabel"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.28"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Approval Time"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.02"
+                        android:fontFamily="sans-serif-medium"
+                        android:text=":"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/approveTime"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="8080808080"
+                        android:textColor="@color/color_grey_light" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/installTimeView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/installTimeLabel"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.28"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Installation Time"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.02"
+                        android:fontFamily="sans-serif-medium"
+                        android:text=":"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/installTime"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="8080808080"
+                        android:textColor="@color/color_grey_light" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/outletDetailView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_3sdp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Outlet Details :- "
+                    android:textColor="@android:color/white" />
+
+                <LinearLayout
+                    android:id="@+id/outletNameView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/OutletLabel"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.28"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Outlet Name"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.02"
+                        android:fontFamily="sans-serif-medium"
+                        android:text=":"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/outlet"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="dreamseller"
+                        android:textColor="@color/color_grey_light" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/outletNoView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/outletNoLabel"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.28"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Outlet No"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.02"
+                        android:fontFamily="sans-serif-medium"
+                        android:text=":"
+                        android:textColor="@color/color_grey_light" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/outletNo"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="8080808080"
+                        android:textColor="@color/color_grey_light" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Source : "
+            android:textColor="@android:color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/source"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:text="895346777"
+            android:textColor="@android:color/white" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/remarkView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/remarkLabel"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Remark"
+            android:textColor="@color/color_grey_light" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/remark"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:text="8080808080"
+            android:textColor="@color/color_grey_light" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/userNameView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/userNameLabel"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Member Name :- "
+            android:textColor="@android:color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/userName"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="895346777"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/date"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center|left"
+            android:text="29 Jan 2020 10:42 AM"
+            android:textColor="@color/color_grey_light" />
+
+
+        <LinearLayout
+            android:id="@+id/statusView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center|right">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/statusIcon"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                app:srcCompat="@drawable/ic_success" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/status"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:text="Sucess"
+                android:textAllCaps="true"
+                android:textColor="@color/darkGreen"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp">
+
+        <LinearLayout
+            android:id="@+id/disputeStatusView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_13sdp"
+                    android:layout_height="@dimen/_13sdp"
+                    android:layout_marginRight="@dimen/_3sdp"
+                    app:srcCompat="@drawable/ic_dispute"
+                    app:tint="@android:color/white" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/statusDisputeLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Dispute Status"
+                    android:textColor="@android:color/white" />
+
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/statusDispute"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="UNDER REVIEW"
+                android:textColor="@color/darkGreen"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/subscriptionStatusView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_toRightOf="@+id/disputeStatusView"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_13sdp"
+                    android:layout_height="@dimen/_13sdp"
+                    android:layout_marginRight="@dimen/_3sdp"
+                    app:srcCompat="@drawable/ic_dth_subscription" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Subscription Status"
+                    android:textColor="@android:color/white" />
+
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/statusSubscription"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="UNDER REVIEW"
+                android:textColor="@color/darkGreen"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/subscriptionStatusView"
+            android:gravity="center|right">
+
+            <LinearLayout
+                android:id="@+id/dispute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/rounded_reports_button_gradient_border"
+                android:elevation="@dimen/_3sdp"
+                android:gravity="center"
+                android:minWidth="@dimen/_70sdp"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatImageView
+
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/ic_dispute"
+                    app:tint="@color/colorPrimary" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Dispute"
+                    android:textColor="@color/colorPrimary" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/w2r"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/rounded_reports_button_gradient_border"
+                android:elevation="@dimen/_3sdp"
+                android:gravity="center"
+                android:minWidth="@dimen/_70sdp"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatImageView
+
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/ic_wrong_right" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="W2R"
+                    android:textColor="@color/colorPrimary" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/print"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/rounded_reports_button_gradient_border"
+                android:elevation="@dimen/_3sdp"
+                android:gravity="center"
+                android:minWidth="@dimen/_70sdp"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/ic_printer_tool"
+                    app:tint="@color/colorPrimary" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Print"
+                    android:textColor="@color/colorPrimary" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@drawable/rounded_reports_button_gradient_border"
+                android:elevation="@dimen/_3sdp"
+                android:gravity="center"
+                android:minWidth="@dimen/_70sdp"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/ic_share_black_24dp"
+                    app:tint="@color/colorPrimary" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/fundTransferTv"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Share"
+                    android:textColor="@color/colorPrimary" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+
+    

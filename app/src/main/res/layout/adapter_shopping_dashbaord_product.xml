@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:orientation="vertical"
+        app:cardBackgroundColor="@color/lightWhite"
+        app:cardCornerRadius="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_cat_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/viewAllBtn"
+                    android:gravity="left"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:paddingRight="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/tv_category"
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:paddingTop="@dimen/_2sdp"
+                        android:text="Test"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/sub_category"
+                        style="@style/Base.TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxLines="1"
+                        android:paddingTop="@dimen/_2sdp"
+                        android:paddingBottom="@dimen/_2sdp"
+                        android:text="Test"
+                        android:textColor="@color/greycon" />
+                    <!--<View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_3sdp"
+                        android:background="?attr/colorPrimaryDark" />-->
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/viewAllBtn"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/_2sdp"
+                    android:backgroundTint="?attr/colorAccent"
+                    android:fontFamily="sans-serif-medium"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:text="@string/view_all"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white" />
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:nestedScrollingEnabled="false"
+                android:visibility="visible" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewGridHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:nestedScrollingEnabled="false"
+                android:visibility="visible" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewGridVertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:nestedScrollingEnabled="false"
+                android:visibility="visible" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/otherOfferRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false"
+        android:visibility="visible" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/adsView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/lightWhite"
+        app:cardCornerRadius="0dp">
+
+        <RelativeLayout
+            android:id="@+id/adsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/otherOfferView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:orientation="vertical"
+        app:cardBackgroundColor="@color/lightWhite"
+        app:cardCornerRadius="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/viewAllBtn"
+            android:gravity="left"
+            android:orientation="vertical"
+
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingBottom="@dimen/_3sdp">
+
+            <TextView
+                android:id="@+id/tv_other_offer_title"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:fontFamily="sans-serif-medium"
+                android:paddingTop="@dimen/_2sdp"
+                android:text="Test"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_other_offer_description"
+                style="@style/Base.TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:fontFamily="sans-serif-medium"
+                android:paddingTop="@dimen/_2sdp"
+                android:text="Test"
+                android:textColor="@color/greycon" />
+
+            <TextView
+                android:id="@+id/tv_other_offer_cashback"
+                style="@style/Base.TextAppearance.AppCompat.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:fontFamily="sans-serif-medium"
+                android:paddingTop="1dp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:text="Get 20% Cashback in Moneyfy wallet"
+                android:textColor="?attr/colorAccent"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_margin="@dimen/_4sdp"
+                app:cardBackgroundColor="@color/lightWhite"
+                app:cardCornerRadius="@dimen/_3sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/offerImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/placeholder_square" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

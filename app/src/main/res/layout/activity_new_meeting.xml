@@ -1,0 +1,973 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnPaymentSubmit">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_Moblie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:text="Mobile No:"
+                    android:textColor="@color/colorAccent" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/walletTypeChooserView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardCornerRadius="@dimen/_5sdp">
+
+                    <EditText
+                        android:id="@+id/txtMobileNo"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_bg"
+                        android:ellipsize="end"
+                        android:hint="Enter Mobile No"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:maxLines="1"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textColor="@android:color/white"
+                        android:textColorHint="@color/color_grey" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:text="Name:"
+                    android:textColor="@color/colorAccent" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardCornerRadius="@dimen/_5sdp">
+
+                    <EditText
+                        android:id="@+id/txtname"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_bg"
+                        android:ellipsize="end"
+                        android:hint="Enter Name"
+                        android:maxLines="1"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textColor="@android:color/white"
+                        android:textColorHint="@color/color_grey" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_outletName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:text="Outlet Name:"
+                    android:textColor="@color/colorAccent" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardCornerRadius="@dimen/_5sdp">
+
+                    <EditText
+                        android:id="@+id/txtoutletName"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_bg"
+                        android:ellipsize="end"
+                        android:hint="Enter Outlet Name"
+                        android:maxLines="1"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textColor="@android:color/white"
+                        android:textColorHint="@color/color_grey" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_pincode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:text="Pincode:"
+                    android:textColor="@color/colorAccent" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardCornerRadius="@dimen/_5sdp">
+
+                    <EditText
+                        android:id="@+id/txtpincode"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_bg"
+                        android:ellipsize="end"
+                        android:hint="Enter Pincode"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:maxLines="1"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textColor="@android:color/white"
+                        android:textColorHint="@color/color_grey" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:text="Area :"
+                    android:textColor="@color/colorAccent" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/areaChooserView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardCornerRadius="@dimen/_5sdp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/area"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_bg"
+                            android:ellipsize="end"
+                            android:focusable="false"
+                            android:gravity="center_vertical"
+                            android:hint="Select Area"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_10sdp"
+                            android:paddingRight="@dimen/_35sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@color/color_grey" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/areaArrow"
+                            android:layout_width="@dimen/_17sdp"
+                            android:layout_height="@dimen/_17sdp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            app:srcCompat="@drawable/ic_arrow_drop_down"
+                            app:tint="@color/colorAccent" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_purpose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:text="Purpose :"
+                    android:textColor="@color/colorAccent" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/purposeChooserView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardCornerRadius="@dimen/_5sdp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/purpose"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_bg"
+                            android:ellipsize="end"
+                            android:focusable="false"
+                            android:gravity="center_vertical"
+                            android:hint="Select Purpose"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_10sdp"
+                            android:paddingRight="@dimen/_35sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@color/color_grey" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/purposeArrow"
+                            android:layout_width="@dimen/_17sdp"
+                            android:layout_height="@dimen/_17sdp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            app:srcCompat="@drawable/ic_arrow_drop_down"
+                            app:tint="@color/colorAccent" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_consumption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:text="Consumption [Calculate Monthly]:"
+                    android:textColor="@color/colorAccent" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardCornerRadius="@dimen/_5sdp">
+
+                    <EditText
+                        android:id="@+id/txtconsumption"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_bg"
+                        android:ellipsize="end"
+                        android:hint="Enter Consumption"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textColor="@android:color/white"
+                        android:textColorHint="@color/color_grey" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@drawable/rounded_primary_gradient"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/checkbox"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@android:color/white"
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:text="Is Using Other Brands"
+                    android:textColor="@android:color/white" />
+
+                <LinearLayout
+                    android:id="@+id/ll_rechargeCons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:text="Recharge:"
+                        android:textColor="@color/colorAccent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <EditText
+                            android:id="@+id/txtRechargeCons"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_bg"
+                            android:ellipsize="end"
+                            android:hint="Enter How Much"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@color/color_grey" />
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_billCons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:text="Bill Payment:"
+                        android:textColor="@color/colorAccent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <EditText
+                            android:id="@+id/txtBillCons"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_bg"
+                            android:ellipsize="end"
+                            android:hint="Enter How Much"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@color/color_grey" />
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_moneyTxnCons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:text="Money Transfer:"
+                        android:textColor="@color/colorAccent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <EditText
+                            android:id="@+id/txtMoneyTxnCons"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_bg"
+                            android:ellipsize="end"
+                            android:hint="Enter How Much"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@color/color_grey" />
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_aepsCons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:text="AEPS:"
+                        android:textColor="@color/colorAccent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <EditText
+                            android:id="@+id/txtAepsCons"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_bg"
+                            android:ellipsize="end"
+                            android:hint="Enter How Much"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@color/color_grey" />
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_miniAtmCons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:text="Mini ATM:"
+                        android:textColor="@color/colorAccent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <EditText
+                            android:id="@+id/txtMiniAtmCons"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_bg"
+                            android:ellipsize="end"
+                            android:hint="Enter How Much"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@color/color_grey" />
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_insuranceCons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:text="Insurance:"
+                        android:textColor="@color/colorAccent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <EditText
+                            android:id="@+id/txtInsuranceCons"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_bg"
+                            android:ellipsize="end"
+                            android:hint="Enter How Much"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@color/color_grey" />
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_hotelFlightCons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:text="Hotel/Flight Booking:"
+                        android:textColor="@color/colorAccent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <EditText
+                            android:id="@+id/txtHotelFlightCons"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_bg"
+                            android:ellipsize="end"
+                            android:hint="Enter How Much"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@color/color_grey" />
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_panCardCons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:text="PAN Card:"
+                        android:textColor="@color/colorAccent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <EditText
+                            android:id="@+id/txtPanCardCons"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_bg"
+                            android:ellipsize="end"
+                            android:hint="Enter How Much"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@color/color_grey" />
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_vehicleInsuranceCons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:text="Vehicle Insurance:"
+                        android:textColor="@color/colorAccent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <EditText
+                            android:id="@+id/txtVehicleInsuranceCons"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_bg"
+                            android:ellipsize="end"
+                            android:hint="Enter How Much"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@color/color_grey" />
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_reason"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:text="Reason to Use Other Brands :"
+                        android:textColor="@color/colorAccent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/reasonChooserView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/reason"
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:background="@drawable/edittext_bg"
+                                android:ellipsize="end"
+                                android:focusable="false"
+                                android:gravity="center_vertical"
+                                android:hint="Select Purpose"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:paddingTop="@dimen/_10sdp"
+                                android:paddingRight="@dimen/_35sdp"
+                                android:paddingBottom="@dimen/_10sdp"
+                                android:singleLine="true"
+                                android:textColor="@android:color/white"
+                                android:textColorHint="@color/color_grey" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/reasonArrow"
+                                android:layout_width="@dimen/_17sdp"
+                                android:layout_height="@dimen/_17sdp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                app:srcCompat="@drawable/ic_arrow_drop_down"
+                                app:tint="@color/colorAccent" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_remark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:text="Remark:"
+                    android:textColor="@color/colorAccent" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardCornerRadius="@dimen/_5sdp">
+
+                    <EditText
+                        android:id="@+id/txtremark"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_bg"
+                        android:ellipsize="end"
+                        android:hint="Enter Remark"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textColor="@android:color/white"
+                        android:textColorHint="@color/color_grey" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_uploadImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:text="Upload Image:"
+                    android:textColor="@color/colorAccent" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    app:cardCornerRadius="@dimen/_5sdp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_unfocused">
+
+                        <TextView
+                            android:id="@+id/txtSelectImage"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:text="Choose Image"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@color/color_grey" />
+
+                        <!--<android.support.v7.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="@dimen/_1sdp"
+                            app:cardCornerRadius="@dimen/_5sdp">-->
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/image"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="@dimen/_1sdp"
+                            app:srcCompat="@drawable/app_full_logo" />
+                        <!-- </android.support.v7.widget.CardView>-->
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/btnPaymentSubmit"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorAccent"
+        android:padding="@dimen/_8sdp"
+        android:text="Submit"
+        android:textColor="@color/colorPrimary" />
+
+</RelativeLayout>

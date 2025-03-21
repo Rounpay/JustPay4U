@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/opType"
+    style="@style/TextAppearance.AppCompat.Subhead"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:elevation="@dimen/_4sdp"
+    android:fontFamily="sans-serif-medium"
+    android:padding="@dimen/_8sdp"
+    android:text="Header Name"
+    android:textColor="@android:color/white" />

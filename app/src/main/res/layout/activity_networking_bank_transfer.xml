@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/balanceDetailView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:background="@drawable/rounded_reports_gradient_border"
+
+            android:orientation="vertical"
+            android:padding="@dimen/_7sdp">
+
+            <LinearLayout
+                android:id="@+id/balanceTitleView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="center"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/ic_wallet" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_toRightOf="@+id/balanceIcon"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Remainig Balance"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/balancetv"
+                        android:layout_toRightOf="@+id/balanceIcon"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="Your remaining wallet balance is"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- <View
+                 android:layout_width="match_parent"
+                 android:layout_height="1dp"
+                 android:background="@color/light_grey" />-->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/balanceRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_below="@+id/balanceTitleView"
+                android:clipToPadding="false"
+                android:visibility="gone"
+                tools:itemCount="2"
+                tools:listitem="@layout/adapter_wallet_balance" />
+            <RelativeLayout
+
+                android:id="@+id/amountView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_3sdp">
+
+
+
+                <TextView
+                    android:id="@+id/name"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="match_parent"
+                    android:layout_toLeftOf="@+id/amount"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Prepaid Balance"
+                    android:textColor="@color/colorAccentLight" />
+
+                <TextView
+                    android:id="@+id/amount"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="\u20B9 0.0"
+                    android:textStyle="bold"
+                    android:layout_toLeftOf="@+id/addBtn"
+                    android:textColor="@android:color/white" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/balanceDetailView"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/addBankView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_reports_button_gradient_border"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_5sdp">
+
+
+                <ImageView
+                    android:id="@+id/benificiaryIcon"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    app:srcCompat="@drawable/ic_bank"
+                    />
+
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_toRightOf="@+id/benificiaryIcon"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:text="Add Bank"
+                    android:textColor="@color/colorPrimary" />
+
+                <!--<android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    app:srcCompat="@drawable/ic_arrow_forward" />-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dmtReportView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_reports_button_gradient_border"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_5sdp">
+
+
+                <ImageView
+                    android:id="@+id/dmtIcon"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    app:srcCompat="@drawable/ic_transaction"
+                    app:tint="@color/colorPrimary" />
+
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_toRightOf="@+id/dmtIcon"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:text="Transaction Report"
+                    android:textColor="@color/colorPrimary" />
+
+                <!--<android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    app:srcCompat="@drawable/ic_arrow_forward" />-->
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/btnView"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <include layout="@layout/layout_search" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:paddingTop="@dimen/_7sdp"
+                    android:visibility="visible"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/adapter_beneficiary" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/loaderView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_40sdp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ProgressBar
+                    android:id="@+id/progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:indeterminateDrawable="@drawable/progess_effect" />
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/progress"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:text="Loading Beneficiary Please Wait..."
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+            <include
+                android:id="@+id/noDataView"
+                layout="@layout/no_data_layout"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/noNetworkView"
+                layout="@layout/network_error_layout"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/notice"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimaryMoreMoreLight"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="Payment Will Be Settled in Default Account."
+            android:textColor="@color/color_grey_more_light" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

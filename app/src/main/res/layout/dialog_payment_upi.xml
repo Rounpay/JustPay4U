@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/popup"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:padding="@dimen/_10sdp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_40sdp"
+            android:layout_marginRight="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingBottom="@dimen/_8sdp"
+            android:text="UPI Payment" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/closeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/_8sdp"
+            app:srcCompat="@mipmap/close_btn" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/msg"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:text="Topup Your Wallet Instant Through BHIM UPI
+24*7 Service Without Convinience Fee."
+        android:textColor="@android:color/black" />
+
+    <LinearLayout
+        android:id="@+id/amountView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amount to be Added :"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_14sdp" />
+
+        <EditText
+            android:id="@+id/amountEt"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            android:drawablePadding="@dimen/_5sdp"
+            android:ellipsize="end"
+            android:hint="Enter Amount"
+            android:inputType="number"
+            android:paddingLeft="@dimen/_10sdp"
+            android:singleLine="true"
+            android:text="00"
+            android:textColor="@color/red"
+            android:textSize="@dimen/_16sdp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/vpaView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="UPI Id :"
+            android:textColor="@color/colorPrimary" />
+
+        <EditText
+            android:id="@+id/vpaEt"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:background="@drawable/edittext_bg"
+            android:drawablePadding="@dimen/_5sdp"
+            android:ellipsize="end"
+            android:hint="Enter Upi Id"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingTop="@dimen/_12sdp"
+            android:paddingRight="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_12sdp"
+            android:singleLine="true"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/upiBtn"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:background="@drawable/round_corner_green"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:padding="@dimen/_12sdp"
+        android:text="Submit"
+        android:textColor="@android:color/white" />
+
+    <ImageView
+        android:id="@+id/bhimLogo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_40sdp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitEnd"
+        android:src="@drawable/bhim_upi" />
+
+
+</LinearLayout>

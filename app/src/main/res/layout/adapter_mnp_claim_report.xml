@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/_5sdp"
+    android:layout_marginRight="@dimen/_5sdp"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:background="@drawable/rounded_reports_gradient_border"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/_8sdp">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/status"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/red_button_background"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:paddingLeft="@dimen/_10sdp"
+        android:paddingTop="@dimen/_2sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_2sdp"
+        android:text="Failed"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/operatorImage"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_toLeftOf="@+id/amount"
+            android:layout_toRightOf="@+id/operatorImage"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/operatorName"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="Airtel"
+                android:textColor="@android:color/white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mobile"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="895346777"
+                android:textColor="@color/color_grey_light" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/amount"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="895346777"
+            android:textColor="@android:color/holo_blue_dark" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/liveIdView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/liveIdLabel"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reference No : "
+            android:textColor="@android:color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/liveID"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="895346777"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/userNameView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/userNameLabel"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Member Name : "
+            android:textColor="@android:color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/userName"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="895346777"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/date"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        android:text="895346777"
+        android:textColor="@android:color/white" />
+
+
+</LinearLayout>

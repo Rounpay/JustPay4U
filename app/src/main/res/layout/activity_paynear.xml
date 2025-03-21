@@ -1,0 +1,555 @@
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/_4sdp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_130sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/mpos_machine" />
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:text="Enter Amount :"
+            android:textColor="@color/colorPrimary" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            app:cardCornerRadius="@dimen/_5sdp">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/amount"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:digits="0123456789."
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:hint="Enter Amount"
+                android:inputType="numberDecimal"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimary" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:text="Enter Reference Number :"
+            android:textColor="@color/colorPrimary" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            app:cardCornerRadius="@dimen/_5sdp">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/referanceno"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:hint="Enter reference number"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimary" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:text="Enter Cash Back Amount :"
+            android:textColor="@color/colorPrimary"
+            android:visibility="gone" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:visibility="gone"
+            app:cardCornerRadius="@dimen/_5sdp">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/cashbacckamount"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:hint="Enter cash back amount"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimary" />
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:text="Select Device :"
+            android:textColor="@color/colorPrimary"
+            android:visibility="gone" />
+
+        <RadioGroup
+            android:id="@+id/radiodevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <RadioButton
+                android:id="@+id/me30s"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="ME30S" />
+
+            <RadioButton
+                android:id="@+id/n910"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="N910"
+                android:visibility="gone" />
+
+            <RadioButton
+                android:id="@+id/n3"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="N3"
+                android:visibility="gone" />
+
+            <RadioButton
+                android:id="@+id/n6"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="N6"
+                android:visibility="gone" />
+
+            <RadioButton
+                android:id="@+id/qpos"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="QPOS" />
+
+            <RadioButton
+                android:id="@+id/miura"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="MIURA"
+                android:visibility="gone" />
+        </RadioGroup>
+
+
+        <LinearLayout
+            android:id="@+id/llRadio"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/deviceselection"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:text="Select Connectivity Type :"
+                android:textColor="@color/colorPrimary" />
+
+            <LinearLayout
+                android:id="@+id/commView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/viewBluetooth"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_primary_border"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp">
+
+                    <ImageView
+                        android:id="@+id/iconBluetooth"
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="@dimen/_16sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        app:srcCompat="@drawable/ic_bluetooth"
+                        app:tint="@color/colorPrimary" />
+
+                    <TextView
+                        android:id="@+id/textBluetooth"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/radio_bluetooth"
+                        android:textColor="@color/colorPrimary" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/viewUSB"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_grey_border_fill"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp">
+
+                    <ImageView
+                        android:id="@+id/iconUsb"
+                        android:layout_width="@dimen/_16sdp"
+                        android:layout_height="@dimen/_16sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        app:srcCompat="@drawable/ic_usb_plug"
+                        app:tint="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/textUsb"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/radio_usb"
+                        android:textColor="@color/colorAccent" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--   <RadioGroup
+                   android:id="@+id/radioComm"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="@dimen/_10sdp"
+                   android:layout_marginRight="@dimen/_10sdp"
+                   android:layout_marginBottom="@dimen/_5sdp"
+                   android:orientation="horizontal">
+
+                   <RadioButton
+                       android:id="@+id/radioBluetooth"
+                       style="@style/TextAppearance.AppCompat.Subhead"
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"
+                       android:layout_weight="1"
+                       android:checked="true"
+                       android:fontFamily="sans-serif-medium"
+                       android:text="@string/radio_bluetooth" />
+
+                   <RadioButton
+                       android:id="@+id/radioUSB"
+                       style="@style/TextAppearance.AppCompat.Subhead"
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"
+                       android:layout_weight="1"
+                       android:fontFamily="sans-serif-medium"
+                       android:text="@string/radio_usb" />
+               </RadioGroup>-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/chooseDeviceView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:text="Select Paired Device :"
+                android:textColor="@color/colorPrimary" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/choosePairedProviderView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/choosePairedProvider"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/choosePairedProviderIv"
+                        android:background="@android:color/transparent"
+                        android:ellipsize="end"
+                        android:focusable="false"
+                        android:gravity="center_vertical"
+                        android:hint="Choose Paired Device"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textColor="@android:color/black" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/choosePairedProviderIv"
+                        android:layout_width="@dimen/_17sdp"
+                        android:layout_height="@dimen/_17sdp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        app:srcCompat="@drawable/ic_arrow_drop_down"
+                        app:tint="@color/colorPrimary" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <!--mpaysdk 2.0 -->
+
+
+        <LinearLayout
+            android:id="@+id/chooseModeView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/paired_provider"
+
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:text="Select Payment Mode :"
+                android:textColor="@color/colorPrimary" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/modeChooserView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/chooseMode"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/chooseModeIv"
+                        android:background="@android:color/transparent"
+                        android:ellipsize="end"
+                        android:focusable="false"
+                        android:gravity="center_vertical"
+                        android:hint="Choose Payment Mode"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textColor="@android:color/black" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/chooseModeIv"
+                        android:layout_width="@dimen/_17sdp"
+                        android:layout_height="@dimen/_17sdp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        app:srcCompat="@drawable/ic_arrow_drop_down"
+                        app:tint="@color/colorPrimary" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:text="@string/paynear_note" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_sale"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_primary"
+                android:elevation="@dimen/_3sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Sale"
+                android:textColor="@android:color/white"
+                android:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_cashPos"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_primary"
+                android:elevation="@dimen/_3sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Cash At Pos"
+                android:textColor="@android:color/white"
+                android:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_vasSale"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_primary"
+                android:elevation="@dimen/_3sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Vas Sale"
+                android:textColor="@android:color/white"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/cashBtn"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_primary"
+                android:elevation="@dimen/_3sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Cash"
+                android:textColor="@android:color/white"
+                android:visibility="gone" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/getdeviceserialnumber"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_primary"
+                android:elevation="@dimen/_3sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Serial number"
+                android:textColor="@android:color/white"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/trxn_status"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@drawable/rounded_primary"
+            android:elevation="@dimen/_3sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Get transaction status"
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
+

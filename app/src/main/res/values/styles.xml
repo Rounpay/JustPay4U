@@ -1,0 +1,303 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--<style name="logo_image">-->
+    <!--<item name="android:layout_width">wrap_content</item>-->
+    <!--<item name="android:layout_height">120dp</item>-->
+    <!--<item name="android:layout_gravity">center</item>-->
+    <!--<item name="android:layout_margin">10dp</item>-->
+    <!--<item name="android:src">@drawable/aeps_logo</item>-->
+    <!--<item name="android:scaleType">centerInside</item>-->
+    <!--</style>-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkTheme</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="AppTheme_back_bgg" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkTheme</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/back_bgg</item>
+    </style>
+
+    <style name="Appnew" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkTheme</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:actionMenuTextColor">@android:color/white</item>
+        <item name="android:windowBackground">@color/colorPrimaryDark</item>
+    </style>
+
+
+    <style name="AppMaterialUPITheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkTheme</item>
+        <item name="android:textColorPrimary">@color/colorPrimary</item>
+        <item name="colorOnSecondary">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="fontFamily">sans-serif-condensed-medium</item>
+        <item name="android:textAppearance">@style/ShapeAppearance.App.SmallComponent</item>
+        <item name="textInputStyle">@style/UPITxtInputTheme</item>
+        <item name="materialButtonStyle">@style/MaterialButton</item>
+
+    </style>
+
+    <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">4dp</item>
+    </style>
+
+
+    <style name="MaterialButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/rect_primary_dark_fill_white_border</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="Appnew_back_bgg" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkTheme</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:actionMenuTextColor">@android:color/white</item>
+        <item name="android:windowBackground">@color/back_bgg</item>
+    </style>
+
+
+    <style name="Appnew_login_bg" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkTheme</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:actionMenuTextColor">@android:color/white</item>
+    </style>
+
+    <style name="Appnew_with_bg" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkTheme</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:actionMenuTextColor">@android:color/white</item>
+        <item name="android:windowBackground">@drawable/login_bg</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowAnimationStyle">@null</item>
+        <!--<item name="android:windowDisablePreview">true</item>-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkTheme</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@drawable/background_splash</item>
+    </style>
+
+    <style name="transparentDialog" parent="Base.Theme.AppCompat.Light.Dialog.Alert">
+
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkTheme</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:backgroundDimAmount">0.45</item>
+
+        <!-- <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+         <item name="android:backgroundDimEnabled">true</item>-->
+    </style>
+
+    <style name="dialog" parent="Base.Theme.AppCompat.Light.Dialog.Alert">
+
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkTheme</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+         <item name="android:backgroundDimEnabled">true</item>-->
+    </style>
+
+    <style name="MyTabLayoutTextAppearance" parent="TextAppearance.AppCompat.Body2">
+
+        <item name="android:fontFamily">sans-serif-condensed-medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Base application popup theme. -->
+
+    <style name="full_screen_dialog">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkTheme</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <!-- <item name="android:windowNoTitle">true</item>-->
+    </style>
+
+    <style name="full_screen_bg_dialog">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkTheme</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:background">@drawable/login_bg</item>
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <!-- <item name="android:windowNoTitle">true</item>-->
+    </style>
+
+    <style name="bubble_dialog" parent="android:Theme.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.4</item>
+    </style>
+
+
+    <style name="TextLabel_error" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textColorHint">@color/red</item>
+        <item name="android:keyTextColor">@color/colorAccent</item>
+    </style>
+
+    <style name="ColorSwitchStyle">
+        <item name="colorControlActivated">@color/green</item>
+    </style>
+
+    <style name="ColorProgressBarStyle">
+        <item name="colorAccent">@color/green</item>
+    </style>
+
+    <style name="ErrorTextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@android:color/holo_orange_dark</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold|italic</item>
+    </style>
+
+    <style name="HelperTextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="fontFamily">sans-serif-condensed-medium</item>
+    </style>
+
+    <style name="UPITxtInputTheme" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="textInputStyle">@style/textInputCommonStyle</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerRadius">100dp</item>
+        <item name="boxCornerRadiusTopStart">@dimen/_10sdp</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/_10sdp</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/_10sdp</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/_10sdp</item>
+
+    </style>
+
+    <style name="textInputCommonStyle" parent="">
+        <item name="hintTextColor">@color/colorAccent</item>
+        <item name="android:textColorHint">@color/colorAccent</item>
+        <item name="helperTextTextColor">@color/green</item>
+        <item name="helperTextTextAppearance">@style/AppShapeAppearance.MediumComponent</item>
+        <item name="errorEnabled">true</item>
+        <item name="errorTextColor">@color/red</item>
+        <item name="boxStrokeErrorColor">@color/red</item>
+        <item name="endIconMode">clear_text</item>
+        <item name="endIconTint">@color/colorPrimaryDarkTheme</item>
+        <item name="errorTextAppearance">@style/AppShapeAppearance.MediumComponent</item>
+        <item name="startIconTint">@color/colorAccent</item>
+        <item name="boxStrokeWidth">@dimen/_2sdp</item>
+        <item name="boxStrokeColor">@color/text_input_box_stroke</item>
+    </style>
+
+    <style name="AppShapeAppearance.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">8dp</item>
+        <item name="android:textSize">@dimen/_12sdp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Body1</item>
+    </style>
+
+    <style name="Widget.App.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+
+        <!--Error-->
+        <item name="errorEnabled">true</item>
+        <item name="errorTextColor">@color/red</item>
+        <item name="errorIconDrawable">@null</item>
+        <item name="errorTextAppearance">@style/ErrorTextAppearance</item>
+        <!--hint and label-->
+        <item name="hintEnabled">false</item>
+        <item name="android:textColorHint">@color/grey</item>
+        <item name="hintTextAppearance">@style/TextAppearance.AppCompat.Caption</item>
+        <item name="helperTextTextAppearance">@style/HelperTextAppearance</item>
+
+        <!--Box-->
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="boxCornerRadiusTopStart">@dimen/_5sdp</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/_5sdp</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/_5sdp</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/_5sdp</item>
+        <item name="boxStrokeColor">@color/text_input_box_stroke</item>
+        <item name="boxStrokeWidth">@dimen/_1sdp</item>
+
+        <!--<item name="startIconDrawable">@drawable/ic_number</item>-->
+        <item name="startIconTint">@color/colorPrimary</item>
+        <item name="endIconTint">@color/red</item>
+
+
+    </style>
+
+    <style name="Widget.App.TextInputLayout.Dropdown" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+
+        <!--Error-->
+        <item name="errorEnabled">true</item>
+        <item name="errorTextColor">@color/red</item>
+        <item name="errorIconDrawable">@null</item>
+        <item name="errorTextAppearance">@style/ErrorTextAppearance</item>
+        <!--hint and label-->
+        <item name="android:textColorHint">@color/grey_1</item>
+        <item name="hintTextAppearance">@style/TextAppearance.AppCompat.Caption</item>
+        <item name="helperTextTextAppearance">@style/HelperTextAppearance</item>
+
+        <!--Box-->
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="boxCornerRadiusTopStart">@dimen/_5sdp</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/_5sdp</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/_5sdp</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/_5sdp</item>
+        <item name="boxStrokeColor">@color/text_input_box_stroke</item>
+        <item name="boxStrokeWidth">@dimen/_1sdp</item>
+
+
+        <item name="startIconTint">@color/colorPrimary</item>
+        <item name="endIconTint">@color/colorPrimary</item>
+        <item name="endIconMode">dropdown_menu</item>
+
+    </style>
+
+    <style name="full_screen_withoutbg_dialog">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkTheme</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:windowBackground">@color/colorPrimaryDark</item>
+        <!-- <item name="android:windowNoTitle">true</item>-->
+    </style>
+
+</resources>

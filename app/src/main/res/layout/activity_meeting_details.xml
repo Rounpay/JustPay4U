@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include layout="@layout/layout_search" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchViewLayout"
+        android:scrollbars="vertical" />
+
+    <include
+        android:id="@+id/noDataView"
+        layout="@layout/no_data_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_below="@id/searchViewLayout"
+        android:layout_centerInParent="true" />
+
+    <include
+        android:id="@+id/noNetworkView"
+        layout="@layout/network_error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_below="@id/searchViewLayout"
+        android:layout_centerInParent="true" />
+
+</RelativeLayout>

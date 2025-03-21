@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/itemPoolView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_7sdp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/displayName"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="Pool Matrix Tree"
+        android:gravity="center"
+        android:layout_margin="@dimen/_2sdp"
+        android:padding="@dimen/_2sdp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/totaltargetView"
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="@drawable/rounded_team_dark_style"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/headerName1"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:text="total Target"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/headerValue1"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:text="0.00"
+                    android:textColor="@color/white" />
+                <TextView
+                    android:id="@+id/viewReport"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:background="@drawable/rounded_primary_border_white"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/_7sdp"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingEnd="@dimen/_7sdp"
+                    android:paddingBottom="@dimen/_2sdp"
+                    android:text="View Report"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/deActiveView"
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_height="match_parent"
+                android:gravity="end"
+                android:padding="@dimen/_3sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:background="@drawable/rounded_team_dark_style"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/headerName2"
+                        style="@style/TextAppearance.AppCompat.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="center"
+                        android:text="total Achieved"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        />
+
+                    <TextView
+                        android:id="@+id/headerValue2"
+                        style="@style/TextAppearance.AppCompat.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="center"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:text="0.00"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:gravity="center_horizontal">
+                    <TextView
+                        android:id="@+id/headerName3"
+                        style="@style/TextAppearance.AppCompat.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="center"
+                        android:text="Remaining"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        />
+
+                    <TextView
+                        android:id="@+id/headerValue3"
+                        style="@style/TextAppearance.AppCompat.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="center"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:text="7648"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/treeReport"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:background="@drawable/rounded_primary_border_white"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/_7sdp"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingEnd="@dimen/_7sdp"
+                    android:paddingBottom="@dimen/_2sdp"
+                    android:text="Tree"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/targetStatus"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/deactive_user" />
+
+    </RelativeLayout>
+
+</LinearLayout>

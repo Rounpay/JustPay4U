@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/submitBtn">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_10sdp">
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Referral :"
+                android:textColor="@color/colorAccent" />
+
+
+            <TextView
+                android:id="@+id/referralTv"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@drawable/edittext_bg"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:hint="Enter Referral Id"
+                android:inputType="number"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/referralDetailTv"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:textColor="@android:color/white"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/roleView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_3sdp"
+                    android:text="Choose Role :"
+                    android:textColor="@color/colorAccent" />
+
+                <RelativeLayout
+                    android:id="@+id/roleChooserView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                    <TextView
+                        android:id="@+id/chooseRoleTv"
+                        style="@android:style/Widget.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_bg"
+                        android:clickable="false"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:hint="Choose Role"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingTop="@dimen/_10sdp"
+                        android:paddingRight="@dimen/_35sdp"
+                        android:paddingBottom="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textColor="@android:color/white"
+                        android:textColorHint="@color/color_grey" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/chooseRoleArrow"
+                        android:layout_width="@dimen/_17sdp"
+                        android:layout_height="@dimen/_17sdp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        app:srcCompat="@drawable/ic_arrow_drop_down"
+                        app:tint="@color/colorAccent" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/slabView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7.5"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:text="Choose Slab :"
+                        android:textColor="@color/colorAccent" />
+
+                    <RelativeLayout
+                        android:id="@+id/chooseSlabView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                        <TextView
+                            android:id="@+id/chooseSlabTv"
+                            style="@android:style/Widget.EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_bg"
+                            android:clickable="false"
+                            android:ellipsize="end"
+                            android:focusable="false"
+                            android:gravity="center_vertical"
+                            android:hint="Choose Slab"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_10sdp"
+                            android:paddingRight="@dimen/_35sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@color/color_grey" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/chooseSlabArrow"
+                            android:layout_width="@dimen/_17sdp"
+                            android:layout_height="@dimen/_17sdp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            app:srcCompat="@drawable/ic_arrow_drop_down"
+                            app:tint="@color/colorAccent" />
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/realApiText"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_4sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:gravity="center"
+                        android:text="IsRealApi"
+                        android:textColor="@color/colorAccent" />
+
+
+                    <LinearLayout
+                        android:id="@+id/realApiSwitchView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_4sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:background="@drawable/rounded_unfocused"
+                        android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/realApiSwitch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:clickable="false"
+                            android:padding="@dimen/_10sdp"
+                            android:text="" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/websiteView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7.5"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:text="Website :"
+                        android:textColor="@color/colorAccent" />
+
+                    <EditText
+                        android:id="@+id/websiteEt"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_4sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:layout_toLeftOf="@+id/chooseSlabArrow"
+                        android:background="@drawable/edittext_bg"
+                        android:ellipsize="end"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:gravity="center_vertical"
+                        android:hint="Enter Website"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textColor="@android:color/white"
+                        android:textColorHint="@color/color_grey" />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/websiteText"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_4sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:gravity="center"
+                        android:text="IsWebsite"
+                        android:textColor="@color/colorAccent" />
+
+
+                    <LinearLayout
+                        android:id="@+id/websiteSwitchView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_4sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:background="@drawable/rounded_unfocused"
+                        android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/websiteSwitch"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:clickable="false"
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
+                            android:padding="@dimen/_10sdp"
+                            android:text="" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Name :"
+                android:textColor="@color/colorAccent" />
+
+
+            <EditText
+                android:id="@+id/nameEt"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@drawable/edittext_bg"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:hint="Enter Name"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey" />
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Outlet Name :"
+                android:textColor="@color/colorAccent" />
+
+
+            <EditText
+                android:id="@+id/outletNameEt"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@drawable/edittext_bg"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:hint="Enter Outlet Name"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey" />
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Email Id :"
+                android:textColor="@color/colorAccent" />
+
+
+            <EditText
+                android:id="@+id/emailIdEt"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@drawable/edittext_bg"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:hint="Enter Email Id"
+                android:inputType="textEmailAddress"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey" />
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Mobile No :"
+                android:textColor="@color/colorAccent" />
+
+
+            <EditText
+                android:id="@+id/mobileNoEt"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@drawable/edittext_bg"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:hint="Enter Mobile Number"
+                android:inputType="number"
+                android:maxLength="10"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey" />
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Pincode :"
+                android:textColor="@color/colorAccent" />
+
+
+            <EditText
+                android:id="@+id/pincodeEt"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@drawable/edittext_bg"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:hint="Enter Pincode"
+                android:inputType="number"
+                android:maxLength="6"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey" />
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Commission Rate :"
+                android:textColor="@color/colorAccent"
+                android:visibility="visible" />
+
+
+            <EditText
+                android:id="@+id/commRateEt"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@drawable/edittext_bg"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:hint="Enter Commission Rate"
+                android:inputType="number"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey" />
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Address :"
+                android:textColor="@color/colorAccent" />
+
+
+            <EditText
+                android:id="@+id/addressEt"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@drawable/edittext_bg"
+                android:gravity="center_vertical"
+                android:hint="Enter Address"
+                android:padding="@dimen/_10sdp"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey" />
+
+
+            <LinearLayout
+                android:id="@+id/pinPassView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_3sdp"
+                    android:text="Pin Password :"
+                    android:textColor="@color/colorAccent" />
+
+
+                <EditText
+                    android:id="@+id/pinPassEt"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:background="@drawable/edittext_bg"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:hint="Enter Pin Password"
+                    android:padding="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/color_grey" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+
+                <RelativeLayout
+                    android:id="@+id/gstSwitchView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_unfocused">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/gstText"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="right"
+                        android:padding="@dimen/_10sdp"
+                        android:text="IsGST"
+                        android:textColor="@color/colorAccent" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/gstSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="false"
+                        android:padding="@dimen/_10sdp"
+                        android:text="" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/tdsSwitchView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_unfocused">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tdsText"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="right"
+                        android:padding="@dimen/_10sdp"
+                        android:text="IsTDS"
+                        android:textColor="@color/colorAccent" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/tdsSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="false"
+
+                        android:padding="@dimen/_10sdp"
+                        android:text="" />
+
+
+                </RelativeLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/submitBtn"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorAccent"
+        android:enabled="true"
+        android:fontFamily="sans-serif-medium"
+        android:text="Create User"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:visibility="visible" />
+
+</RelativeLayout>

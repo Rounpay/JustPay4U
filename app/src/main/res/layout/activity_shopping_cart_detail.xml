@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Shopping.Activity.CartDetailShoppingActivity">
+
+
+    <include
+        android:id="@+id/noDataView"
+        layout="@layout/no_data_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/noNetworkView"
+        layout="@layout/network_error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/placeBtn"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/addressView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/addressDetailView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_10sdp">
+
+                    <RelativeLayout
+                        android:id="@+id/deliverToView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/changeBtn">
+
+                        <TextView
+                            android:id="@+id/deliverTo"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="sans-serif-condensed"
+                            android:text="Deliver to - "
+                            android:textColor="@color/grey" />
+
+                        <TextView
+                            android:id="@+id/deliverToName"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/title"
+                            android:layout_toRightOf="@+id/deliverTo"
+                            android:ellipsize="end"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="User Name"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/title"
+                            style="@style/TextAppearance.AppCompat.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/rounded_white"
+                            android:backgroundTint="@color/light_grey"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:paddingLeft="@dimen/_6sdp"
+                            android:paddingTop="@dimen/_3sdp"
+                            android:paddingRight="@dimen/_6sdp"
+                            android:paddingBottom="@dimen/_3sdp"
+                            android:text="Title"
+                            android:textColor="@android:color/white" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/address"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/deliverToView"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_toLeftOf="@+id/changeBtn"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-condensed"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="User Address"
+                        android:textColor="@color/grey" />
+
+                    <TextView
+                        android:id="@+id/city"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/address"
+                        android:layout_toLeftOf="@+id/changeBtn"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="User Address"
+                        android:textColor="@color/grey" />
+
+                    <TextView
+                        android:id="@+id/mobile"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/city"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_toLeftOf="@+id/changeBtn"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="User Address"
+                        android:textColor="@color/grey" />
+
+                    <TextView
+                        android:id="@+id/changeBtn"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/_7sdp"
+                        android:background="@drawable/rounded_primary_border"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="center"
+                        android:minWidth="@dimen/_55sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Change"
+                        android:textColor="?attr/colorPrimary" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/addressAddView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_10sdp">
+
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_toLeftOf="@+id/addAddressBtn"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Add New Address"
+                        android:textColor="@android:color/black" />
+
+
+                    <TextView
+                        android:id="@+id/addAddressBtn"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/_7sdp"
+                        android:background="@drawable/rounded_primary_border"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="center"
+                        android:minWidth="@dimen/_80sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Add Address"
+                        android:textColor="?attr/colorPrimary" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_4sdp"
+                    android:background="@color/aboutpagecolour_light" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/priceDetailLabel"
+                    style="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_6sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_6sdp"
+                    android:text="Price Details"
+                    android:textColor="@color/grey" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@color/aboutpagecolour_light" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/totalMrpLabel"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_toLeftOf="@+id/totalMrp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:text="Total MRP"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/totalMrp"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:text="Total MRP"
+                        android:textColor="@color/grey" />
+
+                    <TextView
+                        android:id="@+id/totalPriceLabel"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/totalMrpLabel"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_toLeftOf="@+id/totalPrice"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:text="Total Price"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/totalPrice"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/totalMrp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:text="Total MRP"
+                        android:textColor="@color/grey" />
+
+                    <TextView
+                        android:id="@+id/totalDiscLabel"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/totalPriceLabel"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_toLeftOf="@+id/totalDisc"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:text="Total Discount"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/totalDisc"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/totalPrice"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:text="Total MRP"
+                        android:textColor="@color/green" />
+
+                    <TextView
+                        android:id="@+id/totalShipLabel"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/totalDiscLabel"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_toLeftOf="@+id/totalShip"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:text="Total Shipping Charge"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/totalShip"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/totalDisc"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:text="Total MRP"
+                        android:textColor="@color/grey" />
+
+                    <View
+                        android:id="@+id/priceLine"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_below="@+id/totalShip"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@color/aboutpagecolour_light" />
+
+                    <RelativeLayout
+                        android:id="@+id/walletDetailView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/priceLine"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/walletDetailLabel"
+                            style="@style/TextAppearance.AppCompat.Medium"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_6sdp"
+                            android:paddingRight="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_6sdp"
+                            android:text="Wallet Details"
+                            android:textColor="@color/grey" />
+
+                        <View
+                            android:id="@+id/walletLine"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            android:layout_below="@+id/walletDetailLabel"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:background="@color/aboutpagecolour_light" />
+
+                        <TextView
+                            android:id="@+id/pWalletLabel"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/walletLine"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_toLeftOf="@+id/pWalletAmt"
+                            android:paddingBottom="@dimen/_5sdp"
+                            android:text="Prepaid Wallet"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/pWalletAmt"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/walletLine"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_5sdp"
+                            android:text="Total MRP"
+                            android:textColor="@android:color/holo_red_dark" />
+
+                        <TextView
+                            android:id="@+id/sWalletLabel"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/pWalletLabel"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_toLeftOf="@+id/sWalletAmt"
+                            android:paddingBottom="@dimen/_5sdp"
+                            android:text="Utility Wallet"
+                            android:textColor="@android:color/black" />
+
+                        <TextView
+                            android:id="@+id/sWalletAmt"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/pWalletAmt"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_5sdp"
+                            android:text="Total MRP"
+                            android:textColor="@android:color/holo_red_dark" />
+
+                        <View
+                            android:id="@+id/priceLine2"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            android:layout_below="@+id/sWalletLabel"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:background="@color/aboutpagecolour_light" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/totalAmtLabel"
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/walletDetailView"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_toLeftOf="@+id/totalAmt"
+                        android:fontFamily="sans-serif-medium"
+                        android:paddingTop="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_10sdp"
+                        android:text="Total Amount"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/totalAmt"
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/walletDetailView"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:paddingTop="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_10sdp"
+                        android:text="Total MRP"
+                        android:textColor="@android:color/black" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/placeBtn"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="?attr/colorPrimary"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:text="Place Order"
+        android:textColor="@android:color/white"
+        android:visibility="visible" />
+
+
+    <RelativeLayout
+        android:id="@+id/loadingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:elevation="@dimen/_5sdp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/closeIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/ic_cancel_black_24dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:theme="@style/ColorProgressBarStyle" />
+
+            <ImageView
+                android:id="@+id/statusIcon"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:src="@drawable/ic_check_mark" />
+
+            <TextView
+                android:id="@+id/loadingMsg"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_15sdp"
+                android:gravity="center"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Please wait transaction under process..."
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/noticeMsg"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Please do not press back button or close app"
+                android:textColor="@android:color/holo_red_dark" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/orderViewBtn"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/rounded_primary_border"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:padding="@dimen/_8sdp"
+            android:text="View Order Details"
+            android:textColor="?attr/colorPrimary" />
+    </RelativeLayout>
+</RelativeLayout>

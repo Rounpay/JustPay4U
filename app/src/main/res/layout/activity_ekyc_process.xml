@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp">
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="@string/below_is_the_process"
+            android:textColor="@android:color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/_1_the_merchant_need"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/installApp"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:background="@drawable/rounded_primary_border"
+                android:elevation="@dimen/_3sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+
+                android:minWidth="@dimen/_100sdp"
+                android:padding="@dimen/_8sdp"
+                android:text="@string/install_app"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/contentTv"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@string/ekyc_steps"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
+
+
+
+

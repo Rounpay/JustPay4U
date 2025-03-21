@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_7sdp"
+        app:cardCornerRadius="@dimen/_5sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_accent_border"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingTop="@dimen/_8sdp"
+            android:paddingRight="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:text="Confirmation !"
+                android:textColor="@color/red"
+                app:fontFamily="sans-serif-medium" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/message"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Are you sure you want to delete following beneficiary :"
+                android:textColor="@android:color/black"
+                app:fontFamily="sans-serif-condensed" />
+
+            <TextView
+                android:id="@+id/userDetailTitle"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/beneDetailView"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:fontFamily="sans-serif-medium"
+                android:text="User Details"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/beneName"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/userDetailTitle"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Dreamseller"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/detailTitle"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Bank Details"
+                android:textColor="@color/colorPrimary" />
+
+            <RelativeLayout
+                android:id="@+id/beneDetailView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/detailTitle"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp">
+
+                <LinearLayout
+                    android:id="@+id/beneDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/beneIFSCView"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/beneBank"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="State Bank Of India"
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/beneAccountNumber"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="234589637520008"
+                        android:textColor="@color/greycon" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/beneIFSCView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="IFSC Code"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:id="@+id/beneIFSC"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="SBIN000432"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/cancel"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_accent_border"
+                    android:elevation="@dimen/_3sdp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:padding="@dimen/_6sdp"
+                    android:text="CANCEL"
+                    android:textColor="@android:color/holo_red_dark" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/ok"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_accent_border"
+                    android:elevation="@dimen/_3sdp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:padding="@dimen/_6sdp"
+                    android:text="CONTINUE"
+                    android:textColor="@color/green" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

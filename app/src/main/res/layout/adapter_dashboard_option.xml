@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_prepaid"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_3sdp"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:padding="@dimen/_8sdp">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/_5sdp"
+        app:srcCompat="@drawable/placeholder_square"
+        app:tint="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_8sdp"
+        android:layout_toLeftOf="@+id/rightView"
+        android:layout_toRightOf="@+id/icon"
+        android:fontFamily="sans-serif-medium"
+        android:text="Prepaid"
+        android:textColor="@android:color/black" />
+
+    <RelativeLayout
+        android:id="@+id/rightView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true">
+
+        <ImageView
+            android:id="@+id/arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_arrow_right"
+            app:tint="@android:color/black" />
+
+        <TextView
+            android:id="@+id/comingsoonTv"
+            style="@style/TextAppearance.Compat.Notification.Info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_primary"
+            android:elevation="@dimen/_2sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:padding="@dimen/_3sdp"
+            android:text="Coming Soon"
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
+    </RelativeLayout>
+</RelativeLayout>
+
+

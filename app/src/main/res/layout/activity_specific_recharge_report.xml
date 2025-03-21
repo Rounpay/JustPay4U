@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/searchViewLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/primary_gradient"
+        android:elevation="@dimen/_3sdp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/ic_phone"
+            app:tint="@color/color_grey" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_search_number"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_1sdp"
+            android:layout_toLeftOf="@+id/search"
+            android:layout_weight="8.7"
+            android:background="@android:color/transparent"
+            android:fontFamily="sans-serif-medium"
+            android:hint="Enter Mobile Number"
+            android:inputType="number"
+            android:maxLength="10"
+            android:padding="@dimen/_8sdp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/color_grey"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:background="@color/color_grey" />
+
+        <LinearLayout
+            android:id="@+id/searchView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.3"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatImageView
+
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                app:srcCompat="@drawable/ic_search_icon"
+                app:tint="@android:color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/searchViewLayout"
+        android:scrollbars="vertical" />
+
+    <include
+        android:id="@+id/noDataView"
+        layout="@layout/no_data_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchViewLayout"
+        android:layout_centerInParent="true"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/_5sdp"
+        android:visibility="visible" />
+
+    <include
+        android:id="@+id/noNetworkView"
+        layout="@layout/network_error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchViewLayout"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

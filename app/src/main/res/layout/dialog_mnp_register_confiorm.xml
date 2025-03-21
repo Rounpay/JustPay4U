@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/_8sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_25sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/logo"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp" />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/operator"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="200" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/number"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="sans-serif-medium"
+                android:text="200"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/pinPassView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:elevation="@dimen/_3sdp"
+                app:cardBackgroundColor="@color/aboutpagecolour"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <EditText
+                    android:id="@+id/pinPassEt"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:hint="Enter Pin Password"
+                    android:padding="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/black" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/cancel"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_accent_border"
+                    android:elevation="@dimen/_3sdp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:padding="@dimen/_6sdp"
+                    android:text="CANCEL"
+                    android:textColor="@android:color/holo_red_dark" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/ok"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_accent_border"
+                    android:elevation="@dimen/_3sdp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:padding="@dimen/_6sdp"
+                    android:text="CONTINUE"
+                    android:textColor="@color/green" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

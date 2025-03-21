@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<item android:drawable="@android:color/white" />
+    <item android:drawable="@drawable/back_splash" />
+
+    <item>
+
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/app_logo" />
+    </item>-->
+
+    <item
+        android:width="@dimen/_14sdp"
+        android:height="@dimen/_14sdp"
+        android:gravity="center">
+        <shape android:shape="oval">
+
+            <solid android:color="@color/darkGreen2" />
+
+        </shape>
+    </item>
+    <item
+        android:width="@dimen/_20sdp"
+        android:height="@dimen/_20sdp"
+        android:gravity="center">
+        <shape android:shape="oval">
+            <stroke
+                android:width="@dimen/_1sdp"
+                android:color="@color/darkGreen2" />
+        </shape>
+    </item>
+</layer-list>

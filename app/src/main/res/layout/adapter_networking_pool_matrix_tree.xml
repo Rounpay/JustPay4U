@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/_5sdp"
+    android:layout_marginRight="@dimen/_5sdp"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:background="@drawable/rounded_primary_border_white"
+    android:backgroundTint="@color/color_grey_more_light"
+    android:elevation="@dimen/_5sdp"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/poolName"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_top_primary"
+        android:backgroundTint="@color/colorPrimaryMoreDark"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:padding="@dimen/_5sdp"
+        android:paddingStart="@dimen/_10sdp"
+        android:text="@string/app_name"
+        android:textAllCaps="@bool/cashfree_pg_core_auto_initialize_enabled"
+        app:layout_constraintEnd_toStartOf="@id/targetStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/white"
+        tools:ignore="RtlSymmetry" />
+
+    <ImageView
+        android:id="@+id/targetStatus"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:src="@drawable/true_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/poolName" />
+
+    <HorizontalScrollView
+        android:id="@+id/downlineStatusView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:nestedScrollingEnabled="false"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/targetStatus">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/targetStatus">
+
+            <ImageView
+                android:id="@+id/downlineStatus1"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="1"
+                android:src="@drawable/true_user" />
+
+            <ImageView
+                android:id="@+id/downlineStatus2"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="1"
+                android:src="@drawable/true_user" />
+
+            <ImageView
+                android:id="@+id/downlineStatus3"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="1"
+                android:src="@drawable/true_user" />
+
+            <ImageView
+                android:id="@+id/downlineStatus4"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="1"
+                android:src="@drawable/true_user" />
+
+            <ImageView
+                android:id="@+id/downlineStatus5"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="1"
+                android:src="@drawable/false_user" />
+
+            <ImageView
+                android:id="@+id/downlineStatus6"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_weight="1"
+                android:src="@drawable/false_user" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+
+    <RelativeLayout
+        android:id="@+id/memberView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:background="@drawable/rounded_bottom_primary"
+        android:backgroundTint="@color/dark_grey_color"
+        android:padding="@dimen/_5sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/downlineStatusView">
+
+        <LinearLayout
+            android:id="@+id/targetView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:background="@drawable/rounded_primary_border_white"
+            android:backgroundTint="@color/green"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_7sdp"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingEnd="@dimen/_7sdp"
+            android:paddingBottom="@dimen/_3sdp">
+
+            <ImageView
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:layout_centerInParent="true"
+                android:padding="@dimen/_1sdp"
+                android:src="@drawable/ic_user" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/requiredMemberLabel"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center"
+                android:text="Target : "
+                android:textAllCaps="true"
+                android:textColor="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/requiredMember"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/achievedView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:background="@drawable/rounded_primary_border_white"
+            android:backgroundTint="@color/gre"
+            android:gravity="end"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_7sdp"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingEnd="@dimen/_7sdp"
+            android:paddingBottom="@dimen/_3sdp">
+
+            <ImageView
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:padding="@dimen/_1sdp"
+                android:src="@drawable/ic_user" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/achievedTitle"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:text="Achieved : "
+                android:textAllCaps="true"
+                android:textColor="@color/white" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/totalAchieved"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

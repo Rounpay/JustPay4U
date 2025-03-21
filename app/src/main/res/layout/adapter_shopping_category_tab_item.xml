@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_75sdp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_4sdp"
+    android:layout_marginRight="@dimen/_4sdp"
+    android:layout_marginBottom="@dimen/_3sdp"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_75sdp"
+        android:orientation="vertical"
+        app:cardCornerRadius="@dimen/_4sdp">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/placeholder_square" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/TextAppearance.Compat.Notification.Info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:lines="2"
+        android:maxLines="2"
+        android:padding="@dimen/_2sdp"
+        android:text="Home &amp; Furniture"
+        android:textAllCaps="false"
+        android:textColor="@color/greycon"
+        android:textStyle="bold" />
+</LinearLayout>

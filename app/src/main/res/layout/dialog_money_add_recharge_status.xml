@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/_10sdp">
+
+    <RelativeLayout
+        android:id="@+id/balanceView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/back_bgg"
+        android:paddingLeft="@dimen/_10sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_10sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/walletIv"
+
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="Wallet Balance"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/balance"
+                style="@style/TextAppearance.AppCompat.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Current Balance"
+                android:textColor="@color/color_red" />
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/walletIv"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/ic_wallet" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rechargeView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/balanceView"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/back_bgg"
+        android:padding="@dimen/_10sdp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/logo"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_centerVertical="true" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_4sdp"
+            android:layout_toLeftOf="@+id/amount"
+            android:layout_toRightOf="@+id/logo"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/operator"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="200"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/number"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="200"
+                android:textColor="@color/greycon" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/amount"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_4sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="200"
+            android:textColor="@android:color/holo_red_dark" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/progressView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rechargeView"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/status1Iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    app:srcCompat="@drawable/ic_pending_outline" />
+
+                <LinearLayout
+                    android:id="@+id/line"
+                    android:layout_width="@dimen/_1sdp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/dotted_line_vertical"
+                    android:orientation="vertical" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/statusMsg1Tv"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Waitnig for payment confirmation from wallet/bank"
+                    android:textColor="@color/greycon" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginBottom="@dimen/_10sdp">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Requested Amount :- "
+                        android:textColor="@android:color/black" />
+
+                    <TextView
+                        android:id="@+id/requestedAmt"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Balance"
+                        android:textColor="@color/darkGreen" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/num2Tv"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:background="@drawable/circle_filled"
+                    android:backgroundTint="@color/back_bg"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textColor="@android:color/black" />
+
+                <ImageView
+                    android:id="@+id/status2Iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_pending_outline" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/statusMsg2Tv"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Waitnig confirmation from operator"
+                android:textColor="@color/grey" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/warningmsg"
+        android:layout_below="@+id/progressView"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/detailView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/powerdByView"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/statusMsg"
+                style="@style/TextAppearance.AppCompat.Headline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:text="Please wait... We are processing"
+                android:textColor="@android:color/holo_red_dark" />
+
+            <LinearLayout
+                android:id="@+id/detailTxnView"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/tidView"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="@dimen/_1sdp"
+                        android:layout_weight="0.9"
+                        android:background="@android:color/white"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Transaction Id"
+                        android:textColor="@android:color/black" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_txid"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.1"
+                        android:background="@android:color/white"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/_5sdp"
+                        android:text=""
+                        android:textColor="@color/colorAccent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/liveIdView"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="@dimen/_1sdp"
+                        android:layout_weight="0.9"
+                        android:background="@android:color/white"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Reffrence Id"
+                        android:textColor="@android:color/black" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_liveId"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.1"
+                        android:background="@android:color/white"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/_5sdp"
+                        android:text=""
+                        android:textColor="@color/colorAccent" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/closeBtn"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_accent_border"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:padding="@dimen/_6sdp"
+                    android:text="CLOSE"
+                    android:visibility="gone"
+                    android:textColor="@color/grey" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/receipt"
+                    android:visibility="gone"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_accent_border"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:padding="@dimen/_6sdp"
+                    android:text="RECEIPT"
+                    android:textColor="@color/color_blue" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/enable"
+                    android:visibility="gone"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_accent_border"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:padding="@dimen/_6sdp"
+                    android:text="Enable"
+                    android:textColor="@color/color_red" />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/bill_logo"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_centerVertical="true"
+                android:adjustViewBounds="true"
+                android:visibility="gone"
+                app:srcCompat="@drawable/bharat_billpay" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/powerdByView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/bhimLogo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_40sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/bhim_upi" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:text="Powered By "
+                android:textColor="@color/hint_color" />
+
+            <ImageView
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/icicilogo" />
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/warningmsg"
+        style="@style/TextAppearance.Compat.Notification.Info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="@color/light_red"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp"
+        android:text="Please don't press back/home button until payment is complete"
+        android:textColor="@android:color/holo_red_dark" />
+</RelativeLayout>

@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusableInTouchMode="true"
+    app:cardBackgroundColor="@color/back_bg"
+    app:cardCornerRadius="@dimen/_8sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/closeIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="@dimen/_12sdp"
+                app:srcCompat="@mipmap/close_btn" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/titleTv"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:text="Voucher Entry Form"
+                android:textColor="@android:color/black" />
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/closeIv"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/nestedff"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_5sdp">
+
+
+                <LinearLayout
+                    android:id="@+id/changetTypeView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:id="@+id/collectionTypeView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_7sdp"
+                        android:layout_marginRight="@dimen/_7sdp"
+                        android:background="@drawable/rounded_light_green_border">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cashCollectionTv"
+                            style="@style/TextAppearance.AppCompat.Subhead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_light_green"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:gravity="center"
+                            android:minWidth="@dimen/_80sdp"
+                            android:paddingLeft="@dimen/_12sdp"
+                            android:paddingTop="@dimen/_10sdp"
+                            android:paddingRight="@dimen/_12sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:text="Cash"
+                            android:textColor="@android:color/white" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/bankCollectionTv"
+                            style="@style/TextAppearance.AppCompat.Subhead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:gravity="center"
+                            android:minWidth="@dimen/_80sdp"
+                            android:paddingLeft="@dimen/_12sdp"
+                            android:paddingTop="@dimen/_10sdp"
+                            android:paddingRight="@dimen/_12sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:text="Bank"
+                            android:textColor="@color/lightDarkGreen" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/changetTypeView"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_3sdp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="left"
+                    android:text="Select User :"
+                    android:textColor="@android:color/black"
+                    android:visibility="visible" />
+
+                <RelativeLayout
+                    android:id="@+id/userSelect_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:background="@drawable/edittext_bg"
+                    android:elevation="@dimen/_3sdp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                    <!-- <Spinner
+                         android:id="@+id/bankList"
+                         android:layout_width="match_parent"
+                         android:layout_height="@dimen/_35sdp"
+                         />-->
+
+                    <TextView
+                        android:id="@+id/userNameTv"
+                        style="@android:style/Widget.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/iv_user"
+                        android:background="@android:color/transparent"
+                        android:clickable="false"
+                        android:textColor="@android:color/white"
+                        android:textColorHint="@color/color_grey"
+                        android:fontFamily="sans-serif-medium"
+                        android:hint="Select User"
+                        android:paddingLeft="@dimen/_12sdp"
+                        android:paddingTop="@dimen/_12sdp"
+                        android:paddingRight="@dimen/_4sdp"
+                        android:paddingBottom="@dimen/_12sdp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+                    <ImageView
+                        android:id="@+id/iv_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/_6sdp"
+                        app:srcCompat="@drawable/ic_arrow_down"
+                        app:tint="@color/colorPrimary" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/bankView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/bank_tv"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/changetTypeView"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="left"
+                        android:text="Select Bank :"
+                        android:textColor="@android:color/black"
+                        android:visibility="visible" />
+
+                    <RelativeLayout
+                        android:id="@+id/bankSelect_ll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:background="@drawable/edittext_bg"
+                        android:elevation="@dimen/_3sdp"
+                        android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                        <!-- <Spinner
+                             android:id="@+id/bankList"
+                             android:layout_width="match_parent"
+                             android:layout_height="@dimen/_35sdp"
+                             />-->
+
+                        <TextView
+                            android:id="@+id/bankTv"
+                            style="@android:style/Widget.EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/iv_arrow"
+                            android:background="@android:color/transparent"
+                            android:clickable="false"
+                            android:fontFamily="sans-serif-medium"
+                            android:hint="Select Bank"
+                            android:paddingLeft="@dimen/_12sdp"
+                            android:paddingTop="@dimen/_12sdp"
+                            android:paddingRight="@dimen/_4sdp"
+                            android:paddingBottom="@dimen/_12sdp"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+                        <ImageView
+                            android:id="@+id/iv_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:padding="@dimen/_6sdp"
+                            app:srcCompat="@drawable/ic_arrow_down"
+                            app:tint="@color/colorPrimary" />
+
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/bankUtr_tv"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/remarksEt"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="left"
+                        android:text="Bank UTR"
+                        android:textColor="@android:color/black"
+                        android:visibility="visible" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/bankUtrEt"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/bankUtr_tv"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:background="@drawable/edittext_bg"
+                        android:elevation="@dimen/_3sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:hint="Enter Bank UTR"
+                        android:inputType="number"
+                        android:padding="@dimen/_12sdp"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/amountTitleTv"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bankSelectCardView"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="left"
+                    android:text="Amount"
+                    android:textColor="@android:color/black" />
+
+                <RelativeLayout
+                    android:id="@+id/amountView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/amountTitleTv">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/amountEt"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:textColorHint="@color/color_grey"
+                        android:textColor="@android:color/white"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:background="@drawable/edittext_bg"
+                        android:elevation="@dimen/_3sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:hint="Amount"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:padding="@dimen/_12sdp"
+                        android:singleLine="true" />
+
+                </RelativeLayout>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/remarksTv"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/amountView"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="left"
+                    android:text="Remark"
+                    android:textColor="@android:color/black" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/remarksEt"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/remarksTv"
+                    android:textColorHint="@color/color_grey"
+                    android:textColor="@android:color/white"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:background="@drawable/edittext_bg"
+                    android:elevation="@dimen/_3sdp"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint="Remark"
+                    android:inputType="text"
+                    android:padding="@dimen/_12sdp" />
+
+
+                <LinearLayout
+                    android:id="@+id/bottomBtnView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/totalAmtView"
+                    android:layout_marginTop="@dimen/_15sdp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/cancelBtn"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_recharge_button_gradient_border"
+                        android:elevation="@dimen/_3sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:gravity="center"
+                        android:padding="@dimen/_7sdp"
+                        android:text="Cancel"
+                        android:textColor="@color/color_grey" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/fundCollectBtn"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_recharge_button_gradient_border"
+                        android:elevation="@dimen/_3sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:gravity="center"
+                        android:padding="@dimen/_7sdp"
+                        android:text="Collect"
+                        android:textColor="@android:color/white" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+        <!--</android.support.v7.widget.CardView>-->
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

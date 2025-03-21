@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_below="@+id/tabRecyclerView"
+        android:layout_marginTop="@dimen/_minus1sdp"
+        android:background="?attr/colorPrimary" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tabRecyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_minus1sdp"
+        android:layout_marginRight="@dimen/_minus1sdp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:scrollbars="none"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="5"
+        tools:listitem="@layout/adapter_shopping_category_tab_layout" />
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/filterSortView"
+        android:layout_below="@+id/line"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <include
+        android:id="@+id/noDataView"
+        layout="@layout/no_data_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/filterSortView"
+        android:layout_below="@+id/line"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/elevationView"
+        android:layout_width="match_parent"
+        android:layout_height="0.01dp"
+        android:layout_above="@+id/filterSortView"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="@dimen/_4sdp" />
+    <LinearLayout
+        android:id="@+id/filterSortView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/morelightWhite"
+        android:elevation="@dimen/_4sdp">
+
+        <LinearLayout
+            android:id="@+id/sortView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center|center_vertical"
+            android:padding="@dimen/_8sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_sort_black" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Sort"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:background="@color/greycon" />
+
+        <LinearLayout
+            android:id="@+id/filterView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center|center_vertical"
+            android:padding="@dimen/_8sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_filter_black" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Filter"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>
+

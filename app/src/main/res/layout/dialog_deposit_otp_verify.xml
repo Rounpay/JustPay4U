@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/_5sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/shareView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/bottomView"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/_12sdp"
+            android:paddingTop="@dimen/_15sdp"
+            android:paddingRight="@dimen/_12sdp"
+            android:paddingBottom="@dimen/_15sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/statusIcon"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                app:srcCompat="@drawable/ic_check_mark" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/statusTv"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:text="OTP successfully verified"
+                android:textColor="@color/green" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@color/devider_color"
+                android:orientation="vertical"
+                android:padding="@dimen/_1sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="@dimen/_1sdp"
+                        android:layout_weight="0.9"
+                        android:background="@color/devider_color"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Account Number"
+                        android:textColor="@android:color/black" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/accountNumTv"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.1"
+                        android:background="@color/devider_color"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:padding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/colorAccent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="@dimen/_1sdp"
+                        android:layout_weight="0.9"
+                        android:background="@android:color/white"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Beneficiary Name"
+                        android:textColor="@android:color/black" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/nameTv"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.1"
+                        android:background="@android:color/white"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/_5sdp"
+                        android:text=""
+                        android:textColor="@color/colorAccent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="@dimen/_1sdp"
+                        android:layout_weight="0.9"
+                        android:background="@color/devider_color"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Deposit Amount"
+                        android:textColor="@android:color/black" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/amtTv"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.1"
+                        android:background="@color/devider_color"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:padding="@dimen/_5sdp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/colorAccent" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnCancel"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_accent"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:padding="@dimen/_8sdp"
+                    android:text="Cancel transaction"
+                    android:textColor="@android:color/white" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btnSubmit"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_primary"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:padding="@dimen/_8sdp"
+                    android:text="Procceed to deposit"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/closeIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_3sdp"
+            android:padding="@dimen/_8sdp"
+            app:srcCompat="@mipmap/close_btn" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

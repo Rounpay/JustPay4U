@@ -1,0 +1,1038 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-sdk tools:overrideLibrary="org.egram.aepslib,com.fingpay.microatmsdk" />
+
+    <queries>
+
+        <!-- Explicit apps you know in advance about: -->
+
+        <package android:name="org.egram.microatm" />
+        <package android:name="com.mantra.rdservice" />
+        <package android:name="com.evolute.rdservice" />
+        <package android:name="com.scl.rdservice" />
+        <package android:name="com.tatvik.bio.tmf20" />
+        <package android:name="com.acpl.registersdk" />
+        <package android:name="com.precision.pb510.rdservice" />
+        <package android:name="com.secugen.rdservice" />
+        <package android:name="com.nextbiometrics.onetouchrdservice" />
+        <package android:name="com.google.android.apps.nbu.paisa.user" />
+        <package android:name="com.phonepe.app" />
+        <package android:name="in.org.npci.upiapp" />
+        <package android:name="net.one97.paytm" />
+        <package android:name="com.whatsapp.w4b" />
+        <package android:name="com.csam.icici.bank.imobile" />
+        <package android:name="com.sbi.upi" />
+        <package android:name="com.upi.axispay" />
+        <package android:name="com.samsung.android.spaymini" />
+        <package android:name="com.samsung.android.spay" />
+        <package android:name="com.snapwork.hdfc" />
+        <package android:name="com.fss.pnbpsp" />
+        <package android:name="com.icicibank.pockets" />
+        <package android:name="com.bankofbaroda.upi" />
+        <package android:name="com.freecharge.android" />
+        <package android:name="com.fss.unbipsp" />
+        <package android:name="com.whatsapp" />
+        <package android:name="com.mipay.wallet.in" />
+        <package android:name="in.amazon.mShop.android.shopping" />
+        <package android:name="com.axis.mobile" />
+        <package android:name="com.mycompany.kvb" />
+        <package android:name="com.fss.vijayapsp" />
+        <package android:name="com.dena.upi.gui" />
+        <package android:name="com.fss.jnkpsp" />
+        <package android:name="com.olive.kotak.upi" />
+        <package android:name="com.enstage.wibmo.hdfc" />
+        <package android:name="com.bsb.hike" />
+        <package android:name="com.fss.idfcpsp" />
+        <package android:name="com.YesBank" />
+        <package android:name="com.abipbl.upi" />
+        <package android:name="com.microsoft.mobile.polymer" />
+        <package android:name="com.finopaytech.bpayfino" />
+        <package android:name="com.mgs.obcbank" />
+        <package android:name="com.upi.federalbank.org.lotza" />
+        <package android:name="com.mgs.induspsp" />
+        <package android:name="ai.wizely.android" />
+        <package android:name="com.olive.dcb.upi" />
+        <package android:name="com.mgs.yesmerchantnative.prod" />
+        <package android:name="com.dbs.in.digitalbank" />
+        <package android:name="com.mobikwik_new" />
+        <package android:name="com.rblbank.mobank" />
+        <package android:name="in.chillr" />
+        <package android:name="com.citrus.citruspay" />
+        <package android:name="com.SIBMobile" />
+        <package android:name="com.truecaller" />
+        <package android:name="com.olacabs.customer" />
+        <package android:name="com.myairtelapp" />
+        <package android:name="com.paytmmall" />
+        <package android:name="com.gbwhatsapp" />
+        <package android:name="com.msf.angelmobile" />
+        <package android:name="com.fundsindia" />
+        <package android:name="com.muthootfinance.imuthoot" />
+        <package android:name="com.angelbroking.angelwealth" />
+    </queries>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:remove="android:maxSdkVersion" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" /> <!-- <uses-permission android:name="android.permission.READ_CONTACTS" /> -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
+
+    <application
+        android:name="androidx.multidex.MultiDexApplication"
+        android:allowBackup="false"
+        android:allowClearUserData="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:icon,allowBackup">
+
+        <activity
+            android:name=".Networking.Activity.PoolTeamNetworkingActivity"
+            android:label="Pool Team"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Networking.Activity.GetPoolUpLineReport"
+            android:exported="false"
+            android:label="UpLineReport"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Networking.Activity.GetPoolUpLineLevelDetails"
+            android:exported="false"
+            android:label="UpLineLevel Report"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Networking.Activity.WalletToWalletTransferNetworkingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Wallet Transfer"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".WalletToWalletTransfer.Activity.WalletToWalletTransferActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppMaterialUPITheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Networking.Activity.NetworkingDashboardActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Networking.Activity.AddUserNetworkingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+            android:label="Add Member"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Networking.Activity.GenelogyNetworkingActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".Networking.Activity.GenelogyGlobalNetworkingActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".Networking.Activity.ActivateUserNetworkingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+            android:label="Activate User"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Networking.Activity.ActivateUserByEpinNetworkingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+            android:label="Activate User"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Networking.Activity.EPinListNetworkingActivity"
+            android:label="EPin List"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Reports.Activity.ReportActivity"
+            android:exported="true"
+            android:label="Reports"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Activities.UpdateAddSettlementBankActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew_with_bg" />
+        <activity
+            android:name=".Fintech.Activities.SettlementBankListActivity"
+            android:label="Settlement Accounts"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Reports.Activity.MoveToBankReportActivity"
+            android:label="Move To Bank Report"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Networking.Activity.MoneyTransferNetworkingActivity"
+            android:label="Money Transfer"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Networking.Activity.BankTransferNetworkingActivity"
+            android:label="Bank Transfer"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Networking.Activity.BankUpdateAddNetworkingActivity"
+            android:label="Bank Update"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Networking.Activity.IncomeReportNetworkingActivity"
+            android:label="Income"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Networking.Activity.TotalBuisnessNetworkingActivity"
+            android:label="Total Business"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Networking.Activity.DirectBuisnessNetworkingActivity"
+            android:label="Direct Business"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Networking.Activity.SponserBuisnessNetworkingActivity"
+            android:label="Sponser Business"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Networking.Activity.SelfBuisnessNetworkingActivity"
+            android:label="Self Business"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.AEPS.Activity.AEPSBalanceStatusActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew_back_bgg"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.AEPS.Activity.AEPSBankListActivity"
+            android:label="Bank List"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.AEPS.Activity.AEPSDashboardActivity"
+            android:label="AEPS"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_back_bgg"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.AEPS.Activity.AEPSDepositStatusActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew_back_bgg" />
+        <activity
+            android:name=".Fintech.AEPS.Activity.EKYCProcessActivity"
+            android:label="E-KYC verification Process"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_back_bgg"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.AEPS.Activity.AEPSMiniStatementActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew_back_bgg"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Networking.Activity.DirectTeamNetworkingActivity"
+            android:label="Direct Team"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Networking.Activity.SponserTeamNetworkingActivity"
+            android:label="Generation Team"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Networking.Activity.UplinePoolCountTeamNetworkingActivity"
+            android:label="Generation Team Count"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Networking.Activity.TotalTeamNetworkingActivity"
+            android:label="Global Team"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.AEPS.Activity.AEPSMiniStatementRPActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew_back_bgg"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.AEPS.Activity.AEPSStatusActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew_back_bgg"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.AEPS.Activity.AEPSStatusRPActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew_back_bgg"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.MicroAtm.Activity.MicroATMStatusActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew_back_bgg"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.MicroAtm.Activity.MicroATMStatusRPActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew_back_bgg"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.MicroAtm.Activity.MicroATMBalanceStatusActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew_back_bgg"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.MicroAtm.Activity.MicroAtmActivity"
+            android:label="Mini ATM"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_back_bgg"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.Activities.MultiImageUploadActivity"
+            android:label="Upload Image"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.Recharge.Activity.DthPlanChannelListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew" />
+        <activity
+            android:name=".Fintech.AppUser.Activity.FosUserListActivity"
+            android:label="Fos User List"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.AppUser.Activity.FosReportActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Fos Report"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.AppUser.Activity.AccountStatementServiceWiseActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Account Statement"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.AppUser.Activity.AccountStatementReportActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Account Statement"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.AppUser.Activity.FOSAccStmtAndCollActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Fos Collection Report"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.AppUser.Activity.FosAreaReportActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Area List"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.AppUser.Activity.FosCollectionActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/transparentDialog" />
+        <activity
+            android:name=".Fintech.AppUser.Activity.VoucherEntryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/transparentDialog" />
+        <activity
+            android:name=".Fintech.AppUser.Activity.FosCollectionBankListActivity"
+            android:label="Bank List"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.AppUser.Activity.VoucherEntryUserListActivity"
+            android:label="User List"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.AppUser.Activity.ChannelReportActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Channel Report"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.Dashboard.Activity.AEPSRecriptActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew" />
+        <activity
+            android:name=".Fintech.UpiPayment.Activity.QRScanActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew" />
+        <activity
+            android:name=".Networking.Activity.QRScanNewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew" />
+        <activity
+            android:name=".Fintech.UpiPayment.Activity.QRPayActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew" />
+        <activity
+            android:name=".Fintech.UpiPayment.Activity.UPIPayActivity"
+            android:label="UPI Payment"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.UpiPayment.Activity.UPIListActivity"
+            android:label="UPI Payment"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.Paynear.Activity.PaymentTransactionActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+            android:label="Payment Transaction"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Paynear.Activity.RKIProcessActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+            android:label="RKI Process"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Paynear.Activity.SignatureCaptureActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+            android:label="Signature"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Paynear.Activity.PaymentDetailsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+            android:label="Payment Detials"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Paynear.Activity.PaymentDetailsSlipActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Paynear.Activity.TransactionDetailsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+            android:label="Transaction Details"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Paynear.Activity.SendSMSEmailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+            android:label="Send SMS Email"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Paynear.Activity.TransactionStatusActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+            android:label="Transaction Status"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Paynear.Activity.PaynearActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+            android:label="MPOS"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_back_bgg"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.Paynear.Activity.PaynearActivationActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+            android:label="POS Activation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Paynear.Activity.EmiPaymentActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+            android:label="EMI Payment"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Paynear.Activity.EmipaymentwithCodeActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+            android:label="EMI Payment With Code"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Activities.PermissionActivity"
+            android:theme="@style/Appnew_back_bgg" />
+        <activity
+            android:name=".Fintech.Reports.Activity.DthSubscriptionReportActivity"
+            android:label="DTH Subscription Report"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.DthSubscription.Activity.DthChannelActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.DthSubscription.Activity.DthPackageActivity"
+            android:label="Package"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.DthSubscription.Activity.DthSubscriptionActivity"
+            android:label="Subscriptions"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.Info.Activity.InfoActivity"
+            android:label="Informations"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.Authentication.ChangePinPassActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew_with_bg"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.Activities.UserProfileActivity"
+            android:label="User Profile"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Activities.UpgradePackageActivity"
+            android:label="Upgrade Package"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Reports.Activity.AEPSReportActivity"
+            android:label="AEPS Report"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Dashboard.Activity.VirtualAccountActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Notification.FundTransferNotificationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Dashboard.Activity.QRCodePaymentActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.FundTransactions.Activity.AddMoneyActivity"
+            android:label="Add Money"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Reports.Activity.SpecificRechargeReportActivity"
+            android:label="Specific Recharge Report"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.PSA.Activity.PurchaseTokenActivity"
+            android:label="Purchase Token"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.PSA.Activity.PanApplicationActivity"
+            android:label="PAN Service Agent(PSA)"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.PSA.Activity.UTILoginActivity"
+            android:label="UTI Login Portal"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.Activities.AchievedTargetActivity"
+            android:label="Target Details"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.Activities.AccountOpenActivity"
+            android:label="Account Open"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.Activities.QrBankActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Scan &amp; Pay"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.Activities.QrCodeActivity"
+            android:label="Scan &amp; Pay"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.Authentication.SignupActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew_with_bg"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.MoveToWallet.Activity.WalletToWalletActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Transfer"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Networking.Activity.WalletToWalletNewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Transfer"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Networking.Activity.CryptoWithdrawalActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Withdrawal"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.MoveToWallet.Activity.MoveToWalletActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Withdrawal"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.Info.Activity.BankDetailActivity"
+            android:label="Bank Details"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.Info.Activity.DthSupportActivity"
+            android:label="Support"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.Notification.NotificationListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Notification &amp; Event"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.Reports.Activity.UserDayBookActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="User Day Book"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.Reports.Activity.UserDayBookDMTActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="User Day Book DMT"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.Activities.UpdateBankActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew_with_bg" />
+        <activity
+            android:name=".Fintech.Activities.UpdateProfileActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Update Profile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.Activities.CreateUserActivity"
+            android:label="Create User"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.Activities.MNPClaimHistory"
+            android:label="MNP Claim Report"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.Activities.MNPRegisterActivity"
+            android:label="Register MNP"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.FundTransactions.Activity.DMRWithPipeActivity"
+            android:label="Money Transfer"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.FundTransactions.Activity.DMRActivity"
+            android:label="Money Transfer"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.Reports.Activity.FundOrderPendingActivity"
+            android:label="Fund Order Pending"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.AppUser.Activity.AppUserListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew" />
+        <activity
+            android:name=".Fintech.Notification.NotificationActivity"
+            android:label="Notification"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.AEPS.Activity.AEPSSlipActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew" />
+        <activity
+            android:name=".Fintech.Recharge.Activity.RechargeSlipActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".Fintech.Activities.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Fintech.Activities.TutorialActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew" />
+        <activity
+            android:name=".Fintech.Authentication.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew_login_bg"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.Activities.PinPassActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew_with_bg"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.Recharge.Activity.CircleZoneActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+            android:label="Select Zone"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" /> <!-- Include the AdActivity configChanges and theme. -->
+        <activity
+            android:name=".Fintech.FundTransactions.Activity.DMRRecieptActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew" />
+        <!--
+ Set custom default icon. This is used when no icon is set for incoming notification messages.
+     See README(https://goo.gl/l4GJaQ) for more.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/ic_launcher" />
+        <!--
+ Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+        <service
+            android:name=".Fintech.Notification.service.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".Fintech.Recharge.Activity.RechargeProviderActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+            android:label="Select Provider"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Reports.Activity.FundDcReportActivity"
+            android:label="Fund Credit Report"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Reports.Activity.DisputeReportActivity"
+            android:label="Complaint Report"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Recharge.Activity.RechargeBillPaymentActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.FundTransactions.Activity.MoneyTransferActivity"
+            android:label="Money Transfer"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.FundTransactions.Activity.MoneyTransferWithPipeActivity"
+            android:label="Money Transfer"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.FundTransactions.Activity.AddBeneficiaryWithPipeActivity"
+            android:label="Add Beneficiary"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.FundTransactions.Activity.AddBeneficiaryActivity"
+            android:label="Add Beneficiary"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.FundTransactions.Activity.BankListScreenActivity"
+            android:label="Bank List"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.Reports.Activity.DMRReportActivity"
+            android:label="DMT Report"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.CommissionSlab.Activity.CommissionScreenActivity"
+            android:label="Commission Slab"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.Reports.Activity.RechargeReportActivity"
+            android:label="Recharge Report"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Reports.Activity.LedgerReportActivity"
+            android:label="Ledger Report"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.FundTransactions.Activity.PaymentRequest"
+            android:label="Fund Request"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Fintech.Reports.Activity.FundOrderReportActivity"
+            android:label="Fund Order Report"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.Dashboard.Activity.HomeDashActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Recharge.Activity.ROfferActivity"
+            android:label="R OFFER"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Fintech.Recharge.Activity.BrowsePlanScreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Recharge.Activity.DthPlanInfoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Reports.Activity.W2RHistoryActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="W2R History"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Employee.Activity.EmpDashboardActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Employee.Activity.EmployeesListReport"
+            android:label="Employees List"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Employee.Activity.EmpUserListReport"
+            android:label="User List"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Employee.Activity.MeetingDetails"
+            android:label="Meeting Details"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Employee.Activity.MeetingtReport"
+            android:label="Meeting Reports"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Employee.Activity.NewMeetingActivity"
+            android:label="New Meeting"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Employee.Activity.PstReport"
+            android:label="PST Report"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Employee.Activity.TargetReport"
+            android:label="Target Report"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Fintech.Employee.Activity.TeriatryReport"
+            android:label="Teriatry Report"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Shopping.Activity.ShoppingDashboardActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Shopping.Activity.MainCategoryDetailShoppingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Category Details"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Shopping.Activity.ShoppingCategoryActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Categories"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Shopping.Activity.ItemDetailsShoppingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Shopping.Activity.WishlistShoppingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Wishlist"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Shopping.Activity.CartDetailShoppingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Cart"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Shopping.Activity.AddressListShoppingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Address"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Shopping.Activity.OrderListShoppingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Your Orders"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Shopping.Activity.OrderTrackShoppingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Track Order"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Shopping.Activity.OtherOfferShoppingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Shopping.Activity.OrderDetailShoppingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Order Detail"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Shopping.Activity.AddAddressShoppingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+            android:label="Add Address"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Shopping.Activity.SearchProductShoppingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+            android:label="Search Result"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Shopping.Activity.SearchResultShoppingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Shopping.Activity.FilterShoppingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Shopping.Activity.SimilarProductShoppingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+            android:label="Products"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Shopping.Activity.ZoomImageShoppingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+            android:screenOrientation="portrait"
+            android:theme="@style/Appnew_back_bgg"
+            android:windowSoftInputMode="adjustPan" />
+
+        <service
+            android:name=".Shopping.Services.GetAddressShoppingIntentService"
+            android:exported="false" />
+
+        <receiver
+            android:name=".Util.Receiver.InstallReferrerReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBZCYRgTr2-qPcTvTmA21t1AQT3Ywwdd4U" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <service
+            android:name="com.anfu.pos.library.bluetooth4.BluetoothLeService"
+            android:enabled="true" />
+    </application>
+
+</manifest>

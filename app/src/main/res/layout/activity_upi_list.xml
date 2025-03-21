@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_25sdp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/bhimupi" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/bhimUPIText"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_7sdp"
+            android:layout_marginRight="@dimen/_7sdp"
+            android:gravity="center"
+            android:text="@string/upi_msg"
+            android:textColor="@color/colorAccent"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/upi_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_7sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_7sdp"
+            android:background="@drawable/rounded_primary_gradient"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Sender Number :"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_12sdp" />
+
+
+            <EditText
+                android:id="@+id/edit_mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:layout_toLeftOf="@+id/phoneBookIv"
+                android:background="@drawable/edittext_bg"
+                android:elevation="@dimen/_3sdp"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:hint="Enter Sender Number"
+                android:inputType="number"
+                android:maxLength="10"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey"
+                android:textSize="@dimen/_12sdp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/recent_login_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_7sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_7sdp"
+            android:background="@drawable/rounded_primary_gradient"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_3sdp"
+                android:fontFamily="sans-serif-condensed"
+                android:padding="@dimen/_5sdp"
+                android:text="Recent Sender Login"
+                android:textColor="@color/colorAccent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recentRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                tools:itemCount="1"
+                tools:listitem="@layout/adapter_recent_dmr_login" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sender_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_7sdp"
+            android:layout_marginRight="@dimen/_7sdp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icon_phone"
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_centerVertical="true"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/ic_sender" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/dmr_logout"
+                    android:layout_toRightOf="@+id/icon_phone"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/sender_name"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Name"
+                        android:textColor="@color/colorAccentDark"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/sender_num"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Number"
+                        android:textColor="@color/colorAccent" />
+
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/dmr_logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="right"
+                    android:padding="@dimen/_8sdp"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/ic_logout" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/rounded_reports_gradient_border"
+
+                android:orientation="vertical"
+                android:padding="@dimen/_7sdp">
+
+                <LinearLayout
+                    android:id="@+id/balanceTitleView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_gravity="center"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/ic_wallet" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_toRightOf="@+id/balanceIcon"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Subhead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Remainig Balance"
+                            android:textColor="@android:color/white" />
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/balancetv"
+                            android:layout_toRightOf="@+id/balanceIcon"
+                            android:fontFamily="sans-serif-condensed"
+                            android:text="Your remaining wallet balance is"
+                            android:textColor="@android:color/white" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- <View
+                     android:layout_width="match_parent"
+                     android:layout_height="1dp"
+                     android:background="@color/light_grey" />-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/balanceRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/balanceTitleView"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:paddingTop="@dimen/_4sdp"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/adapter_wallet_balance" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/buttonView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_7sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_7sdp"
+            android:background="@drawable/rounded_primary_gradient"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+
+            <LinearLayout
+                android:id="@+id/addVPAView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_reports_button_gradient_border"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_8sdp">
+
+
+                <ImageView
+                    android:id="@+id/benificiaryIcon"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    app:srcCompat="@drawable/ic_upi_icon" />
+
+
+                <TextView
+
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_toRightOf="@+id/benificiaryIcon"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:text="Pay To New UPI"
+                    android:textColor="@color/colorPrimary" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/scanPayView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_7sdp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_reports_button_gradient_border"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_8sdp">
+
+
+                <ImageView
+                    android:id="@+id/scanIcon"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    app:srcCompat="@drawable/ic_scan_and_pay" />
+
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_toRightOf="@+id/benificiaryIcon"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:text="Scan &amp; Pay To New UPI"
+                    android:textColor="@color/colorPrimary" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/senderDetailView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_7sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_7sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/rounded_primary_gradient"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+
+            <LinearLayout
+                android:id="@+id/vpaListView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+                android:visibility="gone">
+
+                <include layout="@layout/layout_search" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/vpaListRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:paddingTop="@dimen/_7sdp"
+                    android:visibility="visible"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/adapter_vpa" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/loaderView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_40sdp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ProgressBar
+                    android:id="@+id/progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:indeterminateDrawable="@drawable/progess_effect" />
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/progress"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:text="Loading VPA List Please Wait..."
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+            <include
+                android:id="@+id/noDataView"
+                layout="@layout/no_data_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/noNetworkView"
+                layout="@layout/network_error_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
+
+        </LinearLayout>
+        <!-- <androidx.recyclerview.widget.RecyclerView
+             android:id="@+id/vpaListRecyclerView"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="@dimen/_10sdp"
+             android:layout_marginTop="@dimen/_20sdp"
+             android:layout_marginRight="@dimen/_10sdp"
+             android:layout_marginBottom="@dimen/_15sdp"
+             android:background="@drawable/rounded_white"
+             android:nestedScrollingEnabled="false"
+             android:padding="@dimen/_10sdp"
+             android:visibility="gone" />-->
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/otherOfferView"
+    android:layout_width="@dimen/_280sdp"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/lightWhite"
+    app:cardCornerRadius="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/viewAllBtn"
+        android:gravity="left"
+        android:orientation="vertical"
+
+        android:paddingTop="@dimen/_4sdp"
+        android:paddingBottom="@dimen/_5sdp">
+
+        <TextView
+            android:id="@+id/tv_type"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_6sdp"
+            android:layout_marginRight="@dimen/_6sdp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center|left"
+            android:text="Test"
+            android:textColor="@color/black"
+            android:visibility="gone" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_margin="@dimen/_4sdp"
+            app:cardBackgroundColor="@color/lightWhite"
+            app:cardCornerRadius="@dimen/_3sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/offerImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/placeholder_square" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_other_offer_title"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_6sdp"
+            android:layout_marginRight="@dimen/_6sdp"
+            android:fontFamily="sans-serif-medium"
+            android:paddingTop="@dimen/_2sdp"
+            android:text="Test"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tv_other_offer_description"
+            style="@style/Base.TextAppearance.AppCompat.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_6sdp"
+            android:layout_marginRight="@dimen/_6sdp"
+            android:text="Test"
+            android:textColor="@color/greycon" />
+
+        <TextView
+            android:id="@+id/tv_other_offer_cashback"
+            style="@style/Base.TextAppearance.AppCompat.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_6sdp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="@dimen/_6sdp"
+            android:fontFamily="sans-serif-medium"
+            android:paddingBottom="@dimen/_2sdp"
+            android:text="Get 20% Cashback in Moneyfy wallet"
+            android:textColor="?attr/colorAccent"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right|bottom"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_6sdp"
+                android:layout_marginRight="@dimen/_6sdp"
+                android:background="@drawable/rounded_accent"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:text="Shop Now"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

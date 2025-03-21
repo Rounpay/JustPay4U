@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusableInTouchMode="true"
+    app:cardCornerRadius="@dimen/_8sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_10sdp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/closeIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            app:srcCompat="@mipmap/close_btn" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleTv"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/closeIv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="Enable Real Api"
+            android:textColor="@android:color/black" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/msg"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleTv"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="Dear Partner Currently {Op}Lapu Route is Down.
+Please enable Real API Route to Recharge {Op} instantly any time\nप्रिय  विक्रेता   अभी  {Op} का  रिचार्ज  सिम रूट से  बंद   है . अभी  रिचार्ज  करने  लिए  Backup Route को  Activate करें." />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/realApiLayoutContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/msg"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            app:cardCornerRadius="@dimen/_8sdp">
+
+            <RelativeLayout
+                android:id="@+id/realApiLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/realApi"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_centerVertical="true"
+                    app:srcCompat="@drawable/ic_api" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/toggleRealApi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:clickable="false"
+                    android:scaleType="fitXY"
+                    android:theme="@style/ColorSwitchStyle" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_toLeftOf="@+id/toggleRealApi"
+                    android:layout_toRightOf="@+id/realApi"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/realApiLabel"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/toggleDoubleFactor"
+                        android:layout_toRightOf="@+id/doubleFactor"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="left"
+                        android:text="Enable Real Api"
+                        android:textColor="@android:color/black" />
+
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/doubleFactor"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="sans-serif"
+                        android:text="Enable real api to recharge &amp; bill payment instantly with Api."
+                        android:textColor="@color/green" />
+                </LinearLayout>
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

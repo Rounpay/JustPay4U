@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include layout="@layout/layout_search" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/searchViewLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccentMoreLight"
+                android:elevation="@dimen/_3sdp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/_1sdp"
+                android:paddingBottom="@dimen/_1sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/outletNameValue"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="@dimen/_140sdp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/_1sdp"
+
+                    android:background="@color/icon_color"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:paddingLeft="@dimen/_2sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="Outlet Name"
+                    android:textColor="@color/colorPrimary" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mobileValue"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="@dimen/_85sdp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/_1sdp"
+                    android:background="@color/icon_color"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:paddingLeft="@dimen/_2sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="Mobile No"
+                    android:textColor="@color/colorPrimary" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/balanceTab"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_1sdp"
+
+                    android:background="@color/icon_color"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:paddingLeft="@dimen/_2sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="Prepaid\nBalance"
+                    android:textColor="@color/colorPrimary" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/uBalanceTab"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_1sdp"
+
+                    android:background="@color/icon_color"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:paddingLeft="@dimen/_2sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="Utility\nBalance"
+                    android:textColor="@color/colorPrimary" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/openingValue"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/_1sdp"
+
+                    android:background="@color/icon_color"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:paddingLeft="@dimen/_2sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="Opening"
+                    android:textColor="@color/colorPrimary" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/salesValue"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/_1sdp"
+
+                    android:background="@color/icon_color"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:paddingLeft="@dimen/_2sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="Sales"
+                    android:textColor="@color/colorPrimary" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lsaleValue"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/_1sdp"
+
+                    android:background="@color/icon_color"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:paddingLeft="@dimen/_2sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="Last Sales"
+                    android:textColor="@color/colorPrimary" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lsDateValue"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="@dimen/_110sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_1sdp"
+
+                    android:background="@color/icon_color"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:paddingLeft="@dimen/_2sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="Last Sale\nDate"
+                    android:textColor="@color/colorPrimary" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/cCollectionValue"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/_1sdp"
+
+                    android:background="@color/icon_color"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:paddingLeft="@dimen/_2sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="Collection"
+                    android:textColor="@color/colorPrimary" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lCollectionValue"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_1sdp"
+
+                    android:background="@color/icon_color"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:paddingLeft="@dimen/_2sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="Last Collection"
+                    android:textColor="@color/colorPrimary" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lcDateValue"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="@dimen/_110sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_1sdp"
+
+                    android:background="@color/icon_color"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:paddingLeft="@dimen/_2sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="Last Collection\nDate"
+                    android:textColor="@color/colorPrimary" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/closingValue"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/_1sdp"
+
+                    android:background="@color/icon_color"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:paddingLeft="@dimen/_2sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="Closing"
+                    android:textColor="@color/colorPrimary" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="@dimen/_240sdp"
+                    android:layout_height="wrap_content"
+
+                    android:background="@color/icon_color"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:paddingLeft="@dimen/_2sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:text="Collection &amp; Transfer"
+                    android:textColor="@color/colorPrimary" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:scrollbars="vertical" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+    <include
+        android:id="@+id/noDataView"
+        layout="@layout/no_data_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchViewLayout"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/noNetworkView"
+        layout="@layout/network_error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchViewLayout"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

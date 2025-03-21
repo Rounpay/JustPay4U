@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.1"
+        android:background="@color/devider_color"
+        android:paddingLeft="@dimen/_1sdp"
+        android:paddingBottom="@dimen/_1sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/date"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="@android:color/white"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:paddingLeft="@dimen/_2sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingRight="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:text="Transaction Date"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.1"
+        android:background="@android:color/white"
+        android:paddingBottom="@dimen/_1sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/narration"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:background="@color/devider_color"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:paddingLeft="@dimen/_2sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingRight="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:text="Description"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.8"
+        android:background="@color/devider_color"
+        android:paddingRight="@dimen/_1sdp"
+        android:paddingBottom="@dimen/_1sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/amt"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/_2sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingRight="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:singleLine="true"
+            android:text="Amount"
+            android:textColor="@color/green" />
+    </LinearLayout>
+</LinearLayout>

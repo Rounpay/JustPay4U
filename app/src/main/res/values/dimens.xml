@@ -1,0 +1,10 @@
+<resources>
+
+    <dimen name="activity_horizontal_margin">2dp</dimen>
+    <dimen name="activity_vertical_margin">2dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="scoreFontSize">4sp</dimen>
+    <dimen name="scoreFontSizeHeader">7sp</dimen>
+    <dimen name="_minus5sdp">-6dp</dimen>
+    <dimen name="_minus3sdp">-3dp</dimen>
+</resources>

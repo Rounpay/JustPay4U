@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/iconView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_60sdp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/app_logo" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Change Password"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_26sdp" />
+
+                <!-- <TextView
+                     style="@style/TextAppearance.AppCompat.Headline"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_gravity="center"
+                     android:fontFamily="sans-serif-medium"
+                     android:text="Login"
+                     android:textColor="@android:color/black" />-->
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_login"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/iconView"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp"
+                android:visibility="visible">
+
+
+                <TextView
+                    android:id="@+id/oldPassTitle"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_6sdp"
+                    android:layout_marginBottom="@dimen/_3sdp"
+                    android:text="Enter Old Password :"
+                    android:textColor="@color/colorPrimary"
+                    android:visibility="visible" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_marginRight="@dimen/_6sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:cardElevation="@dimen/_4sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/_5sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_24sdp"
+                            android:layout_height="@dimen/_24sdp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/ic_password"
+                            app:tint="@color/colorPrimary" />
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_old_pass"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            app:hintEnabled="false"
+                            app:passwordToggleEnabled="true"
+                            app:passwordToggleTint="@color/colorPrimaryDark">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/et_old_pass"
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:hint="Enter Old Password"
+                                android:imeOptions="actionDone"
+                                android:inputType="textPassword"
+                                android:paddingLeft="@dimen/_8sdp"
+                                android:paddingRight="@dimen/_8sdp"
+                                android:singleLine="true"
+                                android:textColor="@color/colorPrimary"
+                                android:textColorHint="@android:color/darker_gray" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/titleNewPass"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginRight="@dimen/_6sdp"
+                    android:layout_marginBottom="@dimen/_3sdp"
+                    android:text="Enter New Password :"
+                    android:textColor="@color/colorPrimary"
+                    android:visibility="visible" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_marginRight="@dimen/_6sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:cardElevation="@dimen/_4sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/_5sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_24sdp"
+                            android:layout_height="@dimen/_24sdp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/ic_password"
+                            app:tint="@color/colorPrimary" />
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_new_pass"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            app:hintEnabled="false"
+                            app:passwordToggleEnabled="true"
+                            app:passwordToggleTint="@color/colorPrimaryDark">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/et_new_pass"
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:hint="Enter New Password"
+                                android:imeOptions="actionDone"
+                                android:inputType="textPassword"
+                                android:maxLength="4"
+                                android:paddingLeft="@dimen/_8sdp"
+                                android:paddingRight="@dimen/_8sdp"
+                                android:singleLine="true"
+                                android:textColor="@color/colorPrimary"
+                                android:textColorHint="@android:color/darker_gray" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/titleConfPass"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginRight="@dimen/_6sdp"
+                    android:layout_marginBottom="@dimen/_3sdp"
+                    android:text="Enter Confirm Password"
+                    android:textColor="@color/colorPrimary"
+                    android:visibility="visible" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_6sdp"
+
+                    android:layout_marginRight="@dimen/_6sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:cardElevation="@dimen/_4sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/_5sdp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_24sdp"
+                            android:layout_height="@dimen/_24sdp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/ic_password"
+                            app:tint="@color/colorPrimary" />
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til__conf_pass"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            app:hintEnabled="false"
+                            app:passwordToggleEnabled="true"
+                            app:passwordToggleTint="@color/colorPrimaryDark">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/et_conf_pass"
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:hint="Confirm Password"
+                                android:imeOptions="actionDone"
+                                android:inputType="textPassword"
+                                android:paddingLeft="@dimen/_8sdp"
+                                android:paddingRight="@dimen/_8sdp"
+                                android:singleLine="true"
+                                android:textColor="@color/colorPrimary"
+                                android:textColorHint="@android:color/darker_gray" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/bt_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginRight="@dimen/_6sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:cardElevation="@dimen/_4sdp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/changePassword"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Change Password"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/white" />
+                </androidx.cardview.widget.CardView>
+
+
+                <TextView
+                    android:id="@+id/noticeMsg"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_6sdp"
+                    android:autoLink="all"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="bottom"
+                    android:text="@string/change_pass_msg"
+                    android:textColor="@color/color_red" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/closeIv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_3sdp"
+        android:padding="@dimen/_8sdp"
+        app:srcCompat="@mipmap/close_btn" />
+</RelativeLayout>

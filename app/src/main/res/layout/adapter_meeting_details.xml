@@ -1,0 +1,854 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/_5sdp"
+    android:layout_marginRight="@dimen/_5sdp"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:background="@drawable/rounded_reports_gradient_border"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/nameLabel"
+        style="@style/TextAppearance.AppCompat.Caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        android:layout_toLeftOf="@+id/status"
+        android:fontFamily="sans-serif-medium"
+        android:text="Name"
+        android:textColor="@color/colorAccent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/nameTv"
+        style="@style/TextAppearance.AppCompat.Body2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nameLabel"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        android:layout_toLeftOf="@+id/status"
+        android:text="User Outlet Name [RT1234]"
+        android:textColor="@color/reddishBrown" />
+
+    <LinearLayout
+        android:id="@+id/mobileView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mobileView"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mobileLabel"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.23"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Mobile No"
+            android:textColor="@android:color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.02"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text=":"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.75"
+            android:gravity="center_vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mobileTv"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:text="0000000000"
+                android:textColor="@color/color_grey_light" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/whatsapView"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:background="@drawable/rounded_white"
+                android:backgroundTint="@color/whatsappColor"
+                android:padding="@dimen/_3sdp"
+                app:srcCompat="@drawable/ic_whatsapp_outline"
+                app:tint="@android:color/white" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/callView"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:background="@drawable/rounded_white"
+                android:backgroundTint="@color/colorAccent"
+                android:padding="@dimen/_2sdp"
+                app:srcCompat="@drawable/ic_call_black_24dp"
+                app:tint="@android:color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/outletNameView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mobileView"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ouyletNameLabel"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.23"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Outlet Name"
+            android:textColor="@android:color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.02"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text=":"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/outletNameTv"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.75"
+            android:fontFamily="sans-serif-condensed"
+            android:text="0000000000"
+            android:textColor="@color/color_grey_light" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pincodeView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mobileView"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/pincodeLabel"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.23"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Pincode"
+            android:textColor="@android:color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.02"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text=":"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/pincodeTv"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.75"
+            android:fontFamily="sans-serif-condensed"
+            android:text="0000000000"
+            android:textColor="@color/color_grey_light" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/areaView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mobileView"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/areaLabel"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.23"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Area"
+            android:textColor="@android:color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.02"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text=":"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/areaTv"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.75"
+            android:fontFamily="sans-serif-condensed"
+            android:text="0000000000"
+            android:textColor="@color/color_grey_light" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/purposeView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mobileView"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/purposeLabel"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.23"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Purpose"
+            android:textColor="@android:color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.02"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text=":"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/purposeTv"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.75"
+            android:fontFamily="sans-serif-condensed"
+            android:text="0000000000"
+            android:textColor="@color/color_grey_light" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        android:background="@drawable/rounded_primary_gradient"
+        android:orientation="vertical"
+        android:padding="@dimen/_2sdp">
+
+        <RelativeLayout
+            android:id="@+id/consumptionView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mobileView"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/_1sdp"
+            android:paddingTop="@dimen/_1sdp"
+            android:paddingRight="@dimen/_1sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/consumptionLabel"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:paddingLeft="@dimen/_8sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:text="Total Consumption"
+                android:textColor="@android:color/white" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/consumptionTv"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/consumptionLabel"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="right"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingRight="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:text="0000000000"
+                android:textColor="@color/color_grey_light" />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_2sdp">
+
+            <LinearLayout
+                android:id="@+id/rechargeConView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_1sdp">
+
+                <TextView
+                    android:id="@+id/rechargeConLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Recharge"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/rechargeCons"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="895346777"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@color/back_bg" />
+
+            <LinearLayout
+                android:id="@+id/billConView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_1sdp">
+
+                <TextView
+                    android:id="@+id/billConLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Bill Payment"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/billCons"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="895346777"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@color/back_bg" />
+
+            <LinearLayout
+                android:id="@+id/moneyTxnConView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_1sdp">
+
+                <TextView
+                    android:id="@+id/moneyTxnConLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Money Transfer"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/moneyTxnCons"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="895346777"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_2sdp">
+
+            <LinearLayout
+                android:id="@+id/aepsConView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_1sdp">
+
+                <TextView
+                    android:id="@+id/aepsConLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="AEPS"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/aepsCons"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="895346777"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@color/back_bg" />
+
+            <LinearLayout
+                android:id="@+id/panConView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_1sdp">
+
+                <TextView
+                    android:id="@+id/panConLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="PAN"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/panCons"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="895346777"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@color/back_bg" />
+
+            <LinearLayout
+                android:id="@+id/miniAtmConView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_1sdp">
+
+                <TextView
+                    android:id="@+id/miniAtmConLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Mini ATM"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/miniAtmCons"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="895346777"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/hotelConView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_1sdp">
+
+                <TextView
+                    android:id="@+id/hotelConLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Hotel"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/hotelCons"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="895346777"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@color/back_bg" />
+
+            <LinearLayout
+                android:id="@+id/insuranceConView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_1sdp">
+
+                <TextView
+                    android:id="@+id/insuranceConLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Insurance"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/insuranceCons"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="895346777"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@color/back_bg" />
+
+            <LinearLayout
+                android:id="@+id/vehicleConView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_1sdp">
+
+                <TextView
+                    android:id="@+id/vehicleConLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Vehicle Insurance"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/vehicleCons"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="895346777"
+                    android:textColor="@android:color/white" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/otherBrandReasonView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mobileView"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/otherBrandReasonLabel"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.38"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Reason to Use Other Brands"
+            android:textColor="@android:color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.02"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text=":"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/otherBrandReasonTv"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"
+            android:fontFamily="sans-serif-condensed"
+            android:text="0000000000"
+            android:textColor="@color/color_grey_light" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/remarkView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mobileView"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/remarkLabel"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.38"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Remark"
+            android:textColor="@android:color/white" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.02"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text=":"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/remarkTv"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"
+            android:fontFamily="sans-serif-condensed"
+            android:text="0000000000"
+            android:textColor="@color/color_grey_light" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/btnView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@drawable/rounded_reports_button_gradient_border"
+            android:elevation="@dimen/_3sdp"
+            android:gravity="center"
+            android:minWidth="@dimen/_80sdp"
+            android:orientation="horizontal"
+            android:padding="@dimen/_5sdp"
+            android:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatImageView
+
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:backgroundTint="@android:color/transparent"
+                android:gravity="center"
+                app:srcCompat="@drawable/ic_map"
+                app:tint="@color/colorPrimary" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Map"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_6sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@drawable/rounded_reports_button_gradient_border"
+            android:elevation="@dimen/_3sdp"
+            android:gravity="center"
+            android:minWidth="@dimen/_80sdp"
+            android:orientation="horizontal"
+            android:padding="@dimen/_5sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_4sdp"
+                android:backgroundTint="@android:color/transparent"
+                android:gravity="center"
+                app:srcCompat="@drawable/ic_shop_black"
+                app:tint="@color/colorPrimary" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Shop Image"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
+        <!-- <android.support.v7.widget.AppCompatImageView
+             android:id="@+id/fundTransfer"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:backgroundTint="@android:color/transparent"
+             android:gravity="center"
+             android:padding="@dimen/_5sdp"
+             app:srcCompat="@drawable/ic_fund_transfer"
+             app:tint="@color/colorPrimary" />-->
+
+    </LinearLayout>
+</LinearLayout>
+
+  

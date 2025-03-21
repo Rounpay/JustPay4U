@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark">
+
+        <LinearLayout
+            android:id="@+id/shareView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccentAlpha_1"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_10sdp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_top_bg_register_new"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/statusIcon"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_120sdp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/app_logo_white" />
+
+                <TextView
+                    android:id="@+id/labelTv"
+                    style="@style/TextAppearance.AppCompat.Large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/statusIcon"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_2sdp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="Registration"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/statusIcon"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:paddingBottom="@dimen/_20sdp"
+                    android:text="Complete"
+                    android:textColor="@android:color/black" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/statusMsg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/statusTv"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="center"
+                    android:text="Welcome, Your account has been created successfully."
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="center"
+                    android:text="Login Credential"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_14sdp" />
+
+                <TextView
+                    android:id="@+id/loginUrl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:gravity="center"
+                    android:text="Login URL"
+                    android:textColor="@android:color/black" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:orientation="vertical">
+
+                    <!--       <LinearLayout
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:gravity="center_vertical"
+                               android:padding="@dimen/_5sdp">
+
+                               <androidx.appcompat.widget.AppCompatTextView
+                                   style="@style/TextAppearance.AppCompat.Subhead"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:fontFamily="sans-serif-condensed-medium"
+                                   android:gravity="center_vertical"
+                                   android:text="Login Url : "
+                                   android:textColor="@android:color/blackk" />
+
+
+
+                               <androidx.appcompat.widget.AppCompatTextView
+                                   android:id="@+id/loginUrl"
+                                   style="@style/TextAppearance.AppCompat.Subhead"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:autoLink="all"
+                                   android:fontFamily="sans-serif-condensed-medium"
+                                   android:gravity="center_vertical|right"
+                                   android:text=""
+                                   android:textStyle="bold"
+                                   android:textColor="@android:color/blackk" />
+
+
+
+                           </LinearLayout>-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_5sdp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_vertical"
+                            android:text="Your Name : "
+                            android:textColor="@android:color/black" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/name"
+                            style="@style/TextAppearance.AppCompat.Subhead"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/poppins_medium"
+                            android:gravity="center_vertical|right"
+                            android:text=""
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_5sdp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_vertical"
+                            android:text="User Id : "
+                            android:textColor="@android:color/black" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/userId"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_vertical|right"
+                            android:text=""
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_5sdp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_vertical"
+                            android:text="Password : "
+                            android:textColor="@android:color/black" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/password"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:gravity="center_vertical|right"
+                            android:text=""
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_2sdp"
+                    android:background="@drawable/horizontal_dashed_line" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="start"
+                android:text="We have sent you an email &amp; message containing your login details."
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:text="Please keep email safe"
+                android:textColor="@color/colorPrimary" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_70sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_70sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:adjustViewBounds="true"
+                android:visibility="gone"
+                app:srcCompat="@drawable/app_full_logo" />
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <ImageView
+        android:id="@+id/closeIv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="right"
+        android:elevation="@dimen/_5sdp"
+        android:padding="@dimen/_8sdp"
+        app:srcCompat="@drawable/ic_close_black_24dp" />
+
+</RelativeLayout>

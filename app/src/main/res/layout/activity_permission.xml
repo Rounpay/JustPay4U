@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fintech.Activities.PermissionActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/nextBtn"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:padding="@dimen/_8sdp"
+                android:text="Required Permissions"
+                android:textColor="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iconCamera"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:background="@drawable/accent_circle"
+            android:backgroundTint="@color/color_indigo"
+            android:padding="@dimen/_7sdp"
+            app:layout_constraintBottom_toBottomOf="@id/cameraDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cameraLabel"
+            app:srcCompat="@drawable/ic_camera_col" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/cameraLabel"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Camera Permission"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="@id/cameraDescription"
+            app:layout_constraintStart_toEndOf="@id/iconCamera"
+            app:layout_constraintTop_toBottomOf="@id/line" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/cameraDescription"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:text="@string/camera_permission_msg"
+            android:textColor="@color/grey"
+            app:fontFamily="sans-serif-condensed-medium"
+            app:layout_constraintEnd_toStartOf="@id/switchCameraView"
+            app:layout_constraintStart_toStartOf="@id/cameraLabel"
+            app:layout_constraintTop_toBottomOf="@id/cameraLabel" />
+
+
+        <LinearLayout
+            android:id="@+id/switchCameraView"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@id/cameraDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cameraDescription"
+            app:layout_constraintTop_toTopOf="@id/cameraLabel">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchCamera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:clickable="false"
+                android:padding="@dimen/_5sdp"
+                android:theme="@style/ColorSwitchStyle" />
+        </LinearLayout>
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iconLocation"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:background="@drawable/accent_circle"
+            android:backgroundTint="@color/color_orange"
+            android:padding="@dimen/_7sdp"
+            app:layout_constraintBottom_toBottomOf="@id/locationDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/locationLable"
+            app:srcCompat="@drawable/ic_location_col" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/locationLable"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Location Permission"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="@id/locationDescription"
+            app:layout_constraintStart_toEndOf="@id/iconLocation"
+            app:layout_constraintTop_toBottomOf="@id/cameraDescription" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/locationDescription"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:text="@string/location_permission_msg"
+            android:textColor="@color/grey"
+            app:fontFamily="sans-serif-condensed-medium"
+            app:layout_constraintEnd_toStartOf="@id/switchLocationView"
+            app:layout_constraintStart_toStartOf="@id/locationLable"
+            app:layout_constraintTop_toBottomOf="@id/locationLable" />
+
+
+        <LinearLayout
+            android:id="@+id/switchLocationView"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@id/locationDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/locationDescription"
+            app:layout_constraintTop_toTopOf="@id/locationLable">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:checked="false"
+                android:clickable="false"
+                android:padding="@dimen/_5sdp"
+                android:theme="@style/ColorSwitchStyle" />
+        </LinearLayout>
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iconStorage"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:background="@drawable/accent_circle"
+            android:backgroundTint="@color/lightDarkGreen"
+            android:padding="@dimen/_7sdp"
+            app:layout_constraintBottom_toBottomOf="@id/storageDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/storageLabel"
+            app:srcCompat="@drawable/ic_storage_col" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/storageLabel"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Storage Permission"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="@id/storageDescription"
+            app:layout_constraintStart_toEndOf="@id/iconStorage"
+            app:layout_constraintTop_toBottomOf="@id/locationDescription" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/storageDescription"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:text="@string/storage_permission_msg"
+            android:textColor="@color/grey"
+            app:fontFamily="sans-serif-condensed-medium"
+            app:layout_constraintEnd_toStartOf="@id/switchStorageView"
+            app:layout_constraintStart_toStartOf="@id/storageLabel"
+            app:layout_constraintTop_toBottomOf="@id/storageLabel" />
+
+
+        <LinearLayout
+            android:id="@+id/switchStorageView"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@id/storageDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/storageDescription"
+            app:layout_constraintTop_toTopOf="@id/storageLabel">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchStorage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:clickable="false"
+                android:padding="@dimen/_5sdp"
+                android:theme="@style/ColorSwitchStyle" />
+        </LinearLayout>
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iconPhone"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:background="@drawable/accent_circle"
+            android:backgroundTint="@color/color_accent"
+            android:padding="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="@id/phoneDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/phoneLabel"
+            app:srcCompat="@drawable/ic_smartphone_col" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/phoneLabel"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Phone Permission"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="@id/phoneDescription"
+            app:layout_constraintStart_toEndOf="@id/iconStorage"
+            app:layout_constraintTop_toBottomOf="@id/storageDescription" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/phoneDescription"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:text="@string/phone_permission_msg"
+            android:textColor="@color/grey"
+            app:fontFamily="sans-serif-condensed-medium"
+            app:layout_constraintEnd_toStartOf="@id/switchPhoneView"
+            app:layout_constraintStart_toStartOf="@id/phoneLabel"
+            app:layout_constraintTop_toBottomOf="@id/phoneLabel" />
+
+
+        <LinearLayout
+            android:id="@+id/switchPhoneView"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@id/phoneDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/phoneDescription"
+            app:layout_constraintTop_toTopOf="@id/phoneLabel">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:checked="false"
+                android:clickable="false"
+                android:padding="@dimen/_5sdp"
+                android:theme="@style/ColorSwitchStyle" />
+        </LinearLayout>
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iconNotification"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:background="@drawable/accent_circle"
+            android:backgroundTint="@color/color_indigo"
+            android:padding="@dimen/_5sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/notificationDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/notificationLabel"
+            app:srcCompat="@drawable/ic_notifications" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/notificationLabel"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_7sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Notification Permission"
+            android:textColor="@color/colorAccent"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/notificationDescription"
+            app:layout_constraintStart_toEndOf="@id/iconNotification"
+            app:layout_constraintTop_toBottomOf="@id/phoneDescription" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/notificationDescription"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:text="@string/notification_permission_msg"
+            android:textColor="@color/grey"
+            android:visibility="gone"
+            app:fontFamily="sans-serif-condensed-medium"
+            app:layout_constraintEnd_toStartOf="@id/switchNotificationView"
+            app:layout_constraintStart_toStartOf="@id/notificationLabel"
+            app:layout_constraintTop_toBottomOf="@id/notificationLabel" />
+
+
+        <LinearLayout
+            android:id="@+id/switchNotificationView"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:gravity="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/notificationDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/notificationDescription"
+            app:layout_constraintTop_toTopOf="@id/notificationLabel">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchNotification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:checked="false"
+                android:clickable="false"
+                android:padding="@dimen/_5sdp"
+                android:theme="@style/ColorSwitchStyle" />
+        </LinearLayout>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/notice"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_15sdp"
+            android:gravity="center"
+            android:padding="@dimen/_4sdp"
+            android:text="If you do not feel comfortable with this permissions, you can go to Settings and modify it at any time."
+            android:textColor="@color/red1"
+            app:fontFamily="sans-serif-condensed-medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/notificationDescription" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/nextBtn"
+        style="@style/TextAppearance.AppCompat.Body2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/light_grey"
+        android:gravity="center"
+
+        android:padding="@dimen/_10sdp"
+        android:text="Continue"
+        android:textColor="@android:color/white" />
+</RelativeLayout>

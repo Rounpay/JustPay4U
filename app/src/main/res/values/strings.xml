@@ -1,0 +1,319 @@
+<resources>
+    <string name="app_name">JustPay4u</string>
+    <string name="newpass_error">New password &amp; confirm password should be same</string>
+    <string name="password_error">Please enter valid password</string>
+    <string name="pincode_error">Enter valid pincode</string>
+    <string name="mobilenumber_error">Enter Valid Mobile Number</string>
+    <string name="action_settings">Settings</string>
+    <string name="rechage_note"><font color="black">Note:</font> <font color="red">Please verify all information before doing transacitons. After transaction our company will be not responsible.</font></string>
+    <string name="rechage_confiorm_note"><font color="black"><b>Note:</b></font> <font color="red"><i>Kindly check once again all information before doing transacitons. Otherwise after transaction recharge amount will not reverse.</i></font></string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="bene_acc_error">Please enter valid account number</string>
+    <string name="bene_ifsc_error">Please enter valid IFSC Code</string>
+
+    <string name="err_msg_network">Slow or No Internet Connection!!!</string>
+    <string name="err_msg_email">Please Enter Valid Email Id</string>
+    <string name="err_msg_mobile">Please Enter Your Mobile No.</string>
+    <string name="err_msg_mobile_length">Please Enter Your Mobile No.of 10 Digits.</string>
+    <string name="aadhaar">Please Enter Aadhaar No.of 12 Digits.</string>
+    <string name="err_msg_pass">Please Enter Your Password.</string>
+    <string name="err_msg_text">Please Enter the Text.</string>
+
+    <string name="password_expired_msg">Your password has been expired, Please change before using this app</string>
+    <string name="pin_password_expired_msg">Your have not created Pin Password, Please create first before using this app.</string>
+    <string name="samepass_error">New password cann\'t be same as old password!</string>
+
+    <string name="str_ShowOnPermisstion">Please Allow some permission for your app. If you deny permissions will not be able to use functionality of this app.</string>
+
+
+    <string name="rupiya">\u20B9</string>
+    <!--  <string name="cancel">\u274C</string>
+    <string name="delete">\u2718</string>-->
+    <string name="click_here"><u>Click here</u></string>
+
+
+    <string name="network_error_message">Please check your network connection and try again.</string>
+
+    <string name="str_Note"><font color="black">Note:</font> <font color="red">Always make sure your Account Number \u0026 IFSC Code is correct. Company will not be liable for any wrong transactions.</font></string>
+    <string name="note"> <font color="red"> Admin charge 10% applied.</font></string>
+    <string name="err_msg_valid_mobile">Please Enter Valid Mobile No</string>
+    <string name="paymentoptioncode">payment option code</string>
+
+
+    //payneer
+
+    <string name="network_error">Slow Network Connection, Please check your network connection and try again!!!</string>
+    <string name="radio_bluetooth">Bluetooth</string>
+    <string name="radio_usb">USB</string>
+    <string name="err_something_went_wrong">Temporary server error has been occurred.</string>
+    <string name="NotAuthorized">You are not authorized to use this service.</string>
+    <string name="mobile_tollfree">Mobile Tollfree </string>
+    <string name="dth_tollfree">DTH Tollfree </string>
+
+
+    <string name="Bank_string">In order to make an money transfer or payment request, you will need the following details relating to your recipient\'s bank account</string>
+    <string name="some_thing_error">Some thing error please try after some time</string>
+    <string name="err_empty_field">Field can\'t be empty</string>
+    <string name="invalid_aadhar">Invalid AADHAR no.</string>
+    <string name="invalid_pan">Enter Valid PAN no</string>
+    <string name="profile_update_notice">For KYC update please update user with all given fields</string>
+    <string name="amount">Amount</string>
+    <string name="start_date">From Date</string>
+    <string name="end_date">To Date</string>
+    <string name="wallet_type">Wallet Type</string>
+    <string name="action_filter">Filter</string>
+    <string name="debit_credit">Debit/Credit</string>
+    <string name="received_by">Received By</string>
+    <string name="choose_top">Choose Top</string>
+    <string name="choose_refund_status">Choose Refund Status</string>
+    <string name="choose_date_type">Choose Date Type</string>
+    <string name="choose_criteria">Choose Criteria</string>
+    <string name="enter_criteria">Enter Criteria</string>
+    <string name="AepsNotApproved">Your Aeps status is not approved.</string>
+
+    <string name="SERVICEDOWN"><b><i>SERVICEDOWN</i></b></string>
+    <string name="UNDERSCREENING"><b>UNDERSCREENING</b></string>
+    <string name="REJECT"><b><i>REJECTED</i></b></string>
+    <string name="UNAUTHORISED"><b>UNAUTHORISED</b></string>
+    <string name="INCOMPLETE"><b>INCOMPLETE</b></string>
+    <string name="Redirection"><b>Redirection</b></string>
+    <string name="mob_num">Mobile Number</string>
+    <string name="Physical">Physical</string>
+    <string name="Digital">Digital</string>
+    <string name="str_ShowOnPermisstionDenied"><![CDATA[To using all functionality of this app, please allow permissions. Go to App Setting -> Permissions enable all permissions.]]></string>
+    <string name="dispute_msg">Are you sure you want to Dispute to this transaction</string>
+    <string name="choose_mode">Choose Mode</string>
+    <string name="child_mobile_number">Child Mobile Number</string>
+    <string name="realapi_popup_english_billpayment_msg">Dear Partner Currently %1$s Lapu Route is Down.
+Please enable Real API Route to Pay %2$s Bill instantly any time</string>
+    <string name="realapi_popup_english_recharge_msg">Dear Partner Currently %1$s Lapu Route is Down.
+Please enable Real API Route to Recharge %2$s instantly any time</string>
+    <string name="realapi_popup_hindi_billpayment_msg">प्रिय विक्रेता अभी %1$s का बिल भुगतान सिम रूट से बंद है| अभी बिल भुगतान करने लिए Real API Route को Activate करें|</string>
+
+    <string name="realapi_popup_hindi_recharge_msg">प्रिय विक्रेता अभी %1$s का रिचार्ज सिम रूट से बंद है| अभी रिचार्ज करने लिए Real API Route को Activate करें|</string>
+
+    <string name="realapi_popup_english_dthsubscription_msg">Dear Partner Currently %1$s Lapu Route is Down.
+Please enable Real API Route to Pay %2$s for Subscription instantly any time</string>
+
+    <string name="realapi_popup_hindi_dthsubscription_msg">प्रिय विक्रेता अभी %1$s का बिल भुगतान सदस्यता के लिए सिम रूट से बंद है| अभी बिल भुगतान करने लिए Real API Route को Activate करें|</string>
+
+
+    <string-array name="nonActualDeviceSimArray">
+        <item>Android</item>
+        <item>android</item>
+        <item>emulator</item>
+        <item>Emulator</item>
+        <item>T-Mobile</item>
+
+    </string-array>
+
+
+    <string name="change_pass_msg">Inorder to <b>protect your account</b>, make sure your password.\n\n
+        <li>Password should be more then 7 character</li>\n
+        <li>Besides letters, include at least a number and symbol</li>\n
+        <li>Password is case sensitive</li>\n
+        <li>Avoid using the same password for multiple site</li>\n
+    <li>Does not match or significantly contain your username e.g. do not use <b>\'username123\'</b></li></string>
+    <string name="change_mpin_msg">Inorder to <b>protect your account</b>, make sure your MPIN.\n\n
+        <li>Mpin should not more than 4 character</li></string>
+    <!--<string name="change_pass_msg"><![CDATA[<body>
+                               Inorder to <b>protect your account</b>, make sure your password.</br>\n
+                                <ul class=anclnk>\n
+                                    <li>\n
+                                      Password should be more then 7 character.\n
+                                   </li>\n\n
+                                   <li>\n
+                                      Besides letters, include at least a number and symbol.\n
+                                   </li>\n
+                                    <li>\n
+                                        Password is case sensitive.\n
+                                    </li>\n
+                                    <li>\n
+                                        PSA shall not be blacklisted by any bank, government, private organizations.\n
+                                    </li>\n
+                                    <li>\n
+                                        Avoid using the same password for multiple site.\n
+                                    </li>\n
+                                    <li>\n
+                                        Does not match or significantly contain your username e.g. do not use <b>username123</b>.\n
+                                    </li>\n
+
+                    </ul></body>]]></string>-->
+    <string name="pan_tc"><![CDATA[<html><body>
+<p><span style="font-family:georgia,serif;"><span style="font-size:14px;"><strong>Terms &amp; Conditions</strong><br />
+PSA shall take written approval from UTI before organizing any PAN Card camp.</span></span></p>
+
+<ul class="anclnk">
+	<li><span style="font-family:georgia,serif;"><span style="font-size:14px;">PSA shall not charge any extra fees/convenience charges for PAN card application.</span></span></li>
+	<li><span style="font-family:georgia,serif;"><span style="font-size:14px;">PSA Shall not issue any hand written/self-designed/created receipt to customer.</span></span></li>
+	<li><span style="font-family:georgia,serif;"><span style="font-size:14px;">Proper process has to be followed while applying PAN card. (Refer manual)</span></span></li>
+	<li><span style="font-family:georgia,serif;"><span style="font-size:14px;">PSA shall not be blacklisted by any bank, government, private organizations.</span></span></li>
+	<li><span style="font-family:georgia,serif;"><span style="font-size:14px;">PSA should not have any criminal record.</span></span></li>
+	<li><span style="font-family:georgia,serif;"><span style="font-size:14px;">PSA Is authorized to collect PAN applications at Rs.107 (inclusive of GST)<br />
+	You may download any one of the following app (from google store) in your Smart Phone at your own discretion.<br />
+	Cam Scanner<br />
+	Smart Docs Scanner<br />
+	Convert JPG to PDF &amp; Scanner</span></span></li>
+	<li><span style="font-family:georgia,serif;"><span style="font-size:14px;">To merge Two or More .PDF pages use following links</span></span></li>
+	<li><span style="font-family:georgia,serif;"><span style="font-size:14px;"><a href="https://www.pdfmerge.com">https://www.pdfmerge.com</a></span></span></li>
+	<li><span style="font-family:georgia,serif;"><span style="font-size:14px;"><a href="https://www.pdfjoiner.com">http://pdfjoiner.com</a></span></span></li>
+	<li><span style="font-family:georgia,serif;"><span style="font-size:14px;">Click the photo of following customer documents, using above app and send it to your own email in .PDF format<br />
+	PAN Application form, signed by customer with his photograph<br />
+	ID proof<br />
+	Address Proof<br />
+	Date of Birth document</span></span></li>
+	<li><span style="font-family:georgia,serif;"><span style="font-size:14px;">Click photo of following documents in .JPEG/.JPG format with defined specification and send it to your email address Photo Scanning 300 dpi,Colour,213 X 213 px (Size:less than 30 kb) Signature scanning 600 dpi black and white (Size:less than 60 kb)</span></span></li>
+	<li><span style="font-family:georgia,serif;"><span style="font-size:14px;">To convert the scanned image as per above specification you may use following links or any software like photoshop etc or link as per your wish</span></span></li>
+	<li><span style="font-family:georgia,serif;"><span style="font-size:14px;"><a href="https://online-converting.com/image">https://online-converting.com/image</a></span></span></li>
+	<li><span style="font-family:georgia,serif;"><span style="font-size:14px;"><a href="https://www.imgonline.com.ua/eng/resize-image.php">https://www.imgonline.com.ua/eng/resize-image.php</a></span></span></li>
+	<li><span style="font-family:georgia,serif;"><span style="font-size:14px;">Save all of the above documents in your computer and Upload on UTIISL website</span></span></li>
+</ul>
+</body>
+</html>]]></string>
+
+
+    <string name="data_not_found">Data not found</string>
+    <string name="rs_0_0">\u20B9 0.0</string>
+    <string name="internet_error_msg">There is no internet connection found. Check your internet connection or try again.</string>
+    <string name="verify_otp_notice">An <b>OTP</b> has been sent on your registered <b>Mobile number</b> or <b>Email id</b> to verify mobile number, please enter it below.</string>
+    <string name="dmt_msg">Enter <b>Mobile Number</b> which you have been registerd as a sender or create new sender</string>
+    <string name="view_channel"><u><i>View Channel</i></u></string>
+    <string name="camera_permission_msg">This app needs access to your Camera Permission for uploading direct capture image for KYC Documents or Transaction Receipt</string>
+    <string name="contact_permission_msg">This app needs access to your Contact Permission which will be used when the contact mobile number is required. No data will be upload to the server</string>
+    <string name="location_permission_msg">This app needs access to your Location Permission, which will be used at the time of Bill Fetch, Recharge and AEPS</string>
+    <string name="storage_permission_msg">This app needs access to your Storge Permission, which will be used in choose gallary image for KYC Documents or Transaction Receipt</string>
+    <string name="phone_permission_msg">This app needs access to your Phone Permission, which is required for device identity for making secure transactions</string>
+    <string name="notification_permission_msg">This app needs access to your Notification Permission, which is required for device to post notification</string>
+
+    <string name="update_msg">The current version of the application is no longer supported. You will need to update it to continue using this application. We apologize for any inconvinence we may have caused you.</string>
+    <string name="enable">Enable</string>
+    <string name="Setting">Settings</string>
+    <string name="allow_permission">Please Allow this permission. If you deny this permissions you will not be able to use this functionality.</string>
+    <string name="enable_gps">Enable GPS for current location</string>
+    <string name="plan_note"><b>Disclaimer:</b> We support most types of recharges, but please check with your operator before you proceed.</string>
+    <string name="paynear_note"><font color='#FF0000'><b>Note:</b> <i>For Cash @ Pos transaction daily limit is \u20B9. 1000 per Debit or Credit Card</i></font></string>
+    <string name="continue_signature">Continue</string>
+    <string name="clear">Clear</string>
+    <string name="Please_Sign_Below_signature">Please Sign Below</string>
+    <string name="invalid_code">Invalid Code</string>
+    <string name="pls_enter_code">Please Enter The Code</string>
+    <string name="enter_sale_completion_amt">Enter Sale completion amount</string>
+    <string name="enter_refund_amt">Enter Refund amount</string>
+    <string name="refund_success">Refund Success</string>
+    <string name="sale_completion_success">Sale completion Success</string>
+    <string name="void_success">Void Success</string>
+    <string name="refund_Data">Refund Data : </string>
+    <string name="sale_completion_Data">Sale completion Data : </string>
+    <string name="void_Data">Void Data : </string>
+    <string name="pls_chk_cardreader_availble">Please check whether card reader available and its ON?</string>
+    <string name="pls_enter_amount">Please Enter The Amount</string>
+    <string name="pls_select_device">Please select paired device</string>
+    <string name="bluetooth_not_supported_device">Bluetooth is not supported in this device</string>
+    <string name="select_device">Select Device</string>
+    <string name="no_device_found">No device found</string>
+    <string name="usb_otg_not_detected">USB OTG not detected</string>
+    <string name="no_payment_modes">No Payment Modes</string>
+    <string name="enter_txn_id">Enter Transaction id</string>
+    <string name="enter_numeric_txn_id">Enter numeric transaction id</string>
+    <string name="pls_enter_referenceno">Please enter reference number</string>
+    <string name="pls_select_mode">Please select payment mode</string>
+    <string name="paynear">Paynear</string>
+    <string name="mpos">MPOS</string>
+    <string name="smething_went_wrong">Oops Something went wrong</string>
+    <string name="c_me">C-ME</string>
+    <string name="enter_key">Enter the key</string>
+    <string name="enter_mobile_email">Enter Mobile No / E-Mail ID</string>
+    <string name="success">Success</string>
+    <string name="start">Start</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="share_description">Invite your friends and start business with justpay to get attractive commission on every trasaction.\n\nYou will get Reward on first Wallet Topup of your referrals.</string>
+    <string name="share_title">Be a SuperHero and help you friends to start a Safe and Smart Business</string>
+    <string name="share_msg">Install app %1$s and become Merchant of justpay and Start Recharge, Bill Payments, Money Transfer, AEPS- Adhar Enable Payment System, MINI ATM, Vehicle Insurance Services and Get attractive commission on Every trasaction.\n365 Dyas Hassle free Services. with Round the clock Customer Support.</string>
+    <string name="upload_multidoc_notice">Choose %1$s image Of %2$s for KYC</string>
+    <string name="microATMApproved">Status is not approved</string>
+    <string name="dmt_pending_msg">Your transaction is under process, please check your DMT Report after some time to confirmation.\n\n
+आपका लेन-देन प्रक्रियाधीन है, कृपया पुष्टि करने के कुछ समय बाद अपनी DMT रिपोर्ट देखें।</string>
+    <string name="sim_error_msg">Sorry, You can\'t use this app, Please check your Sim availability or any other issue related to Sim.</string>
+    <string name="vpn_enable">In your device VPN enable please disable VPN before using app.</string>
+    <string name="rooted_error_msg">Sorry, You can\'t use this app, Your device is rooted.</string>
+    <string name="transaction_history"><u>Transaction History</u></string>
+
+
+    <string name="ekyc_steps">2. After installing the application the merchant has to enter their Username &lt;b>(%1$s)&lt;/b> &amp; super merchant id &lt;b>(%2$s)&lt;/b> then click on Next.&lt;br>&lt;br>
+
+3. Then merchant needs to enter their respective Aadhar number, Active Mobile number, PAN Number, and the MPOS Serial number (optional - if the Mpos is allocated to the merchant).&lt;br>&lt;br>
+
+4. After entering the details by merchant needs to acknowledge the below undertaking by selecting the tick-box and need to click on Next.&lt;br>&lt;br>
+
+5. After clicking on Next the verification OTP will be received by the merchant on the mobile number which he/she has entered.&lt;br>&lt;br>
+
+6. Once the correct OTP is entered and validated, the merchant will have to do the biometric authentication by providing a thumb impression through the connected biometric device.&lt;br>&lt;br>
+
+7. After the biometric authentication a Success/Failure message will appear on the screen, then the merchant E-KYC verification will be completed.</string>
+
+
+    <string name="process_for_e_kyc_verification"><u>Process for E-KYC verification</u></string>
+    <string name="verify_deposit_otp_notice">An <b>OTP</b> has been sent on your registered <b>Mobile number</b> to verify this transaction, please enter it below.</string>
+    <string name="view_charges"><u>View Charges</u></string>
+    <string name="rupees">₹</string>
+    <string name="upi_text_lable">Your <font color='#2196F3'> Virtual Payment Address (VPA) </font></string>
+    <string name="amt_text_lable">Amount to be paid </string>
+    <string name="beneName_text_lable">Beneficiary Name </string>
+    <string name="note_vpa_text_lable"> VPA is a unique payment address that can be linked to a person\'s bank account to make a payment.</string>
+    <string name="str_settlement_Note"><font color="black">Note:</font> <font color="red">Bank Account Should Be With the Name of Company or Director or Proprietor, Third-party Account Will Not Be Approved for Settlement.</font></string>
+    <string name="verify_gauth_notice">Open Google Auth Application and enter <b>TOTP</b> to verify User Id, please enter it below.</string>
+    <string name="edit_change">Edit/Update</string>
+    <string name="consent_msg_ekyc_steps">I hear by declare my consent agreement for fetching my information via justpay Pvt Ltd</string>
+    <string name="speech_prompt">Say something&#8230;</string>
+    <string name="speech_not_supported">Sorry! Your device doesn\'t support speech input</string>
+    <string name="search_detail">Search for Products, Brands and More</string>
+    <string name="features">Features</string>
+    <string name="view_all">View All</string>
+    <string name="fieldEmpty">Field can\'t be empty</string>
+    <string name="errorPassword">Invalid password</string>
+    <string name="invalidPincode">Pincode invalid</string>
+    <string name="errorMobile">Mobile number should be 10 digits.</string>
+    <string name="errorEmail">Invalid email address</string>
+    <string name="upi_verify_error">We are unable to verify this UPI, please try again after some time or you can proceed if you are confident that UPI is correct, Company will not be liable for any wrong transactions.</string>
+    <string name="upi_msg">Enter sender <b>Mobile Number</b> which you have been registerd as a sender and we will figure out the rest</string>
+
+    <string name="term_privacy_text">You agree with our <a href="http://justpay4u.com/t-c">Terms &amp; Conditions</a> and <a href="http://justpay4u.com/privacy">Privacy Policy</a> by tapping Sign In button</string>
+    <string name="title_toolbar">Wallet To Wallet</string>
+    <string name="subtitle_toolbar">Fund Transfer</string>
+    <string name="remark_text_lable">Remark</string>
+    <string name="customerNo_text_label">Customer Number</string>
+    <string name="amt_text_label">Amount to be paid </string>
+    <string name="pinNo_text_label">Security Key</string>
+    <string name="privacyPolicy">Privacy Policy<a href="http://justpay4u.com/privacy" /></string>
+    <string name="terms">Terms &amp; Condition<a href="http://justpay4u.com/t-c" /></string>
+    <string name="verify_gauth_otp_notice">An <b>OTP</b> has been sent on your registered <b>Mobile Number </b> to verify your account, please enter it below.</string>
+    <string name="verify_pan"><u>Verify Pan</u></string>
+    <string name="verify_aadhaar"><u>Verify Aadhaar</u></string>
+    <string name="view_team"><u>View Team...</u></string>
+    <string name="copy_link">Copy Link</string>
+    <string name="right_team">Right Team</string>
+    <string name="direct_team">Direct Team</string>
+    <string name="user_">User -</string>
+    <string name="business_">Business -</string>
+    <string name="deactive">DeActive</string>
+    <string name="active">Active</string>
+    <string name="share">Share</string>
+    <string name="hold_commission">Total Hold Amount</string>
+    <string name="enter_transfer_amount">Enter Transfer Amount</string>
+    <string name="star">★</string>
+    <string name="action_sort">Sort</string>
+    <string name="sorting">Sort By</string>
+    <string name="sort_by">Sorting</string>
+    <string name="below_is_the_process">Below is the process for E-KYC Verification that the merchant needs to follow.</string>
+    <string name="_1_the_merchant_need">1. The merchant needs to onboarding through the ICICI Verification Application. So for installing ICICI Verification Application on android device click on below Install App button.</string>
+    <string name="install_app">Install App</string>
+    <string name="rank">Rank:</string>
+    <string name="rank_">Rank :</string>
+    <integer name="viewfinder_border_width">4</integer>
+    <integer name="viewfinder_border_length">60</integer>
+</resources>
+

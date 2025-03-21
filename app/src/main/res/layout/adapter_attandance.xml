@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_1sdp"
+    android:background="@drawable/rounded_primary_gradient"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/incentive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp">
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_toLeftOf="@+id/status"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Roundpay Tecno Media"
+            android:textColor="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/mobile"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:layout_toLeftOf="@+id/status"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Roundpay Tecno Media"
+            android:textColor="@color/color_grey_light" />
+
+        <ImageView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:padding="@dimen/_6sdp"
+            app:srcCompat="@drawable/ic_check_circle_black_24dp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:background="@color/colorAccentMoreLight" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:layout_weight="2.075"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:text="Role"
+                    android:textColor="@android:color/white" />
+
+
+                <TextView
+                    android:id="@+id/role"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="1dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:paddingTop="@dimen/_1sdp"
+                    android:singleLine="true"
+                    android:text="\u20B9 1100000000"
+                    android:textColor="@color/color_grey_light" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccentMoreLight" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:layout_weight="2.075"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:text="City"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/city"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingTop="@dimen/_1sdp"
+                android:singleLine="true"
+                android:text="\u20B9 0"
+                android:textColor="@color/color_grey_light" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccentMoreLight" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:layout_weight="2.075"
+            android:gravity="center_vertical|right"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:text="State"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/state"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:paddingTop="@dimen/_1sdp"
+                    android:singleLine="true"
+                    android:text="\u20B9 0"
+                    android:textColor="@color/color_grey_light" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- <View
+         android:layout_width="match_parent"
+         android:layout_height="@dimen/_1sdp"
+         android:background="@color/colorPrimaryDark" />-->
+
+</LinearLayout>
+

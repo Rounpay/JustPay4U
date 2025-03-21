@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusableInTouchMode="true"
+    app:cardBackgroundColor="@color/back_bg"
+    app:cardCornerRadius="@dimen/_8sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_10sdp">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleTv"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="Update UTR"
+            android:textColor="@android:color/black" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mobileTitleTv"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/closeIv"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:fontFamily="sans-serif-medium"
+            android:text="UTR Number"
+            android:textColor="@color/colorPrimary" />
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/mobileEt"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mobileTitleTv"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:background="@drawable/edittext_bg"
+            android:elevation="@dimen/_3sdp"
+            android:fontFamily="sans-serif-medium"
+            android:hint="Enter UTR"
+            android:inputType="number"
+            android:maxLines="1"
+            android:padding="@dimen/_12sdp"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/notice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mobileEt"
+            android:layout_margin="@dimen/_10sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="We have sent Rs 1 in Your Bank Account With UTR NO 13**********31. Please check your Statement and enter complete UTR to Verify your Bank Account\n\n
+
+हमने आपके बैंक खाते में यूटीआर नं 13**********31 के साथ 1 रुपये भेजे हैं। कृपया अपना बैंक विवरण जांचें और अपना बैंक खाता सत्यापित करने के लिए पूरा UTR दर्ज करें"
+            android:textColor="@android:color/holo_red_dark">
+
+        </TextView>
+
+        <LinearLayout
+            android:id="@+id/bottomBtnView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/notice"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_5sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cancelBtn"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_accent_border"
+                android:elevation="@dimen/_3sdp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:padding="@dimen/_7sdp"
+                android:text="CANCEL"
+                android:textColor="@android:color/holo_red_dark" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/sendBtn"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_accent_border"
+                android:elevation="@dimen/_3sdp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:padding="@dimen/_7sdp"
+                android:text="Send"
+                android:textColor="@color/green" />
+        </LinearLayout>
+        <!-- <LinearLayout
+             android:id="@+id/bottomBtnView"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/emailEt"
+             android:layout_margin="@dimen/_10sdp">
+
+             <android.support.v7.widget.AppCompatTextView
+                 android:id="@+id/cancelBtn"
+                 style="@style/TextAppearance.AppCompat.Subhead"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginLeft="@dimen/_3sdp"
+                 android:background="@drawable/rounded_dark_grey_border"
+                 android:gravity="center"
+                 android:minWidth="@dimen/_70sdp"
+                 android:padding="@dimen/_12sdp"
+                 android:text="Cancel"
+                 android:textAllCaps="false"
+                 android:textColor="@color/greycon" />
+
+             <android.support.v7.widget.AppCompatTextView
+                 android:id="@+id/sendBtn"
+                 style="@style/TextAppearance.AppCompat.Subhead"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginLeft="@dimen/_15sdp"
+                 android:background="@drawable/rounded_greycon"
+                 android:gravity="center"
+                 android:minWidth="@dimen/_70sdp"
+                 android:padding="@dimen/_12sdp"
+                 android:text="Send"
+
+                 android:textAllCaps="false"
+                 android:textColor="@android:color/white" />
+         </LinearLayout>-->
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/closeIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            app:srcCompat="@mipmap/close_btn" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

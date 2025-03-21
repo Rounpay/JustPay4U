@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical"
+            android:padding="@dimen/_5sdp">
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Beneficiary Name :"
+                android:textColor="@color/colorAccent"
+                android:visibility="visible" />
+
+            <EditText
+                android:id="@+id/beneficiaryName"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@drawable/edittext_bg"
+                android:fontFamily="sans-serif-medium"
+                android:hint="Beneficiary Name"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Beneficiary Number :"
+                android:textColor="@color/colorAccent"
+                android:visibility="visible" />
+
+            <RelativeLayout
+                android:id="@+id/beneficiaryNumberView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_2sdp">
+
+                <EditText
+                    android:id="@+id/beneficiaryNumber"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/iv_contact"
+                    android:background="@drawable/edittext_bg"
+                    android:digits="0123456789"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint="Beneficiary Number"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_7sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/color_grey" />
+
+                <ImageView
+                    android:id="@+id/iv_contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/_6sdp"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_contact_phone"
+                    app:tint="@color/colorPrimary" />
+
+            </RelativeLayout>
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Select Bank :"
+                android:textColor="@color/colorAccent"
+                android:visibility="visible" />
+
+            <RelativeLayout
+                android:id="@+id/bankView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@drawable/rounded_unfocused"
+                android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                <TextView
+                    android:id="@+id/bank"
+                    style="@android:style/Widget.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext_bg"
+                    android:clickable="false"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint="Select Bank"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_30sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/color_grey" />
+
+                <ImageView
+                    android:id="@+id/iv_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/_6sdp"
+                    app:srcCompat="@drawable/ic_arrow_down"
+                    app:tint="@color/colorAccent" />
+
+            </RelativeLayout>
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="IFSC Code :"
+                android:textColor="@color/colorAccent"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/ifscLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/accountNumber"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:background="@drawable/edittext_bg"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <TextView
+                    android:id="@+id/ifscCode"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:text=""
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/color_grey"
+                    android:visibility="gone" />
+
+                <EditText
+                    android:id="@+id/ifsc"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bank"
+                    android:background="@drawable/edittext_bg"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint="IFSC Code"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/color_grey" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Account Number :"
+                android:textColor="@color/colorAccent"
+                android:visibility="visible" />
+
+            <RelativeLayout
+                android:id="@+id/accountNumberView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bank"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_2sdp">
+
+                <EditText
+                    android:id="@+id/accountNumber"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:background="@drawable/edittext_bg"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint="Account Number"
+                    android:inputType="number"
+                    android:maxLength="20"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_60sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/color_grey" />
+
+                <TextView
+                    android:id="@+id/accVerify"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_3sdp"
+                    android:background="@drawable/rounded_reports_button_gradient_border"
+                    android:elevation="@dimen/_2sdp"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:maxLength="15"
+                    android:padding="@dimen/_7sdp"
+                    android:text="Verify"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/bt_add"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/rounded_accent"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:text="Add Beneficiary"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimaryDark" />
+
+
+            <TextView
+                android:id="@+id/notice"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ll_form"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/_8sdp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="bottom"
+
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="@string/str_Note"
+                android:textColor="@android:color/holo_red_light" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,170 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_scrollFlags="scroll|enterAlways|snap" />
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            app:tabBackground="@color/colorPrimaryDark"
+            app:tabIndicatorColor="@color/colorAccent"
+            app:tabMinWidth="50dp"
+            app:tabMode="scrollable"
+            app:tabPaddingBottom="@dimen/_2sdp"
+            app:tabSelectedTextColor="@color/colorAccent"
+            app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
+            app:tabTextColor="@color/color_grey" />
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <!--   <android.support.design.widget.AppBarLayout
+               android:id="@+id/app_bar_layout"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+               <android.support.design.widget.CollapsingToolbarLayout
+                   android:id="@+id/toolbar_layout"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:fitsSystemWindows="true"
+                   app:contentScrim="?attr/colorPrimary"
+                   app:layout_scrollFlags="scroll|exitUntilCollapsed">
+               <include
+                   android:id="@+id/toolbar"
+                   layout="@layout/toolbar" />
+               </android.support.design.widget.CollapsingToolbarLayout>
+               <RelativeLayout
+                   android:id="@+id/searchViewLayout"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="@dimen/_6sdp"
+                   android:layout_marginTop="@dimen/_3sdp"
+                   android:layout_marginRight="@dimen/_6sdp"
+                   android:layout_marginBottom="@dimen/_6sdp"
+                   android:background="@drawable/rounded_white"
+                   android:elevation="@dimen/_3sdp">
+
+                   <android.support.v7.widget.AppCompatImageView
+                       android:id="@+id/searchIcon"
+                       android:layout_width="@dimen/_12sdp"
+                       android:layout_height="@dimen/_12sdp"
+                       android:layout_centerVertical="true"
+                       android:layout_marginLeft="@dimen/_10sdp"
+                       app:srcCompat="@drawable/ic_musica_searcher" />
+
+                   <android.support.v7.widget.AppCompatEditText
+                       android:id="@+id/search_all"
+                       style="@style/TextAppearance.AppCompat.Body2"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_toLeftOf="@+id/searchLine"
+                       android:layout_toRightOf="@+id/searchIcon"
+                       android:background="@android:color/transparent"
+                       android:fontFamily="sans-serif-medium"
+                       android:hint="Search"
+                       android:maxLines="1"
+                       android:padding="@dimen/_8sdp"
+                       android:singleLine="true"
+                       android:visibility="visible" />
+
+                   <LinearLayout
+                       android:id="@+id/searchLine"
+                       android:layout_width="1dp"
+                       android:layout_height="wrap_content"
+                       android:layout_alignTop="@+id/search_all"
+                       android:layout_alignBottom="@+id/search_all"
+                       android:layout_marginTop="@dimen/_6sdp"
+                       android:layout_marginBottom="@dimen/_6sdp"
+                       android:layout_toLeftOf="@+id/clearIcon"
+                       android:background="@color/color_grey"
+                       android:orientation="vertical" />
+
+                   <android.support.v7.widget.AppCompatImageView
+                       android:id="@+id/clearIcon"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_alignParentRight="true"
+                       android:layout_centerVertical="true"
+                       android:layout_marginLeft="@dimen/_5sdp"
+                       android:layout_marginRight="@dimen/_5sdp"
+                       android:padding="@dimen/_5sdp"
+                       app:srcCompat="@drawable/ic_close_black_24dp"
+                       app:tint="@color/text_color" />
+               </RelativeLayout>
+
+               <android.support.design.widget.TabLayout
+                   android:id="@+id/tabs"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:background="@android:color/white"
+                   app:tabBackground="@android:color/white"
+                   app:tabIndicatorColor="@color/colorPrimaryDark"
+                   app:tabMinWidth="50dp"
+                   app:tabMode="scrollable"
+                   app:tabPaddingBottom="@dimen/_2sdp"
+                   app:tabSelectedTextColor="@color/colorPrimaryDark"
+                   app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
+                   app:tabTextColor="@color/bottommenu" />
+
+           </android.support.design.widget.AppBarLayout>-->
+
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/tv_note"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <TextView
+            android:id="@+id/tv_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/back_bgg"
+            android:padding="@dimen/_10sdp"
+            android:text="@string/plan_note"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_9sdp"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/noDataView"
+            layout="@layout/no_data_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/noNetworkView"
+            layout="@layout/network_error_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

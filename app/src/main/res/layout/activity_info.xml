@@ -1,0 +1,1190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/bannerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_contactus"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:elevation="@dimen/_3sdp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:background="@drawable/share" />
+
+            <LinearLayout
+                android:id="@+id/image_count"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:orientation="horizontal" />
+
+            <TextView
+                android:id="@+id/shareContent"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:padding="@dimen/_7sdp"
+                android:text="shareContent"
+                android:textColor="@android:color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/whatsappShareView1"
+                    android:layout_width="@dimen/_26sdp"
+                    android:layout_height="@dimen/_26sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    app:srcCompat="@drawable/ic_whatsapp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/facebookShareView1"
+                    android:layout_width="@dimen/_26sdp"
+                    android:layout_height="@dimen/_26sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    app:srcCompat="@drawable/ic_facebook" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/twitterShareView1"
+                    android:layout_width="@dimen/_27sdp"
+                    android:layout_height="@dimen/_27sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    app:srcCompat="@drawable/ic_twitter" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/mailShareView1"
+                    android:layout_width="@dimen/_26sdp"
+                    android:layout_height="@dimen/_26sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    app:srcCompat="@drawable/ic_email" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/shareView1"
+                    android:layout_width="@dimen/_26sdp"
+                    android:layout_height="@dimen/_26sdp"
+
+                    app:srcCompat="@drawable/ic_share_black_24dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/inviteView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_contactus"
+            android:elevation="@dimen/_3sdp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/share" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:paddingLeft="@dimen/_7sdp"
+                android:paddingRight="@dimen/_7sdp"
+                android:text="@string/share_title"
+                android:textColor="@color/colorAccent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:paddingLeft="@dimen/_7sdp"
+                android:paddingRight="@dimen/_7sdp"
+                android:text="@string/share_description"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/whatsappShareView"
+                    android:layout_width="@dimen/_26sdp"
+                    android:layout_height="@dimen/_26sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    app:srcCompat="@drawable/ic_whatsapp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/facebookShareView"
+                    android:layout_width="@dimen/_26sdp"
+                    android:layout_height="@dimen/_26sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    app:srcCompat="@drawable/ic_facebook" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/twitterShareView"
+                    android:layout_width="@dimen/_27sdp"
+                    android:layout_height="@dimen/_27sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    app:srcCompat="@drawable/ic_twitter" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/mailShareView"
+                    android:layout_width="@dimen/_26sdp"
+                    android:layout_height="@dimen/_26sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    app:srcCompat="@drawable/ic_email" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/shareView"
+                    android:layout_width="@dimen/_26sdp"
+                    android:layout_height="@dimen/_26sdp"
+                    app:srcCompat="@drawable/ic_share_black_24dp" />
+            </LinearLayout>
+        </LinearLayout>
+        <!--    <RelativeLayout
+                android:id="@+id/ll_bank"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/rounded_grey_border_fill"
+                android:elevation="@dimen/_3sdp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_12sdp"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/bankdetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:background="@drawable/rounded_accent"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:minWidth="@dimen/_100sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Bank Detail"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/bankMsg"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/bankdetail"
+                    android:gravity="left"
+                    android:text="@string/Bank_string"
+                    android:textColor="@color/grey" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bankMsg"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    app:srcCompat="@drawable/ic_arrow_forward"
+                    app:tint="@color/grey" />
+
+            </RelativeLayout>-->
+
+        <LinearLayout
+            android:id="@+id/ll_bank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_contactus"
+            android:layout_marginLeft="@dimen/_7sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_7sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/rounded_primary_gradient"
+            android:elevation="@dimen/_3sdp"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/bankdetail"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/rounded_accent_left_top"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:minWidth="@dimen/_100sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="Bank Detail"
+                android:textColor="@android:color/white" />
+
+
+            <TextView
+                android:id="@+id/bankMsg"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/aboutus"
+                android:layout_margin="@dimen/_10sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="left"
+                android:text="@string/Bank_string"
+                android:textColor="@color/color_grey_light" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@drawable/rounded_primary_right_only_bottom"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:minWidth="@dimen/_100sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="View"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_contactus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_bank"
+            android:layout_marginLeft="@dimen/_7sdp"
+            android:layout_marginRight="@dimen/_7sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:elevation="@dimen/_3sdp"
+            android:gravity="center"
+
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/contactus"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/rounded_primary_top_gradient"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:minWidth="@dimen/_130sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="Contact Us"
+                android:textColor="@android:color/white" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/customerCareView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/dashboard_bg_light_color"
+                app:cardCornerRadius="@dimen/_6sdp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_card_bg_full"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_10sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_27sdp"
+                        android:layout_height="@dimen/_27sdp"
+                        app:srcCompat="@drawable/ic_support" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="center"
+                            android:text="Customer Care"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/customerCareRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false" />
+
+                        <!--<LinearLayout
+                            android:id="@+id/custCareCallUsView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:gravity="center_vertical">
+
+                                <android.support.v7.widget.AppCompatImageView
+                                    android:layout_width="@dimen/_16sdp"
+                                    android:layout_height="@dimen/_16sdp"
+                                    app:srcCompat="@drawable/ic_call_black_24dp"
+                                    app:tint="@color/grey" />
+
+                                <TextView
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    android:fontFamily="sans-serif-medium"
+                                    android:gravity="center"
+                                    android:text="Call Us"
+                                    android:textColor="@color/grey"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/customerCareNumber"
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:layout_toLeftOf="@+id/whatsapp1Icon"
+                                android:layout_toRightOf="@+id/phoneIcon"
+                                android:autoLink="all"
+                                android:fontFamily="sans-serif-medium"
+                                android:gravity="center|left"
+                                android:text="9812345678, 9887654321"
+                                android:textColor="@color/colorPrimary"
+                                android:textIsSelectable="true"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/custCareWhatsAppView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:gravity="center_vertical">
+
+                                <android.support.v7.widget.AppCompatImageView
+                                    android:layout_width="@dimen/_16sdp"
+                                    android:layout_height="@dimen/_16sdp"
+                                    app:srcCompat="@drawable/ic_whatsapp_outline"
+                                    app:tint="@color/grey" />
+
+                                <TextView
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    android:fontFamily="sans-serif-medium"
+                                    android:gravity="center"
+                                    android:text="WhatsApp"
+                                    android:textColor="@color/grey"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/customerCareWhatsappNumber"
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:layout_toLeftOf="@+id/whatsapp1Icon"
+                                android:layout_toRightOf="@+id/phoneIcon"
+                                android:autoLink="all"
+                                android:fontFamily="sans-serif-medium"
+                                android:gravity="center|left"
+                                android:text="9812345678, 9887654321"
+                                android:textColor="@color/colorPrimary"
+                                android:textIsSelectable="true"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/custCareEmailView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:gravity="center_vertical">
+
+                                <android.support.v7.widget.AppCompatImageView
+                                    android:layout_width="@dimen/_16sdp"
+                                    android:layout_height="@dimen/_16sdp"
+                                    app:srcCompat="@drawable/ic_email_outline"
+                                    app:tint="@color/grey" />
+
+                                <TextView
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    android:fontFamily="sans-serif-medium"
+                                    android:gravity="center"
+                                    android:text="Email"
+                                    android:textColor="@color/grey"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/customerCareEmail"
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:layout_toLeftOf="@+id/whatsapp1Icon"
+                                android:layout_toRightOf="@+id/phoneIcon"
+                                android:autoLink="all"
+                                android:fontFamily="sans-serif-medium"
+                                android:gravity="center|left"
+                                android:text="email@domain.com"
+                                android:textColor="@color/colorPrimary"
+                                android:textIsSelectable="true"
+                                android:textStyle="bold" />
+                        </LinearLayout>-->
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/paymentInqueryView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/dashboard_bg_light_color"
+                app:cardCornerRadius="@dimen/_6sdp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_card_bg_full"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_10sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_27sdp"
+                        android:layout_height="@dimen/_27sdp"
+                        app:srcCompat="@drawable/ic_debit_card" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="center"
+                            android:text="Payment Inquiry"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/accountRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false" />
+                        <!--<LinearLayout
+                            android:id="@+id/paymentInqueryCallUsView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:gravity="center_vertical">
+
+                                <android.support.v7.widget.AppCompatImageView
+                                    android:layout_width="@dimen/_16sdp"
+                                    android:layout_height="@dimen/_16sdp"
+                                    app:srcCompat="@drawable/ic_call_black_24dp"
+                                    app:tint="@color/grey" />
+
+                                <TextView
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    android:fontFamily="sans-serif-medium"
+                                    android:gravity="center"
+                                    android:text="Call Us"
+                                    android:textColor="@color/grey"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/paymentInqueryNumber"
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:layout_toLeftOf="@+id/whatsapp1Icon"
+                                android:layout_toRightOf="@+id/phoneIcon"
+                                android:autoLink="all"
+                                android:fontFamily="sans-serif-medium"
+                                android:gravity="center|left"
+                                android:text="9812345678, 9887654321"
+                                android:textColor="@color/colorPrimary"
+                                android:textIsSelectable="true"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/paymentInqueryWhatsAppView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:gravity="center_vertical">
+
+                                <android.support.v7.widget.AppCompatImageView
+                                    android:layout_width="@dimen/_16sdp"
+                                    android:layout_height="@dimen/_16sdp"
+                                    app:srcCompat="@drawable/ic_whatsapp_outline"
+                                    app:tint="@color/grey" />
+
+                                <TextView
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    android:fontFamily="sans-serif-medium"
+                                    android:gravity="center"
+                                    android:text="WhatsApp"
+                                    android:textColor="@color/grey"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/paymentInqueryWhatsappNumber"
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:layout_toLeftOf="@+id/whatsapp1Icon"
+                                android:layout_toRightOf="@+id/phoneIcon"
+                                android:autoLink="all"
+                                android:fontFamily="sans-serif-medium"
+                                android:gravity="center|left"
+                                android:text="9812345678, 9887654321"
+                                android:textColor="@color/colorPrimary"
+                                android:textIsSelectable="true"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/paymentInqueryEmailView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:gravity="center_vertical">
+
+                                <android.support.v7.widget.AppCompatImageView
+                                    android:layout_width="@dimen/_16sdp"
+                                    android:layout_height="@dimen/_16sdp"
+                                    app:srcCompat="@drawable/ic_email_outline"
+                                    app:tint="@color/grey" />
+
+                                <TextView
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    android:fontFamily="sans-serif-medium"
+                                    android:gravity="center"
+                                    android:text="Email"
+                                    android:textColor="@color/grey"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/paymentInqueryEmail"
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:layout_toLeftOf="@+id/whatsapp1Icon"
+                                android:layout_toRightOf="@+id/phoneIcon"
+                                android:autoLink="all"
+                                android:fontFamily="sans-serif-medium"
+                                android:gravity="center|left"
+                                android:text="email@domain.com"
+                                android:textColor="@color/colorPrimary"
+                                android:textIsSelectable="true"
+                                android:textStyle="bold" />
+                        </LinearLayout>-->
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/followUsView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/rounded_primary_border_gradient_fill"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/_10sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/facebookView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_27sdp"
+                        android:layout_height="@dimen/_27sdp"
+                        app:srcCompat="@drawable/ic_facebook" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Subhead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="center"
+                            android:text="Facebbok Page"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/facebbokLink"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:layout_toLeftOf="@+id/whatsapp1Icon"
+                            android:layout_toRightOf="@+id/phoneIcon"
+                            android:autoLink="all"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="center|left"
+                            android:text="Follow Us"
+                            android:textColor="@color/colorPrimary"
+                            android:textIsSelectable="true"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/instagramView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_27sdp"
+                        android:layout_height="@dimen/_27sdp"
+                        app:srcCompat="@drawable/ic_instagram" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Subhead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="center"
+                            android:text="Instagram"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/instaLink"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:layout_toLeftOf="@+id/whatsapp1Icon"
+                            android:layout_toRightOf="@+id/phoneIcon"
+                            android:autoLink="all"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="center|left"
+                            android:text="Follow Us"
+                            android:textColor="@color/colorPrimary"
+                            android:textIsSelectable="true"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/twitterView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_27sdp"
+                        android:layout_height="@dimen/_27sdp"
+                        app:srcCompat="@drawable/ic_twitter" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Subhead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="center"
+                            android:text="Twitter"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/twitterLink"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:layout_toLeftOf="@+id/whatsapp1Icon"
+                            android:layout_toRightOf="@+id/phoneIcon"
+                            android:autoLink="all"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="center|left"
+                            android:text="Follow Us"
+                            android:textColor="@color/colorPrimary"
+                            android:textIsSelectable="true"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/websiteView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_29sdp"
+                        android:layout_height="@dimen/_29sdp"
+                        app:srcCompat="@drawable/ic_domain" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Subhead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="center"
+                            android:text="Website"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/website"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:layout_toLeftOf="@+id/whatsapp1Icon"
+                            android:layout_toRightOf="@+id/phoneIcon"
+                            android:autoLink="all"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="center|left"
+                            android:text="https://www"
+                            android:textColor="@color/colorPrimary"
+                            android:textIsSelectable="true"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/addressView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_27sdp"
+                        android:layout_height="@dimen/_27sdp"
+                        app:srcCompat="@drawable/ic_shops" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Subhead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="center"
+                            android:text="Address"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/address"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_3sdp"
+                            android:layout_toLeftOf="@+id/whatsapp1Icon"
+                            android:layout_toRightOf="@+id/phoneIcon"
+                            android:autoLink="all"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="center|left"
+                            android:textColor="@color/colorAccent"
+                            android:textIsSelectable="true"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tollFreeNo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/shareView"
+
+            android:visibility="visible">
+
+
+            <LinearLayout
+                android:id="@+id/Mobiletollfree"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_recharge_button_gradient_border"
+                android:elevation="@dimen/_3sdp"
+                android:gravity="center"
+                android:padding="@dimen/_8sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_call_black_24dp"
+                    app:tint="@color/colorAccent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:text="@string/mobile_tollfree"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/_12sdp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/DTHtollfree"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_recharge_button_gradient_border"
+                android:elevation="@dimen/_3sdp"
+                android:gravity="center"
+                android:padding="@dimen/_8sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_call_black_24dp"
+                    app:tint="@color/colorAccent" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:text="@string/dth_tollfree"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/_12sdp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/shareView"
+            android:visibility="visible">
+
+
+            <LinearLayout
+                android:id="@+id/privacy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_reports_button_gradient_border"
+                android:elevation="@dimen/_3sdp"
+                android:gravity="center"
+                android:padding="@dimen/_8sdp">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:text="@string/privacyPolicy"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_12sdp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/Terms"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_reports_button_gradient_border"
+                android:elevation="@dimen/_3sdp"
+                android:gravity="center"
+                android:padding="@dimen/_8sdp">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:text="@string/terms"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_12sdp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/currentVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:fontFamily="sans-serif-medium"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:text="Current Version:1.1"
+            android:textColor="@color/color_grey"
+
+            android:textStyle="bold" />
+
+        <!-- <LinearLayout
+             android:id="@+id/shareView"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/currentVersion"
+             android:layout_centerHorizontal="true"
+             android:layout_marginTop="@dimen/_8sdp"
+             android:layout_marginBottom="@dimen/_8sdp">
+
+
+             <ImageView
+                 android:id="@+id/playstorelink"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_centerHorizontal="true"
+                 android:layout_marginTop="@dimen/_5sdp"
+                 android:layout_toLeftOf="@id/Share"
+                 app:srcCompat="@drawable/ic_download_app_google_play" />
+
+             <ImageView
+                 android:id="@+id/Share"
+                 android:layout_width="40dp"
+                 android:layout_height="40dp"
+                 android:layout_alignParentRight="true"
+                 android:layout_marginLeft="@dimen/_10sdp"
+
+                 app:srcCompat="@drawable/ic_share_black_24dp" />
+
+
+         </LinearLayout>-->
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5sdp"
+    android:layout_weight="1"
+    android:background="@drawable/rounded_white"
+    android:backgroundTint="@color/colorPrimaryMoreMoreLight"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/_5sdp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:src="@drawable/ic_coin_balance" />
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Prepaid\nWallet"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/amountLabel"
+        style="@style/TextAppearance.AppCompat.Body2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccentDark"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:padding="@dimen/_2sdp"
+        android:text="Balance"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/amount"
+        style="@style/TextAppearance.AppCompat.Body2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:paddingTop="@dimen/_3sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:text="\u20B9 0"
+        android:textColor="@android:color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/withdrawalBtn"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_1sdp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_bottom_left"
+            android:backgroundTint="@color/colorAccentDark"
+            android:elevation="@dimen/_3sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:padding="@dimen/_4sdp"
+            android:text="Withdrawal"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/transferBtn"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:elevation="@dimen/_3sdp"
+            android:background="@drawable/rounded_bottom_right"
+            android:backgroundTint="@color/colorAccentDark"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:padding="@dimen/_4sdp"
+            android:text="Transfer"
+            android:textColor="@android:color/white" />
+
+
+    </LinearLayout>
+</LinearLayout>

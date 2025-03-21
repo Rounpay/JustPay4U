@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fintech.Activities.MultiImageUploadActivity">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/submitBtn"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/firstImageView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/firstImageNotice"
+                android:background="@drawable/grey_fill_border">
+
+                <LinearLayout
+                    android:id="@+id/firstImageViewCenterView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        app:srcCompat="@drawable/ic_image_black"
+                        app:tint="@color/grey" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Choose First Image"
+                        android:textColor="@color/grey" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/firstImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:scaleType="fitXY" />
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/firstImageNotice"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/upload_multidoc_notice"
+                android:textColor="@color/red1" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/secondImageView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/secondImageNotice"
+
+                android:background="@drawable/grey_fill_border">
+
+                <LinearLayout
+                    android:id="@+id/secondImageViewCenterView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        app:srcCompat="@drawable/ic_image_black"
+                        app:tint="@color/grey" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Choose Second Image"
+                        android:textColor="@color/grey" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/secondImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_2sdp"
+                    android:scaleType="fitXY" />
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/secondImageNotice"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/upload_multidoc_notice"
+                android:textColor="@color/red1" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/previewImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/submitBtn"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/grey_fill_border"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/previewImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_margin="@dimen/_2sdp"
+            android:clickable="true"
+            android:scaleType="fitXY" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/closeBtn"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/grey_fill_border"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:padding="@dimen/_5sdp"
+            android:text="Close"
+            android:textColor="@color/bottommenu" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/submitBtn"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:enabled="true"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="Preview"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:visibility="visible" />
+</RelativeLayout>

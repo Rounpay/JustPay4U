@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_4sdp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="@dimen/_5sdp">
+
+    <TextView
+        android:id="@+id/emi_tenure_s"
+        style="@style/TextAppearance.AppCompat.Body2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/intrest_s"
+        style="@style/TextAppearance.AppCompat.Body2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/installments_s"
+        style="@style/TextAppearance.AppCompat.Body2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center" />
+
+
+</LinearLayout>
+
+

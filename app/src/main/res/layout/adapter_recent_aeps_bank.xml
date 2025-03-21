@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/_5sdp"
+    android:background="@drawable/rounded_accent_border"
+    android:orientation="vertical"
+    android:padding="@dimen/_5sdp">
+
+    <ImageView
+        android:id="@+id/banklogo"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/app_logo"
+        android:visibility="visible" />
+
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/TextAppearance.AppCompat.Caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:maxLines="2"
+        android:text="State Bank Of India"
+        android:textColor="@color/grey" />
+
+</LinearLayout>

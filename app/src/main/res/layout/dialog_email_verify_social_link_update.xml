@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:elevation="@dimen/_3sdp">
+
+        <ImageView
+            android:id="@+id/closeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:padding="@dimen/_5sdp"
+            app:srcCompat="@mipmap/close_btn" />
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/_35sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingRight="@dimen/_35sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:singleLine="true"
+            android:text="Verify Email And Update Social Link"
+            android:textColor="@color/colorPrimary" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/verifyEmailView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/_12sdp">
+
+        <TextView
+            android:id="@+id/verifyEmailTxt"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Your email id is not verified, please click on Verify button to verify registerd email id."
+            android:textColor="@android:color/holo_red_dark" />
+
+        <TextView
+            android:id="@+id/verifyEmailBtn"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/verifyEmailTxt"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="right"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/rounded_reports_button_gradient_border"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:minWidth="@dimen/_110sdp"
+            android:padding="@dimen/_5sdp"
+            android:text="Verify Email id"
+            android:textColor="@color/colorPrimary" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/_12sdp"
+        android:layout_marginRight="@dimen/_12sdp"
+        android:background="@color/back_bg" />
+
+    <LinearLayout
+        android:id="@+id/socialView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/_12sdp">
+
+        <TextView
+            android:id="@+id/socialSaveTxt"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Details Updated Successfully."
+            android:textColor="@color/green"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/socialInputView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/whatsappTitle"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_3sdp"
+
+                android:text="Whatsapp Number"
+                android:textColor="@android:color/black" />
+
+
+            <EditText
+                android:id="@+id/whatsappNumberEt"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/edittext_bg"
+                android:hint="Enter Whatsapp number"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="10"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingRight="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey" />
+
+            <TextView
+                android:id="@+id/telegramTitle"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Telegram Number"
+                android:textColor="@android:color/black" />
+
+
+            <EditText
+                android:id="@+id/telegramNumberEt"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/edittext_bg"
+                android:hint="Enter Telegram number"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="10"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingRight="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey" />
+
+            <TextView
+                android:id="@+id/hangoutTitle"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Hangout Email Id"
+                android:textColor="@android:color/black" />
+
+
+            <EditText
+                android:id="@+id/hangoutEt"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/edittext_bg"
+                android:hint="Enter Hangout Email Id"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingRight="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey" />
+
+            <TextView
+                android:id="@+id/submitBtn"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/verifyEmailTxt"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/rounded_recharge_button_gradient_border"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:minWidth="@dimen/_110sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="Submit Details"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

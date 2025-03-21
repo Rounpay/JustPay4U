@@ -1,0 +1,1361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/morelightWhite"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/detailContentView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:elevation="@dimen/_3sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:padding="@dimen/_10sdp"
+            android:text="E-KYC Verification Steps"
+            android:textColor="@color/colorPrimary" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true">
+
+                <TextView
+                    android:id="@+id/previous"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:padding="@dimen/_5sdp"
+                    android:text="&lt; Previous"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/line"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:padding="@dimen/_5sdp"
+                    android:text="|"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/next"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/previous"
+                    android:fontFamily="sans-serif-medium"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Next &gt;"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="right|bottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/currentSteps"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="bottom"
+                    android:includeFontPadding="false"
+                    android:text="Steps - "
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/currentSteps"
+                    style="@style/TextAppearance.AppCompat.Headline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/totalSteps"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="bottom"
+                    android:includeFontPadding="false"
+                    android:text="1"
+                    android:textColor="@color/color_orange"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/totalSteps"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="bottom"
+                    android:includeFontPadding="false"
+                    android:text="/4"
+                    android:textColor="@color/grey"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/apiErrorTv"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:visibility="gone" />
+
+
+                <LinearLayout
+                    android:id="@+id/gstinRadioView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:padding="@dimen/_10sdp"
+                        android:text="GSTIN Verification"
+                        android:textColor="@color/style_color_primary" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Are you registerd with GST?"
+                        android:textColor="@color/greycon" />
+
+                    <RadioGroup
+                        android:id="@+id/gstRadioGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/gstinYesRadio"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:fontFamily="sans-serif-medium"
+                            android:paddingLeft="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_10sdp"
+                            android:paddingRight="@dimen/_5sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:text="Yes" />
+
+                        <RadioButton
+                            android:id="@+id/gstinNoRadio"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:fontFamily="sans-serif-medium"
+                            android:paddingLeft="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_10sdp"
+                            android:paddingRight="@dimen/_5sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:text="No" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/gstinInputView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:background="@drawable/rounded_primary"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:padding="@dimen/_5sdp"
+                            android:text="Choose Company Type :"
+                            android:textColor="@android:color/white" />
+
+
+                        <RelativeLayout
+                            android:id="@+id/compnyTypeChooserView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_primary_border"
+                            android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                            <TextView
+                                android:id="@+id/companyType"
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toLeftOf="@+id/companyTypeArrow"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:hint="Choose Company Type"
+                                android:padding="@dimen/_10sdp"
+                                android:textColor="@android:color/black" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/companyTypeArrow"
+                                android:layout_width="@dimen/_17sdp"
+                                android:layout_height="@dimen/_17sdp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                app:srcCompat="@drawable/ic_arrow_drop_down"
+                                app:tint="@color/colorPrimary" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/chooseCompError"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Please choose company type"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:background="@drawable/rounded_primary"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Enter GSTIN :"
+                            android:textColor="@android:color/white" />
+
+
+                        <EditText
+                            android:id="@+id/etGstin"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_bg_primary"
+                            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:ellipsize="end"
+                            android:hint="Enter GSTIN e.g. 29GGGGG1314R9Z6"
+                            android:inputType="textCapCharacters"
+                            android:maxLength="15"
+                            android:maxLines="1"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:textColor="@android:color/black" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/gstinError"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Please enter valid GSTIN"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/gstinDetailView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:padding="@dimen/_10sdp"
+                        android:text="GSTIN Detail"
+                        android:textColor="@color/style_color_primary" />
+
+                    <LinearLayout
+                        android:id="@+id/gstinNumberView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:background="@drawable/rounded_primary"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:padding="@dimen/_5sdp"
+                            android:text="GSTIN :"
+                            android:textColor="@android:color/white" />
+
+
+                        <TextView
+                            android:id="@+id/gstinNumber"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_primary_border"
+                            android:padding="@dimen/_10sdp"
+                            android:text="AAAAA1111A"
+                            android:textColor="@android:color/black" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/directordetailView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:background="@drawable/rounded_primary"
+                        android:orientation="vertical">
+
+                        <TextView
+
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Director :"
+                            android:textColor="@android:color/white" />
+
+
+                        <TextView
+                            android:id="@+id/directordetail"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_primary_border"
+                            android:padding="@dimen/_10sdp"
+                            android:text="AAAAA1111A"
+                            android:textColor="@android:color/black" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/gstInEdit"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:background="@drawable/rounded_accent_border"
+                        android:fontFamily="sans-serif-medium"
+                        android:padding="@dimen/_8sdp"
+                        android:text="@string/edit_change"
+                        android:textColor="@color/colorAccent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/aadharInputView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:padding="@dimen/_10sdp"
+                        android:text="AADHAR Verification"
+                        android:textColor="@color/style_color_primary" />
+
+                    <LinearLayout
+                        android:id="@+id/directerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:background="@drawable/rounded_primary"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Choose Director :"
+                            android:textColor="@android:color/white" />
+
+
+                        <RelativeLayout
+                            android:id="@+id/directorChooserView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_primary_border"
+                            android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                            <TextView
+                                android:id="@+id/director"
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toLeftOf="@+id/directorArrow"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:hint="Choose Director"
+                                android:padding="@dimen/_10sdp"
+                                android:textColor="@android:color/black" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/directorArrow"
+                                android:layout_width="@dimen/_17sdp"
+                                android:layout_height="@dimen/_17sdp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                app:srcCompat="@drawable/ic_arrow_drop_down"
+                                app:tint="@color/colorPrimary" />
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/chooseDirectorError"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Please choose director"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:background="@drawable/rounded_primary"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Enter Aadhar Number :"
+                            android:textColor="@android:color/white" />
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/etAadhar"
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/edittext_bg_primary"
+                                android:ellipsize="end"
+                                android:hint="Enter Aadhar e.g. 542136985478"
+                                android:inputType="number"
+                                android:maxLength="12"
+                                android:maxLines="1"
+                                android:paddingLeft="@dimen/_10sdp"
+                                android:paddingTop="@dimen/_10sdp"
+                                android:paddingRight="@dimen/_55sdp"
+                                android:paddingBottom="@dimen/_10sdp"
+                                android:singleLine="true"
+                                android:textColor="@android:color/black" />
+
+                            <ImageView
+                                android:id="@+id/aadharEditIv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@+id/etAadhar"
+                                android:layout_alignBottom="@+id/etAadhar"
+                                android:layout_alignParentRight="true"
+                                android:paddingLeft="@dimen/_5sdp"
+                                android:paddingRight="@dimen/_8sdp"
+                                app:srcCompat="@drawable/ic_edit"
+                                app:tint="@color/colorPrimary" />
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/aadharError"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Please enter valid 12 digit AADHAR number"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/otpView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:background="@drawable/rounded_primary"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Enter OTP :"
+                            android:textColor="@android:color/white" />
+
+
+                        <EditText
+                            android:id="@+id/etOTP"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_bg_primary"
+                            android:ellipsize="end"
+                            android:hint="Enter OTP"
+                            android:inputType="number"
+                            android:maxLength="6"
+                            android:maxLines="1"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:textColor="@android:color/black" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/otpError"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Please enter valid 6 digit OTP"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/aadharDetailView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:padding="@dimen/_10sdp"
+                        android:text="AADHAR Detail"
+                        android:textColor="@color/style_color_primary" />
+
+                    <LinearLayout
+                        android:id="@+id/aadharNumberView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:background="@drawable/rounded_primary"
+                        android:orientation="vertical">
+
+                        <TextView
+
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:padding="@dimen/_5sdp"
+                            android:text="AADHAR :"
+                            android:textColor="@android:color/white" />
+
+
+                        <TextView
+                            android:id="@+id/aadharNumber"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_primary_border"
+                            android:padding="@dimen/_10sdp"
+                            android:text="AAAAA1111A"
+                            android:textColor="@android:color/black" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/aadharEdit"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:background="@drawable/rounded_accent_border"
+                        android:fontFamily="sans-serif-medium"
+                        android:padding="@dimen/_8sdp"
+                        android:text="@string/edit_change"
+                        android:textColor="@color/colorAccent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/panView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:padding="@dimen/_10sdp"
+                        android:text="PAN Verification"
+                        android:textColor="@color/style_color_primary" />
+
+                    <LinearLayout
+                        android:id="@+id/companyPanView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/rounded_primary"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_5sdp"
+                            android:text="PAN :"
+                            android:textColor="@android:color/white" />
+
+
+                        <TextView
+                            android:id="@+id/companyPan"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_primary_border"
+                            android:padding="@dimen/_10sdp"
+                            android:text="AAAAA1111A"
+                            android:textColor="@android:color/black" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:background="@drawable/rounded_primary"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/panLabel"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Enter PAN :"
+                            android:textColor="@android:color/white" />
+
+
+                        <EditText
+                            android:id="@+id/etPan"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_bg_primary"
+                            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:ellipsize="end"
+                            android:hint="Enter PAN e.g. AAAAA1111A"
+                            android:inputType="textCapCharacters"
+                            android:maxLength="10"
+                            android:maxLines="1"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:textColor="@android:color/black" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/panError"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Please enter valid 10 alphanumeric PAN number"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/panDetailView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:padding="@dimen/_10sdp"
+                        android:text="PAN Detail"
+                        android:textColor="@color/style_color_primary" />
+
+                    <LinearLayout
+                        android:id="@+id/compPanNumberView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/rounded_primary"
+                        android:orientation="vertical">
+
+                        <TextView
+
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_5sdp"
+                            android:text="PAN :"
+                            android:textColor="@android:color/white" />
+
+
+                        <TextView
+                            android:id="@+id/compPanNumber"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_primary_border"
+                            android:padding="@dimen/_10sdp"
+                            android:text="AAAAA1111A"
+                            android:textColor="@android:color/black" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/directorPanDetailView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:background="@drawable/rounded_primary"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/panNumLabel"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_5sdp"
+                            android:text="PAN:"
+                            android:textColor="@android:color/white" />
+
+
+                        <TextView
+                            android:id="@+id/panNum"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_primary_border"
+                            android:padding="@dimen/_10sdp"
+                            android:text="AAAAA1111A"
+                            android:textColor="@android:color/black" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/panEdit"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:background="@drawable/rounded_accent_border"
+                        android:fontFamily="sans-serif-medium"
+                        android:padding="@dimen/_8sdp"
+                        android:text="@string/edit_change"
+                        android:textColor="@color/colorAccent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/bankView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:padding="@dimen/_10sdp"
+                        android:text="Bank Account Verification"
+                        android:textColor="@color/style_color_primary" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:background="@drawable/rounded_primary"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Choose Bank :"
+                            android:textColor="@android:color/white" />
+
+
+                        <RelativeLayout
+                            android:id="@+id/bankChooserView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_primary_border"
+                            android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                            <TextView
+                                android:id="@+id/bankTv"
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_toLeftOf="@+id/bankArrow"
+                                android:background="@android:color/transparent"
+                                android:gravity="center_vertical"
+                                android:hint="Choose Bank"
+                                android:padding="@dimen/_10sdp"
+                                android:textColor="@android:color/black" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/bankArrow"
+                                android:layout_width="@dimen/_17sdp"
+                                android:layout_height="@dimen/_17sdp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                app:srcCompat="@drawable/ic_arrow_drop_down"
+                                app:tint="@color/colorPrimary" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/chooseBankError"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Please choose Bank"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:background="@drawable/rounded_primary"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Enter Account Number :"
+                            android:textColor="@android:color/white" />
+
+
+                        <EditText
+                            android:id="@+id/etAccountNum"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_bg_primary"
+                            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:ellipsize="end"
+                            android:hint="Enter Account Number"
+                            android:inputType="textCapCharacters"
+                            android:maxLines="1"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:textColor="@android:color/black" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/accountNumError"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Please enter valid account number"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:background="@drawable/rounded_primary"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Enter IFSC :"
+                            android:textColor="@android:color/white" />
+
+
+                        <EditText
+                            android:id="@+id/etIfsc"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_bg_primary"
+                            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            android:ellipsize="end"
+                            android:hint="Enter IFSC"
+                            android:inputType="textCapCharacters"
+                            android:maxLength="11"
+                            android:maxLines="1"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:textColor="@android:color/black" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/ifscError"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Please enter valid 11 alphanumeric IFSC Code"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/bankDetailView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:padding="@dimen/_10sdp"
+                        android:text="Bank Account Detail"
+                        android:textColor="@color/style_color_primary" />
+
+                    <LinearLayout
+                        android:id="@+id/bankNameView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:background="@drawable/rounded_primary"
+                        android:orientation="vertical">
+
+                        <TextView
+
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Bank :"
+                            android:textColor="@android:color/white" />
+
+
+                        <TextView
+                            android:id="@+id/bankName"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_primary_border"
+                            android:padding="@dimen/_10sdp"
+                            android:text="AAAAA1111A"
+                            android:textColor="@android:color/black" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/accountNumView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:background="@drawable/rounded_primary"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Account Number :"
+                            android:textColor="@android:color/white" />
+
+
+                        <TextView
+                            android:id="@+id/accountNum"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_primary_border"
+                            android:padding="@dimen/_10sdp"
+                            android:text="AAAAA1111A"
+                            android:textColor="@android:color/black" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ifscView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:background="@drawable/rounded_primary"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_5sdp"
+                            android:text="IFSC :"
+                            android:textColor="@android:color/white" />
+
+
+                        <TextView
+                            android:id="@+id/ifscCode"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_primary_border"
+                            android:padding="@dimen/_10sdp"
+                            android:text="AAAAA1111A"
+                            android:textColor="@android:color/black" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/accountNameView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:background="@drawable/rounded_primary"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/_5sdp"
+                            android:text="Account Holder Name :"
+                            android:textColor="@android:color/white" />
+
+
+                        <TextView
+                            android:id="@+id/accountName"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:background="@drawable/rounded_primary_border"
+                            android:padding="@dimen/_10sdp"
+                            android:text="AAAAA1111A"
+                            android:textColor="@android:color/black" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/bankEdit"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:background="@drawable/rounded_accent_border"
+                        android:fontFamily="sans-serif-medium"
+                        android:padding="@dimen/_8sdp"
+                        android:text="@string/edit_change"
+                        android:textColor="@color/colorAccent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btnView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <CheckBox
+                        android:id="@+id/checkbox"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_6sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="@string/consent_msg_ekyc_steps"
+                        android:textColor="@color/colorAccent" />
+
+                    <TextView
+                        android:id="@+id/consentError"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Please accept consent"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/verifyBtn"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_12sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_15sdp"
+                        android:background="@drawable/rounded_accent"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center"
+                        android:padding="@dimen/_8sdp"
+                        android:text="Verify GST"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/loaderView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_15sdp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ProgressBar
+                        android:id="@+id/progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:indeterminateDrawable="@drawable/progess_effect" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/progress"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="center"
+                        android:text="Please Wait..."
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/preventView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/detailContentView"
+        android:layout_alignBottom="@+id/detailContentView"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:visibility="gone" />
+</RelativeLayout>

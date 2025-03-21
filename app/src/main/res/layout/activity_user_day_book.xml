@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/totalCommView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimaryMoreLight"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1px"
+            android:layout_marginRight="1px"
+            android:layout_marginBottom="1px"
+            android:layout_weight="1"
+            android:background="@drawable/primary_gradient"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="Total Self Commission"
+                android:textColor="@color/colorAccent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/totalSelfComm"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="₹ 0"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="1px"
+            android:layout_marginBottom="1px"
+            android:layout_weight="1"
+            android:background="@drawable/primary_gradient"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="Total Team Commission"
+                android:textColor="@color/colorAccent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/totalTeamComm"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="₹ 0"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomView"
+        android:layout_below="@+id/totalCommView"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/_5sdp"
+        android:scrollbars="vertical" />
+
+    <include
+        android:id="@+id/noDataView"
+        layout="@layout/no_data_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/totalCommView"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/noNetworkView"
+        layout="@layout/network_error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/totalCommView"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/bottomView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:paddingTop="@dimen/_1sdp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_1sdp"
+            android:layout_weight="1"
+            android:background="@drawable/primary_gradient"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_3sdp">
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Total Success"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/totalSuccess"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:fontFamily="sans-serif-condensed"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Total Success"
+                android:textColor="@color/color_grey_light" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pendingView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_1sdp"
+            android:layout_weight="1"
+            android:background="@drawable/primary_gradient"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_3sdp">
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Total Pending"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/totalPending"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:fontFamily="sans-serif-condensed"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Total Success"
+                android:textColor="@color/color_grey_light" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_1sdp"
+            android:layout_weight="1"
+            android:background="@drawable/primary_gradient"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_3sdp">
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Total Failed"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/totalfailed"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:fontFamily="sans-serif-condensed"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Total Success"
+                android:textColor="@color/color_grey_light" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/totalView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_1sdp"
+            android:layout_weight="1"
+            android:background="@drawable/primary_gradient"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_3sdp">
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Total Amount"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/totalAmt"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:fontFamily="sans-serif-condensed"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Total Success"
+                android:textColor="@color/color_grey_light" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/primary_gradient"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_3sdp">
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Total Commission"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/totalcomm"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:fontFamily="sans-serif-condensed"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Total Success"
+                android:textColor="@color/color_grey_light" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

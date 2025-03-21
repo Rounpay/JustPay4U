@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--<android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8sdp"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        app:cardCornerRadius="@dimen/_4sdp"
+        app:cardElevation="@dimen/_4sdp">-->
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/back_bgg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/msgView"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_6sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/closeBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_3sdp"
+                    android:padding="@dimen/_8sdp"
+                    app:srcCompat="@mipmap/close_btn" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_40sdp"
+                    android:layout_marginRight="@dimen/_40sdp"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_8sdp"
+                    android:text="Upload KYC Documents" />
+
+
+            </RelativeLayout>
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/icon_color">
+
+                <android.support.v7.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_1sdp"
+                    android:layout_weight="3.5"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/_15sdp"
+                    android:paddingBottom="@dimen/_15sdp"
+                    android:text="Name"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:layout_marginBottom="@dimen/_1sdp"
+                    android:layout_weight="3.5"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/_15sdp"
+                    android:paddingBottom="@dimen/_15sdp"
+                    android:text="Document"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_1sdp"
+                    android:layout_weight="3"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/_15sdp"
+                    android:paddingBottom="@dimen/_15sdp"
+                    android:text="Status"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+            </LinearLayout>-->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:paddingTop="@dimen/_5sdp"
+                tools:itemCount="4"
+                tools:listitem="@layout/adapter_upload_docs_list" />
+
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/icon_color">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_1sdp"
+                    android:layout_weight="3.5"
+                    android:background="@android:color/white"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/_7sdp"
+                    android:paddingBottom="@dimen/_7sdp">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/panTv"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toLeftOf="@+id/panInfo"
+                        android:layout_weight="1"
+                        android:gravity="center"
+
+                        android:text="PAN" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/panInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/_5sdp"
+                        app:srcCompat="@drawable/ic_info_small" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_1sdp"
+                    android:layout_weight="3.5"
+                    android:background="@android:color/white"
+                    android:gravity="center|right"
+                    android:paddingTop="@dimen/_7sdp"
+                    android:paddingBottom="@dimen/_7sdp">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/uploadPan"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/panUploadInfo"
+                        android:background="@drawable/rounded_focused"
+                        android:gravity="center"
+                        android:minWidth="@dimen/_60sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Upload"
+                        android:textColor="@color/colorPrimary" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/panUploadInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/_5sdp"
+                        app:srcCompat="@drawable/ic_info_small" />
+                </LinearLayout>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/panStatusTv"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_1sdp"
+                    android:layout_marginRight="@dimen/_1sdp"
+                    android:layout_weight="3"
+                    android:background="@android:color/white"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/_7sdp"
+                    android:paddingBottom="@dimen/_7sdp"
+                    android:text="Status" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/icon_color">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_1sdp"
+                    android:layout_weight="3.5"
+                    android:background="@android:color/white"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/_7sdp"
+                    android:paddingBottom="@dimen/_7sdp">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/aadharTv"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toLeftOf="@+id/aadharInfo"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="AADHAR" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/aadharInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/_5sdp"
+                        app:srcCompat="@drawable/ic_info_small" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:layout_marginBottom="@dimen/_1sdp"
+                    android:layout_weight="3.5"
+                    android:background="@android:color/white"
+                    android:gravity="center|right"
+                    android:paddingTop="@dimen/_7sdp"
+                    android:paddingBottom="@dimen/_7sdp">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/uploadAdhar"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toLeftOf="@+id/aadharUploadInfo"
+                        android:background="@drawable/rounded_focused"
+                        android:gravity="center"
+                        android:minWidth="@dimen/_60sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Upload"
+                        android:textColor="@color/colorPrimary" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/aadharUploadInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/_5sdp"
+                        app:srcCompat="@drawable/ic_info_small" />
+                </LinearLayout>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/aadharStatusTv"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_1sdp"
+                    android:layout_weight="3"
+                    android:background="@android:color/white"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/_7sdp"
+                    android:paddingBottom="@dimen/_7sdp"
+                    android:text="Status" />
+            </LinearLayout>-->
+
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/msgView"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/bottomBtnView"
+            android:padding="@dimen/_5sdp"
+            android:text="(Only .jpeg, .jpg, .png, .gif, .pdf files are allowed and file size not more than 200 KB.)"
+            android:textColor="@color/color_blue" />
+
+        <RelativeLayout
+            android:id="@+id/bottomBtnView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:paddingBottom="@dimen/_5sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/kycBtn"
+                android:padding="@dimen/_5sdp"
+                android:text="* Required For KYC Completion"
+                android:textColor="@color/red" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/kycBtn"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:background="@drawable/rounded_accent"
+                android:fontFamily="sans-serif-medium"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:paddingLeft="@dimen/_8sdp"
+                android:paddingRight="@dimen/_8sdp"
+                android:text="KYC COMPLETED"
+                android:textColor="@android:color/white"
+                app:backgroundTint="@color/grey" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <!--</android.support.v7.widget.CardView>-->
+</LinearLayout>

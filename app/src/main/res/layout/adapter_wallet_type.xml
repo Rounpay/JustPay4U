@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/walletTv"
+    style="@style/TextAppearance.AppCompat.Body2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="sans-serif-condensed-medium"
+    android:gravity="center"
+    android:paddingLeft="@dimen/_12sdp"
+    android:paddingTop="@dimen/_10sdp"
+    android:paddingRight="@dimen/_12sdp"
+    android:paddingBottom="@dimen/_10sdp"
+    android:text="Utility"
+    android:textColor="@color/light_green" />

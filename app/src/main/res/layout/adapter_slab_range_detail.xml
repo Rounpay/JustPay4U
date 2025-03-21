@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/icon_color">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/range"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="1dp"
+        android:layout_weight="2.7"
+        android:background="@android:color/white"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:text="Range" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/comSur"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="1dp"
+        android:layout_weight="2.7"
+        android:background="@android:color/white"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:text="Commission/Surcharge" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/maxCom"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="1dp"
+        android:layout_weight="2.3"
+        android:background="@android:color/white"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:text="Max Commission" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/fixed"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="1dp"
+        android:layout_weight="2.3"
+        android:background="@android:color/white"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:text="Max Commission" />
+
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatButton xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/regd"
+    style="@style/TextAppearance.AppCompat.Body2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:layout_gravity="center"
+    android:layout_marginLeft="@dimen/_10sdp"
+    android:layout_marginRight="@dimen/_10sdp"
+    android:background="@drawable/rounded_primary"
+    android:elevation="@dimen/_3sdp"
+    android:fontFamily="sans-serif-condensed-medium"
+    android:text="Card Reader Regd"
+    android:textColor="@android:color/white" />
+

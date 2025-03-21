@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/_10sdp"
+    android:layout_marginRight="@dimen/_10sdp"
+    android:orientation="horizontal">
+
+    <com.solution.app.justpay4u.Util.timelineview.TimelineView
+        android:id="@+id/timeline"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:endLineColor="@android:color/holo_green_dark"
+        app:lineStyle="normal"
+        app:lineWidth="@dimen/_2sdp"
+        app:markerInCenter="false"
+        app:markerSize="@dimen/_10sdp"
+        app:startLineColor="@android:color/holo_green_dark" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/_10sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_timeline_status"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Deliverd"
+
+            android:textColor="@android:color/black" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_timeline_location"
+            style="@style/TextAppearance.AppCompat.Small"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Order Successfully"
+            android:textColor="@android:color/black" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_timeline_title"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Order Successfully"
+            android:textColor="@android:color/black" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_timeline_date"
+            style="@style/TextAppearance.Compat.Notification.Info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="24 JAN"
+            android:textColor="@color/greycon" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

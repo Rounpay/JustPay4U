@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.solution.app.JustPay4u",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 5,
+      "versionName": "1.4",
+      "outputFile": " JustPay4u 1.4-release.apk"
+    }
+  ],
+  "elementType": "File"
+}

@@ -1,0 +1,109 @@
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottom_panels"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:focusableInTouchMode="true"
+    android:scrollbars="none">
+
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/_15sdp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Sort By"
+            android:textColor="@color/greycon" />
+
+        <RelativeLayout
+            android:id="@+id/newestFirst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/rounded_focused">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:padding="@dimen/_10sdp"
+                android:text="Newest First" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/newestRadioBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:checked="true"
+                android:clickable="false" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lowToHeigh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+
+            android:background="@drawable/rounded_unfocused">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:padding="@dimen/_10sdp"
+                android:text="Price -- Low to High" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/lowToHeighRadioBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:clickable="false" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/highToLow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/rounded_unfocused">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:padding="@dimen/_10sdp"
+                android:text="Price -- High to Low" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/heighToLowRadioBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:clickable="false" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>
+
+

@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusableInTouchMode="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_50sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_50sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/app_full_logo" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/_5sdp"
+                android:paddingRight="@dimen/_10sdp"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/eWalletRadio"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:checked="true"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:padding="@dimen/_10sdp"
+                    android:text="E Wallet" />
+
+                <RadioButton
+                    android:id="@+id/payoutWalletRadio"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:padding="@dimen/_10sdp"
+                    android:text="Payout Wallet" />
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/rounded_reports_gradient_border"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/balanceTitleView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_primary"
+                        android:backgroundTint="@color/colorPrimaryLight"
+                        android:padding="@dimen/_5sdp"
+                        app:srcCompat="@drawable/ic_wallet_line" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/balanceTitle"
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Balance"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/walletBalance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:padding="@dimen/_6sdp"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/adapter_wallet_balance" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/epinView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_vertical"
+                    android:paddingRight="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="Epin"
+                    android:textColor="@color/colorAccent" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/epinTv"
+                    style="@style/Widget.AppCompat.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/epinDropIcon"
+                    android:background="@drawable/rounded_unfocused"
+                    android:clickable="false"
+                    android:hint="Epin"
+                    android:maxLines="1"
+                    android:padding="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/colorAccent"
+                    android:textColorHint="@color/grey" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_vertical"
+                    android:paddingRight="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="Epin Amount"
+                    android:textColor="@color/colorAccent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/amountEPin"
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/amountTitle"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/rounded_unfocused"
+                    android:hint="Epin Amount"
+                    android:maxLines="1"
+                    android:padding="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorAccent"
+                    android:textColorHint="@color/grey" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/userIdView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/userIdTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_vertical"
+                    android:paddingRight="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="User Id"
+                    android:textColor="@color/colorAccent" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/userId"
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/userIdTitle"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/edittext_bg"
+                    android:hint="New User Id"
+
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_35sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorAccent"
+                    android:textColorHint="@color/grey" />
+
+
+                <ImageView
+                    android:id="@+id/searchIv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/userIdTitle"
+                    android:layout_alignTop="@+id/userId"
+                    android:layout_alignBottom="@+id/userId"
+                    android:layout_alignParentRight="true"
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingRight="@dimen/_8sdp"
+                    android:src="@drawable/ic_search_icon"
+                    app:tint="@color/colorAccent" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/receiverDetailView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:background="@drawable/rounded_primary_border_gradient_fill"
+                android:orientation="vertical"
+                android:padding="@dimen/_5sdp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/userDetailTitle"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_6sdp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="User Details"
+                    android:textColor="@color/colorAccent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/receiverName"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/userDetailTitle"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginRight="@dimen/_6sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:lineSpacingExtra="@dimen/_3sdp"
+                    android:textColor="@android:color/white" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/typeView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/typeTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_vertical"
+                    android:paddingRight="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_3sdp"
+                    android:text="Select Type"
+                    android:textColor="@color/colorAccent" />
+
+                <RelativeLayout
+                    android:id="@+id/typeContatiner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/typeTitle"
+                    android:background="@drawable/rounded_unfocused">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/type"
+                        style="@style/Widget.AppCompat.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/typeDropIcon"
+                        android:background="@android:color/transparent"
+                        android:clickable="false"
+                        android:hint="Select Type"
+                        android:maxLines="1"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textColor="@color/colorAccent"
+                        android:textColorHint="@color/grey" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/typeDropIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingRight="@dimen/_8sdp"
+                        app:srcCompat="@drawable/ic_arrow_down"
+                        app:tint="@color/colorAccent" />
+                </RelativeLayout>
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/register"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_22sdp"
+                android:background="@drawable/rounded_accent"
+                android:elevation="@dimen/_4sdp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:padding="@dimen/_12sdp"
+                android:text="Activate User"
+                android:textColor="@android:color/white" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

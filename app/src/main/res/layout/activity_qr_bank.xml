@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/roleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:background="@drawable/rounded_white"
+        android:elevation="@dimen/_3sdp"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/searchIcon"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_10sdp"
+            app:srcCompat="@drawable/ic_roll"
+            app:tint="@color/grey" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/requestTo"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/searchLine"
+            android:layout_toRightOf="@+id/searchIcon"
+            android:background="@android:color/transparent"
+            android:fontFamily="sans-serif-medium"
+            android:hint="Select Request To"
+            android:maxLines="1"
+            android:padding="@dimen/_8sdp"
+            android:singleLine="true"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/searchLine"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/search_all"
+            android:layout_alignBottom="@+id/search_all"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:layout_toLeftOf="@+id/arrowIcon"
+            android:background="@color/color_grey"
+            android:orientation="vertical" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/arrowIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            app:srcCompat="@drawable/ic_arrow_drop_down"
+            app:tint="@color/text_color" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/roleLayout"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/_3sdp"
+        android:scrollbars="vertical" />
+
+    <include
+        android:id="@+id/noDataView"
+        layout="@layout/no_data_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/roleLayout"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/noNetworkView"
+        layout="@layout/network_error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/roleLayout"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+
+</LinearLayout>
+
+    <!-- <android.support.v4.widget.NestedScrollView
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:fillViewport="true">
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:gravity="center_horizontal"
+             android:orientation="vertical">
+
+
+             <LinearLayout
+                 android:id="@+id/ll_contactus"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_margin="@dimen/_8sdp"
+                 android:background="@drawable/rect"
+                 android:gravity="center"
+                 android:orientation="vertical"
+                 android:padding="@dimen/_8sdp"
+                 android:visibility="visible">
+
+
+                 <TextView
+                     android:id="@+id/contactus"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="@dimen/_4sdp"
+                     android:background="@drawable/cell_gradient_blue"
+                     android:gravity="center"
+                     android:minWidth="@dimen/_100sdp"
+                     android:padding="@dimen/_5sdp"
+                     android:text="Scan &amp; Pay"
+                     android:textColor="@android:color/white" />
+
+
+                 <LinearLayout
+                     android:id="@+id/banRoleView"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="@dimen/_10sdp"
+                     android:background="@drawable/rect"
+                     android:padding="@dimen/_10sdp">
+
+                     <Spinner
+                         android:id="@+id/bankRole"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:ellipsize="end"
+                         android:focusable="false"
+                         android:gravity="center_vertical"
+                         android:hint="Select Role"
+                         android:singleLine="true"
+                         android:text=""
+                         android:textColor="@android:color/black"
+                         android:textSize="@dimen/_12sdp" />
+                 </LinearLayout>
+
+
+                 <android.support.v7.widget.RecyclerView
+                     android:id="@+id/recycler_view"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="@dimen/_10sdp" />
+             </LinearLayout>
+
+
+         </LinearLayout>
+     </android.support.v4.widget.NestedScrollView>
+ </LinearLayout>-->

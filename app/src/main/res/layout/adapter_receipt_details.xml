@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/packageView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/name"
+        style="@style/TextAppearance.AppCompat.Body2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/_1sdp"
+        android:layout_weight="0.9"
+        android:background="@color/devider_color"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center_vertical"
+        android:padding="@dimen/_5sdp"
+        android:text="AADHAR Number"
+        android:textColor="@android:color/black" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/value"
+        style="@style/TextAppearance.AppCompat.Caption"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.1"
+        android:background="@color/devider_color"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:padding="@dimen/_5sdp"
+        android:singleLine="true"
+        android:text=""
+        android:textColor="@color/colorPrimary" />
+</LinearLayout>

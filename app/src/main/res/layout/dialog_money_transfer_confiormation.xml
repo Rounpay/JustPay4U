@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_5sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_accent_border"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/bankName"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="State Bank Of India"
+                android:textColor="@android:color/black" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/name"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="Account Holder Name"
+                android:textColor="@android:color/black" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/accountNo"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="36783425673"
+                android:textColor="@android:color/black"
+                app:fontFamily="sans-serif-medium" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mode"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:fontFamily="sans-serif-medium"
+                android:text="NEFT"
+                android:textColor="@android:color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/transferAmountView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/slabView"
+                    android:layout_weight="0.9"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_11sdp"
+                            android:layout_height="@dimen/_11sdp"
+                            android:layout_marginRight="@dimen/_3sdp"
+                            app:srcCompat="@drawable/ic_rupee_circle"
+                            app:tint="@color/colorPrimary" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/amountLabel"
+                            style="@style/TextAppearance.AppCompat.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Amount"
+                            android:textColor="@color/colorPrimary" />
+
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/amountTv"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_14sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/rs_0_0"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:background="@color/grey" />
+
+                <LinearLayout
+                    android:id="@+id/dmtChargeView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/slabView"
+                    android:layout_weight="1.05"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_11sdp"
+                            android:layout_height="@dimen/_11sdp"
+                            android:layout_marginRight="@dimen/_3sdp"
+                            app:srcCompat="@drawable/ic_rupee_circle"
+                            app:tint="@color/colorPrimary" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/dmtChargeLabel"
+                            style="@style/TextAppearance.AppCompat.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/joinByIcon"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="DMT Charge"
+                            android:textColor="@color/colorPrimary" />
+
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/dmtChargeTv"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_14sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/rs_0_0"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:background="@color/grey" />
+
+
+                <LinearLayout
+                    android:id="@+id/totalAmountView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/slabView"
+                    android:layout_weight="1.05"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_11sdp"
+                            android:layout_height="@dimen/_11sdp"
+                            android:layout_marginRight="@dimen/_3sdp"
+                            app:srcCompat="@drawable/ic_rupee_circle"
+                            app:tint="@color/colorPrimary" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/totalAmtLabel"
+                            style="@style/TextAppearance.AppCompat.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/joinByIcon"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Total Amount"
+                            android:textColor="@color/colorPrimary" />
+
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/totalAmtTv"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_14sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/rs_0_0"
+                        android:textColor="@color/red" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/pinPassView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:elevation="@dimen/_3sdp"
+                app:cardBackgroundColor="@color/aboutpagecolour"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <EditText
+                    android:id="@+id/pinPassEt"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:hint="Enter Pin Password"
+                    android:padding="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/black" />
+            </androidx.cardview.widget.CardView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_5sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/cancel"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_accent_border"
+                    android:elevation="@dimen/_3sdp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:padding="@dimen/_6sdp"
+                    android:text="CANCEL"
+                    android:textColor="@android:color/holo_red_dark" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/ok"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_accent_border"
+                    android:elevation="@dimen/_3sdp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:padding="@dimen/_6sdp"
+                    android:text="CONTINUE"
+                    android:textColor="@color/green" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:text="@string/rechage_note"
+                android:textColor="@color/red"
+                android:visibility="visible" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

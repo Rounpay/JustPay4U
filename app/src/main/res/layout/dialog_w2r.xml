@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusableInTouchMode="true"
+    app:cardBackgroundColor="@color/back_bg"
+    app:cardCornerRadius="@dimen/_8sdp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_10sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleTv"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="Apply Right To Wrong"
+            android:textColor="@android:color/black" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mobileTitleTv"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/closeIv"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Right Account"
+            android:textColor="@color/colorPrimary" />
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/RightAccountEt"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mobileTitleTv"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:background="@drawable/edittext_bg"
+            android:elevation="@dimen/_3sdp"
+            android:fontFamily="sans-serif-medium"
+            android:hint="Enter Right Account"
+            android:maxLines="1"
+            android:padding="@dimen/_12sdp"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/color_grey" />
+
+
+        <LinearLayout
+            android:id="@+id/bottomBtnView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/RightAccountEt"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_5sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cancelButton"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_recharge_button_gradient_border"
+                android:elevation="@dimen/_3sdp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:padding="@dimen/_7sdp"
+                android:text="CANCEL"
+                android:textColor="@android:color/darker_gray" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/submitButton"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_reports_button_gradient_border"
+                android:elevation="@dimen/_3sdp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:padding="@dimen/_7sdp"
+                android:text="Submit"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
+        <!-- <LinearLayout
+             android:id="@+id/bottomBtnView"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/emailEt"
+             android:layout_margin="@dimen/_10sdp">
+
+             <android.support.v7.widget.AppCompatTextView
+                 android:id="@+id/cancelBtn"
+                 style="@style/TextAppearance.AppCompat.Subhead"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginLeft="@dimen/_3sdp"
+                 android:background="@drawable/rounded_dark_grey_border"
+                 android:gravity="center"
+                 android:minWidth="@dimen/_70sdp"
+                 android:padding="@dimen/_12sdp"
+                 android:text="Cancel"
+                 android:textAllCaps="false"
+                 android:textColor="@color/greycon" />
+
+             <android.support.v7.widget.AppCompatTextView
+                 android:id="@+id/sendBtn"
+                 style="@style/TextAppearance.AppCompat.Subhead"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginLeft="@dimen/_15sdp"
+                 android:background="@drawable/rounded_greycon"
+                 android:gravity="center"
+                 android:minWidth="@dimen/_70sdp"
+                 android:padding="@dimen/_12sdp"
+                 android:text="Send"
+
+                 android:textAllCaps="false"
+                 android:textColor="@android:color/white" />
+         </LinearLayout>-->
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/closeIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            app:srcCompat="@mipmap/close_btn" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+
+    <!--
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:color/white">
+
+
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/RightAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:layout_margin="@dimen/_10sdp"
+            android:fontFamily="serif"
+            android:hint="Right Account"
+            android:inputType="number" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/RightAccount">
+
+            <Button
+                android:id="@+id/cancelButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@color/red"
+                android:fontFamily="monospace"
+                android:text="Cancel"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:background="@color/green"
+                android:fontFamily="monospace"
+                android:text="Submit"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </RelativeLayout>-->

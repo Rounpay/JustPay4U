@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/_5sdp"
+    android:layout_marginRight="@dimen/_5sdp"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:background="@drawable/rounded_reports_gradient_border"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/_5sdp">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/operator"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="Operator"
+        android:textColor="@color/colorAccent" />
+
+    <!--<LinearLayout
+        android:id="@+id/commissionNormalView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:gravity="center"
+        android:visibility="visible">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/commissionNormalLabel"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_3sdp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Commission"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/commissionNormal"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@string/rs_0_0"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+    </LinearLayout>-->
+
+    <LinearLayout
+        android:id="@+id/commissionDetailView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/selfCommisionView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/selfCommisionLabel"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="sans-serif-medium"
+                android:text="Self Commission"
+                android:textColor="@color/color_grey_light" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/selfCommision"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="@string/rs_0_0"
+                android:textColor="@color/color_grey_light" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/teamCommisionView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/teamCommisionLabel"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="sans-serif-medium"
+                android:text="Team Commission"
+                android:textColor="@color/color_grey_light" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/teamCommision"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="@string/rs_0_0"
+                android:textColor="@color/color_grey_light" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/commissionView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/commisiionLabel"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="sans-serif-medium"
+                android:text="Retailer Commission"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/commission"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="@string/rs_0_0"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/hitsAmountDetailView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@drawable/rounded_primary_gradient"
+        android:orientation="vertical"
+        android:padding="@dimen/_2sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/sucessHitView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sucessHitLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Success Hit"
+                    android:textColor="@color/color_grey_light" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sucessHit"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="0"
+                    android:textColor="@color/color_grey_light" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/_1sdp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@color/colorAccent" />
+
+            <LinearLayout
+                android:id="@+id/pendingHitView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/pendingHitLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Pending Hit"
+                    android:textColor="@color/color_grey_light" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/pendingHit"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="0"
+                    android:textColor="@color/color_grey_light" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/_1sdp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@color/colorAccent" />
+
+            <LinearLayout
+                android:id="@+id/failedHitView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/failedHitLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Failed Hit"
+                    android:textColor="@color/color_grey_light" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/failedHit"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="0"
+                    android:textColor="@color/color_grey_light" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/_1sdp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@color/colorAccent" />
+
+            <LinearLayout
+                android:id="@+id/totalHitView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/totalHitLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Total Hit"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/totalHit"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="0"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/sucessAmtView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sucessAmtLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Success"
+                    android:textColor="@color/color_grey_light" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sucessAmt"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="@string/rs_0_0"
+                    android:textColor="@color/color_grey_light" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/_1sdp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@color/colorAccent" />
+
+            <LinearLayout
+                android:id="@+id/pendingAmtView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/pendingAmtLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Pending Amt."
+                    android:textColor="@color/color_grey_light" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/pendingAmt"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="@string/rs_0_0"
+                    android:textColor="@color/color_grey_light" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/_1sdp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@color/colorAccent"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/failedAmtView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/failedAmtLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Failed"
+                    android:textColor="@color/color_grey_light" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/failedAmt"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="@string/rs_0_0"
+                    android:textColor="@color/color_grey_light" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/_1sdp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@color/colorAccent" />
+
+            <LinearLayout
+                android:id="@+id/totalAmtView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/totalAmtLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Total"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/totalAmt"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="@string/rs_0_0"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/_1sdp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@color/colorAccent" />
+
+            <LinearLayout
+                android:id="@+id/commissionNormalView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/commissionNormalLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Commission"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/commissionNormal"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="@string/rs_0_0"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/surchargeDetailsView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@drawable/rounded_primary_gradient"
+        android:padding="@dimen/_2sdp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_2sdp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/sucessHitDmtView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/_3sdp"
+                android:paddingRight="@dimen/_3sdp">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sucessHitDmtLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Success Hit"
+                    android:textColor="@color/color_grey_light" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sucessHitDmt"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="0"
+                    android:textColor="@color/color_grey_light" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/ccfView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/_3sdp"
+                android:paddingRight="@dimen/_3sdp">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/ccfLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="CCF"
+                    android:textColor="@color/color_grey_light" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/ccf"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="0"
+                    android:textColor="@color/color_grey_light" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/surchargeView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/_3sdp"
+                android:paddingRight="@dimen/_3sdp">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/surchargeLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Surcharge"
+                    android:textColor="@color/color_grey_light" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/surcharge"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="0"
+                    android:textColor="@color/color_grey_light" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/gstOnSurchargeView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/_3sdp"
+                android:paddingRight="@dimen/_3sdp">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/gstOnSurchargeLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="GST On Sur."
+                    android:textColor="@color/color_grey_light" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/gstOnSurcharge"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="0"
+                    android:textColor="@color/color_grey_light" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/tdsView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/_3sdp"
+                android:paddingRight="@dimen/_3sdp"
+                android:visibility="visible">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tdsLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="TDS"
+                    android:textColor="@color/color_grey_light" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tds"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="0"
+                    android:textColor="@color/color_grey_light" />
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/sucessAmtDmtView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/_3sdp"
+                android:paddingRight="@dimen/_3sdp">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sucessAmtDmtLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Success Amt."
+                    android:textColor="@color/color_grey_light" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sucessAmtDmt"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/rs_0_0"
+                    android:textColor="@color/color_grey_light" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/baseAmtView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/_3sdp"
+                android:paddingRight="@dimen/_3sdp">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/baseAmtLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Base Amt."
+                    android:textColor="@color/color_grey_light" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/baseAmt"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/rs_0_0"
+                    android:textColor="@color/color_grey_light" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/afterSurchargeView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/_3sdp"
+                android:paddingRight="@dimen/_3sdp">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/afterSurchargeLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="After Sur."
+                    android:textColor="@color/color_grey_light" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/afterSurcharge"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/rs_0_0"
+                    android:textColor="@color/color_grey_light" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/refundGstView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/_3sdp"
+                android:paddingRight="@dimen/_3sdp">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/refundGstLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Refund GST"
+                    android:textColor="@color/color_grey_light" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/refundGst"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/rs_0_0"
+                    android:textColor="@color/color_grey_light" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/withTdsView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/_3sdp"
+                android:paddingRight="@dimen/_3sdp"
+                android:visibility="visible">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/withTdsLabel"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="With TDS"
+                    android:textColor="@color/color_grey_light" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/withTds"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/rs_0_0"
+                    android:textColor="@color/color_grey_light" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+
+
+

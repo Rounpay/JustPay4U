@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+
+    <LinearLayout
+        android:id="@+id/containView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:scaleType="fitXY" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:clickable="false"
+            android:text="fejk3gu4guirtgui4g"
+            android:textColor="@color/colorPrimary" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/message"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:autoLink="web"
+            android:clickable="false"
+            android:text="3jgufgui4fguigfuiguigugui"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:id="@+id/timeView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:gravity="center_vertical|right">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                app:srcCompat="@drawable/ic_calendar_icon"
+                app:tint="@color/black" />
+
+            <TextView
+                android:id="@+id/time"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="hghgjghwqdvw"
+                android:textColor="@color/black" />
+        </LinearLayout>
+        <!-- <android.support.v7.widget.AppCompatTextView
+             android:id="@+id/time"
+             style="@style/TextAppearance.AppCompat.Caption"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="right"
+             android:layout_marginLeft="@dimen/_10sdp"
+             android:layout_marginTop="1dp"
+             android:layout_marginRight="@dimen/_10sdp"
+             android:layout_marginBottom="@dimen/_5sdp"
+
+             android:textColor="@color/color_grey"
+             android:visibility="visible" />-->
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/detailBtn"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_20sdp"
+            android:background="@drawable/rounded_reports_button_gradient_border"
+            android:elevation="@dimen/_4sdp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:paddingLeft="@dimen/_15sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingRight="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:text="View Details"
+            android:textColor="@color/colorPrimary"
+            android:visibility="visible" />
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

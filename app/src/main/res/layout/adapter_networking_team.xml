@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/itemTeamView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/_10sdp"
+    android:layout_marginLeft="@dimen/_10sdp"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:background="@drawable/rounded_team_dark_style"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_7sdp"
+        android:layout_marginRight="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/displayName"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/headerName1"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/displayName"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/user_"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/headerValue1"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+
+            android:layout_below="@+id/displayName"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:layout_toEndOf="@+id/headerName1"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+
+        <ImageView
+            android:id="@+id/teamIv"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_team_icon" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_7sdp"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/activeView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/headerName2"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="@dimen/_minus15sdp"
+                android:layout_toStartOf="@+id/leftTeamActiveIv"
+                android:background="@drawable/rect_fill"
+                android:backgroundTint="@color/back_bgg"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingStart="@dimen/_2sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:text="@string/active"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="italic" />
+
+
+            <TextView
+                android:id="@+id/headerValue2"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_minus15sdp"
+                android:layout_toEndOf="@+id/leftTeamActiveIv"
+                android:background="@drawable/rect_fill"
+                android:backgroundTint="@color/back_bgg"
+                android:gravity="center"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingEnd="@dimen/_2sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:textColor="@color/green" />
+
+            <ImageView
+                android:id="@+id/leftTeamActiveIv"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_circle_fill"
+                android:backgroundTint="@color/back_bgg"
+                android:padding="@dimen/_1sdp"
+                android:src="@drawable/ic_check_mark_fill" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/deActiveView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/headerName3"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="@dimen/_minus15sdp"
+                android:layout_toStartOf="@+id/teamDeactiveIv"
+                android:background="@drawable/rect_fill"
+                android:backgroundTint="@color/back_bgg"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:maxLines="1"
+                android:paddingStart="@dimen/_2sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:text="@string/deactive"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="italic" />
+
+
+            <TextView
+                android:id="@+id/headerValue3"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_minus15sdp"
+                android:layout_toEndOf="@+id/teamDeactiveIv"
+                android:background="@drawable/rect_fill"
+                android:backgroundTint="@color/back_bgg"
+                android:gravity="center"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingEnd="@dimen/_2sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:textColor="@android:color/holo_red_dark" />
+
+            <ImageView
+                android:id="@+id/teamDeactiveIv"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_circle_fill"
+                android:backgroundTint="@color/back_bgg"
+                android:padding="@dimen/_1sdp"
+                android:src="@drawable/ic_cross_mark_fill" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/userShareView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_bottom_white"
+        android:backgroundTint="@color/colorPrimaryMoreDark"
+        android:paddingLeft="@dimen/_10sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingRight="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_7sdp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/userShareTv"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:paddingBottom="@dimen/_3sdp"
+            android:textColor="@color/colorPrimary" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/userShareTv"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:id="@+id/userCopy"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_copy_but"
+                android:backgroundTint="@color/colorPrimary"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:minWidth="@dimen/_58sdp"
+                android:padding="@dimen/_3sdp"
+                android:text="@string/copy_link"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/userShare"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_share_but"
+                android:backgroundTint="@color/colorAccentDark"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:minWidth="@dimen/_58sdp"
+                android:padding="@dimen/_3sdp"
+                android:text="@string/share"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

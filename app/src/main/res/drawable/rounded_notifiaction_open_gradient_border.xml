@@ -1,0 +1,15 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="@dimen/_5sdp" />
+    <gradient
+        android:angle="90"
+        android:centerColor="@color/notification_bg_dark_color"
+        android:centerX="45%"
+        android:centerY="45%"
+        android:endColor="@color/notification_bg_light_color"
+        android:startColor="@color/notification_bg_light_color"
+        android:type="linear" />
+    <stroke
+        android:width="@dimen/_1sdp"
+        android:color="@color/colorAccentMoreLight" />
+</shape>

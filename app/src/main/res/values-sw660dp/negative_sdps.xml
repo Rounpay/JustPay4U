@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="_minus1sdp">-2.20dp</dimen>
+    <dimen name="_minus15sdp">-33.00dp</dimen>
+    <dimen name="_minus20sdp">-44.00dp</dimen>
+    <dimen name="_minus25sdp">-55.00dp</dimen>
+</resources>

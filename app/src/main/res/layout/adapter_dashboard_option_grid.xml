@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_prepaid"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/_2sdp"
+    android:layout_marginBottom="@dimen/_2sdp"
+    android:padding="@dimen/_4sdp"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="@dimen/_45sdp"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:adjustViewBounds="true"
+        app:srcCompat="@drawable/placeholder_square" />
+
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/TextAppearance.AppCompat.Caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:lines="2"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:text="Prepaid"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/comingsoonTv"
+        style="@style/TextAppearance.Compat.Notification.Info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:background="@drawable/rounded_primary"
+        android:elevation="@dimen/_2sdp"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:gravity="center"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:padding="@dimen/_3sdp"
+        android:text="Coming Soon"
+        android:textColor="@android:color/white" />
+</RelativeLayout>
+
+

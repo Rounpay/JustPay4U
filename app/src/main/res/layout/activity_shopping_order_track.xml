@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/allDataView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/orderNo"
+                    style="@style/TextAppearance.AppCompat.Small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_10sdp"
+                    android:text="Order No - ASON100002712"
+                    android:textColor="@color/greycon" />
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/orderNo"
+                    android:background="@color/light_grey" />
+
+                <RelativeLayout
+                    android:id="@+id/ll_main_cat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view1"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5sdp">
+
+
+                    <ImageView
+                        android:id="@+id/iv_product_image"
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="@dimen/_90sdp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/placeholder_square" />
+
+                    <TextView
+                        android:id="@+id/tv_description"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_toRightOf="@+id/iv_product_image"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="3"
+                        android:text="DESIGNER COUPLE DRESS(SHIRT FOR MEN)(KURTI FOR WOMEN)(WHITE)"
+                        android:textColor="@color/black" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_description"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:layout_toLeftOf="@+id/quantityView"
+                        android:layout_toRightOf="@+id/iv_product_image"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:id="@+id/subDescription"
+                            style="@style/TextAppearance.AppCompat.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:maxLines="2"
+                            android:paddingTop="@dimen/_2sdp"
+                            android:paddingBottom="@dimen/_2sdp"
+                            android:text="4 GB RAM"
+                            android:textColor="@color/greycon"
+
+                            android:visibility="visible" />
+
+
+                        <LinearLayout
+                            android:id="@+id/priceView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+
+
+                            android:layout_toRightOf="@+id/iv_product_image"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_orignal_price"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:fontFamily="sans-serif-medium"
+                                android:gravity="left"
+                                android:singleLine="true"
+                                android:text="Rs 1200"
+                                android:textColor="?attr/colorPrimaryDark" />
+
+                            <TextView
+                                android:id="@+id/tv_mrp"
+                                style="@style/TextAppearance.AppCompat.Small"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:singleLine="true"
+                                android:text="Rs 1250"
+                                android:textColor="@color/grey" />
+
+                            <TextView
+                                android:id="@+id/tv_total_discount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:singleLine="true"
+                                android:text="dfdfgf"
+                                android:textColor="@color/red"
+                                android:textSize="@dimen/_9sdp"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_shipping"
+                            style="@style/TextAppearance.AppCompat.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:maxLines="2"
+                            android:text="Shipping Charge: Rs 40"
+                            android:textColor="@color/black" />
+
+                        <LinearLayout
+                            android:id="@+id/discountView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Caption"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/rounded_light_red"
+                                android:fontFamily="sans-serif-medium"
+                                android:paddingLeft="@dimen/_5sdp"
+                                android:paddingTop="@dimen/_2sdp"
+                                android:paddingRight="@dimen/_5sdp"
+                                android:paddingBottom="@dimen/_2sdp"
+                                android:text="Discount"
+                                android:textColor="@android:color/white" />
+
+                            <TextView
+                                android:id="@+id/discountText"
+                                style="@style/TextAppearance.AppCompat.Caption"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:singleLine="true"
+                                android:text="Rs. 50"
+                                android:textColor="@color/red1"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_deleivery"
+                            style="@style/TextAppearance.AppCompat.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_2sdp"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:maxLines="2"
+                            android:text="Delivery by, Wed May 8 "
+                            android:textColor="@color/black"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/quantityView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_description"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="@dimen/_4sdp"
+                        android:background="@drawable/rounded_tab_not_selected"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:paddingTop="@dimen/_3sdp"
+                        android:paddingRight="@dimen/_5sdp"
+                        android:paddingBottom="@dimen/_3sdp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/qtyTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Qty: 1"
+                            android:textColor="@android:color/black" />
+
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+
+                    android:layout_below="@+id/ll_main_cat"
+                    android:background="@color/light_grey" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/title"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/view2"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:padding="@dimen/_10sdp"
+                    android:text="Tracking Details &amp; Current Location"
+                    android:textColor="@color/greycon" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/title"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:paddingTop="@dimen/_5sdp"
+                    tools:listitem="@layout/adapter_shopping_timeline" />
+            </RelativeLayout>
+
+            <include
+                android:id="@+id/noDataView"
+                layout="@layout/no_data_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/noNetworkView"
+                layout="@layout/network_error_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>

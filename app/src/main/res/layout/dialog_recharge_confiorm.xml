@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_5sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_10sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/logo"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/_10sdp" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:layout_toLeftOf="@+id/amount"
+                    android:layout_toRightOf="@+id/logo"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/operator"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="200"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/number"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="200"
+                        android:textColor="@color/greycon" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/amount"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="200"
+                    android:textColor="@android:color/holo_red_dark" />
+            </RelativeLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/forPgDetails"
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp">
+
+
+                <TextView
+                    android:id="@+id/balanceAmtLabel"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Wallet Balance"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="@id/balanceAmt"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/balanceAmt"
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Your Remaining Balance : ₹0"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintTop_toBottomOf="@id/balanceAmtLabel"
+                    app:layout_constraintEnd_toStartOf="@id/walletAmt"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:layout_editor_absoluteY="18dp" />
+
+                <TextView
+                    android:id="@+id/commAmountLabel"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Commission Amount"
+                    android:textColor="@android:color/holo_green_dark"
+                    app:layout_constraintEnd_toStartOf="@id/commAmount"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/balanceAmt" />
+
+                <TextView
+                    android:id="@+id/commAmount"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:text="₹0"
+                    android:textColor="@android:color/holo_green_dark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/commAmountLabel"
+                    app:layout_constraintStart_toEndOf="@id/commAmountLabel"
+                    app:layout_constraintTop_toTopOf="@id/commAmountLabel" />
+
+                <TextView
+                    android:id="@+id/requiredAmtLabel"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="You have to pay"
+                    android:textColor="@android:color/holo_red_dark"
+                    app:layout_constraintEnd_toStartOf="@id/requiredAmt"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/commAmountLabel" />
+
+                <TextView
+                    android:id="@+id/requiredAmt"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:text="₹0"
+                    android:textColor="@android:color/holo_red_dark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/requiredAmtLabel"
+                    app:layout_constraintStart_toEndOf="@id/requiredAmtLabel"
+                    app:layout_constraintTop_toTopOf="@id/requiredAmtLabel" />
+                <TextView
+                    android:id="@+id/walletAmt"
+                    style="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:text="₹0"
+                    android:textColor="@android:color/holo_green_dark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/balanceAmt"
+                    app:layout_constraintBottom_toBottomOf="@id/balanceAmt"
+                    app:layout_constraintTop_toTopOf="@id/balanceAmtLabel" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/incentive"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_toLeftOf="@id/ll_browse_plan"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:text="dwiho2fi32f"
+                android:textColor="@color/color_green"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/commView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp">
+
+                <LinearLayout
+                    android:id="@+id/lapuView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5sdp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/lapuTitle"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Lapu" />
+
+                    <!-- <android.support.v7.widget.AppCompatTextView
+                         android:id="@+id/lapuAmt"
+                         style="@style/TextAppearance.AppCompat.Body2"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:text="Lapu" />-->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/realView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_5sdp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/realTitle"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Real" />
+
+                    <!-- <android.support.v7.widget.AppCompatTextView
+                         android:id="@+id/realAmt"
+                         style="@style/TextAppearance.AppCompat.Body2"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:text="Real" />-->
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/pinPassView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:elevation="@dimen/_3sdp"
+                app:cardBackgroundColor="@color/aboutpagecolour"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <EditText
+                    android:id="@+id/pinPassEt"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:hint="Enter Pin Password"
+                    android:padding="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/black" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/walletView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/walletTypeView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/walletIv"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Subhead"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/_8sdp"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Wallet Balance"
+                            android:textColor="@color/colorPrimary" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/walletAmountTv"
+                            style="@style/TextAppearance.AppCompat.Title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginRight="@dimen/_8sdp"
+                            android:layout_toLeftOf="@+id/arrowIv"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="\u20B9 0" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/walletIv"
+                        android:layout_width="@dimen/_25sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        app:srcCompat="@drawable/ic_wallet" />
+                </RelativeLayout>
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/walletTypeView"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Your current wallet balance is low, please add money before transaction"
+                    android:textColor="@color/color_red" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/commAmountWalletLabel"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Commission Amount"
+                    android:textColor="@android:color/holo_green_dark"
+                    app:layout_constraintEnd_toStartOf="@id/commAmountWallet"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/commAmountWallet"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:text="₹0"
+                    android:textColor="@android:color/holo_green_dark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/commAmountWalletLabel"
+                    app:layout_constraintStart_toEndOf="@id/commAmountWalletLabel"
+                    app:layout_constraintTop_toTopOf="@id/commAmountWalletLabel" />
+
+                <TextView
+                    android:id="@+id/requiredAmtWalletLabel"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="You have to pay"
+                    android:textColor="@android:color/holo_red_dark"
+                    app:layout_constraintEnd_toStartOf="@id/requiredAmtWallet"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/commAmountWalletLabel" />
+
+                <TextView
+                    android:id="@+id/requiredAmtWallet"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:text="₹0"
+                    android:textColor="@android:color/holo_red_dark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/requiredAmtWalletLabel"
+                    app:layout_constraintStart_toEndOf="@id/requiredAmtWalletLabel"
+                    app:layout_constraintTop_toTopOf="@id/requiredAmtWalletLabel" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_5sdp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/cancel"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_accent_border"
+                    android:elevation="@dimen/_3sdp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:padding="@dimen/_6sdp"
+                    android:text="CANCEL"
+                    android:textColor="@android:color/holo_red_dark" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/ok"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_accent_border"
+                    android:elevation="@dimen/_3sdp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:padding="@dimen/_6sdp"
+                    android:text="CONTINUE"
+                    android:textColor="@color/green" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/addMoney"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_accent_border"
+                    android:elevation="@dimen/_3sdp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:padding="@dimen/_6sdp"
+                    android:text="PAY NOW"
+                    android:textColor="@color/green"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/bill_logo"
+                    android:text="@string/rechage_confiorm_note"
+                    android:textColor="@color/red"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/bill_logo"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:adjustViewBounds="true"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/bharat_billpay" />
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

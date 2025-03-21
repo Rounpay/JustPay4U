@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_3sdp"
+    android:background="@android:color/white"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/key"
+        style="@style/TextAppearance.AppCompat.Body2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".9"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Key "
+        android:textColor="@color/grey"
+        android:textStyle="bold" />
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Body2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".1"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text=":"
+        android:textColor="@color/grey"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/value"
+        style="@style/TextAppearance.AppCompat.Body2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Value"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+</LinearLayout>

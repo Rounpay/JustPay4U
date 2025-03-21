@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/dmr_login_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:fontFamily="sans-serif-medium"
+                android:textStyle="bold"
+                android:text="Login Sender"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_19sdp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/noticeMsg"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:gravity="center|bottom"
+                android:text="@string/dmt_msg"
+                android:textColor="@color/colorAccent" />
+
+            <LinearLayout
+                android:id="@+id/dmr_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_6sdp"
+
+                android:background="@drawable/rounded_primary_gradient"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_3sdp"
+                    android:text="Sender Number :"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/_12sdp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:background="@drawable/rounded_unfocused">
+
+
+                    <EditText
+                        android:id="@+id/senderNumberEt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/phoneBookIv"
+                        android:background="@android:color/transparent"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:hint="Enter Sender Number"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@android:color/white"
+                        android:textColorHint="@color/color_grey"
+                        android:textSize="@dimen/_12sdp" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/phoneBookIv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/ic_contact_phone"
+                        app:tint="@color/colorAccentDark" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/dmr_create"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_6sdp"
+                    android:background="@drawable/rounded_primary_gradient"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:text="First Name :"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/_12sdp" />
+
+
+                    <EditText
+                        android:id="@+id/nameEt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:background="@drawable/edittext_bg"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:hint="Enter First Name"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@android:color/white"
+                        android:textColorHint="@color/color_grey"
+                        android:textSize="@dimen/_12sdp" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:text="Last Name :"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/_12sdp" />
+
+
+                    <EditText
+                        android:id="@+id/lastNameEt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:background="@drawable/edittext_bg"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:hint="Enter Last Name"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@android:color/white"
+                        android:textColorHint="@color/color_grey"
+                        android:textSize="@dimen/_12sdp" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:text="Pincode :"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/_12sdp" />
+
+
+                    <EditText
+                        android:id="@+id/pincodeEt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:background="@drawable/edittext_bg"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:hint="Enter Pincode"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:padding="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textColor="@android:color/white"
+                        android:textColorHint="@color/color_grey"
+                        android:textSize="@dimen/_12sdp" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:text="Address :"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/_12sdp" />
+
+
+                    <EditText
+                        android:id="@+id/addressEt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:background="@drawable/edittext_bg"
+                        android:gravity="center_vertical"
+                        android:hint="Enter Address"
+                        android:padding="@dimen/_10sdp"
+                        android:text=""
+                        android:textColor="@android:color/white"
+                        android:textColorHint="@color/color_grey"
+                        android:textSize="@dimen/_12sdp" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:text="Date Of Birth :"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <RelativeLayout
+                        android:id="@+id/dobView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_8sdp"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:background="@drawable/rounded_unfocused">
+
+
+                        <TextView
+                            android:id="@+id/dobTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:hint="Select Date of Birth"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:text=""
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@color/color_grey"
+                            android:textSize="@dimen/_12sdp" />
+
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/_16sdp"
+                            app:srcCompat="@drawable/ic_calendar_icon"
+                            app:tint="@color/colorAccentDark" />
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/submit"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_6sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@drawable/rounded_accent"
+                    android:elevation="2dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Create Beneficiary"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/recent_login_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_6sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:background="@drawable/rounded_primary_gradient"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Recent Sender Login"
+                    android:textColor="@color/colorAccent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recentRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:paddingTop="@dimen/_5sdp"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/adapter_recent_dmr_login" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sender_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_6sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginRight="@dimen/_6sdp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icon_phone"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    app:srcCompat="@drawable/ic_sender" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/dmr_logout"
+                    android:layout_toRightOf="@+id/icon_phone"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/sender_name"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_2sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Name"
+                        android:textColor="@color/colorAccentDark" />
+
+                    <TextView
+                        android:id="@+id/sender_num"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Number"
+                        android:textColor="@color/colorAccentLight" />
+
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/dmr_logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="right"
+                    android:padding="@dimen/_8sdp"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/ic_logout" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/rounded_reports_gradient_border"
+
+                android:orientation="vertical"
+                android:padding="@dimen/_7sdp">
+
+                <LinearLayout
+                    android:id="@+id/balanceTitleView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_gravity="center"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/ic_wallet" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_toRightOf="@+id/balanceIcon"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Subhead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Remainig Balance"
+                            android:textColor="@android:color/white" />
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Body1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/balancetv"
+                            android:layout_toRightOf="@+id/balanceIcon"
+                            android:fontFamily="sans-serif-condensed"
+                            android:text="Your remaining wallet balance is"
+                            android:textColor="@android:color/white" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- <View
+                     android:layout_width="match_parent"
+                     android:layout_height="1dp"
+                     android:background="@color/light_grey" />-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/balanceRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/balanceTitleView"
+                    android:clipToPadding="false"
+                    android:paddingTop="@dimen/_4sdp"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/adapter_wallet_balance" />
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/rounded_primary_gradient"
+                android:orientation="horizontal"
+                android:padding="@dimen/_7sdp">
+
+                <ImageView
+                    android:id="@+id/balanceIcon"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_gravity="center"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/ic_profits" />
+
+                <LinearLayout
+                    android:id="@+id/balanceDetailView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_toRightOf="@+id/balanceIcon"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/balancetv"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Remainig Limits"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/balanceMsgTv"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/balancetv"
+                        android:layout_toRightOf="@+id/balanceIcon"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="Your remaining maximum transaction limit is"
+                        android:textColor="@android:color/white" />
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/balanceDetailView"
+                    android:layout_marginTop="@dimen/_5sdp">
+
+                    <TextView
+                        android:id="@+id/monthlyLimitTv"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/remaining"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text=" Monthly Limit : "
+                        android:textColor="@color/color_red"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/remaining"
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="center"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Limit Amount"
+                        android:textColor="@color/color_blue" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/rounded_primary_gradient"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/addBeneficiaryView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_7sdp"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:layout_marginBottom="@dimen/_7sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_reports_button_gradient_border"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_8sdp">
+
+
+                    <ImageView
+                        android:id="@+id/benificiaryIcon"
+                        android:layout_width="@dimen/_28sdp"
+                        android:layout_height="@dimen/_28sdp"
+                        app:srcCompat="@drawable/ic_add_user"
+                        app:tint="@color/colorPrimary" />
+
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_toRightOf="@+id/benificiaryIcon"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center"
+                        android:text="Add Beneficiary"
+                        android:textColor="@color/colorPrimary" />
+
+                    <!--<android.support.v7.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        app:srcCompat="@drawable/ic_arrow_forward" />-->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/dmtReportView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_7sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_reports_button_gradient_border"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_8sdp">
+
+
+                    <ImageView
+                        android:id="@+id/dmtIcon"
+                        android:layout_width="@dimen/_28sdp"
+                        android:layout_height="@dimen/_28sdp"
+                        app:srcCompat="@drawable/ic_transaction"
+                        app:tint="@color/colorPrimary" />
+
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_toRightOf="@+id/dmtIcon"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center"
+                        android:text="DMT Report"
+                        android:textColor="@color/colorPrimary" />
+
+                    <!--<android.support.v7.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        app:srcCompat="@drawable/ic_arrow_forward" />-->
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/rounded_primary_gradient"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/beneListView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <include layout="@layout/layout_search" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:nestedScrollingEnabled="false"
+                        android:paddingTop="@dimen/_7sdp"
+                        android:visibility="visible"
+                        tools:itemCount="1"
+                        tools:listitem="@layout/adapter_beneficiary" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/loaderView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_40sdp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ProgressBar
+                        android:id="@+id/progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:indeterminateDrawable="@drawable/progess_effect" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/progress"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="center"
+                        android:text="Loading Beneficiary Please Wait..."
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <include
+                    android:id="@+id/noDataView"
+                    layout="@layout/no_data_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/noNetworkView"
+                    layout="@layout/network_error_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
+
+
+
+

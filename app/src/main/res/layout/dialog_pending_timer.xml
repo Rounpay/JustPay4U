@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/popup"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rect"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleTv"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_40sdp"
+            android:layout_marginRight="@dimen/_40sdp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:text="Transaction Pending" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/closeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/titleTv"
+            android:layout_alignBottom="@+id/titleTv"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingRight="@dimen/_10sdp"
+            app:srcCompat="@drawable/ic_cancel_black_24dp" />
+    </RelativeLayout>
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottomBtnView"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_horizontal"
+        android:paddingTop="@dimen/_15sdp"
+        android:text="Please wait for"
+        android:textColor="@color/colorPrimary" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+
+        <TextView
+            android:id="@+id/minute"
+            style="@style/TextAppearance.AppCompat.Display1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:background="@drawable/rounded_primary_border"
+            android:elevation="@dimen/_2sdp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:padding="@dimen/_7sdp"
+            android:text="00"
+            android:textColor="@color/color_red" />
+
+        <TextView
+            style="@style/TextAppearance.Compat.Notification.Info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/minute"
+            android:layout_alignLeft="@+id/minute"
+            android:layout_alignRight="@+id/minute"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="Minutes"
+            android:textColor="@color/dark_grey" />
+
+        <TextView
+            android:id="@+id/minute_second_colan"
+            style="@style/TextAppearance.AppCompat.Display1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:layout_toRightOf="@+id/minute"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:paddingTop="@dimen/_7sdp"
+            android:paddingBottom="@dimen/_7sdp"
+            android:text=":"
+            android:textColor="@color/color_red" />
+
+        <TextView
+            android:id="@+id/second"
+            style="@style/TextAppearance.AppCompat.Display1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:layout_toRightOf="@+id/minute_second_colan"
+            android:background="@drawable/rounded_primary_border"
+            android:elevation="@dimen/_2sdp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:padding="@dimen/_7sdp"
+            android:text="00"
+            android:textColor="@color/color_red" />
+
+        <TextView
+            style="@style/TextAppearance.Compat.Notification.Info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/second"
+            android:layout_alignLeft="@+id/second"
+            android:layout_alignRight="@+id/second"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:layout_toRightOf="@+id/minute_second_colan"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="Seconds"
+            android:textColor="@color/dark_grey" />
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_2sdp"
+        android:background="@color/icon_color" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/msgView"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottomBtnView"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/_15sdp"
+        android:text="We are waiting for Payment Confirmation. Please stay with Us"
+        android:textColor="@color/color_indigo" />
+
+
+</LinearLayout>
+
+
+

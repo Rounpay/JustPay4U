@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/shareView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/back_bgg"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_12sdp">
+
+                <!--<androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_7sdp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Transaction Receipt"
+                    android:textColor="@android:color/black" />-->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/statusIcon"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    app:srcCompat="@drawable/ic_check_mark" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/statusTv"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:text="Failed!! Unknown Error"
+                    android:textColor="@color/green" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/statusMsg"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:textColor="@android:color/black" />
+
+                <LinearLayout
+                    android:id="@+id/addressDetailsView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/companyName"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="7.2"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:gravity="center_vertical"
+                            android:text="dreamseller"
+                            android:textColor="@android:color/black" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/appLogo"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2.8"
+                            android:adjustViewBounds="true"
+                            app:srcCompat="@drawable/app_full_logo" />
+
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/address"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="center_vertical"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleTv"
+                    style="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Transaction Details"
+                    android:textColor="@android:color/black" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/operatorImage"
+                        android:layout_width="@dimen/_33sdp"
+                        android:layout_height="@dimen/_33sdp"
+                        android:layout_centerVertical="true"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/ic_tower" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/opTv"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/bbpsLogo"
+                        android:layout_toRightOf="@+id/operatorImage"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/_5sdp"
+                        android:text=""
+                        android:textColor="@android:color/black" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+
+                        android:id="@+id/bbpsLogo"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:adjustViewBounds="true"
+                        app:srcCompat="@drawable/aeps_logo" />
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:nestedScrollingEnabled="false"
+                    tools:listitem="@layout/adapter_receipt_details" />
+
+
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Shop Details"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/outletDetail"
+                    style="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:textColor="@android:color/darker_gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/bt_repeat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:background="@color/colorAccent"
+                    android:gravity="center"
+                    android:padding="@dimen/_8sdp"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        app:srcCompat="@drawable/ic_repeat"
+                        app:tint="@android:color/white" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Repeat this transaction"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/bt_share"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:padding="@dimen/_8sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        app:srcCompat="@drawable/ic_share_black_24dp"
+                        app:tint="@android:color/white" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Share with friends"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/bt_whatsapp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:background="@color/whatsappColor"
+                    android:gravity="center"
+                    android:padding="@dimen/_8sdp"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        app:srcCompat="@drawable/ic_whatsapp_outline"
+                        app:tint="@android:color/white" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Share with Whatsapp"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <ImageView
+        android:id="@+id/closeIv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_3sdp"
+        android:padding="@dimen/_8sdp"
+        app:srcCompat="@mipmap/close_btn" />
+</RelativeLayout>

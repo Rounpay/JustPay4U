@@ -1,0 +1,2143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorAccentMoreLight" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/editProfile">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_200sdp"
+                    android:background="@drawable/rounded_accent_bottom_right_100_gradient" />
+
+                <LinearLayout
+                    android:id="@+id/userDetailView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:background="@drawable/rounded_primary_border_gradient_fill"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_12sdp">
+
+                    <FrameLayout
+                        android:id="@+id/userIconView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/userImage"
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="@dimen/_80sdp"
+                            android:src="@drawable/user_icon" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_gravity="bottom|right"
+                            android:layout_marginRight="@dimen/_3sdp"
+                            app:srcCompat="@drawable/ic_camera_col" />
+                    </FrameLayout>
+
+                    <!--<android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/userImage"
+                        android:layout_width="@dimen/_65sdp"
+                        android:layout_height="@dimen/_65sdp"
+                        android:src="@drawable/user_icon" />-->
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/name"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text=""
+                        android:textColor="@color/colorPrimary" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/role"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Role"
+                        android:textColor="@color/colorPrimary"
+                        android:visibility="gone" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/TextAppearance.AppCompat.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="UID - "
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:textColor="@color/colorPrimary"
+                            android:visibility="visible" />
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/roleTv"
+                            style="@style/TextAppearance.AppCompat.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:textColor="@color/colorPrimary"
+                            android:visibility="visible" />
+                        <TextView
+                            android:id="@+id/verifyUserIv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_4sdp"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:text="" />
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/mobile"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text=""
+                        android:textColor="@color/colorAccent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/email"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text=""
+                        android:textColor="@color/colorAccent" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_reports_gradient_border"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/balanceTitleView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:gravity="center_vertical">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:background="@drawable/rounded_primary"
+                                android:backgroundTint="@color/colorPrimaryLight"
+                                android:padding="@dimen/_5sdp"
+                                app:srcCompat="@drawable/ic_wallet_line" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/balanceTitle"
+                                style="@style/TextAppearance.AppCompat.Medium"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/_37sdp"
+                                android:layout_toLeftOf="@+id/addMoneyView"
+                                android:fontFamily="sans-serif-medium"
+                                android:text="Balance"
+                                android:textColor="@android:color/white" />
+
+                            <LinearLayout
+                                android:id="@+id/addMoneyView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:background="@drawable/rounded_accent_gradient_border"
+                                android:elevation="@dimen/_2sdp"
+                                android:foreground="?selectableItemBackgroundBorderless"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:paddingLeft="@dimen/_7sdp"
+                                android:paddingTop="@dimen/_5sdp"
+                                android:paddingRight="@dimen/_7sdp"
+                                android:paddingBottom="@dimen/_5sdp"
+                                android:visibility="gone">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="@dimen/_14sdp"
+                                    android:layout_height="@dimen/_14sdp"
+                                    android:layout_marginRight="@dimen/_4sdp"
+                                    android:gravity="center"
+                                    app:srcCompat="@drawable/ic_add_fund"
+                                    app:tint="@color/white" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:text="Add money"
+                                    android:textColor="@color/white" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <!-- <View
+                             android:layout_width="match_parent"
+                             android:layout_height="1dp"
+                             android:background="@color/light_grey" />-->
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/balanceRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/balanceTitleView"
+                            android:clipToPadding="false"
+                            android:nestedScrollingEnabled="false"
+                            android:paddingLeft="@dimen/_8sdp"
+                            android:paddingTop="@dimen/_10sdp"
+                            android:paddingRight="@dimen/_10sdp"
+                            tools:itemCount="2"
+                            tools:listitem="@layout/adapter_wallet_balance" />
+
+                        <LinearLayout
+                            android:id="@+id/btnView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/ifscView"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="right"
+                            android:gravity="center"
+                            android:padding="@dimen/_5sdp"
+                            android:visibility="visible">
+
+
+                            <!-- <LinearLayout
+                                 android:id="@+id/addMoneyView"
+                                 android:layout_width="0dp"
+                                 android:layout_height="wrap_content"
+                                 android:layout_alignParentRight="true"
+                                 android:layout_centerVertical="true"
+                                 android:layout_margin="@dimen/_5sdp"
+                                 android:layout_weight="1"
+                                 android:background="@drawable/rounded_accent_gradient_border"
+                                 android:elevation="@dimen/_2sdp"
+                                 android:foreground="?selectableItemBackgroundBorderless"
+                                 android:gravity="center"
+                                 android:orientation="horizontal"
+                                 android:paddingLeft="@dimen/_7sdp"
+                                 android:paddingTop="@dimen/_5sdp"
+                                 android:paddingRight="@dimen/_7sdp"
+                                 android:paddingBottom="@dimen/_5sdp"
+                                 android:visibility="visible">
+
+                                 <androidx.appcompat.widget.AppCompatImageView
+                                     style="@style/TextAppearance.AppCompat.Body2"
+                                     android:layout_width="@dimen/_16sdp"
+                                     android:layout_height="@dimen/_16sdp"
+                                     android:layout_marginRight="@dimen/_4sdp"
+                                     android:gravity="center"
+                                     app:srcCompat="@drawable/ic_add_wallet" />
+
+                                 <androidx.appcompat.widget.AppCompatTextView
+                                     style="@style/TextAppearance.AppCompat.Body2"
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="wrap_content"
+                                     android:fontFamily="sans-serif-condensed-medium"
+                                     android:text="Add money"
+                                     android:textColor="@color/colorPrimary" />
+                             </LinearLayout>-->
+
+                            <LinearLayout
+                                android:id="@+id/sendMoneyView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="@dimen/_5sdp"
+                                android:layout_weight="1"
+                                android:background="@drawable/rounded_accent_gradient_border"
+                                android:elevation="@dimen/_2sdp"
+                                android:foreground="?selectableItemBackgroundBorderless"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:paddingLeft="@dimen/_7sdp"
+                                android:paddingTop="@dimen/_5sdp"
+                                android:paddingRight="@dimen/_7sdp"
+                                android:paddingBottom="@dimen/_5sdp"
+                                android:visibility="gone">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="@dimen/_16sdp"
+                                    android:layout_height="@dimen/_16sdp"
+                                    android:layout_marginRight="@dimen/_4sdp"
+                                    android:backgroundTint="@android:color/transparent"
+                                    android:gravity="center"
+                                    app:srcCompat="@drawable/ic_send_money"
+                                    app:tint="@color/colorPrimary" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/sendMoneyTv"
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:text="AEPS Settlement"
+                                    android:textColor="@color/colorPrimary" />
+                            </LinearLayout>
+
+
+                            <!--<LinearLayout
+                                android:id="@+id/btnView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_gravity="right"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:gravity="right">
+
+                                <android.support.v7.widget.AppCompatImageView
+                                    android:id="@+id/msg"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/_5sdp"
+                                    android:foreground="?selectableItemBackgroundBorderless"
+                                    android:padding="@dimen/_5sdp"
+                                    app:srcCompat="@drawable/ic_text_messages" />
+
+                                <android.support.v7.widget.AppCompatImageView
+                                    android:id="@+id/share"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:foreground="?selectableItemBackgroundBorderless"
+                                    android:padding="@dimen/_5sdp"
+                                    app:srcCompat="@drawable/ic_share_black_24dp"
+                                    app:tint="@color/colorPrimary" />
+                            </LinearLayout>-->
+                        </LinearLayout>
+                        <!-- <android.support.v7.widget.AppCompatTextView
+                             android:id="@+id/moveBalanceTv"
+                             style="@style/TextAppearance.AppCompat.Body2"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_gravity="right"
+                             android:visibility="gone"
+                             android:layout_marginTop="@dimen/_3sdp"
+                             android:fontFamily="sans-serif-medium"
+                             android:foreground="?android:selectableItemBackground"
+                             android:padding="@dimen/_5sdp"
+                             android:text="Move Balance"
+                             android:textColor="@color/colorPrimary" />-->
+                    </LinearLayout>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <!--  <android.support.v7.widget.CardView
+                  android:id="@+id/userDetailCard"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@+id/logoContainer"
+                  android:layout_marginLeft="@dimen/_7sdp"
+                  android:layout_marginRight="@dimen/_7sdp"
+                  android:layout_marginBottom="@dimen/_7sdp"
+                  android:visibility="visible"
+                  card_view:cardCornerRadius="4dp">
+
+                  <LinearLayout
+                      android:id="@+id/userDetail"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:padding="@dimen/_8sdp">
+
+                      <LinearLayout
+                          android:id="@+id/detailTitleView"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginLeft="@dimen/_5sdp"
+                          android:layout_marginBottom="@dimen/_5sdp"
+                          android:gravity="center_vertical">
+
+                          <android.support.v7.widget.AppCompatImageView
+                              android:layout_width="@dimen/_24sdp"
+                              android:layout_height="@dimen/_24sdp"
+                              app:srcCompat="@drawable/ic_id_card" />
+
+                          <android.support.v7.widget.AppCompatTextView
+                              android:id="@+id/detailTitle"
+                              style="@style/TextAppearance.AppCompat.Medium"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_marginLeft="@dimen/_5sdp"
+                              android:fontFamily="sans-serif-medium"
+                              android:text="Details"
+                              android:textColor="@color/grey" />
+                      </LinearLayout>
+                      &lt;!&ndash;<View
+                          android:layout_width="match_parent"
+                          android:layout_height="1dp"
+                          android:background="@color/light_grey" />&ndash;&gt;
+                      &lt;!&ndash; <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:gravity="center"
+                           android:padding="5dp">
+
+                           <TextView
+                               android:id="@+id/nameLabel"
+                               style="@style/TextAppearance.AppCompat.Subhead"
+                               android:layout_width="0dp"
+                               android:layout_height="wrap_content"
+                               android:layout_weight="0.28"
+                               android:fontFamily="sans-serif-medium"
+                               android:text="" />
+
+                           <TextView
+                               style="@style/TextAppearance.AppCompat.Subhead"
+                               android:layout_width="0dp"
+                               android:layout_height="wrap_content"
+                               android:layout_weight="0.05"
+                               android:fontFamily="sans-serif-medium"
+                               android:text=":" />
+
+                           <TextView
+                               android:id="@+id/name"
+                               style="@style/TextAppearance.AppCompat.Subhead"
+                               android:layout_width="0dp"
+                               android:layout_height="wrap_content"
+                               android:layout_weight="0.67"
+                               android:text="" />
+                       </LinearLayout>&ndash;&gt;
+
+                      &lt;!&ndash; <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:gravity="center"
+                           android:padding="5dp">
+
+                           <TextView
+                               android:id="@+id/roleLabel"
+                               style="@style/TextAppearance.AppCompat.Subhead"
+                               android:layout_width="0dp"
+                               android:layout_height="wrap_content"
+                               android:layout_weight="0.28"
+                               android:fontFamily="sans-serif-medium"
+                               android:text="Role" />
+
+                           <TextView
+                               style="@style/TextAppearance.AppCompat.Subhead"
+                               android:layout_width="0dp"
+                               android:layout_height="wrap_content"
+                               android:layout_weight="0.05"
+                               android:fontFamily="sans-serif-medium"
+                               android:text=":" />
+
+                           <TextView
+                               android:id="@+id/role"
+                               style="@style/TextAppearance.AppCompat.Subhead"
+                               android:layout_width="0dp"
+                               android:layout_height="wrap_content"
+                               android:layout_weight="0.67"
+                               android:text="" />
+                       </LinearLayout>&ndash;&gt;
+
+                      &lt;!&ndash;  <LinearLayout
+                            android:id="@+id/outletNameView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp">
+
+                            <TextView
+                                android:id="@+id/outletNameLabel"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.28"
+                                android:fontFamily="sans-serif-medium"
+                                android:text="Outlet Name" />
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.05"
+                                android:fontFamily="sans-serif-medium"
+                                android:text=":" />
+
+                            <TextView
+                                android:id="@+id/outletName"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.67"
+                                android:text="" />
+                        </LinearLayout>&ndash;&gt;
+
+                      <LinearLayout
+                          android:id="@+id/passwordView"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:gravity="center"
+                          android:padding="5dp"
+                          android:visibility="gone">
+
+                          <TextView
+                              android:id="@+id/passwordLabel"
+                              style="@style/TextAppearance.AppCompat.Subhead"
+                              android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="0.4"
+                              android:fontFamily="sans-serif-medium"
+                              android:text="Password" />
+
+                          <TextView
+                              style="@style/TextAppearance.AppCompat.Subhead"
+                              android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="0.05"
+                              android:fontFamily="sans-serif-medium"
+                              android:text=":" />
+
+                          <TextView
+                              android:id="@+id/password"
+                              style="@style/TextAppearance.AppCompat.Subhead"
+                              android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="0.55"
+                              android:text="" />
+                      </LinearLayout>
+
+                      &lt;!&ndash;<LinearLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:gravity="center"
+                          android:padding="5dp">
+
+                          <TextView
+                              android:id="@+id/mobileLabel"
+                              style="@style/TextAppearance.AppCompat.Subhead"
+                              android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="0.28"
+                              android:fontFamily="sans-serif-medium"
+                              android:text="Mobile No" />
+
+                          <TextView
+                              style="@style/TextAppearance.AppCompat.Subhead"
+                              android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="0.05"
+                              android:fontFamily="sans-serif-medium"
+                              android:text=":" />
+
+                          <TextView
+                              android:id="@+id/mobile"
+                              style="@style/TextAppearance.AppCompat.Subhead"
+                              android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="0.67"
+                              android:text="" />
+                      </LinearLayout>&ndash;&gt;
+
+                      &lt;!&ndash;  <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="5dp">
+
+                            <TextView
+                                android:id="@+id/emailLabel"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.28"
+                                android:fontFamily="sans-serif-medium"
+                                android:text="Email Id" />
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.05"
+                                android:fontFamily="sans-serif-medium"
+                                android:text=":" />
+
+                            <TextView
+                                android:id="@+id/email"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.67"
+                                android:text="" />
+                        </LinearLayout>&ndash;&gt;
+
+
+                  </LinearLayout>
+              </android.support.v7.widget.CardView>-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rankDetail"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/logoContainer"
+        android:layout_marginLeft="@dimen/_7sdp"
+        android:layout_marginRight="@dimen/_7sdp"
+        android:layout_marginBottom="@dimen/_7sdp"
+        android:background="@drawable/rounded_team_light_style"
+        android:orientation="horizontal"
+        android:padding="@dimen/_8sdp"
+        android:visibility="visible">
+
+        <View
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lastPkgTVLabel"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="MemberShip"
+            android:textColor="@color/lightWhite"
+            app:layout_constraintEnd_toStartOf="@id/rankLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lastPkgTV"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@id/rank"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lastPkgTVLabel" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rankLabel"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="Rank"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/lastPkgTVLabel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rank"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/lastPkgTV"
+            app:layout_constraintTop_toBottomOf="@id/rankLabel" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/teamDetail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/logoContainer"
+        android:layout_marginLeft="@dimen/_7sdp"
+        android:layout_marginRight="@dimen/_7sdp"
+        android:layout_marginBottom="@dimen/_7sdp"
+        android:background="@drawable/rounded_grey_border_fill"
+        android:orientation="horizontal"
+        android:padding="@dimen/_8sdp"
+        android:visibility="visible">
+        <View
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/colorAccent"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/todayActiveLabel"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="Total Active"
+            android:textColor="@color/greycon"
+            app:layout_constraintEnd_toStartOf="@id/todayDeactiveLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/todayActive"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toStartOf="@id/todayDeactive"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/todayActiveLabel" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/todayDeactiveLabel"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="Total Deactive"
+            android:textColor="@color/greycon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/todayActiveLabel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/todayDeactive"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/todayActive"
+            app:layout_constraintTop_toBottomOf="@id/todayDeactiveLabel" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/incomeDetail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/logoContainer"
+        android:layout_marginLeft="@dimen/_7sdp"
+        android:layout_marginRight="@dimen/_7sdp"
+        android:layout_marginBottom="@dimen/_7sdp"
+        android:background="@drawable/rounded_team_dark_style"
+        android:orientation="horizontal"
+        android:padding="@dimen/_8sdp"
+        android:visibility="visible">
+        <View
+            android:layout_width="@dimen/_1sdp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/colorAccent"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/todayincomeLabel"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="Today Income"
+            android:textColor="@color/lightWhite"
+            app:layout_constraintEnd_toStartOf="@id/totalIncomeLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/todayincome"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@id/totalIncome"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/todayincomeLabel" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/totalIncomeLabel"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="Total Income"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/todayincomeLabel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/totalIncome"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/todayincome"
+            app:layout_constraintTop_toBottomOf="@id/totalIncomeLabel" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/holdComm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/logoContainer"
+        android:layout_marginLeft="@dimen/_7sdp"
+        android:layout_marginRight="@dimen/_7sdp"
+        android:layout_marginBottom="@dimen/_7sdp"
+         android:background="@drawable/rounded_grey_border_fill"
+        android:orientation="horizontal"
+        android:padding="@dimen/_8sdp"
+        android:visibility="visible">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/HoldincomeLabel"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="@string/hold_commission"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/holdincome"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/HoldincomeLabel" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <LinearLayout
+                android:id="@+id/addressDetail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/logoContainer"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@drawable/rounded_primary_gradient"
+                android:orientation="vertical"
+                android:padding="@dimen/_8sdp"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/addressTitleView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_primary"
+                        android:padding="@dimen/_5sdp"
+                        app:srcCompat="@drawable/ic_address_location" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/addressTitle"
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Address"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <!-- <View
+                     android:layout_width="match_parent"
+                     android:layout_height="1dp"
+                     android:background="@color/light_grey" />-->
+                <LinearLayout
+                    android:id="@+id/outletNameView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:paddingLeft="@dimen/_4sdp"
+                    android:paddingTop="@dimen/_4sdp"
+                    android:paddingRight="@dimen/_4sdp">
+
+                    <TextView
+                        android:id="@+id/outletNameLabel"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.28"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Outlet Name"
+
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.05"
+                        android:fontFamily="sans-serif-medium"
+                        android:text=":"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/outletName"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.677"
+                        android:fontFamily="sans-serif-condensed"
+
+                        android:text=""
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/pincodeView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:paddingLeft="@dimen/_4sdp"
+                    android:paddingTop="@dimen/_4sdp"
+                    android:paddingRight="@dimen/_4sdp">
+
+                    <TextView
+                        android:id="@+id/pincodeLabel"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.28"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Pincode"
+
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.05"
+                        android:fontFamily="sans-serif-medium"
+                        android:text=":"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/pincode"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.67"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text=""
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/cityView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/_4sdp"
+                    android:paddingTop="@dimen/_4sdp"
+                    android:paddingRight="@dimen/_4sdp">
+
+                    <TextView
+                        android:id="@+id/cityLabel"
+
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.28"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="City"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.05"
+                        android:fontFamily="sans-serif-medium"
+                        android:text=":"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/city"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.67"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text=""
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/stateView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/_4sdp"
+                    android:paddingTop="@dimen/_4sdp"
+                    android:paddingRight="@dimen/_4sdp">
+
+                    <TextView
+                        android:id="@+id/stateLabel"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.28"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="State"
+
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.05"
+                        android:fontFamily="sans-serif-medium"
+                        android:text=":"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/state"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.67"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text=""
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/addressView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_4sdp">
+
+                    <TextView
+                        android:id="@+id/addressLabel"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.28"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Address"
+
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.05"
+                        android:fontFamily="sans-serif-medium"
+                        android:text=":"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/address"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.67"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text=""
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/kycDetailCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@drawable/rounded_primary_gradient"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_5sdp">
+
+                    <LinearLayout
+                        android:id="@+id/kycTitleView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:gravity="center_vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_primary"
+                            android:padding="@dimen/_5sdp"
+                            app:srcCompat="@drawable/ic_kyc" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/kycTitle"
+                            style="@style/TextAppearance.AppCompat.Medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="KYC"
+                            android:textColor="@android:color/white" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/kycStatus"
+                            style="@style/TextAppearance.AppCompat.Body2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginBottom="@dimen/_2sdp"
+                            android:background="@drawable/rounded_reports_button_gradient_border"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:paddingLeft="@dimen/_7sdp"
+                            android:paddingTop="@dimen/_5sdp"
+                            android:paddingRight="@dimen/_7sdp"
+                            android:paddingBottom="@dimen/_5sdp"
+                            android:text="KYC COMPLETED"
+                            android:textColor="@color/colorPrimary" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/kycStatusMsg"
+                            style="@style/TextAppearance.AppCompat.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/kycStatus"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:text="Click here to apply"
+                            android:textColor="@color/red1" />
+                    </LinearLayout>
+                </RelativeLayout>
+                <!-- <View
+                     android:layout_width="match_parent"
+                     android:layout_height="1dp"
+                     android:background="@color/light_grey" />-->
+                <LinearLayout
+                    android:id="@+id/gstinView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:paddingLeft="@dimen/_4sdp"
+                    android:paddingTop="@dimen/_4sdp"
+                    android:paddingRight="@dimen/_4sdp">
+
+                    <TextView
+                        android:id="@+id/gstinLabel"
+
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.28"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="GSTIN"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.05"
+                        android:fontFamily="sans-serif-medium"
+                        android:text=":"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/gstin"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.67"
+
+                        android:fontFamily="sans-serif-condensed"
+                        android:text=""
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/aadharView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/_4sdp"
+                    android:paddingTop="@dimen/_4sdp"
+                    android:paddingRight="@dimen/_4sdp">
+
+                    <TextView
+                        android:id="@+id/aadharLabel"
+
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.28"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="AADHAR"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.05"
+                        android:fontFamily="sans-serif-medium"
+                        android:text=":"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/aadhar"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.67"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text=""
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/panView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:padding="@dimen/_4sdp">
+
+                    <TextView
+                        android:id="@+id/panLabel"
+                        style="@style/TextAppearance.AppCompat.Body2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.28"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="PAN"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.05"
+                        android:fontFamily="sans-serif-medium"
+                        android:text=":"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/pan"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.67"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text=""
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/doubleFactorLayoutContainer"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@drawable/rounded_primary_gradient"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/doubleFactor"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/rounded_primary"
+                    android:padding="@dimen/_5sdp"
+                    app:srcCompat="@drawable/ic_double_factor" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/toggleDoubleFactor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:clickable="false"
+                    android:scaleType="fitXY"
+                    android:theme="@style/ColorSwitchStyle" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_toLeftOf="@+id/toggleDoubleFactor"
+                    android:layout_toRightOf="@+id/doubleFactor"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/doubleFactorLabel"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/toggleDoubleFactor"
+                        android:layout_toRightOf="@+id/doubleFactor"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="left"
+                        android:text="Disable Double Factor"
+                        android:textColor="@android:color/white" />
+
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/doubleFactor"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="Enable/Disable double factor to make secure transactions."
+                        android:textColor="@color/color_grey_light" />
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/realApiLayoutContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@drawable/rounded_primary_gradient"
+
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/realApi"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/rounded_primary"
+                    android:padding="@dimen/_5sdp"
+                    app:srcCompat="@drawable/ic_api" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/toggleRealApi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:clickable="false"
+                    android:scaleType="fitXY"
+                    android:theme="@style/ColorSwitchStyle" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_toLeftOf="@+id/toggleRealApi"
+                    android:layout_toRightOf="@+id/realApi"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/realApiLabel"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/toggleDoubleFactor"
+                        android:layout_toRightOf="@+id/doubleFactor"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="left"
+                        android:text="Disable Real Api"
+                        android:textColor="@android:color/white" />
+
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/doubleFactor"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="Enable/Disable real api to recharge &amp; bill payment instantly with Api or Lapu."
+                        android:textColor="@color/color_grey_light" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/voiceLayoutContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@drawable/rounded_primary_gradient"
+
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/voice"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/rounded_primary"
+                    android:padding="@dimen/_5sdp"
+                    app:srcCompat="@drawable/ic_sound" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/toggleVoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:checked="true"
+                    android:clickable="false"
+                    android:scaleType="fitXY"
+                    android:theme="@style/ColorSwitchStyle" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_toLeftOf="@+id/toggleVoice"
+                    android:layout_toRightOf="@+id/voice"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/voiceLabel"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/toggleDoubleFactor"
+                        android:layout_toRightOf="@+id/doubleFactor"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="left"
+                        android:text="Disable Voice Instructions"
+                        android:textColor="@android:color/white" />
+
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/doubleFactor"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="Enable/Disable voice instructions toward attract your attentions."
+                        android:textColor="@color/color_grey_light" />
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/changePassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@drawable/rounded_primary_gradient"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/changePasswordIv"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/rounded_primary"
+                    android:padding="@dimen/_3sdp"
+                    app:srcCompat="@drawable/ic_user_password" />
+
+                <ImageView
+                    android:id="@+id/arrowchangePassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ic_arrow_right"
+                    app:tint="@android:color/white" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_toLeftOf="@+id/arrowchangePassword"
+                    android:layout_toRightOf="@+id/changePasswordIv"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/changePasswordLabel"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/toggleDoubleFactor"
+                        android:layout_toRightOf="@+id/doubleFactor"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="left"
+                        android:text="Change Password"
+                        android:textColor="@android:color/white" />
+
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/doubleFactor"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="Change login password every week or month to secure account."
+                        android:textColor="@color/color_grey_light" />
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/changePinPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@drawable/rounded_primary_gradient"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/changePinPasswordIv"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/rounded_primary"
+                    android:padding="@dimen/_5sdp"
+                    app:srcCompat="@drawable/ic_pin_password" />
+
+                <ImageView
+                    android:id="@+id/arrowchangePinPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ic_arrow_right"
+                    app:tint="@android:color/white" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_toLeftOf="@+id/arrowchangePinPassword"
+                    android:layout_toRightOf="@+id/changePinPasswordIv"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/changePinPasswordLabel"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/toggleDoubleFactor"
+                        android:layout_toRightOf="@+id/doubleFactor"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="left"
+                        android:text="Change Pin Password"
+                        android:textColor="@android:color/white" />
+
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/doubleFactor"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="Change pin password to secure transaction."
+                        android:textColor="@color/color_grey_light" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/myOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@drawable/rounded_primary_gradient"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/orderIv"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/rounded_primary"
+                    android:padding="@dimen/_5sdp"
+                    app:srcCompat="@drawable/ic_my_order" />
+
+                <ImageView
+                    android:id="@+id/arrowOrder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ic_arrow_right"
+                    app:tint="@android:color/white" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_toLeftOf="@+id/arrowOrder"
+                    android:layout_toRightOf="@+id/orderIv"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/orderLabel"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/toggleDoubleFactor"
+                        android:layout_toRightOf="@+id/doubleFactor"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="left"
+                        android:text="My Orders"
+                        android:textColor="@android:color/white" />
+
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/doubleFactor"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="View, manage current or previous shopping order"
+                        android:textColor="@color/color_grey_light" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/myWishList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@drawable/rounded_primary_gradient"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/wishlistIv"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/rounded_primary"
+                    android:padding="@dimen/_5sdp"
+                    app:srcCompat="@drawable/ic_my_wishlist" />
+
+                <ImageView
+                    android:id="@+id/arrowWishlist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ic_arrow_right"
+                    app:tint="@android:color/white" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_toLeftOf="@+id/arrowWishlist"
+                    android:layout_toRightOf="@+id/wishlistIv"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/wishlistLabel"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/toggleDoubleFactor"
+                        android:layout_toRightOf="@+id/doubleFactor"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="left"
+                        android:text="My Wishlist"
+                        android:textColor="@android:color/white" />
+
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/doubleFactor"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="View, manage shopping wishlist products"
+                        android:textColor="@color/color_grey_light" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/myAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@drawable/rounded_primary_gradient"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/addressIv"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/rounded_primary"
+                    android:padding="@dimen/_5sdp"
+                    app:srcCompat="@drawable/ic_my_addresses" />
+
+                <ImageView
+                    android:id="@+id/arrowAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ic_arrow_right"
+                    app:tint="@android:color/white" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_toLeftOf="@+id/arrowAddress"
+                    android:layout_toRightOf="@+id/addressIv"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/addressLabel"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/toggleDoubleFactor"
+                        android:layout_toRightOf="@+id/doubleFactor"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="left"
+                        android:text="My Address"
+                        android:textColor="@android:color/white" />
+
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/doubleFactor"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="View, manage all shopping address"
+                        android:textColor="@color/color_grey_light" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/myCart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@drawable/rounded_primary_gradient"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/cartIv"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/rounded_primary"
+                    android:padding="@dimen/_5sdp"
+                    app:srcCompat="@drawable/ic_my_cart" />
+
+                <ImageView
+                    android:id="@+id/arrowCart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ic_arrow_right"
+                    app:tint="@android:color/white" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_toLeftOf="@+id/arrowCart"
+                    android:layout_toRightOf="@+id/cartIv"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/cartLabel"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/toggleDoubleFactor"
+                        android:layout_toRightOf="@+id/doubleFactor"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="left"
+                        android:text="My Cart"
+                        android:textColor="@android:color/white" />
+
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/doubleFactor"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="View, manage or place order from cart"
+                        android:textColor="@color/color_grey_light" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/editProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@drawable/rounded_primary_gradient"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/editProfileIv"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/rounded_primary"
+                    android:padding="@dimen/_5sdp"
+                    app:srcCompat="@drawable/ic_edit_update" />
+
+                <ImageView
+                    android:id="@+id/arroweditProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ic_arrow_right"
+                    app:tint="@android:color/white" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_toLeftOf="@+id/arroweditProfile"
+                    android:layout_toRightOf="@+id/editProfileIv"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/editProfileLabel"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/toggleDoubleFactor"
+                        android:layout_toRightOf="@+id/doubleFactor"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="left"
+                        android:text="Update Profile And KYC"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/doubleFactor"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="Change or update user details, address and KYC"
+                        android:textColor="@color/color_grey_light" />
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/settlementAccountView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@drawable/rounded_primary_gradient"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/settlementAccounIv"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/rounded_primary"
+                    android:padding="@dimen/_5sdp"
+                    app:srcCompat="@drawable/ic_bank_color" />
+
+                <ImageView
+                    android:id="@+id/arrowsettlementAccounBank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ic_arrow_right"
+                    app:tint="@android:color/white" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_toLeftOf="@+id/arrowsettlementAccounBank"
+                    android:layout_toRightOf="@+id/settlementAccounIv"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/settlementAccounLabel"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/toggleDoubleFactor"
+                        android:layout_toRightOf="@+id/doubleFactor"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="left"
+                        android:text="Settlement Accounts"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/doubleFactor"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="Add or update multiple settlement account details for transactions"
+                        android:textColor="@color/color_grey_light" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/editBankView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_7sdp"
+                android:layout_marginRight="@dimen/_7sdp"
+                android:layout_marginBottom="@dimen/_7sdp"
+                android:background="@drawable/rounded_primary_gradient"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/editBankIv"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/rounded_primary"
+                    android:padding="@dimen/_5sdp"
+                    app:srcCompat="@drawable/ic_bank_color" />
+
+                <ImageView
+                    android:id="@+id/arroweditBank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ic_arrow_right"
+                    app:tint="@android:color/white" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_6sdp"
+                    android:layout_toLeftOf="@+id/arroweditBank"
+                    android:layout_toRightOf="@+id/editBankIv"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/editBankLabel"
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/toggleDoubleFactor"
+                        android:layout_toRightOf="@+id/doubleFactor"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="left"
+                        android:text="Update Bank Details"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/doubleFactor"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="Change or update bank details for transactions"
+                        android:textColor="@color/color_grey_light" />
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

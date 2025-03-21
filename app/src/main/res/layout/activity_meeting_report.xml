@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include layout="@layout/layout_search" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomView"
+        android:layout_below="@id/searchViewLayout"
+        android:scrollbars="vertical" />
+
+    <include
+        android:id="@+id/noDataView"
+        layout="@layout/no_data_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_below="@id/searchViewLayout"
+        android:layout_centerInParent="true" />
+
+    <include
+        android:id="@+id/noNetworkView"
+        layout="@layout/network_error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_below="@id/searchViewLayout"
+        android:layout_centerInParent="true" />
+    <LinearLayout
+        android:id="@+id/bottomView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:background="@color/colorPrimary"
+        android:paddingBottom="@dimen/_1sdp"
+        android:paddingTop="@dimen/_1sdp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/_1sdp"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Base.TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txn"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="left"
+                android:text="Total Travel"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/travel"
+                style="@style/Base.TextAppearance.AppCompat.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/operatorLabel"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="left"
+                android:text=""
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/mobileView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/outletNameView"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/_1sdp"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Base.TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Total Expense"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/expense"
+                style="@style/Base.TextAppearance.AppCompat.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/outletNameView"
+                android:layout_toRightOf="@+id/recCommissionLabel"
+                android:fontFamily="sans-serif-condensed"
+                android:text=""
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pincodeView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Base.TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txn"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Total Meeting"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/count"
+                style="@style/Base.TextAppearance.AppCompat.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/operatorLabel"
+                android:fontFamily="sans-serif-condensed"
+                android:text=""
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

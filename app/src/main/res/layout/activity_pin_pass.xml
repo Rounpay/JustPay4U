@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_120sdp"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/app_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/TextAppearance.AppCompat.Headline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/icon"
+            android:text="Unlock using your PIN"
+            android:textColor="@color/black" />
+
+        <com.solution.app.justpay4u.Util.PinEntryEditText
+            android:id="@+id/txt_pin_entry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_7sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginRight="@dimen/_7sdp"
+            android:cursorVisible="false"
+            android:visibility="gone"
+            android:inputType="numberPassword"
+            android:maxLength="4"
+            android:textIsSelectable="false"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+        <LinearLayout
+            android:id="@+id/txt_pin_entry_View"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/_3sdp"
+            android:weightSum="4"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etOtp1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_margin="@dimen/_3sdp"
+                android:layout_weight="1"
+                android:password="true"
+                android:background="@drawable/edittext_bg"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:inputType="numberPassword"
+                android:maxLength="1"
+                android:padding="@dimen/_3sdp"
+                tools:ignore="Deprecated" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etOtp2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_3sdp"
+                android:layout_weight="1"
+                android:background="@drawable/edittext_bg"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:inputType="numberPassword"
+                android:maxLength="1" />
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etOtp3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_3sdp"
+                android:layout_weight="1"
+                android:background="@drawable/edittext_bg"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:inputType="numberPassword"
+                android:maxLength="1" />
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etOtp4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_3sdp"
+                android:layout_weight="1"
+                android:background="@drawable/edittext_bg"
+                android:gravity="center"
+                android:imeOptions="actionDone"
+                android:inputType="numberPassword"
+                android:maxLength="1" />
+
+
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/pinPassError"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold"
+            app:fontFamily="sans-serif-medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_pin_entry_View" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/bt_pinPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardElevation="@dimen/_4sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pinPassError">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/pinPassTv"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-medium"
+                android:padding="@dimen/_8sdp"
+                android:text="Verify"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white" />
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

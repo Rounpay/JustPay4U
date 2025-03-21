@@ -1,0 +1,936 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomBtnView">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_2sdp">
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Name :"
+                android:textColor="@color/colorAccent" />
+
+
+            <EditText
+                android:id="@+id/nameEt"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:background="@drawable/edittext_bg"
+                android:ellipsize="end"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center_vertical"
+                android:hint="Enter Name"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey" />
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Shop Name :"
+                android:textColor="@color/colorAccent"
+                android:visibility="gone" />
+
+
+            <EditText
+                android:id="@+id/outletNameEt"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:background="@drawable/edittext_bg"
+                android:ellipsize="end"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center_vertical"
+                android:hint="Enter Shop Name"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey"
+                android:visibility="gone" />
+
+
+            <!--For Shop Type-->
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Shop Type :"
+                android:textColor="@color/colorAccent"
+                android:visibility="gone" />
+
+
+            <RelativeLayout
+                android:id="@+id/shopTypeChooserView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/shopTypeTv"
+                    style="@android:style/Widget.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext_bg"
+                    android:clickable="false"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:hint="Select Shop Type"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_35sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:text="Kirana Shop"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/color_grey" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/shopTypeArrow"
+                    android:layout_width="@dimen/_17sdp"
+                    android:layout_height="@dimen/_17sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    app:srcCompat="@drawable/ic_arrow_drop_down"
+                    app:tint="@color/colorAccent" />
+            </RelativeLayout>
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Mobile Number :"
+                android:textColor="@color/colorAccent" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                <EditText
+                    android:id="@+id/MobileNumberEt"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/iv_contact"
+                    android:background="@drawable/edittext_bg"
+                    android:digits="0123456789"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint="Mobile Number"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_7sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/color_grey" />
+
+                <ImageView
+                    android:id="@+id/iv_contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:padding="@dimen/_6sdp"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_contact_phone"
+                    app:tint="@color/colorAccent" />
+
+            </RelativeLayout>
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Alternate Mobile Number :"
+                android:textColor="@color/colorAccent" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                <EditText
+                    android:id="@+id/AlternateMobileNumberEt"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/iv_alternate_contact"
+                    android:background="@drawable/edittext_bg"
+                    android:digits="0123456789"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint="Enter Alternate Mobile Number"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_7sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/color_grey" />
+
+                <ImageView
+                    android:id="@+id/iv_alternate_contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    android:padding="@dimen/_6sdp"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/ic_contact_phone"
+                    app:tint="@color/colorAccent" />
+
+            </RelativeLayout>
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Email Id :"
+                android:textColor="@color/colorAccent" />
+
+
+            <EditText
+                android:id="@+id/emailIdEt"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:background="@drawable/edittext_bg"
+                android:ellipsize="end"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center_vertical"
+                android:hint="Enter Email Id"
+                android:inputType="textEmailAddress"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey" />
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Date Of Birth :"
+                android:textColor="@color/colorAccent" />
+
+
+            <RelativeLayout
+                android:id="@+id/dobView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:foreground="?attr/selectableItemBackgroundBorderless">
+
+
+                <TextView
+                    android:id="@+id/tv_dob"
+                    style="@android:style/Widget.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext_bg"
+                    android:clickable="false"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:hint="Select Date of Birth"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_35sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/color_grey" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/calenderIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    app:srcCompat="@drawable/ic_calendar_icon"
+                    app:tint="@color/colorAccent" />
+            </RelativeLayout>
+
+            <!--For Qualification-->
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Qualification :"
+                android:textColor="@color/colorAccent"
+                android:visibility="gone" />
+
+
+            <RelativeLayout
+                android:id="@+id/qualificationChooserView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/qualificationTv"
+                    style="@android:style/Widget.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext_bg"
+                    android:clickable="false"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:hint="Select Qualification"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_35sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:text="SSC"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/color_grey" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/qualificationArrow"
+                    android:layout_width="@dimen/_17sdp"
+                    android:layout_height="@dimen/_17sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    app:srcCompat="@drawable/ic_arrow_drop_down"
+                    app:tint="@color/colorAccent" />
+            </RelativeLayout>
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Pincode :"
+                android:textColor="@color/colorAccent" />
+
+
+            <EditText
+                android:id="@+id/pincodeEt"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:background="@drawable/edittext_bg"
+                android:ellipsize="end"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center_vertical"
+                android:hint="Enter Pincode"
+                android:inputType="number"
+                android:maxLength="6"
+                android:padding="@dimen/_10sdp"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey" />
+
+
+            <!--For LocationType-->
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="LocationType :"
+                android:visibility="gone"
+                android:textColor="@color/colorAccent" />
+
+
+            <RelativeLayout
+                android:id="@+id/locationTypeChooserView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:visibility="gone"
+                android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                <TextView
+                    android:id="@+id/locationTypeTv"
+                    style="@android:style/Widget.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext_bg"
+                    android:clickable="false"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:hint="Select Location Type"
+                    android:text="Rural"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_35sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/color_grey" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/locationTypeArrow"
+                    android:layout_width="@dimen/_17sdp"
+                    android:layout_height="@dimen/_17sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    app:srcCompat="@drawable/ic_arrow_drop_down"
+                    app:tint="@color/colorAccent" />
+            </RelativeLayout>
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Landmark :"
+                android:textColor="@color/colorAccent" />
+
+
+            <EditText
+                android:id="@+id/LandmarkEt"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:background="@drawable/edittext_bg"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center_vertical"
+                android:hint="Enter Landmark"
+                android:padding="@dimen/_10sdp"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey" />
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Address :"
+                android:textColor="@color/colorAccent" />
+
+
+            <EditText
+                android:id="@+id/addressEt"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:background="@drawable/edittext_bg"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center_vertical"
+                android:hint="Enter Address"
+                android:padding="@dimen/_10sdp"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey" />
+
+            <!--For Poupulation-->
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Poupulation :"
+                android:textColor="@color/colorAccent"
+                android:visibility="gone" />
+
+
+            <RelativeLayout
+                android:id="@+id/populationChooserView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/populationTv"
+                    style="@android:style/Widget.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext_bg"
+                    android:clickable="false"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:hint="Select Population"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_35sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:text="0 to 2000"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/color_grey" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/populationArrow"
+                    android:layout_width="@dimen/_17sdp"
+                    android:layout_height="@dimen/_17sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    app:srcCompat="@drawable/ic_arrow_drop_down"
+                    app:tint="@color/colorAccent" />
+            </RelativeLayout>
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="GSTIN :"
+                android:textColor="@color/colorAccent"
+                android:visibility="gone" />
+
+
+            <EditText
+                android:id="@+id/gstinEt"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:background="@drawable/edittext_bg"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center_vertical"
+                android:hint="Enter GSTIN"
+                android:padding="@dimen/_10sdp"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey"
+                android:visibility="gone" />
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="AADHAR :"
+                android:textColor="@color/colorAccent" />
+
+
+            <EditText
+                android:id="@+id/aadharEt"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:background="@drawable/edittext_bg"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center_vertical"
+                android:hint="Enter AADHAR"
+                android:inputType="number"
+                android:padding="@dimen/_10sdp"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey" />
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/verifyAadhaar"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:gravity="end"
+                android:textStyle="italic"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:text="@string/verify_aadhaar"
+                android:textColor="@color/colorAccent" />
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="PAN :"
+                android:textColor="@color/colorAccent" />
+
+
+            <EditText
+                android:id="@+id/panEt"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:background="@drawable/edittext_bg"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center_vertical"
+                android:hint="Enter PAN"
+                android:inputType="textCapCharacters"
+                android:padding="@dimen/_10sdp"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey" />
+
+
+            <!--For Bank-->
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/verifyPan"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:gravity="end"
+                android:textStyle="italic"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:text="@string/verify_pan"
+                android:textColor="@color/colorAccent" />
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Bank :"
+                android:textColor="@color/colorAccent" />
+
+
+            <RelativeLayout
+                android:id="@+id/bankChooserView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                <TextView
+                    android:id="@+id/bankTv"
+                    style="@android:style/Widget.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext_bg"
+                    android:clickable="false"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:hint="Select Bank"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_35sdp"
+                    android:paddingBottom="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                    android:textColor="@android:color/white"
+                    android:textColorHint="@color/color_grey" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/bankArrow"
+                    android:layout_width="@dimen/_17sdp"
+                    android:layout_height="@dimen/_17sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    app:srcCompat="@drawable/ic_arrow_drop_down"
+                    app:tint="@color/colorAccent" />
+            </RelativeLayout>
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Branch Name :"
+                android:textColor="@color/colorAccent" />
+
+
+            <EditText
+                android:id="@+id/branchNameEt"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:background="@drawable/edittext_bg"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center_vertical"
+                android:hint="Enter Branch Name"
+                android:padding="@dimen/_10sdp"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey" />
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="IFSC :"
+                android:textColor="@color/colorAccent" />
+
+
+            <EditText
+                android:id="@+id/IFSCEt"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:background="@drawable/edittext_bg"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center_vertical"
+                android:hint="Enter IFSC"
+                android:inputType="textCapCharacters"
+                android:padding="@dimen/_10sdp"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey" />
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Account Number :"
+                android:textColor="@color/colorAccent" />
+
+
+            <EditText
+                android:id="@+id/AccountNumberEt"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:background="@drawable/edittext_bg"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center_vertical"
+                android:hint="Enter Account Number"
+                android:inputType="number"
+                android:padding="@dimen/_10sdp"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey" />
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:text="Account Name :"
+                android:textColor="@color/colorAccent" />
+
+
+            <EditText
+                android:id="@+id/AccountNameEt"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+
+                android:background="@drawable/edittext_bg"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:gravity="center_vertical"
+                android:hint="Enter Account Name"
+                android:inputType="textCapCharacters"
+                android:padding="@dimen/_10sdp"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/color_grey" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/notice"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/profile_update_notice"
+                android:textColor="@color/red"
+                android:visibility="visible" />
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottomBtnView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/submitBtn"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+
+            android:layout_weight="1"
+            android:background="@color/colorAccent"
+            android:enabled="true"
+            android:fontFamily="sans-serif-medium"
+            android:text="Update Profile"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/kycBtn"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryLight"
+            android:enabled="true"
+            android:fontFamily="sans-serif-medium"
+            android:text="Update Kyc"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:visibility="visible" />
+
+    </LinearLayout>
+</RelativeLayout>

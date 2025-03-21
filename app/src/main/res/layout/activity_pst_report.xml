@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_search" />
+
+    <RelativeLayout
+        android:id="@+id/searchContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchViewLayout"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/primary_gradient"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/calIcon"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/_10sdp"
+            android:paddingRight="@dimen/_2sdp"
+            app:srcCompat="@drawable/ic_calendar_icon"
+            app:tint="@android:color/white" />
+
+        <TextView
+            android:id="@+id/searchDate"
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginRight="1dp"
+            android:layout_toLeftOf="@+id/search"
+            android:layout_toRightOf="@+id/calIcon"
+            android:gravity="center_vertical"
+            android:hint="Enter Date"
+            android:paddingLeft="@dimen/_5sdp"
+            android:paddingRight="@dimen/_5sdp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/color_grey" />
+
+
+        <ImageView
+            android:id="@+id/search"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/_8sdp"
+            app:srcCompat="@drawable/ic_search_icon"
+            app:tint="@android:color/white" />
+
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/searchContainer"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/_5sdp"
+        android:scrollbars="vertical" />
+
+    <include
+        android:id="@+id/noDataView"
+        layout="@layout/no_data_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchContainer"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/noNetworkView"
+        layout="@layout/network_error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchContainer"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

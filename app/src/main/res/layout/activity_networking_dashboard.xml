@@ -1,0 +1,2981 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="?attr/actionBarSize"
+        android:visibility="visible"
+        app:layout_collapseMode="pin">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_toLeftOf="@+id/vaIv"
+            android:layout_toRightOf="@+id/userIcon"
+            android:adjustViewBounds="true"
+            android:paddingTop="@dimen/_7sdp"
+            android:paddingBottom="@dimen/_7sdp"
+            android:scaleType="fitStart"
+            android:src="@drawable/app_full_logo" />
+
+
+        <FrameLayout
+            android:id="@+id/notificationView"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/refresh"
+            android:layout_alignBottom="@+id/refresh"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/refresh"
+            android:foreground="?attr/actionBarItemBackground"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_notifications_fintech" />
+
+            <TextView
+                android:id="@+id/badgesNotification"
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:layout_gravity="right"
+
+                android:layout_marginRight="@dimen/_3sdp"
+                android:background="@drawable/accent_circle"
+                android:elevation="@dimen/_3sdp"
+                android:gravity="center"
+                android:padding="@dimen/_1sdp"
+                android:text="0"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_6sdp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+        </FrameLayout>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/vaIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_toLeftOf="@+id/notificationView"
+            android:padding="@dimen/_7sdp"
+            android:visibility="visible"
+            app:srcCompat="@drawable/ic_qr_code"
+            app:tint="@android:color/white" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/_7sdp"
+            android:foreground="?attr/actionBarItemBackground"
+            android:padding="@dimen/_7sdp"
+            app:srcCompat="@drawable/ic_refresh" />
+
+    </RelativeLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomView"
+        android:layout_below="@+id/app_bar_layout"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_5sdp">
+
+
+            <RelativeLayout
+                android:id="@+id/userView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:background="@drawable/rounded_primary_border_gradient_fill"
+                android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                <LinearLayout
+                    android:id="@+id/userDetailView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/_7sdp"
+                    android:paddingTop="@dimen/_7sdp"
+                    android:paddingRight="@dimen/_4sdp"
+                    android:paddingBottom="@dimen/_7sdp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/userImage"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:src="@drawable/user_icon" />
+
+                    <LinearLayout
+                        android:layout_marginStart="@dimen/_2sdp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/userNameTv"
+                            style="@style/TextAppearance.AppCompat.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:textColor="@android:color/black" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/TextAppearance.AppCompat.Caption"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="UID-"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:textColor="@color/colorAccent"
+                                android:visibility="visible" />
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/roleTv"
+                                style="@style/TextAppearance.AppCompat.Caption"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:textColor="@color/colorAccent"
+                                android:visibility="visible" />
+                            <TextView
+                                android:id="@+id/verifyUserIv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_2sdp"
+                                android:text="" />
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/mobileNumTv"
+                            style="@style/TextAppearance.AppCompat.Caption"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:textColor="@color/color_grey_dark" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/emailTv"
+                            style="@style/TextAppearance.Compat.Notification.Info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif-condensed-medium"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:textColor="@color/color_grey_dark" />
+
+                        <LinearLayout
+                            android:id="@+id/lastPkgView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="visible">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/TextAppearance.AppCompat.Caption"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-condensed-light"
+                                android:text="LastPackage-"
+                                android:textColor="@color/colorAccent"
+                                android:visibility="visible" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/lastPkgTV"
+                                style="@style/TextAppearance.AppCompat.Caption"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-condensed-light"
+                                android:textColor="@color/colorAccent"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/lastPkgAmtTv"
+                                style="@style/TextAppearance.AppCompat.Caption"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_2sdp"
+                                android:fontFamily="sans-serif-condensed-light"
+                                android:text="" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/rankView"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_6sdp"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/rankIV"
+                        android:layout_gravity="center"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        app:srcCompat="@drawable/star_on" />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Rank - "
+                        android:textColor="@color/black"
+                        android:visibility="gone" />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/rankTV"
+                        style="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:textColor="@color/black"
+                        android:visibility="visible" />
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/newsCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:background="@drawable/rounded_primary_gradient_border"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/newsTitle"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_accent_left_top"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:minWidth="@dimen/_50sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:text="News"
+                    android:textColor="@android:color/white" />
+
+                <TextView
+                    android:id="@+id/newsTv"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_7sdp"
+                    android:autoLink="all"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:textColor="@android:color/holo_red_dark" />
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/pagerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:visibility="gone">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <LinearLayout
+                    android:id="@+id/image_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:orientation="horizontal" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:background="@drawable/rounded_primary_right_top_gradient"
+                android:orientation="vertical">
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fillViewport="true"
+                    android:nestedScrollingEnabled="false"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center">
+
+                        <LinearLayout
+                            android:id="@+id/addMember"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/_3sdp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_5sdp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_3sdp"
+                                android:background="@drawable/rounded_white"
+                                android:padding="@dimen/_7sdp"
+                                android:src="@drawable/ic_networking_add_user" />
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:gravity="center"
+                                android:lines="2"
+                                android:text="Add\nMember"
+                                android:textColor="@android:color/black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/activateMember"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/_3sdp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_5sdp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_3sdp"
+                                android:background="@drawable/rounded_white"
+                                android:padding="@dimen/_7sdp"
+                                android:src="@drawable/ic_networking_activate_user" />
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:gravity="center"
+                                android:lines="2"
+                                android:text="Activate\nMember"
+                                android:textColor="@android:color/black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/genelogyView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/_3sdp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_5sdp"
+                            android:visibility="visible">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_3sdp"
+                                android:background="@drawable/rounded_white"
+                                android:padding="@dimen/_7sdp"
+                                android:src="@drawable/ic_networking_team_structure" />
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:gravity="center"
+                                android:lines="2"
+                                android:text="My\nTree"
+                                android:textColor="@android:color/black" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/_3sdp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_5sdp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_3sdp"
+                                android:background="@drawable/rounded_white"
+                                android:padding="@dimen/_7sdp"
+                                android:src="@drawable/ic_networking_team_structure" />
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:gravity="center"
+                                android:lines="2"
+                                android:text="Global\nTree"
+                                android:textColor="@android:color/black" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/addMoneyView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/_3sdp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_5sdp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_3sdp"
+                                android:background="@drawable/rounded_white"
+                                android:padding="@dimen/_7sdp"
+                                android:src="@drawable/ic_networking_add_money" />
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:gravity="center"
+                                android:lines="2"
+                                android:text="Add\nMoney"
+                                android:textColor="@android:color/black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/_3sdp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_5sdp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_3sdp"
+                                android:background="@drawable/rounded_white"
+                                android:padding="@dimen/_7sdp"
+                                android:src="@drawable/ic_networking_money_transfer" />
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:gravity="center"
+                                android:lines="2"
+                                android:text="Withdrawal"
+                                android:textColor="@android:color/black" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/fundRequest"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/_3sdp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:visibility="visible"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_5sdp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_3sdp"
+                                android:background="@drawable/rounded_white"
+                                android:padding="@dimen/_7sdp"
+                                android:src="@drawable/fundrequest" />
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Body2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:gravity="center"
+                                android:lines="2"
+                                android:text="Fund\nRequest"
+                                android:textColor="@android:color/black" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+                <!--<LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:background="@drawable/rounded_white"
+                    android:backgroundTint="@color/colorPrimaryLight"
+                    android:padding="@dimen/_5sdp">
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_primary"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="center"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Wallet"
+                        android:textColor="@android:color/white" />
+
+                    <TextView
+                        style="@style/TextAppearance.AppCompat.Subhead"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_white"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="center"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Downline"
+                        android:textColor="@color/colorPrimary" />
+                </LinearLayout>-->
+
+                <LinearLayout
+                    android:id="@+id/walletView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/walletRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_5sdp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/adapter_networking_wallet" />
+
+                    <RelativeLayout
+                        android:id="@+id/defaultUserView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:padding="@dimen/_1sdp"
+                        android:foreground="?attr/selectableItemBackgroundBorderless">
+
+
+                        <TextView
+                            android:id="@+id/tv_DefaultUser"
+                            style="@android:style/Widget.EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_unfo"
+                            android:clickable="false"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:hint="DefaultUser"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_10sdp"
+                            android:paddingRight="@dimen/_35sdp"
+                            android:paddingBottom="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:text=""
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                            android:textColor="@android:color/white"
+                            android:textColorHint="@color/white" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/calenderIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="@dimen/_9sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            app:srcCompat="@drawable/ic_arrow_down"
+                            app:tint="@color/white" />
+
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:id="@+id/dateView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_DefaultUser"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:padding="@dimen/_1sdp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/fromDateView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_8sdp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/start_date"
+                                android:textColor="@android:color/black" />
+
+                            <LinearLayout
+                                android:id="@+id/startDateView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:background="@drawable/rounded_unfo"
+                                android:gravity="center_vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="@dimen/_15sdp"
+                                    android:layout_height="@dimen/_15sdp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    app:srcCompat="@drawable/ic_calendar_icon"
+                                    app:tint="@color/white" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/startDate"
+                                    style="@style/TextAppearance.AppCompat.Subhead"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:textColor="@android:color/white"
+                                    android:textColorHint="@android:color/white"
+                                    android:hint="@string/start_date"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:paddingTop="@dimen/_10sdp"
+                                    android:paddingRight="@dimen/_5sdp"
+                                    android:paddingBottom="@dimen/_10sdp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/toDateView"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/end_date"
+                                android:textColor="@android:color/black" />
+
+                            <LinearLayout
+                                android:id="@+id/endDateView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_3sdp"
+                                android:background="@drawable/rounded_unfo"
+                                android:gravity="center_vertical">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="@dimen/_15sdp"
+                                    android:layout_height="@dimen/_15sdp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    app:srcCompat="@drawable/ic_calendar_icon"
+                                    app:tint="@android:color/white" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/endDate"
+                                    style="@style/TextAppearance.AppCompat.Subhead"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:textColor="@android:color/white"
+                                    android:textColorHint="@android:color/white"
+                                    android:hint="@string/end_date"
+                                    android:paddingLeft="@dimen/_5sdp"
+                                    android:paddingTop="@dimen/_10sdp"
+                                    android:paddingRight="@dimen/_5sdp"
+                                    android:paddingBottom="@dimen/_10sdp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <Button
+                        android:id="@+id/applyBtn"
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:gravity="center"
+                        android:padding="@dimen/_1sdp"
+                        android:background="@drawable/rounded_accent"
+                        android:elevation="@dimen/_4sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Apply"
+                        android:visibility="gone"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white" />
+
+                    <LinearLayout
+                        android:id="@+id/incomeView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:background="@drawable/rounded_primary"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_10sdp"
+                        android:visibility="gone">
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_primary"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Income"
+                            android:textColor="@android:color/white" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/incomeRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"
+                            tools:itemCount="2"
+                            tools:listitem="@layout/adapter_networking_income" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/downlineView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:id="@+id/teamDetailsView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/poolRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/_5sdp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:itemCount="3"
+                            tools:listitem="@layout/adapter_networking_pool" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/teamRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:itemCount="3"
+                            tools:listitem="@layout/adapter_networking_team" />
+
+                        <LinearLayout
+                        android:id="@+id/leftTeamView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:background="@drawable/rounded_white"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:layout_marginRight="@dimen/_10sdp">
+
+                            <TextView
+                                android:id="@+id/leftTeamTitle"
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:fontFamily="sans-serif-medium"
+                                android:gravity="center"
+                                android:text="Left Team"
+                                android:textColor="@color/colorAccentMoreMoreLight" />
+
+                            <TextView
+                                android:id="@+id/leftTeamUserLabel"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/leftTeamTitle"
+                                android:layout_marginBottom="@dimen/_3sdp"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="User - "
+                                android:textColor="@color/white" />
+
+                            <TextView
+                                android:id="@+id/leftTeamUser"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/leftTeamTitle"
+                                android:layout_marginBottom="@dimen/_3sdp"
+                                android:layout_toRightOf="@+id/leftTeamUserLabel"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="0"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/leftTeamBusinessLabelTxt"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/leftTeamUserLabel"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="Business - "
+                                android:textColor="@color/white"
+                                android:visibility="visible" />
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/leftTeamUser"
+                                android:layout_toRightOf="@+id/leftTeamBusinessLabelTxt"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="0"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+
+                            <ImageView
+                                android:id="@+id/leftTeamIv"
+                                android:layout_width="@dimen/_50sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/ic_team_icon" />
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/leftTeamIv"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_7sdp">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginRight="@dimen/_minus15sdp"
+                                    android:layout_toLeftOf="@+id/leftTeamDeactiveIv"
+                                    android:background="@drawable/rect_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:gravity="center"
+                                    android:maxLines="1"
+                                    android:paddingLeft="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_2sdp"
+                                    android:paddingRight="@dimen/_15sdp"
+                                    android:paddingBottom="@dimen/_2sdp"
+                                    android:text="Deactive"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textStyle="italic" />
+
+
+                                <TextView
+                                    android:id="@+id/leftTeamDeactive"
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/_minus15sdp"
+                                    android:layout_toRightOf="@+id/leftTeamDeactiveIv"
+                                    android:background="@drawable/rect_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:gravity="center"
+                                    android:paddingLeft="@dimen/_15sdp"
+                                    android:paddingTop="@dimen/_2sdp"
+                                    android:paddingRight="@dimen/_2sdp"
+                                    android:paddingBottom="@dimen/_2sdp"
+                                    android:text="0"
+                                    android:textColor="@android:color/holo_red_dark" />
+
+                                <ImageView
+                                    android:id="@+id/leftTeamDeactiveIv"
+                                    android:layout_width="@dimen/_28sdp"
+                                    android:layout_height="@dimen/_28sdp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/ic_circle_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:padding="@dimen/_1sdp"
+                                    android:src="@drawable/ic_cross_mark_fill" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/leftTeamBusinessLabel"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:visibility="visible"
+                                android:layout_weight="1">
+
+                                <TextView
+
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginRight="@dimen/_minus15sdp"
+                                    android:layout_toLeftOf="@+id/leftTeamActiveIv"
+                                    android:background="@drawable/rect_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:gravity="center"
+                                    android:maxLines="1"
+                                    android:paddingLeft="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_2sdp"
+                                    android:paddingRight="@dimen/_15sdp"
+                                    android:paddingBottom="@dimen/_2sdp"
+                                    android:text="Active"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textStyle="italic" />
+
+
+                                <TextView
+                                    android:id="@+id/leftTeamActive"
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/_minus15sdp"
+                                    android:layout_toRightOf="@+id/leftTeamActiveIv"
+                                    android:background="@drawable/rect_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:gravity="center"
+                                    android:paddingLeft="@dimen/_15sdp"
+                                    android:paddingTop="@dimen/_2sdp"
+                                    android:paddingRight="@dimen/_2sdp"
+                                    android:paddingBottom="@dimen/_2sdp"
+                                    android:text="0"
+                                    android:textColor="@color/green" />
+
+                                <ImageView
+                                    android:id="@+id/leftTeamActiveIv"
+                                    android:layout_width="@dimen/_28sdp"
+                                    android:layout_height="@dimen/_28sdp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/ic_circle_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:padding="@dimen/_1sdp"
+                                    android:src="@drawable/ic_check_mark_fill" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:visibility="gone"
+                            android:id="@+id/leftUserShareView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_bottom_white"
+                            android:backgroundTint="@color/light_white"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_5sdp"
+                            android:paddingRight="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_7sdp">
+
+                            <TextView
+                                android:id="@+id/leftUserShareTv"
+                                style="@style/TextAppearance.AppCompat.Caption"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:paddingBottom="@dimen/_3sdp"
+                                android:textColor="@color/colorPrimaryMoreLight" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/leftUserShareTv"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true">
+
+                                <TextView
+                                    android:id="@+id/leftUserCopy"
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/ic_copy_but"
+                                    android:backgroundTint="@color/colorPrimary"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:gravity="center"
+                                    android:minWidth="@dimen/_58sdp"
+                                    android:padding="@dimen/_3sdp"
+                                    android:text="Copy Link"
+                                    android:textColor="@color/colorAccentLight" />
+
+                                <TextView
+                                    android:id="@+id/leftUserShare"
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/ic_share_but"
+                                    android:backgroundTint="@color/colorAccentDark"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:gravity="center"
+                                    android:minWidth="@dimen/_58sdp"
+                                    android:padding="@dimen/_3sdp"
+                                    android:text="Share"
+                                    android:textColor="@color/colorPrimaryLight" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/rightTeamView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/rounded_white"
+                        android:backgroundTint="@color/colorPrimaryMoreMoreLight"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:layout_marginRight="@dimen/_10sdp">
+
+                            <TextView
+                                android:id="@+id/rightTeamTitle"
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:fontFamily="sans-serif-medium"
+                                android:gravity="center"
+                                android:text="Right Team"
+                                android:textColor="@color/colorPrimaryMoreMoreMoreLight" />
+
+                            <TextView
+                                android:id="@+id/rightTeamUserLabel"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rightTeamTitle"
+                                android:layout_marginBottom="@dimen/_3sdp"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="User - "
+                                android:textColor="@color/white" />
+
+                            <TextView
+                                android:id="@+id/rightTeamUser"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rightTeamTitle"
+                                android:layout_marginBottom="@dimen/_3sdp"
+                                android:layout_toRightOf="@+id/rightTeamUserLabel"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="0"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rightTeamUserLabel"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="Business - "
+                                android:textColor="@color/white"
+                                android:visibility="visible" />
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rightTeamUser"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="0"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold"
+
+                                android:visibility="visible" />
+
+                            <ImageView
+                                android:id="@+id/rightTeamIv"
+                                android:layout_width="@dimen/_50sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_team_icon" />
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_7sdp">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginRight="@dimen/_minus15sdp"
+                                    android:layout_toLeftOf="@+id/rightTeamDeactiveIv"
+                                    android:background="@drawable/rect_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:gravity="center"
+                                    android:maxLines="1"
+                                    android:paddingLeft="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_2sdp"
+                                    android:paddingRight="@dimen/_15sdp"
+                                    android:paddingBottom="@dimen/_2sdp"
+                                    android:text="Deactive"
+                                    android:textColor="@color/colorAccentMoreDark"
+                                    android:textStyle="italic" />
+
+
+                                <TextView
+                                    android:id="@+id/rightTeamDeactive"
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/_minus15sdp"
+                                    android:layout_toRightOf="@+id/rightTeamDeactiveIv"
+                                    android:background="@drawable/rect_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:gravity="center"
+                                    android:paddingLeft="@dimen/_15sdp"
+                                    android:paddingTop="@dimen/_2sdp"
+                                    android:paddingRight="@dimen/_2sdp"
+                                    android:paddingBottom="@dimen/_2sdp"
+                                    android:text="0"
+                                    android:textColor="@android:color/holo_red_dark" />
+
+                                <ImageView
+                                    android:id="@+id/rightTeamDeactiveIv"
+                                    android:layout_width="@dimen/_28sdp"
+                                    android:layout_height="@dimen/_28sdp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/ic_circle_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:padding="@dimen/_1sdp"
+                                    android:src="@drawable/ic_cross_mark_fill" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rightTeamBusinessLabel"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="@dimen/_minus15sdp"
+                                    android:layout_toLeftOf="@+id/rightTeamActiveIv"
+                                    android:background="@drawable/rect_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:gravity="center"
+                                    android:maxLines="1"
+                                    android:paddingLeft="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_2sdp"
+                                    android:paddingRight="@dimen/_15sdp"
+                                    android:paddingBottom="@dimen/_2sdp"
+                                    android:text="Active"
+                                    android:textColor="@color/colorAccentMoreDark"
+                                    android:textStyle="italic" />
+
+
+                                <TextView
+                                    android:id="@+id/rightTeamActive"
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/_minus15sdp"
+                                    android:layout_toRightOf="@+id/rightTeamActiveIv"
+                                    android:background="@drawable/rect_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:gravity="center"
+                                    android:paddingLeft="@dimen/_15sdp"
+                                    android:paddingTop="@dimen/_2sdp"
+                                    android:paddingRight="@dimen/_2sdp"
+                                    android:paddingBottom="@dimen/_2sdp"
+                                    android:text="0"
+                                    android:textColor="@color/green" />
+
+                                <ImageView
+                                    android:id="@+id/rightTeamActiveIv"
+                                    android:layout_width="@dimen/_28sdp"
+                                    android:layout_height="@dimen/_28sdp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/ic_circle_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:padding="@dimen/_1sdp"
+                                    android:src="@drawable/ic_check_mark_fill" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:visibility="gone"
+                            android:id="@+id/rightUserShareView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_bottom_white"
+                            android:backgroundTint="@color/light_white"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_5sdp"
+                            android:paddingRight="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_7sdp">
+
+                            <TextView
+                                android:id="@+id/rightUserShareTv"
+                                style="@style/TextAppearance.AppCompat.Caption"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:paddingBottom="@dimen/_3sdp"
+                                android:textColor="@color/colorAccentMoreMoreLight" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/rightUserShareTv"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true">
+
+                                <TextView
+                                    android:id="@+id/rightUserCopy"
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/ic_copy_but"
+                                    android:backgroundTint="@color/colorAccent"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:gravity="center"
+                                    android:minWidth="@dimen/_58sdp"
+                                    android:padding="@dimen/_3sdp"
+                                    android:text="Copy Link"
+                                    android:textColor="@color/colorPrimary" />
+
+                                <TextView
+                                    android:id="@+id/rightUserShare"
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/ic_share_but"
+                                    android:backgroundTint="@color/colorPrimary"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:gravity="center"
+                                    android:minWidth="@dimen/_58sdp"
+                                    android:padding="@dimen/_3sdp"
+                                    android:text="Share"
+                                    android:textColor="@color/colorAccentLight" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/directTeamView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:background="@drawable/rounded_white"
+                        android:backgroundTint="@color/colorPrimaryMoreMoreLight"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:layout_marginRight="@dimen/_10sdp">
+
+                            <TextView
+                                android:id="@+id/directTeamTitle"
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:fontFamily="sans-serif-medium"
+                                android:gravity="center"
+                                android:text="Direct Team"
+                                android:textColor="@color/colorAccentMoreMoreLight" />
+
+                            <TextView
+                                android:id="@+id/directTeamUserLabel"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/directTeamTitle"
+                                android:layout_marginBottom="@dimen/_3sdp"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="User - "
+                                android:textColor="@color/white" />
+
+                            <TextView
+                                android:id="@+id/directTeamUser"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/directTeamTitle"
+                                android:layout_marginBottom="@dimen/_3sdp"
+                                android:layout_toRightOf="@+id/directTeamUserLabel"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="0"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/directTeamBusinessLabe"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/directTeamUserLabel"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="Business - "
+                                android:textColor="@color/white"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/directTeamBusinessValue"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/directTeamUser"
+                                android:layout_toRightOf="@+id/directTeamBusinessLabe"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="0"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold"
+
+                                android:visibility="visible" />
+
+                            <ImageView
+                                android:id="@+id/directTeamIv"
+                                android:layout_width="@dimen/_50sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_team_icon" />
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/directTeamIv"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_7sdp">
+
+                            <RelativeLayout
+                                android:id="@+id/directTeamDeactiveClick"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginRight="@dimen/_minus15sdp"
+                                    android:layout_toLeftOf="@+id/directTeamDeactiveIv"
+                                    android:background="@drawable/rect_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:gravity="center"
+                                    android:maxLines="1"
+                                    android:paddingLeft="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_2sdp"
+                                    android:paddingRight="@dimen/_15sdp"
+                                    android:paddingBottom="@dimen/_2sdp"
+                                    android:text="Deactive"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textStyle="italic" />
+
+
+                                <TextView
+                                    android:id="@+id/directTeamDeactive"
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/_minus15sdp"
+                                    android:layout_toRightOf="@+id/directTeamDeactiveIv"
+                                    android:background="@drawable/rect_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:gravity="center"
+                                    android:paddingLeft="@dimen/_15sdp"
+                                    android:paddingTop="@dimen/_2sdp"
+                                    android:paddingRight="@dimen/_2sdp"
+                                    android:paddingBottom="@dimen/_2sdp"
+                                    android:text="0"
+                                    android:textColor="@android:color/holo_red_dark" />
+
+                                <ImageView
+                                    android:id="@+id/directTeamDeactiveIv"
+                                    android:layout_width="@dimen/_28sdp"
+                                    android:layout_height="@dimen/_28sdp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/ic_circle_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:padding="@dimen/_1sdp"
+                                    android:src="@drawable/ic_cross_mark_fill" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/directTeamActivateClick"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/directTeamBusinessLabel"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="@dimen/_minus15sdp"
+                                    android:layout_toLeftOf="@+id/directTeamActiveIv"
+                                    android:background="@drawable/rect_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:gravity="center"
+                                    android:maxLines="1"
+                                    android:paddingLeft="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_2sdp"
+                                    android:paddingRight="@dimen/_15sdp"
+                                    android:paddingBottom="@dimen/_2sdp"
+                                    android:text="Active"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textStyle="italic" />
+
+
+                                <TextView
+                                    android:id="@+id/directTeamActive"
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/_minus15sdp"
+                                    android:layout_toRightOf="@+id/directTeamActiveIv"
+                                    android:background="@drawable/rect_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:gravity="center"
+                                    android:paddingLeft="@dimen/_15sdp"
+                                    android:paddingTop="@dimen/_2sdp"
+                                    android:paddingRight="@dimen/_2sdp"
+                                    android:paddingBottom="@dimen/_2sdp"
+                                    android:text="0"
+                                    android:textColor="@color/green" />
+
+                                <ImageView
+                                    android:id="@+id/directTeamActiveIv"
+                                    android:layout_width="@dimen/_28sdp"
+                                    android:layout_height="@dimen/_28sdp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/ic_circle_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:padding="@dimen/_1sdp"
+                                    android:src="@drawable/ic_check_mark_fill" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:visibility="gone"
+                            android:id="@+id/directUserShareView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_bottom_white"
+                            android:backgroundTint="@color/light_white"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_5sdp"
+                            android:paddingRight="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_7sdp">
+
+                            <TextView
+                                android:id="@+id/directUserShareTv"
+                                style="@style/TextAppearance.AppCompat.Caption"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:paddingBottom="@dimen/_3sdp"
+                                android:textColor="@color/colorPrimaryMoreLight" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/directUserShareTv"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true">
+
+                                <TextView
+                                    android:id="@+id/directUserCopy"
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/ic_copy_but"
+                                    android:backgroundTint="@color/colorPrimary"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:gravity="center"
+                                    android:minWidth="@dimen/_58sdp"
+                                    android:padding="@dimen/_3sdp"
+                                    android:text="Copy Link"
+                                    android:textColor="@color/colorAccentLight" />
+
+                                <TextView
+                                    android:id="@+id/directUserShare"
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/ic_share_but"
+                                    android:backgroundTint="@color/colorAccentDark"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:gravity="center"
+                                    android:minWidth="@dimen/_58sdp"
+                                    android:padding="@dimen/_3sdp"
+                                    android:text="Share"
+                                    android:textColor="@color/colorPrimaryLight" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/generationActiveTeamView"
+                        android:layout_width="match_parent"
+                        android:visibility="gone"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/rounded_white"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_7sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:layout_marginRight="@dimen/_10sdp">
+
+                            <TextView
+                                android:id="@+id/generationActiveTeamTitle"
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:fontFamily="sans-serif-medium"
+                                android:gravity="center"
+                                android:text="Generation Team (Active)"
+                                android:textColor="@color/colorPrimaryMoreMoreMoreLight" />
+
+                            <TextView
+                                android:id="@+id/generationActiveTeamUserLabel"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/generationActiveTeamTitle"
+                                android:layout_marginBottom="@dimen/_3sdp"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="User - "
+                                android:textColor="@color/white" />
+
+                            <TextView
+                                android:id="@+id/generationActiveTeamUser"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/generationActiveTeamTitle"
+                                android:layout_marginBottom="@dimen/_3sdp"
+                                android:layout_toRightOf="@+id/generationActiveTeamUserLabel"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="0"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold" />
+
+                        <!--    <TextView
+                                android:id="@+id/generationActiveTeamBusinesslabe"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/generationActiveTeamUser"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="Business - "
+                                android:textColor="@color/white"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/generationActiveTeamBusinessValue"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/generationActiveTeamUser"
+                                android:layout_toRightOf="@+id/generationActiveTeamBusinesslabe"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="0"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold"
+                                android:visibility="visible" />-->
+
+                            <ImageView
+                                android:id="@+id/generationActiveTeamIv"
+                                android:layout_width="@dimen/_50sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_team_icon" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/generationDeactiveTeamView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/rounded_white"
+                        android:backgroundTint="@color/colorPrimaryMoreMoreLight"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_7sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:layout_marginRight="@dimen/_10sdp">
+
+                            <TextView
+                                android:id="@+id/generationDeactiveTeamTitle"
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:fontFamily="sans-serif-medium"
+                                android:gravity="center"
+                                android:text="Generation Team (Deactive)"
+                                android:textColor="@color/colorPrimaryMoreMoreMoreLight" />
+
+                            <TextView
+                                android:id="@+id/generationDeactiveTeamUserLabel"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/generationDeactiveTeamTitle"
+                                android:layout_marginBottom="@dimen/_3sdp"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="User - "
+                                android:textColor="@color/white" />
+
+                            <TextView
+                                android:id="@+id/generationDeactiveTeamUser"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/generationDeactiveTeamTitle"
+                                android:layout_marginBottom="@dimen/_3sdp"
+                                android:layout_toRightOf="@+id/generationDeactiveTeamUserLabel"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="0"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold" />
+
+                   <!--         <TextView
+                                android:id="@+id/generationDeactiveTeamBusinesslabe"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/generationDeactiveTeamUser"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="Business - "
+                                android:textColor="@color/white"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/generationDeactiveTeamBusinessValue"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/generationDeactiveTeamUser"
+                                android:layout_toRightOf="@+id/generationDeactiveTeamBusinesslabe"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="0"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold"
+                                android:visibility="visible" />-->
+
+                            <ImageView
+                                android:id="@+id/generationDeactiveTeamIv"
+                                android:layout_width="@dimen/_50sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_team_icon" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/sponserTeamView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:visibility="gone"
+                        android:background="@drawable/rounded_white"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_7sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:layout_marginRight="@dimen/_10sdp">
+
+                            <TextView
+                                android:id="@+id/sponserTeamTitle"
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:fontFamily="sans-serif-medium"
+                                android:gravity="center"
+                                android:text="Generation Team (All)"
+                                android:textColor="@color/colorPrimaryMoreMoreMoreLight" />
+
+                            <TextView
+                                android:id="@+id/sponserTeamUserLabel"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/sponserTeamTitle"
+                                android:layout_marginBottom="@dimen/_3sdp"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="User - "
+                                android:textColor="@color/white" />
+
+                            <TextView
+                                android:id="@+id/sponserTeamUser"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/sponserTeamTitle"
+
+                                android:layout_marginBottom="@dimen/_3sdp"
+                                android:layout_toRightOf="@+id/sponserTeamUserLabel"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="0"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/sponserTeamBusinesslabe"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/sponserTeamUserLabel"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="Business - "
+                                android:textColor="@color/white"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/sponserTeamBusinessValue"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/sponserTeamUser"
+                                android:layout_toEndOf="@+id/sponserTeamBusinesslabe"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="0"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+
+                            <ImageView
+                                android:id="@+id/sponserTeamIv"
+                                android:layout_width="@dimen/_50sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/ic_team_icon" />
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/sponserTeamAllStatusView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_7sdp">
+
+                            <RelativeLayout
+                                android:id="@+id/sponserTeamDeactivaClick"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="@dimen/_minus15sdp"
+                                    android:layout_toLeftOf="@+id/sponserTeamDeactiveIv"
+                                    android:background="@drawable/rect_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:gravity="center"
+                                    android:maxLines="1"
+                                    android:paddingLeft="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_2sdp"
+                                    android:paddingRight="@dimen/_15sdp"
+                                    android:paddingBottom="@dimen/_2sdp"
+                                    android:text="Deactive"
+                                    android:textColor="@color/colorAccentMoreDark"
+                                    android:textStyle="italic" />
+
+
+                                <TextView
+                                    android:id="@+id/sponserTeamDeactive"
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/_minus15sdp"
+                                    android:layout_toRightOf="@+id/sponserTeamDeactiveIv"
+                                    android:background="@drawable/rect_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:gravity="center"
+                                    android:paddingLeft="@dimen/_15sdp"
+                                    android:paddingTop="@dimen/_2sdp"
+                                    android:paddingRight="@dimen/_2sdp"
+                                    android:paddingBottom="@dimen/_2sdp"
+                                    android:text="0"
+                                    android:textColor="@android:color/holo_red_dark" />
+
+                                <ImageView
+                                    android:id="@+id/sponserTeamDeactiveIv"
+                                    android:layout_width="@dimen/_28sdp"
+                                    android:layout_height="@dimen/_28sdp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/ic_circle_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:padding="@dimen/_1sdp"
+                                    android:src="@drawable/ic_cross_mark_fill" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/sponserTeamActivateClick"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/sponserTeamBusinessLabel"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="@dimen/_minus15sdp"
+                                    android:layout_toLeftOf="@+id/sponserTeamActiveIv"
+                                    android:background="@drawable/rect_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:gravity="center"
+                                    android:maxLines="1"
+                                    android:paddingLeft="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_2sdp"
+                                    android:paddingRight="@dimen/_15sdp"
+                                    android:paddingBottom="@dimen/_2sdp"
+                                    android:text="Active"
+                                    android:textColor="@color/colorAccentMoreDark"
+                                    android:textStyle="italic" />
+
+
+                                <TextView
+                                    android:id="@+id/sponserTeamActive"
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/_minus15sdp"
+                                    android:layout_toRightOf="@+id/sponserTeamActiveIv"
+                                    android:background="@drawable/rect_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:gravity="center"
+                                    android:paddingLeft="@dimen/_15sdp"
+                                    android:paddingTop="@dimen/_2sdp"
+                                    android:paddingRight="@dimen/_2sdp"
+                                    android:paddingBottom="@dimen/_2sdp"
+                                    android:text="0"
+                                    android:textColor="@color/green" />
+
+                                <ImageView
+                                    android:id="@+id/sponserTeamActiveIv"
+                                    android:layout_width="@dimen/_28sdp"
+                                    android:layout_height="@dimen/_28sdp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/ic_circle_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:padding="@dimen/_1sdp"
+                                    android:src="@drawable/ic_check_mark_fill" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:visibility="gone"
+                            android:id="@+id/sponserUserShareView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_bottom_white"
+                            android:backgroundTint="@color/light_white"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_5sdp"
+                            android:paddingRight="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_7sdp">
+
+                            <TextView
+                                android:id="@+id/sponserUserShareTv"
+                                style="@style/TextAppearance.AppCompat.Caption"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:paddingBottom="@dimen/_3sdp"
+                                android:textColor="@color/black" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/sponserUserShareTv"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true">
+
+                                <TextView
+                                    android:id="@+id/sponserUserCopy"
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/ic_copy_but"
+                                    android:backgroundTint="@color/colorAccent"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:gravity="center"
+                                    android:minWidth="@dimen/_58sdp"
+                                    android:padding="@dimen/_3sdp"
+                                    android:text="Copy Link"
+                                    android:textColor="@color/white" />
+
+                                <TextView
+                                    android:id="@+id/sponserUserShare"
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/ic_share_but"
+                                    android:backgroundTint="@color/colorPrimary"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:gravity="center"
+                                    android:minWidth="@dimen/_58sdp"
+                                    android:padding="@dimen/_3sdp"
+                                    android:text="Share"
+                                    android:textColor="@color/colorAccentLight" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/totalTeamView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:visibility="gone"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:background="@drawable/rounded_white"
+                        android:backgroundTint="@color/colorPrimaryMoreMoreLight"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:layout_marginRight="@dimen/_10sdp">
+
+                            <TextView
+                                android:id="@+id/totalTeamTitle"
+                                style="@style/TextAppearance.AppCompat.Title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:fontFamily="sans-serif-medium"
+                                android:gravity="center_horizontal"
+                                android:text="Global Team"
+                                android:textColor="@color/colorAccentMoreMoreLight" />
+
+                            <TextView
+                                android:visibility="gone"
+                                android:id="@+id/totalTeamUserLabel"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/totalTeamTitle"
+                                android:layout_marginBottom="@dimen/_3sdp"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="User - "
+                                android:textColor="@color/white" />
+
+                            <TextView
+                                android:visibility="gone"
+                                android:id="@+id/totalTeamUser"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/totalTeamTitle"
+                                android:layout_marginBottom="@dimen/_3sdp"
+                                android:layout_toRightOf="@+id/totalTeamUserLabel"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="0"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold" />
+
+                            <TextView
+
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/totalTeamUserLabel"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="Business - "
+                                android:textColor="@color/white"
+                                android:visibility="gone" />
+
+                            <TextView
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/totalTeamUser"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:text="0"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold"
+                                android:visibility="gone" />
+
+
+                            <ImageView
+                                android:id="@+id/genelogyGlobalView"
+                                android:layout_width="@dimen/_50sdp"
+                                android:layout_height="@dimen/_50sdp"
+                                android:layout_alignParentEnd="true"
+                                android:src="@drawable/ic_team_icon" />
+                            <TextView
+                                android:id="@+id/genelogyGlobalViewTxt"
+                                style="@style/TextAppearance.AppCompat.Subhead"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:layout_below="@id/genelogyGlobalView"
+                                android:layout_alignParentEnd="true"
+                                android:text="Global Tree"
+
+                                android:textColor="@android:color/white" />
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_7sdp">
+
+                            <RelativeLayout
+                                android:visibility="gone"
+                                android:id="@+id/totalTeamDeactivate"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="@dimen/_minus15sdp"
+                                    android:layout_toLeftOf="@+id/totalTeamDeactiveIv"
+                                    android:background="@drawable/rect_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:gravity="center"
+                                    android:maxLines="1"
+                                    android:paddingLeft="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_2sdp"
+                                    android:paddingRight="@dimen/_15sdp"
+                                    android:paddingBottom="@dimen/_2sdp"
+                                    android:text="Deactive"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textStyle="italic" />
+
+
+                                <TextView
+                                    android:id="@+id/totalTeamDeactive"
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/_minus15sdp"
+                                    android:layout_toRightOf="@+id/totalTeamDeactiveIv"
+                                    android:background="@drawable/rect_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:gravity="center"
+                                    android:paddingLeft="@dimen/_15sdp"
+                                    android:paddingTop="@dimen/_2sdp"
+                                    android:paddingRight="@dimen/_2sdp"
+                                    android:paddingBottom="@dimen/_2sdp"
+                                    android:text="0"
+                                    android:textColor="@android:color/holo_red_dark" />
+
+                                <ImageView
+                                    android:id="@+id/totalTeamDeactiveIv"
+                                    android:layout_width="@dimen/_28sdp"
+                                    android:layout_height="@dimen/_28sdp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/ic_circle_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:padding="@dimen/_1sdp"
+                                    android:src="@drawable/ic_cross_mark_fill" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:visibility="gone"
+                                android:id="@+id/totalTeamActivated"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/totalTeamBusinessLabel"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="@dimen/_minus15sdp"
+                                    android:layout_toLeftOf="@+id/totalTeamActiveIv"
+                                    android:background="@drawable/rect_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:gravity="center"
+                                    android:maxLines="1"
+                                    android:paddingLeft="@dimen/_2sdp"
+                                    android:paddingTop="@dimen/_2sdp"
+                                    android:paddingRight="@dimen/_15sdp"
+                                    android:paddingBottom="@dimen/_2sdp"
+                                    android:text="Active"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textStyle="italic" />
+
+
+                                <TextView
+                                    android:id="@+id/totalTeamActive"
+                                    style="@style/TextAppearance.AppCompat.Body2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="@dimen/_minus15sdp"
+                                    android:layout_toRightOf="@+id/totalTeamActiveIv"
+                                    android:background="@drawable/rect_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:gravity="center"
+                                    android:paddingLeft="@dimen/_15sdp"
+                                    android:paddingTop="@dimen/_2sdp"
+                                    android:paddingRight="@dimen/_2sdp"
+                                    android:paddingBottom="@dimen/_2sdp"
+                                    android:text="0"
+                                    android:textColor="@color/green" />
+
+                                <ImageView
+                                    android:id="@+id/totalTeamActiveIv"
+                                    android:layout_width="@dimen/_28sdp"
+                                    android:layout_height="@dimen/_28sdp"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/ic_circle_fill"
+                                    android:backgroundTint="@color/back_bgg"
+                                    android:padding="@dimen/_1sdp"
+                                    android:src="@drawable/ic_check_mark_fill" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:visibility="gone"
+                            android:id="@+id/totalUserShareView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_bottom_white"
+                            android:backgroundTint="@color/white"
+                            android:paddingLeft="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_5sdp"
+                            android:paddingRight="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_7sdp">
+
+                            <TextView
+                                android:id="@+id/totalUserShareTv"
+                                style="@style/TextAppearance.AppCompat.Caption"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-condensed-medium"
+                                android:paddingBottom="@dimen/_3sdp"
+                                android:textColor="@color/colorPrimaryMoreLight" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/totalUserShareTv"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true">
+
+                                <TextView
+                                    android:id="@+id/totalUserCopy"
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/ic_copy_but"
+                                    android:backgroundTint="@color/colorPrimary"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:gravity="center"
+                                    android:minWidth="@dimen/_58sdp"
+                                    android:padding="@dimen/_3sdp"
+                                    android:text="Copy Link"
+                                    android:textColor="@color/colorAccentLight" />
+
+                                <TextView
+                                    android:id="@+id/totalUserShare"
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/ic_share_but"
+                                    android:backgroundTint="@color/colorAccentDark"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:gravity="center"
+                                    android:minWidth="@dimen/_58sdp"
+                                    android:padding="@dimen/_3sdp"
+                                    android:text="Share"
+                                    android:textColor="@color/white" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/coinIV"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="-25dp"
+                        android:elevation="@dimen/_3sdp"
+                        android:src="@drawable/ic_rs_coin" />
+
+                    <LinearLayout
+                        android:id="@+id/buisnessView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:background="@drawable/rounded_right_top_bottom_left"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingTop="@dimen/_15sdp"
+                        android:paddingBottom="@dimen/_10sdp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/businessRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"
+                            android:orientation="vertical"
+                            android:layout_marginEnd="@dimen/_minus1sdp"
+                            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                            tools:itemCount="3"
+                            app:spanCount="2"
+                            tools:listitem="@layout/adapter_networking_business" />
+
+
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:id="@+id/leftBusinessView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="67dp"
+                                    android:padding="@dimen/_10sdp">
+
+                                    <TextView
+                                        android:id="@+id/leftTeamBusinessLabel"
+                                        style="@style/TextAppearance.AppCompat.Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/_7sdp"
+                                        android:fontFamily="sans-serif-condensed-medium"
+                                        android:text="Left\nBusiness"
+                                        android:textColor="@android:color/white" />
+
+                                    <TextView
+                                        android:id="@+id/leftTeamBusiness"
+                                        style="@style/TextAppearance.AppCompat.Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_toRightOf="@+id/leftTeamBusinessLabel"
+                                        android:background="@drawable/rounded_20dp"
+                                        android:backgroundTint="@color/colorPrimaryLight"
+                                        android:fontFamily="sans-serif-condensed-medium"
+                                        android:gravity="center"
+                                        android:paddingTop="@dimen/_3sdp"
+                                        android:paddingBottom="@dimen/_3sdp"
+                                        android:text="0"
+                                        android:textColor="@color/white" />
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:id="@+id/directBusinessView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/_10sdp">
+
+                                    <TextView
+                                        android:id="@+id/directTeamBusinessLabel"
+                                        style="@style/TextAppearance.AppCompat.Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/_7sdp"
+                                        android:fontFamily="sans-serif-condensed-medium"
+                                        android:text="Direct\nBusiness"
+                                        android:textColor="@android:color/white" />
+
+                                    <TextView
+                                        android:id="@+id/directTeamBusiness"
+                                        style="@style/TextAppearance.AppCompat.Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_toRightOf="@+id/directTeamBusinessLabel"
+                                        android:background="@drawable/rounded_20dp"
+                                        android:backgroundTint="@color/colorPrimaryLight"
+                                        android:fontFamily="sans-serif-condensed-medium"
+                                        android:gravity="center"
+                                        android:paddingTop="@dimen/_3sdp"
+                                        android:paddingBottom="@dimen/_3sdp"
+                                        android:text="0"
+                                        android:textColor="@color/white" />
+
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="@dimen/_3sdp"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/black" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:id="@+id/rightBusinessView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/_10sdp">
+
+                                    <TextView
+                                        android:id="@+id/rightTeamBusinessLabel"
+                                        style="@style/TextAppearance.AppCompat.Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/_7sdp"
+                                        android:fontFamily="sans-serif-condensed-medium"
+                                        android:text="Right\nBusiness"
+                                        android:textColor="@android:color/white" />
+
+                                    <TextView
+                                        android:id="@+id/rightTeamBusiness"
+                                        style="@style/TextAppearance.AppCompat.Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_toRightOf="@+id/rightTeamBusinessLabel"
+                                        android:background="@drawable/rounded_20dp"
+                                        android:backgroundTint="@color/colorPrimaryLight"
+                                        android:fontFamily="sans-serif-condensed-medium"
+                                        android:gravity="center"
+                                        android:paddingTop="@dimen/_3sdp"
+                                        android:paddingBottom="@dimen/_3sdp"
+                                        android:text="0"
+                                        android:textColor="@color/white" />
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:id="@+id/sponserBusinessView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/_10sdp">
+
+                                    <TextView
+                                        android:id="@+id/sponserTeamBusinessLabel"
+                                        style="@style/TextAppearance.AppCompat.Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/_7sdp"
+                                        android:fontFamily="sans-serif-condensed-medium"
+                                        android:text="Sponser\nBusiness"
+                                        android:textColor="@android:color/white" />
+
+                                    <TextView
+                                        android:id="@+id/sponserTeamBusiness"
+                                        style="@style/TextAppearance.AppCompat.Caption"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_toRightOf="@+id/sponserTeamBusinessLabel"
+                                        android:background="@drawable/rounded_20dp"
+                                        android:backgroundTint="@color/colorPrimaryLight"
+                                        android:fontFamily="sans-serif-condensed-medium"
+                                        android:gravity="center"
+                                        android:paddingTop="@dimen/_3sdp"
+                                        android:paddingBottom="@dimen/_3sdp"
+                                        android:text="0"
+                                        android:textColor="@color/white" />
+
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RelativeLayout
+                                android:id="@+id/selfBusinessView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="@dimen/_10sdp">
+
+                                <TextView
+                                    android:id="@+id/selfTeamBusinessLabel"
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="@dimen/_7sdp"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:text="Self\nBusiness"
+                                    android:textColor="@android:color/white" />
+
+                                <TextView
+                                    android:id="@+id/selfTeamBusiness"
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toRightOf="@+id/selfTeamBusinessLabel"
+                                    android:background="@drawable/rounded_20dp"
+                                    android:backgroundTint="@color/colorPrimaryLight"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:gravity="center"
+                                    android:paddingTop="@dimen/_3sdp"
+                                    android:paddingBottom="@dimen/_3sdp"
+                                    android:text="0"
+                                    android:textColor="@color/white" />
+
+                            </RelativeLayout>
+
+                             <View
+                                 android:layout_width="@dimen/_3sdp"
+                                 android:layout_height="match_parent"
+                                 android:background="@android:color/black" />
+
+                            <RelativeLayout
+                                android:id="@+id/totalBusinessView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="@dimen/_10sdp">
+
+                                <TextView
+                                    android:id="@+id/totalTeamBusinessLabel"
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginRight="@dimen/_7sdp"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:text="Total\nBusiness"
+                                    android:textColor="@android:color/white" />
+
+                                <TextView
+                                    android:id="@+id/totalTeamBusiness"
+                                    style="@style/TextAppearance.AppCompat.Caption"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toRightOf="@+id/totalTeamBusinessLabel"
+                                    android:background="@drawable/rounded_20dp"
+                                    android:backgroundTint="@color/colorPrimaryLight"
+                                    android:fontFamily="sans-serif-condensed-medium"
+                                    android:gravity="center"
+                                    android:paddingTop="@dimen/_3sdp"
+                                    android:paddingBottom="@dimen/_3sdp"
+                                    android:text="0"
+                                    android:textColor="@color/white" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottomView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:elevation="@dimen/_5sdp"
+        android:paddingLeft="@dimen/_2sdp"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/homeView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_4sdp"
+            android:paddingBottom="@dimen/_4sdp">
+
+
+            <ImageView
+
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_2sdp"
+                app:srcCompat="@drawable/home" />
+
+
+            <TextView
+
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/icon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Home"
+                android:textColor="@color/colorAccentMoreLight"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/supportView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_4sdp"
+            android:paddingBottom="@dimen/_4sdp">
+
+
+            <ImageView
+
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_2sdp"
+                app:srcCompat="@drawable/ic_support_bottom_icon" />
+
+
+            <TextView
+
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/icon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:text="Support"
+                android:textColor="@color/colorAccentMoreLight"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/reportView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_4sdp"
+            android:paddingBottom="@dimen/_4sdp">
+
+
+            <ImageView
+
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_2sdp"
+                app:srcCompat="@drawable/ic_report" />
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/icon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:text="Report"
+
+                android:textColor="@color/colorAccentMoreLight"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/shoppingView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_4sdp"
+            android:paddingBottom="@dimen/_4sdp"
+            android:visibility="gone">
+
+
+            <ImageView
+
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_2sdp"
+                app:srcCompat="@drawable/ic_shopping_trolley" />
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/icon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="Shopping"
+                android:textColor="@color/colorAccentMoreLight"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fintechView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_4sdp"
+            android:paddingBottom="@dimen/_4sdp"
+            android:visibility="gone">
+
+
+            <ImageView
+
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_2sdp"
+                app:srcCompat="@drawable/ic_fintech" />
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/icon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="Fintech"
+                android:textColor="@color/colorAccentMoreLight"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_logout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_4sdp"
+            android:paddingBottom="@dimen/_4sdp"
+            android:visibility="gone">
+
+
+            <ImageView
+
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_2sdp"
+                app:srcCompat="@drawable/ic_signout" />
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/icon"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:text="Logout"
+
+                android:textColor="@color/colorAccentMoreLight"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

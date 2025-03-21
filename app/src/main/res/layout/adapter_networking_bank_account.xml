@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/_5sdp"
+    android:layout_marginRight="@dimen/_5sdp"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:background="@drawable/rounded_reports_gradient_border">
+
+    <TextView
+        android:id="@+id/userDetailTitle"
+        style="@style/TextAppearance.AppCompat.Caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        android:layout_toLeftOf="@+id/switchView"
+        android:fontFamily="sans-serif-medium"
+        android:text="User Details"
+        android:textColor="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/beneName"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/userDetailTitle"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        android:layout_toLeftOf="@+id/switchView"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@android:color/white" />
+
+    <LinearLayout
+        android:id="@+id/switchView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:background="@drawable/rounded_accent_border"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/_2sdp">
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/activeSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/activeTv"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Default"
+            android:textColor="@color/red" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/detailTitle"
+        style="@style/TextAppearance.AppCompat.Caption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/beneName"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:layout_marginRight="@dimen/_6sdp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Bank Details"
+        android:textColor="@color/colorAccent" />
+
+    <RelativeLayout
+        android:id="@+id/beneDetailView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/detailTitle"
+        android:layout_marginLeft="@dimen/_6sdp"
+        android:layout_marginRight="@dimen/_6sdp">
+
+        <LinearLayout
+            android:id="@+id/beneDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/beneIFSCView"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/beneBank"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="State Bank Of India"
+                android:textColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/beneAccountNumber"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_grey_light" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/beneIFSCView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="IFSC Code"
+                android:textColor="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/beneIFSC"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/statusView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/beneDetailView"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginRight="@dimen/_5sdp"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:id="@+id/approvalStatusView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/slabView"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/joinByIcon"
+                    android:layout_width="@dimen/_11sdp"
+                    android:layout_height="@dimen/_11sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    app:srcCompat="@drawable/ic_icon_approval_status"
+                    app:tint="@color/colorAccent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.Compat.Notification.Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Approval Status"
+                    android:textColor="@color/colorAccent" />
+
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/approvalStatusTv"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="-"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/grey" />
+
+        <LinearLayout
+            android:id="@+id/verificationStatusView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/_5sdp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/kycStatusIcon"
+                    android:layout_width="@dimen/_11sdp"
+                    android:layout_height="@dimen/_11sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    app:srcCompat="@drawable/ic_icon_verify_status_accent"
+                    android:tint="@color/colorAccent"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.Compat.Notification.Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Verification Status"
+                    android:textColor="@color/colorAccent" />
+
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/verifyStatusTv"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="-"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <!--<View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/grey" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.275"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/_3sdp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/balanceIcon"
+                    android:layout_width="@dimen/_11sdp"
+                    android:layout_height="@dimen/_11sdp"
+                    android:layout_marginRight="@dimen/_4sdp"
+                    app:srcCompat="@drawable/ic_rupee_indian"
+                    app:tint="@color/colorPrimary" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.Compat.Notification.Info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Current Balance"
+                    android:textColor="@color/colorPrimary" />
+
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/balanceTv"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="\u20B9 0"
+                android:textColor="@color/green" />
+        </LinearLayout>-->
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_4sdp"
+            android:layout_marginRight="@dimen/_4sdp"
+            android:background="@color/grey"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/joinDateView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/slabView"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/calanderIcon"
+                    android:layout_width="@dimen/_11sdp"
+                    android:layout_height="@dimen/_11sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    app:srcCompat="@drawable/ic_calendar_icon"
+                    app:tint="@color/colorAccentMoreLight" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/TextAppearance.AppCompat.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/joinByIcon"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Join Date"
+                    android:textColor="@color/colorAccentMoreLight" />
+
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dateTv"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="30 Dec 2019 11:12 AM "
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/beneAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/statusView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_2sdp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/sendView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@drawable/rounded_reports_button_gradient_border"
+            android:elevation="@dimen/_3sdp"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:minWidth="@dimen/_80sdp"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/_8sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingRight="@dimen/_8sdp"
+            android:paddingBottom="@dimen/_5sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:backgroundTint="@android:color/transparent"
+                android:gravity="center"
+                app:srcCompat="@drawable/ic_send_money" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/sendBtnTv"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Send"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/verifyView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@drawable/rounded_reports_button_gradient_border"
+            android:elevation="@dimen/_3sdp"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:minWidth="@dimen/_80sdp"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/_8sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingRight="@dimen/_8sdp"
+            android:paddingBottom="@dimen/_5sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:backgroundTint="@android:color/transparent"
+                android:gravity="center"
+                app:srcCompat="@drawable/ic_icon_verify_status" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/verifyBtnTv"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Verify"
+
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/updateView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@drawable/rounded_reports_button_gradient_border"
+            android:elevation="@dimen/_3sdp"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:minWidth="@dimen/_80sdp"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/_8sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingRight="@dimen/_8sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:backgroundTint="@android:color/transparent"
+                android:gravity="center"
+                app:srcCompat="@drawable/ic_edit"
+                app:tint="@color/colorPrimary" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/sendTv"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Update"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/deleteView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@drawable/rounded_reports_button_gradient_border"
+            android:elevation="@dimen/_3sdp"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:minWidth="@dimen/_80sdp"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/_8sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingRight="@dimen/_8sdp"
+            android:paddingBottom="@dimen/_5sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:backgroundTint="@android:color/transparent"
+                android:gravity="center"
+                android:padding="@dimen/_1sdp"
+                app:srcCompat="@drawable/ic_delete"
+                app:tint="@color/colorPrimary" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/deleteTv"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Delete"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
+
+        <!--   <TextView
+               style="@style/TextAppearance.AppCompat.Body2"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginRight="@dimen/_8sdp"
+               android:background="@drawable/rounded_primary"
+               android:elevation="@dimen/_2sdp"
+               android:fontFamily="sans-serif-medium"
+               android:gravity="center"
+               android:minWidth="@dimen/_60sdp"
+               android:padding="@dimen/_5sdp"
+               android:text="Send"
+               android:textColor="@android:color/white" />
+
+
+           <TextView
+               style="@style/TextAppearance.AppCompat.Body2"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:background="@drawable/rounded_accent"
+               android:elevation="@dimen/_2sdp"
+               android:fontFamily="sans-serif-medium"
+               android:gravity="center"
+               android:minWidth="@dimen/_60sdp"
+               android:padding="@dimen/_5sdp"
+               android:text="Delete"
+               android:textColor="@android:color/white" />-->
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+
+

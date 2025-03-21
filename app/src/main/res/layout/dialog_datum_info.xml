@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/_5sdp"
+    android:layout_marginRight="@dimen/_5sdp"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:background="@drawable/rounded_accent"
+    android:orientation="vertical"
+    android:padding="@dimen/_10sdp">
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/poolIdView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/levelIdLevel"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Level ID : "
+                android:textColor="@color/colorPrimaryDark" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/levelIDTextView"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/black" />
+            <ImageView
+                android:id="@+id/targetStatus"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:layout_gravity="end"
+                android:gravity="end"
+                android:layout_marginStart="@dimen/_5sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_3sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:src="@drawable/horizontal_dashed_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/poolIdView" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/memberView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@drawable/rounded_grey_border_fill"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/targetLabel"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="Target"
+            android:textColor="@color/greycon"
+            app:layout_constraintEnd_toStartOf="@id/totalTeamLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/targetTextView"
+            style="@style/TextAppearance.Compat.Notification.Info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toStartOf="@id/totalTeamTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/targetLabel" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/totalTeamLabel"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="Total Team"
+            android:textColor="@color/greycon"
+            app:layout_constraintEnd_toStartOf="@id/remainingMemberLabel"
+            app:layout_constraintStart_toEndOf="@id/targetLabel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/totalTeamTextView"
+            style="@style/TextAppearance.Compat.Notification.Info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toStartOf="@id/remainingTeamTextView"
+            app:layout_constraintStart_toEndOf="@id/targetTextView"
+            app:layout_constraintTop_toBottomOf="@id/totalTeamLabel" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/remainingMemberLabel"
+            style="@style/TextAppearance.AppCompat.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:text="Remaining Team"
+            android:textColor="@color/greycon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/totalTeamLabel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/remainingTeamTextView"
+            style="@style/TextAppearance.Compat.Notification.Info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/totalTeamTextView"
+            app:layout_constraintTop_toBottomOf="@id/remainingMemberLabel" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

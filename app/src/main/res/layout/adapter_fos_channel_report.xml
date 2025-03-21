@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/_1sdp"
+    android:background="@color/colorAccentMoreLight"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/_1sdp"
+        android:background="@drawable/primary_gradient"
+        android:paddingLeft="@dimen/_3sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/outletNameValue"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/info"
+            android:fontFamily="sans-serif-condensed-medium"
+
+            android:gravity="center"
+
+            android:text="Outlet Name Value"
+            android:textColor="@color/colorAccent" />
+
+        <ImageView
+            android:id="@+id/info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/_5sdp"
+            app:srcCompat="@drawable/ic_info_small"
+            app:tint="@color/colorAccent" />
+    </RelativeLayout>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mobileValue"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="@dimen/_85sdp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/_1sdp"
+        android:background="@drawable/primary_gradient"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:paddingLeft="@dimen/_3sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingRight="@dimen/_3sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:text="Mobile No"
+        android:textColor="@color/color_grey_light" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/balanceValue"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/_1sdp"
+        android:background="@drawable/primary_gradient"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:paddingLeft="@dimen/_3sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingRight="@dimen/_3sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:text="Balance"
+        android:textColor="@color/color_grey_light" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/uBalanceValue"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/_1sdp"
+        android:background="@drawable/primary_gradient"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingRight="@dimen/_3sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:text=""
+        android:textColor="@color/color_grey_light" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/openingValue"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/_1sdp"
+        android:background="@drawable/primary_gradient"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:paddingLeft="@dimen/_3sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingRight="@dimen/_3sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:text=""
+        android:textColor="@color/color_grey_light" />
+
+    <RelativeLayout
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/_1sdp"
+        android:background="@drawable/primary_gradient"
+        android:paddingLeft="@dimen/_3sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/salesValue"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_1sdp"
+            android:layout_toLeftOf="@+id/infoSale"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:paddingLeft="@dimen/_3sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingRight="@dimen/_3sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:text=""
+            android:textColor="@color/color_grey_light" />
+
+        <ImageView
+            android:id="@+id/infoSale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/_5sdp"
+            app:srcCompat="@drawable/ic_info_small"
+            app:tint="@color/color_grey_light" />
+    </RelativeLayout>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/lsaleValue"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/_1sdp"
+        android:background="@drawable/primary_gradient"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:paddingLeft="@dimen/_3sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingRight="@dimen/_3sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:text=""
+        android:textColor="@color/color_grey_light" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/lsDateValue"
+        style="@style/TextAppearance.Compat.Notification.Info"
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/_1sdp"
+        android:background="@drawable/primary_gradient"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:maxLines="1"
+        android:paddingLeft="@dimen/_3sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingRight="@dimen/_3sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:singleLine="true"
+        android:text="RoundPay Techno Media"
+        android:textColor="@color/color_grey_light" />
+
+    <RelativeLayout
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/_1sdp"
+        android:background="@drawable/primary_gradient"
+        android:paddingLeft="@dimen/_3sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/cCollectionValue"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/_1sdp"
+            android:layout_toLeftOf="@+id/infoCol"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:paddingLeft="@dimen/_3sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingRight="@dimen/_3sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:text=""
+            android:textColor="@color/color_grey_light" />
+
+        <ImageView
+            android:id="@+id/infoCol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/_5sdp"
+            app:srcCompat="@drawable/ic_info_small"
+            app:tint="@color/color_grey_light" />
+    </RelativeLayout>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/lCollectionValue"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/_1sdp"
+        android:background="@drawable/primary_gradient"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:paddingLeft="@dimen/_3sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingRight="@dimen/_3sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:text=""
+        android:textColor="@color/color_grey_light" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/lcDateValue"
+        style="@style/TextAppearance.Compat.Notification.Info"
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/_1sdp"
+        android:background="@drawable/primary_gradient"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="center"
+        android:maxLines="1"
+        android:paddingLeft="@dimen/_3sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingRight="@dimen/_3sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:singleLine="true"
+        android:text="NOT APPLIED"
+        android:textColor="@color/color_grey_light" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/closingValue"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="@dimen/_1sdp"
+        android:background="@drawable/primary_gradient"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:paddingLeft="@dimen/_3sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingRight="@dimen/_3sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:text=""
+        android:textColor="@color/color_grey_light" />
+
+    <LinearLayout
+        android:layout_width="@dimen/_240sdp"
+        android:layout_height="match_parent"
+        android:background="@drawable/primary_gradient"
+        android:gravity="center">
+
+        <LinearLayout
+            android:id="@+id/collectionView"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/_3sdp"
+            android:background="@drawable/rounded_reports_button_gradient_border"
+            android:elevation="@dimen/_3sdp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/_8sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingRight="@dimen/_8sdp"
+            android:paddingBottom="@dimen/_5sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:backgroundTint="@android:color/transparent"
+                android:gravity="center"
+                app:srcCompat="@drawable/ic_collection"
+                app:tint="@color/colorPrimary" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Collection"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fundTransferView"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/_3sdp"
+            android:background="@drawable/rounded_reports_button_gradient_border"
+            android:elevation="@dimen/_3sdp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/_8sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingRight="@dimen/_8sdp"
+            android:paddingBottom="@dimen/_5sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:backgroundTint="@android:color/transparent"
+                android:gravity="center"
+                app:srcCompat="@drawable/ic_fund_transfer"
+                app:tint="@color/colorPrimary" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fundTransferTv"
+                style="@style/TextAppearance.AppCompat.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Fund Transfer"
+                android:textColor="@color/colorPrimary" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
