@@ -125,7 +125,7 @@ import retrofit2.Callback;
 
 public class AddMoneyActivity extends AppCompatActivity implements PaymentResultListener, PaytmPaymentTransactionCallback {
     private static final String TAG = AddMoneyActivity.class.getSimpleName();
-    View walletView, msgView, noDataView, noNetworkView, retryBtn;
+    View walletView,noClickView, msgView, noDataView, noNetworkView, retryBtn;
     TextView walletTv, walletAmountTv;
     TextView upiBtn;
     ImageView arrowIv, bhimLogo;
@@ -174,7 +174,7 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
     private boolean isTransactionCancelledByUser;
     private Dialog uiWebViewDialog;
     private double intentAmount;
-    private boolean isFromCart;
+    private boolean isFromCart,isFromRecharge;
     private int currentPGId;
     private String requestAmount = "0";
     private boolean isAllUpiDialogCanceled;
@@ -184,6 +184,7 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
     private Dialog pendingTimerDialog;
     private CountDownTimer countDownTimerPendingTxn;
     private PaymentGatewayType paymentGatewayType;
+    private String razorpayOrderid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -201,6 +202,7 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
             mLoginDataResponse = ApiFintechUtilMethods.INSTANCE.getLoginResponse(mAppPreferences);
             deviceId = ApiFintechUtilMethods.INSTANCE.getDeviceId(mAppPreferences);
             deviceSerialNum = ApiFintechUtilMethods.INSTANCE.getSerialNumber(mAppPreferences);
+            isFromRecharge = getIntent().getBooleanExtra("IsFromRecharge", false);
             intentAmount = getIntent().getDoubleExtra("AMOUNT", 0);
             isFromCart = getIntent().getBooleanExtra("isFromCart", false);
             findViews();
@@ -249,17 +251,6 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
                 SlabCommissionResponse mSlabCommissionResponse = gson.fromJson(mAppPreferences.getString(ApplicationConstant.INSTANCE.commListPref), SlabCommissionResponse.class);
                 setUiData(mSlabCommissionResponse);
                 HitCommissionApi();
-//                if (intentAmount != 0) {
-//                    int amt = (int) (intentAmount + 1);
-//                    amountEt.setText(amt + "");
-//                }
-                if (intentAmount % 1 != 0) {
-                    int amt = (int) (intentAmount + 1);
-                    amountEt.setText(amt + "");
-                } else {
-                    int amt = (int) intentAmount;
-                    amountEt.setText(amt + "");
-                }
             });
         });
 
@@ -302,6 +293,19 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
         walletAmountTv = findViewById(R.id.walletAmountTv);
         arrowIv = findViewById(R.id.arrowIv);
         amountEt = findViewById(R.id.amountEt);
+        noClickView = findViewById(R.id.noClickView);
+        if (isFromRecharge == true) {
+            if (intentAmount % 1 != 0) {
+                int amt = (int) (intentAmount + 1);
+                amountEt.setText(Utility.INSTANCE.formatedAmountWithOutRupees(amt + ""));
+            } else {
+                int amt = (int) intentAmount;
+                amountEt.setText(Utility.INSTANCE.formatedAmountWithOutRupees(amt + ""));
+            }
+            noClickView.setVisibility(View.VISIBLE);
+        } else {
+            noClickView.setVisibility(View.GONE);
+        }
         noDataView = findViewById(R.id.noDataView);
         noNetworkView = findViewById(R.id.noNetworkView);
         retryBtn = findViewById(R.id.retryBtn);
@@ -311,13 +315,11 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
 
     private void HitCommissionApi() {
         if (ApiFintechUtilMethods.INSTANCE.isNetworkAvialable(this)) {
-
             isApiCalling = true;
             ApiFintechUtilMethods.INSTANCE.MyCommission(this, false, loader, mLoginDataResponse, deviceId, deviceSerialNum, mAppPreferences, new ApiFintechUtilMethods.ApiResponseCallBack() {
                 @Override
                 public void onSucess(Object object) {
                     isApiCalling = false;
-
                     SlabCommissionResponse mSlabCommissionResponse = (SlabCommissionResponse) object;
                     if (mSlabCommissionResponse != null && mSlabCommissionResponse.getSlabDetailDisplayLvl() != null && mSlabCommissionResponse.getSlabDetailDisplayLvl().size() > 0) {
                         noDataView.setVisibility(View.GONE);
@@ -521,7 +523,7 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
 
 
 
-        if (operatorArray != null && operatorArray.size() == 1) {
+        if (isFromRecharge && operatorArray != null && operatorArray.size() == 1) {
             paymentTypeClick(operatorArray.get(0));
         }else {
             if(operatorArray != null && !operatorArray.isEmpty()) {
@@ -808,13 +810,11 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
     }
 
     public void startGateway(PaymentGatewayType paymentGatewayType) {
-
         if (gatewayDialog != null && gatewayDialog.isShowing()) {
             gatewayDialog.dismiss();
         }
         this.paymentGatewayType = paymentGatewayType;
         GatewayTransaction(paymentGatewayType);
-
     }
 
     /*-------Cash Free SDK Integrations..----*/
@@ -1098,14 +1098,14 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
         CashFreeTransactionUpdate(json);
     }
 
-    public void CashFreeTransactionUpdate(JsonObject response) {
+    public void CashFreeTransactionUpdate(JsonObject jsonObj) {
         try {
             if (!isActivityPause) {
                 loader.show();
             }
             FintechEndPointInterface git = ApiClient.getClient().create(FintechEndPointInterface.class);
             Call<BasicResponse> call;
-            call = git.CashFreeTransactionUpdate(new PayTMTransactionUpdateRequest(response, mLoginDataResponse.getData().getUserID(), mLoginDataResponse.getData().getLoginTypeID(), ApplicationConstant.INSTANCE.APP_ID, deviceId, "", BuildConfig.VERSION_NAME, deviceSerialNum, mLoginDataResponse.getData().getSessionID(), mLoginDataResponse.getData().getSession()));
+            call = git.CashFreeTransactionUpdate(new PayTMTransactionUpdateRequest(jsonObj, mLoginDataResponse.getData().getUserID(), mLoginDataResponse.getData().getLoginTypeID(), ApplicationConstant.INSTANCE.APP_ID, deviceId, "", BuildConfig.VERSION_NAME, deviceSerialNum, mLoginDataResponse.getData().getSessionID(), mLoginDataResponse.getData().getSession()));
             call.enqueue(new Callback<BasicResponse>() {
                 @Override
                 public void onResponse(Call<BasicResponse> call, final retrofit2.Response<BasicResponse> response) {
@@ -1118,7 +1118,9 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
                             if (response.body() != null) {
                                 if (response.body().getStatuscode() == 1) {
                                     ApiFintechUtilMethods.INSTANCE.isReadyToUpdateBalance = true;
-                                    amountEt.setText("");
+                                    if (!isFromRecharge) {
+                                        amountEt.setText("");
+                                    }
                                     ApiFintechUtilMethods.INSTANCE.Balancecheck(AddMoneyActivity.this, loader, mLoginDataResponse, deviceId, deviceSerialNum, mAppPreferences, mEKYCStepsDialog, object -> {
                                         balanceCheckResponse = (BalanceResponse) object;
                                         if (balanceCheckResponse != null && balanceCheckResponse.getBalanceData() != null && balanceCheckResponse.getBalanceData().size() > 0) {
@@ -1129,11 +1131,22 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
                                     if (isTransactionCancelledByUser) {
                                         ApiFintechUtilMethods.INSTANCE.ErrorWithTitle(AddMoneyActivity.this, "TXN CANCEL", "Cancelled By User");
                                     } else {
-                                        setResult(RESULT_OK);
-                                        if (isFromCart) {
 
+                                        if (isFromRecharge) {
+                                            Intent intent = new Intent();
+                                            intent.putExtra("TID", jsonObj.get("TXNID").getAsString());
+                                            intent.putExtra("ORDERID", jsonObj.get("ORDERID").getAsString());
+                                            intent.putExtra("Status",jsonObj.get("STATUS").getAsString());
+                                            intent.putExtra("BANKTXNID", jsonObj.get("BANKTXNID").getAsString());
+                                            intent.putExtra("TXNID", jsonObj.get("TXNID").getAsString());
+                                            intent.putExtra("txnRef", jsonObj.get("TXNID").getAsString());
+                                            setResult(RESULT_OK, intent);
+                                            finish();
+                                        } else if (isFromCart) {
+                                            setResult(RESULT_OK);
                                             finish();
                                         } else {
+                                            setResult(RESULT_OK);
                                             if (response.body().getMsg() != null && response.body().getMsg().equalsIgnoreCase("PENDING")) {
                                                 ApiFintechUtilMethods.INSTANCE.Processing(AddMoneyActivity.this, "Your Order" + cFItemData.getOrderID() + " for Amount " + getString(R.string.rupiya) + cFItemData.getOrderAmount() + " is awaited from Bank Side \n" + "We will Update once we get Response From bank Side ");
 
@@ -1496,7 +1509,9 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.setPackage("com.android.chrome");
         gatewayDialog.dismiss();
-        amountEt.setText("");
+        if (!isFromRecharge) {
+            amountEt.setText("");
+        }
         try {
             getApplicationContext().startActivity(intent);
         } catch (ActivityNotFoundException ex) {
@@ -1546,7 +1561,7 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
         Checkout checkout = new Checkout();
         checkout.setKeyID(mRequestRazorPay.getKey_id());
         checkout.setImage(R.drawable.app_full_logo);
-
+        razorpayOrderid = mRequestRazorPay.getOrder_id() + "";
         try {
             JSONObject options = new JSONObject();
             options.put("name", mRequestRazorPay.getPrefill_name());
@@ -1594,10 +1609,23 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
     public void onPaymentSuccess(String razorpayPaymentID) {
         setResult(RESULT_OK);
         ApiFintechUtilMethods.INSTANCE.isReadyToUpdateBalance = true;
-        if (isFromCart) {
+        if (isFromRecharge) {
+            Intent intent = new Intent();
+            intent.putExtra("TID", razorpayOrderid);
+            intent.putExtra("ORDERID", razorpayOrderid);
+            intent.putExtra("BANKTXNID", razorpayPaymentID);
+            intent.putExtra("Status","Success");
+            intent.putExtra("TXNID", razorpayPaymentID);
+            intent.putExtra("txnRef", razorpayPaymentID);
+            setResult(RESULT_OK, intent);
+            finish();
+        } else if (isFromCart) {
             finish();
         } else {
-            amountEt.setText("");
+            setResult(RESULT_OK);
+            if (!isFromRecharge) {
+                amountEt.setText("");
+            }
             ApiFintechUtilMethods.INSTANCE.Successful(AddMoneyActivity.this, "Money Sucessfully Added");
             ApiFintechUtilMethods.INSTANCE.Balancecheck(AddMoneyActivity.this, loader, mLoginDataResponse, deviceId, deviceSerialNum, mAppPreferences, mEKYCStepsDialog, object -> {
                 balanceCheckResponse = (BalanceResponse) object;
@@ -1633,7 +1661,9 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
                         if (response.body() != null) {
                             if (response.body().getStatuscode() == 2) {
                                 ApiFintechUtilMethods.INSTANCE.isReadyToUpdateBalance = true;
-                                amountEt.setText("");
+                                if (!isFromRecharge) {
+                                    amountEt.setText("");
+                                }
                                 ApiFintechUtilMethods.INSTANCE.Balancecheck(AddMoneyActivity.this, loader, mLoginDataResponse, deviceId, deviceSerialNum, mAppPreferences, mEKYCStepsDialog, new ApiFintechUtilMethods.ApiCallBack() {
                                     @Override
                                     public void onSucess(Object object) {
@@ -1643,11 +1673,22 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
                                         }
                                     }
                                 });
-                                setResult(RESULT_OK);
-                                if (isFromCart) {
+                                if (isFromRecharge) {
 
+                                    Intent intent = new Intent();
+                                    intent.putExtra("TID", tid);
+                                    intent.putExtra("ORDERID", tid);
+                                    intent.putExtra("BANKTXNID", tid);
+                                    intent.putExtra("TXNID", tid);
+                                    intent.putExtra("Status","Success");
+                                    intent.putExtra("txnRef", hash);
+                                    setResult(RESULT_OK, intent);
+                                    finish();
+                                } else if (isFromCart) {
+                                    setResult(RESULT_OK);
                                     finish();
                                 } else {
+                                setResult(RESULT_OK);
                                     if (!isActivityPause) {
                                         ApiFintechUtilMethods.INSTANCE.Successful(AddMoneyActivity.this, "Money Added Sucessfully");
                                     } else {
@@ -1658,12 +1699,24 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
                                 }
                             } else if (response.body().getStatuscode() == 1) {
                                 ApiFintechUtilMethods.INSTANCE.isReadyToUpdateBalance = true;
-                                amountEt.setText("");
-                                setResult(RESULT_OK);
-                                if (isFromCart) {
-
+                                if (!isFromRecharge) {
+                                    amountEt.setText("");
+                                }
+                                if (isFromRecharge) {
+                                    Intent intent = new Intent();
+                                    intent.putExtra("TID", tid);
+                                    intent.putExtra("ORDERID", tid);
+                                    intent.putExtra("BANKTXNID", tid);
+                                    intent.putExtra("TXNID", tid);
+                                    intent.putExtra("Status","Pending");
+                                    intent.putExtra("txnRef", hash);
+                                    setResult(RESULT_OK, intent);
+                                    finish();
+                                } else if (isFromCart) {
+                                    setResult(RESULT_OK);
                                     finish();
                                 } else {
+                                    setResult(RESULT_OK);
                                     if (!isActivityPause) {
                                         ApiFintechUtilMethods.INSTANCE.Processing(AddMoneyActivity.this, "Your transcation under process, please wait 48 Hour to confirmation.");
                                     } else {
@@ -1991,8 +2044,6 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
         webView.getSettings().setSupportMultipleWindows(true);
         webView.setWebViewClient(new MyWebViewClient());
         webView.loadUrl(url);
-
-
         View closeBtn = viewMyLayout.findViewById(R.id.closeIv);
         uiWebViewDialog = new Dialog(this, R.style.Theme_AppCompat_Dialog_Alert);
         uiWebViewDialog.setCancelable(false);
@@ -2007,26 +2058,18 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
                 uiWebViewDialog.dismiss();
             }
         });
-
         uiWebViewDialog.setOnDismissListener(dialogInterface -> {
-
             loader.show();
-
             if (currentPGId == 12) {
                 isPendingTimerComplete = false;
                 callAllUPIStatusUpdate(true);
             } else {
                 callUPIWebUpdate(true);
             }
-
         });
-
-
         uiWebViewDialog.show();
         // Window window = dialog.getWindow();
         //window.setLayout(Toolbar.LayoutParams.MATCH_PARENT, Toolbar.LayoutParams.MATCH_PARENT);
-
-
     }
 
     public void callAllUPIStatusUpdate(boolean isLoaderShow) {
@@ -2034,7 +2077,6 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
             if (!isActivityPause && isLoaderShow) {
                 loader.show();
             }
-
             isAllUPIStatusCheckRunning = true;
             FintechEndPointInterface git = ApiClient.getClient().create(FintechEndPointInterface.class);
             Call<GatwayStatusCheckResponse> call = git.AllUPIStatusCheck(upiTID);
@@ -2042,32 +2084,34 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
             call.enqueue(new Callback<GatwayStatusCheckResponse>() {
                 @Override
                 public void onResponse(Call<GatwayStatusCheckResponse> call, final retrofit2.Response<GatwayStatusCheckResponse> response) {
-
                     try {
                         if (loader != null && loader.isShowing()) {
                             loader.dismiss();
                         }
                         if (response.isSuccessful()) {
                             if (response.body() != null) {
-
                                 GatwayStatusCheckResponse apiData = response.body();
-
-
-                                if (apiData.getStatus() != null && !apiData.getStatus().equalsIgnoreCase("0") && apiData.getStatuscode() == 1) {
-                                    if (apiData.getStatus().equalsIgnoreCase("2") || apiData.getStatus().toLowerCase().equalsIgnoreCase("success")) {
+                                if (apiData.getStatus() != null && !apiData.getStatus().equalsIgnoreCase("0")
+                                        && apiData.getStatuscode() == 1) {
+                                    if (apiData.getStatus().equalsIgnoreCase("2") ||
+                                            apiData.getStatus().toLowerCase().equalsIgnoreCase("success")) {
                                         if (pendingTimerDialog != null && pendingTimerDialog.isShowing()) {
                                             pendingTimerDialog.dismiss();
                                         }
-                                        amountEt.setText("");
-                                        ApiFintechUtilMethods.INSTANCE.Balancecheck(AddMoneyActivity.this, loader, mLoginDataResponse, deviceId, deviceSerialNum, mAppPreferences, mEKYCStepsDialog, new ApiFintechUtilMethods.ApiCallBack() {
-                                            @Override
-                                            public void onSucess(Object object) {
-                                                balanceCheckResponse = (BalanceResponse) object;
-                                                if (balanceCheckResponse != null && balanceCheckResponse.getBalanceData() != null && balanceCheckResponse.getBalanceData().size() > 0) {
-                                                    showWalletListPopupWindow();
-                                                }
-                                            }
-                                        });
+                                        if (!isFromRecharge) {
+                                            amountEt.setText("");
+                                        }
+                                        ApiFintechUtilMethods.INSTANCE.Balancecheck(AddMoneyActivity.this, loader,
+                                                mLoginDataResponse, deviceId, deviceSerialNum, mAppPreferences, mEKYCStepsDialog, new ApiFintechUtilMethods.ApiCallBack() {
+                                                    @Override
+                                                    public void onSucess(Object object) {
+                                                        balanceCheckResponse = (BalanceResponse) object;
+                                                        if (balanceCheckResponse != null && balanceCheckResponse.getBalanceData() != null
+                                                                && balanceCheckResponse.getBalanceData().size() > 0) {
+                                                            showWalletListPopupWindow();
+                                                        }
+                                                    }
+                                                });
 
                                         dialogMsg = "Your transaction is successfully completed";
                                         if (!isActivityPause) {
@@ -2077,7 +2121,8 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
                                             sucessDialogStatus = 2;
                                         }
 
-                                    } else if (apiData.getStatus().equalsIgnoreCase("3") || apiData.getStatus().toLowerCase().equalsIgnoreCase("failed")) {
+                                    } else if (apiData.getStatus().equalsIgnoreCase("3") ||
+                                            apiData.getStatus().toLowerCase().equalsIgnoreCase("failed")) {
                                         if (pendingTimerDialog != null && pendingTimerDialog.isShowing()) {
                                             pendingTimerDialog.dismiss();
                                         }
@@ -2090,7 +2135,9 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
                                         }
 
                                     } else {
-                                        amountEt.setText("");
+                                        if (!isFromRecharge) {
+                                            amountEt.setText("");
+                                        }
 
 
                                         if (isAllUpiDialogCanceled) {
@@ -2104,7 +2151,7 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
                                             }
                                         } else {
 
-                                            if (!isPendingTimerComplete && (pendingTimerDialog == null || (pendingTimerDialog != null && !pendingTimerDialog.isShowing()))) {
+                                            if (!isPendingTimerComplete && (pendingTimerDialog == null || !pendingTimerDialog.isShowing())) {
                                                 showPendingTimerDialog();
                                             } else {
                                                 if (isPendingTimerComplete) {
@@ -2128,9 +2175,9 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
                                     }
 
                                 } else if (apiData.getStatuscode() == 0 || apiData.getStatuscode() == 1) {
-                                    amountEt.setText("");
-
-
+                                    if (!isFromRecharge) {
+                                        amountEt.setText("");
+                                    }
                                     if (isAllUpiDialogCanceled) {
                                         isAllUpiDialogCanceled = false;
                                         dialogMsg = "Transaction cancelled by user";
@@ -2142,7 +2189,8 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
                                         }
                                     } else {
 
-                                        if (!isPendingTimerComplete && (pendingTimerDialog == null || (pendingTimerDialog != null && !pendingTimerDialog.isShowing()))) {
+                                        if (!isPendingTimerComplete && (pendingTimerDialog == null ||
+                                                (pendingTimerDialog != null && !pendingTimerDialog.isShowing()))) {
                                             showPendingTimerDialog();
                                         } else {
                                             if (isPendingTimerComplete) {
@@ -2167,16 +2215,20 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
                                     if (pendingTimerDialog != null && pendingTimerDialog.isShowing()) {
                                         pendingTimerDialog.dismiss();
                                     }
-                                    amountEt.setText("");
-                                    ApiFintechUtilMethods.INSTANCE.Balancecheck(AddMoneyActivity.this, loader, mLoginDataResponse, deviceId, deviceSerialNum, mAppPreferences, mEKYCStepsDialog, new ApiFintechUtilMethods.ApiCallBack() {
-                                        @Override
-                                        public void onSucess(Object object) {
-                                            balanceCheckResponse = (BalanceResponse) object;
-                                            if (balanceCheckResponse != null && balanceCheckResponse.getBalanceData() != null && balanceCheckResponse.getBalanceData().size() > 0) {
-                                                showWalletListPopupWindow();
-                                            }
-                                        }
-                                    });
+                                    if (!isFromRecharge) {
+                                        amountEt.setText("");
+                                    }
+                                    ApiFintechUtilMethods.INSTANCE.Balancecheck(AddMoneyActivity.this, loader,
+                                            mLoginDataResponse, deviceId, deviceSerialNum, mAppPreferences, mEKYCStepsDialog, new ApiFintechUtilMethods.ApiCallBack() {
+                                                @Override
+                                                public void onSucess(Object object) {
+                                                    balanceCheckResponse = (BalanceResponse) object;
+                                                    if (balanceCheckResponse != null && balanceCheckResponse.getBalanceData() != null
+                                                            && balanceCheckResponse.getBalanceData().size() > 0) {
+                                                        showWalletListPopupWindow();
+                                                    }
+                                                }
+                                            });
 
                                     dialogMsg = "Your transaction is successfully completed";
                                     if (!isActivityPause) {
@@ -2249,7 +2301,6 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
                             sucessDialogStatus = 3;
                         }
                     }
-
                     isAllUPIStatusCheckRunning = false;
                 }
 
@@ -2321,7 +2372,6 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
             if (loader.isShowing()) {
                 loader.dismiss();
             }
-
             if (!isActivityPause) {
                 ApiFintechUtilMethods.INSTANCE.Error(AddMoneyActivity.this, e.getMessage() + "");
             } else {
@@ -2410,6 +2460,7 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
 
     private void callUPIWebUpdate(boolean isStatus) {
 
+
         // loader.show();
         final boolean finalIsStatus = isStatus;
         ApiFintechUtilMethods.INSTANCE.CashFreeStatusCheck(this,upiTID, loader, new ApiFintechUtilMethods.ApiResponseCallBack() {
@@ -2418,26 +2469,21 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
                 ApiFintechUtilMethods.INSTANCE.isReadyToUpdateBalance = true;
                 setResult(RESULT_OK);
                 if (isFromCart) {
-
                     finish();
                 } else {
                     if (!finalIsStatus) {
                         InitiateUpiResponse apiData = (InitiateUpiResponse) response;
-                       /* if (apiData.getStatus() == 0 || apiData.getStatus() == 1) {
-                            ApiFintechUtilMethods.INSTANCE.Processing(AddMoneyActivity.this, "Your transaction is pending");
-                        } else if (apiData.getStatus() == 2) {
-                            ApiFintechUtilMethods.INSTANCE.Successful(AddMoneyActivity.this, "Your transaction is successfully completed");
-                        } else {
-                            ApiFintechUtilMethods.INSTANCE.Error(AddMoneyActivity.this, "Your transaction failed");
-                        }*/
-                        if (apiData.getStatuscode() == 0 || apiData.getStatuscode() == 1) {
-                            amountEt.setText("");
-                            ApiFintechUtilMethods.INSTANCE.Balancecheck(AddMoneyActivity.this, loader, mLoginDataResponse, deviceId, deviceSerialNum, mAppPreferences, mEKYCStepsDialog, object -> {
-                                balanceCheckResponse = (BalanceResponse) object;
-                                if (balanceCheckResponse != null && balanceCheckResponse.getBalanceData() != null) {
-                                    showWalletListPopupWindow();
-                                }
-                            });
+                        if (/*apiData.getStatuscode() == 0 || */apiData.getStatuscode() == 1) {
+                            if (!isFromRecharge) {
+                                amountEt.setText("");
+                            }
+                            ApiFintechUtilMethods.INSTANCE.Balancecheck(AddMoneyActivity.this, loader, mLoginDataResponse,
+                                    deviceId, deviceSerialNum, mAppPreferences, mEKYCStepsDialog, object -> {
+                                        balanceCheckResponse = (BalanceResponse) object;
+                                        if (balanceCheckResponse != null && balanceCheckResponse.getBalanceData() != null) {
+                                            showWalletListPopupWindow();
+                                        }
+                                    });
 
                             dialogMsg = "Your transaction is pending";
                             if (!isActivityPause) {
@@ -2447,14 +2493,18 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
                                 isSucessDialog = true;
                             }
 
-                        } else if (apiData.getStatuscode() == 2) {
-                            amountEt.setText("");
-                            ApiFintechUtilMethods.INSTANCE.Balancecheck(AddMoneyActivity.this, loader, mLoginDataResponse, deviceId, deviceSerialNum, mAppPreferences, mEKYCStepsDialog, object -> {
-                                balanceCheckResponse = (BalanceResponse) object;
-                                if (balanceCheckResponse != null && balanceCheckResponse.getBalanceData() != null) {
-                                    showWalletListPopupWindow();
-                                }
-                            });
+                        }
+                        else if (apiData.getStatuscode() == 2) {
+                            if (!isFromRecharge) {
+                                amountEt.setText("");
+                            }
+                            ApiFintechUtilMethods.INSTANCE.Balancecheck(AddMoneyActivity.this, loader, mLoginDataResponse,
+                                    deviceId, deviceSerialNum, mAppPreferences, mEKYCStepsDialog, object -> {
+                                        balanceCheckResponse = (BalanceResponse) object;
+                                        if (balanceCheckResponse != null && balanceCheckResponse.getBalanceData() != null) {
+                                            showWalletListPopupWindow();
+                                        }
+                                    });
 
                             dialogMsg = "Your transaction is successfully completed";
                             if (!isActivityPause) {
@@ -2477,24 +2527,35 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
 
                     }
 
-
                 }
             }
+
             @Override
             public void onError(int error) {
-
+                if(error ==ApiFintechUtilMethods.INSTANCE.ERROR_OTHER) {
+                    dialogMsg = "Your transaction failed";
+                    if (!isActivityPause) {
+                        //ApiFintechUtilMethods.INSTANCE.Error(AddMoneyActivity.this, dialogMsg);
+                    } else {
+                        isDialogShowBackground = true;
+                        isSucessDialog = false;
+                    }
+                }
             }
         });
 
     }
 
-    public void PayTMTransactionUpdate(JsonObject response) {
+    public void PayTMTransactionUpdate(JsonObject jsonObj) {
         try {
             if (!isActivityPause) {
                 loader.show();
             }
             FintechEndPointInterface git = ApiClient.getClient().create(FintechEndPointInterface.class);
-            Call<BasicResponse> call = git.PayTMTransactionUpdate(new PayTMTransactionUpdateRequest(response, mLoginDataResponse.getData().getUserID(), mLoginDataResponse.getData().getLoginTypeID(), ApplicationConstant.INSTANCE.APP_ID, deviceId, "", BuildConfig.VERSION_NAME, deviceSerialNum, mLoginDataResponse.getData().getSessionID(), mLoginDataResponse.getData().getSession()));
+            Call<BasicResponse> call = git.PayTMTransactionUpdate(new PayTMTransactionUpdateRequest(jsonObj, mLoginDataResponse.getData().getUserID(),
+                    mLoginDataResponse.getData().getLoginTypeID(), ApplicationConstant.INSTANCE.APP_ID, deviceId,
+                    "", BuildConfig.VERSION_NAME, deviceSerialNum, mLoginDataResponse.getData().getSessionID(),
+                    mLoginDataResponse.getData().getSession()));
 
             call.enqueue(new Callback<BasicResponse>() {
                 @Override
@@ -2505,18 +2566,34 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
                             if (response.body() != null) {
                                 if (response.body().getStatuscode() == 1) {
                                     ApiFintechUtilMethods.INSTANCE.isReadyToUpdateBalance = true;
-                                    amountEt.setText("");
-                                    ApiFintechUtilMethods.INSTANCE.Balancecheck(AddMoneyActivity.this, loader, mLoginDataResponse, deviceId, deviceSerialNum, mAppPreferences, mEKYCStepsDialog, object -> {
-                                        balanceCheckResponse = (BalanceResponse) object;
-                                        if (balanceCheckResponse != null && balanceCheckResponse.getBalanceData() != null && balanceCheckResponse.getBalanceData().size() > 0) {
-                                            showWalletListPopupWindow();
-                                        }
-                                    });
-                                    setResult(RESULT_OK);
-                                    if (isFromCart) {
+                                    if (!isFromRecharge) {
+                                        amountEt.setText("");
+                                    }
+                                    ApiFintechUtilMethods.INSTANCE.Balancecheck(AddMoneyActivity.this, loader,
+                                            mLoginDataResponse, deviceId, deviceSerialNum, mAppPreferences, mEKYCStepsDialog, object -> {
+                                                balanceCheckResponse = (BalanceResponse) object;
+                                                if (balanceCheckResponse != null && balanceCheckResponse.getBalanceData() != null
+                                                        && balanceCheckResponse.getBalanceData().size() > 0) {
+                                                    showWalletListPopupWindow();
+                                                }
+                                            });
 
+                                    if (isFromRecharge) {
+
+                                        Intent intent = new Intent();
+                                        intent.putExtra("TID", jsonObj.get("TXNID").getAsString());
+                                        intent.putExtra("ORDERID", jsonObj.get("ORDERID").getAsString());
+                                        intent.putExtra("Status",jsonObj.get("STATUS").getAsString());
+                                        intent.putExtra("BANKTXNID", jsonObj.get("BANKTXNID").getAsString());
+                                        intent.putExtra("TXNID", jsonObj.get("TXNID").getAsString());
+                                        intent.putExtra("txnRef", jsonObj.get("TXNID").getAsString());
+                                        setResult(RESULT_OK, intent);
+                                        finish();
+                                    } else if (isFromCart) {
+                                        setResult(RESULT_OK);
                                         finish();
                                     } else {
+                                        setResult(RESULT_OK);
                                         if (!isActivityPause) {
                                             ApiFintechUtilMethods.INSTANCE.Successful(AddMoneyActivity.this, "Money Added Sucessfully");
                                         } else {
@@ -2689,7 +2766,6 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
                 responseCode = data.getStringExtra("responseCode");
                 bleTxId = data.getStringExtra("bleTxId");/*TrtxnRef*/
 
-
                 /*if ((status == null || status.isEmpty() || status.toLowerCase().contains("null") || status.toLowerCase().contains("undefined"))
                         && paymentResponse != null && !paymentResponse.isEmpty() && !paymentResponse.toLowerCase().equalsIgnoreCase("undefined")
                         && paymentResponse.contains("&") && paymentResponse.contains("=")) {
@@ -2721,54 +2797,67 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
                     }
 
                 }*/
-                boolean isStatus = false;
-                if (status != null && !status.isEmpty()) {
-                    isStatus = true;
-                    if (status.toLowerCase().equalsIgnoreCase("success")) {
-                        ApiFintechUtilMethods.INSTANCE.SuccessfulWithTitle(AddMoneyActivity.this, "Success", "Transaction Successful.");
-                    } else if (status.toLowerCase().equalsIgnoreCase("submitted")) {
-                        ApiFintechUtilMethods.INSTANCE.ProcessingWithTitle(AddMoneyActivity.this, "Submitted", "Transaction submitted, Please wait some time for confirmation.");
-                    } else {
-                        ApiFintechUtilMethods.INSTANCE.ErrorWithTitle(AddMoneyActivity.this, "Failed", "Transaction Failed, Please Try After Some Time.");
+                if (isFromRecharge) {
+                    Intent intent = new Intent();
+                    intent.putExtra("TID", upiTID);
+                    intent.putExtra("ORDERID", txnRef);
+                    intent.putExtra("BANKTXNID", bleTxId);
+                    intent.putExtra("Status",status);
+                    intent.putExtra("TXNID", txnId);
+                    intent.putExtra("txnRef", TrtxnRef);
+                    intent.putExtra("isFromUpi", true);
+                    setResult(RESULT_OK, intent);
+                    finish();
+                } else {
+                    boolean isStatus = false;
+                    if (status != null && !status.isEmpty()) {
+                        isStatus = true;
+                        if (status.toLowerCase().equalsIgnoreCase("success")) {
+                            ApiFintechUtilMethods.INSTANCE.SuccessfulWithTitle(AddMoneyActivity.this, "Success", "Transaction Successful.");
+                        } else if (status.toLowerCase().equalsIgnoreCase("submitted")) {
+                            ApiFintechUtilMethods.INSTANCE.ProcessingWithTitle(AddMoneyActivity.this, "Submitted", "Transaction submitted, Please wait some time for confirmation.");
+                        } else {
+                            ApiFintechUtilMethods.INSTANCE.ErrorWithTitle(AddMoneyActivity.this, "Failed", "Transaction Failed, Please Try After Some Time.");
+                        }
+
                     }
 
-                }
-
-                // loader.show();
-                final boolean finalIsStatus = isStatus;
-                ApiFintechUtilMethods.INSTANCE.UPIPaymentUpdate(AddMoneyActivity.this, upiTID, status + "", loader,
-                        mLoginDataResponse, deviceId, deviceSerialNum, new ApiFintechUtilMethods.ApiResponseCallBack() {
-                            @Override
-                            public void onSucess(Object object) {
-                                ApiFintechUtilMethods.INSTANCE.isReadyToUpdateBalance = true;
-                                setResult(RESULT_OK);
-                                if (isFromCart) {
-                                    finish();
-                                } else {
-                                    if (!finalIsStatus) {
-                                        InitiateUpiResponse apiData = (InitiateUpiResponse) object;
-                                        ApiFintechUtilMethods.INSTANCE.Successful(AddMoneyActivity.this, apiData.getMsg() + "");
+                    // loader.show();
+                    final boolean finalIsStatus = isStatus;
+                    ApiFintechUtilMethods.INSTANCE.UPIPaymentUpdate(AddMoneyActivity.this, upiTID, status + "", loader,
+                            mLoginDataResponse, deviceId, deviceSerialNum, new ApiFintechUtilMethods.ApiResponseCallBack() {
+                                @Override
+                                public void onSucess(Object object) {
+                                    ApiFintechUtilMethods.INSTANCE.isReadyToUpdateBalance = true;
+                                    setResult(RESULT_OK);
+                                    if (isFromCart) {
+                                        finish();
+                                    } else {
+                                        if (!finalIsStatus) {
+                                            InitiateUpiResponse apiData = (InitiateUpiResponse) object;
+                                            ApiFintechUtilMethods.INSTANCE.Successful(AddMoneyActivity.this, apiData.getMsg() + "");
+                                        }
                                     }
                                 }
-                            }
 
-                            @Override
-                            public void onError(int error) {
+                                @Override
+                                public void onError(int error) {
 
-                            }
-                        });
+                                }
+                            });
 
                 /*Toast.makeText(PaymentRequest.this, data.getExtras() + "", Toast.LENGTH_LONG).show();
                  Log.e("UPI",paymentResponse+"");
                    Log.e("UPI",data.getExtras()+"");
                    Log.e("UPI",data.getData()+"");*/
 
-                /*Bundle[{Status=Success, isExternalMerchant=true, txnRef=uDK7591578462474072lpif, TRANSACTION_STATUS=3, response=txnId=Airpay1139Rjc1578462474071&txnRef=uDK7591578462474072lpif&Status=Success&responseCode=00, bleTxId=P2001081118229818376376, txnId=Airpay1139Rjc1578462474071, responseCode=00}]*/
-                /*Bundle[{Status=SUCCESS, txnRef=fjD8091578483039469owLn, ApprovalRefNo=, response=txnId=Airpay1297Fyo1578483039469&responseCode=0&Status=SUCCESS&txnRef=fjD8091578483039469owLn, txnId=Airpay1297Fyo1578483039469, responseCode=0, TrtxnRef=fjD8091578483039469owLn}]*/
+                    /*Bundle[{Status=Success, isExternalMerchant=true, txnRef=uDK7591578462474072lpif, TRANSACTION_STATUS=3, response=txnId=Airpay1139Rjc1578462474071&txnRef=uDK7591578462474072lpif&Status=Success&responseCode=00, bleTxId=P2001081118229818376376, txnId=Airpay1139Rjc1578462474071, responseCode=00}]*/
+                    /*Bundle[{Status=SUCCESS, txnRef=fjD8091578483039469owLn, ApprovalRefNo=, response=txnId=Airpay1297Fyo1578483039469&responseCode=0&Status=SUCCESS&txnRef=fjD8091578483039469owLn, txnId=Airpay1297Fyo1578483039469, responseCode=0, TrtxnRef=fjD8091578483039469owLn}]*/
 
-                /*txnId=AXI17152979abdf4b2b9a9e141083936913&responseCode=&Status=SUBMITTED&txnRef=*/
-                /*txnId=SBIfa2b4b8c907a4226bf8829e8769b55f7&responseCode=UP00&Status=SUCCESS&txnRef=000817212057*/
-                /*txnId=139Zas1578403940921Ys4T&responseCode=ZD&Status=FAILURE&txnRef=1375qE1578403940921BFMf*/
+                    /*txnId=AXI17152979abdf4b2b9a9e141083936913&responseCode=&Status=SUBMITTED&txnRef=*/
+                    /*txnId=SBIfa2b4b8c907a4226bf8829e8769b55f7&responseCode=UP00&Status=SUCCESS&txnRef=000817212057*/
+                    /*txnId=139Zas1578403940921Ys4T&responseCode=ZD&Status=FAILURE&txnRef=1375qE1578403940921BFMf*/
+                }
             }
         } else if (requestCode == INTENT_UPI_WEB) {
 

@@ -150,7 +150,14 @@
                     android:singleLine="true"
                     android:textColor="@color/white"
                     android:textColorHint="@color/white" />
-
+                <View
+                    android:id="@+id/noClickView"
+                    android:clickable="true"
+                    android:visibility="gone"
+                    android:layout_alignTop="@id/amountEt"
+                    android:layout_alignBottom="@id/amountEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_amount"

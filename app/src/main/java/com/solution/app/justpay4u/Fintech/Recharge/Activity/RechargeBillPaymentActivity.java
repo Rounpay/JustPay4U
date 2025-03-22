@@ -2,22 +2,36 @@ package com.solution.app.justpay4u.Fintech.Recharge.Activity;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.ActivityNotFoundException;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
+import android.provider.MediaStore;
 import android.speech.tts.TextToSpeech;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.InputType;
 import android.text.TextWatcher;
+import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.webkit.ConsoleMessage;
+import android.webkit.JsResult;
+import android.webkit.URLUtil;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -43,6 +57,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.appbar.AppBarLayout;
+import com.google.gson.Gson;
 import com.solution.app.justpay4u.Api.Fintech.Object.CommissionDisplay;
 import com.solution.app.justpay4u.Api.Fintech.Object.DTHInfoData;
 import com.solution.app.justpay4u.Api.Fintech.Object.DTHInfoRecords;
@@ -51,8 +66,12 @@ import com.solution.app.justpay4u.Api.Fintech.Object.OpOptionalDic;
 import com.solution.app.justpay4u.Api.Fintech.Object.OperatorList;
 import com.solution.app.justpay4u.Api.Fintech.Object.OperatorOptional;
 import com.solution.app.justpay4u.Api.Fintech.Object.OperatorParams;
+import com.solution.app.justpay4u.Api.Fintech.Object.PaymentGatewayType;
 import com.solution.app.justpay4u.Api.Fintech.Object.RealLapuCommissionSlab;
 import com.solution.app.justpay4u.Api.Fintech.Object.RechargeStatus;
+import com.solution.app.justpay4u.Api.Fintech.Object.SlabDetailDisplayLvl;
+import com.solution.app.justpay4u.Api.Fintech.Request.ChoosePaymentGatwayRequest;
+import com.solution.app.justpay4u.Api.Fintech.Request.GatewayTransactionRequest;
 import com.solution.app.justpay4u.Api.Fintech.Request.GetHLRLookUpRequest;
 import com.solution.app.justpay4u.Api.Fintech.Request.HeavyrefreshRequest;
 import com.solution.app.justpay4u.Api.Fintech.Request.OptionalOperatorRequest;
@@ -73,6 +92,8 @@ import com.solution.app.justpay4u.Api.Fintech.Response.OperatorListResponse;
 import com.solution.app.justpay4u.Api.Fintech.Response.OperatorOptionalResponse;
 import com.solution.app.justpay4u.Api.Fintech.Response.RechargeReportResponse;
 import com.solution.app.justpay4u.Api.Fintech.Response.RechargeResponse;
+import com.solution.app.justpay4u.Api.Fintech.Response.SlabCommissionResponse;
+import com.solution.app.justpay4u.Api.Networking.Response.GatwayStatusCheckResponse;
 import com.solution.app.justpay4u.ApiHits.ApiClient;
 import com.solution.app.justpay4u.ApiHits.ApiFintechUtilMethods;
 import com.solution.app.justpay4u.ApiHits.ApplicationConstant;
@@ -80,6 +101,7 @@ import com.solution.app.justpay4u.ApiHits.FintechEndPointInterface;
 import com.solution.app.justpay4u.BuildConfig;
 import com.solution.app.justpay4u.Fintech.Authentication.ChangePinPassActivity;
 import com.solution.app.justpay4u.Fintech.FundTransactions.Activity.AddMoneyActivity;
+import com.solution.app.justpay4u.Fintech.FundTransactions.Adapter.GatewayTypeAdapter;
 import com.solution.app.justpay4u.Fintech.Recharge.Adapter.BillDetailAdapter;
 import com.solution.app.justpay4u.Fintech.Recharge.Adapter.DthCustInfoAdapter;
 import com.solution.app.justpay4u.Fintech.Recharge.Adapter.IncentiveAdapter;
@@ -94,6 +116,11 @@ import com.solution.app.justpay4u.Util.GetLocation;
 import com.solution.app.justpay4u.Util.ServiceIcon;
 import com.solution.app.justpay4u.Util.Utility;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -275,6 +302,29 @@ public class RechargeBillPaymentActivity extends AppCompatActivity implements Te
     private AlertDialog alertDialog;
     private int timeCounter;
     private double commAmount;
+    private boolean isApiCalling;
+    private OperatorListResponse mOperatorListResponse;
+    int selectedOPId = -1;
+    private String selectedMethod;
+    private SlabDetailDisplayLvl selectedOperator;
+    private boolean isUpi;
+    private boolean isPaymentGatway;
+    private Gson gson;
+    ArrayList<SlabDetailDisplayLvl> operatorArray = new ArrayList<>();
+    private int requestedAmtPay;
+    ArrayList<PaymentGatewayType> pgList = new ArrayList<>();
+    private Dialog gatewayDialog;
+    private PaymentGatewayType paymentGatewayType;
+    private String selectedWalletId = "1";
+    private int currentPGId;
+    private String upiTID;
+    private String requestAmount = "0";
+    private int INTENT_UPI = 8765;
+    private int INTENT_UPI_WEB = 6782;
+    private Dialog uiWebViewDialog;
+    private boolean isAllUpiDialogCanceled;
+    private boolean isActivityPause;
+    private boolean isAllUPIStatusCheckRunning;
 
 
     @Override
@@ -284,7 +334,9 @@ public class RechargeBillPaymentActivity extends AppCompatActivity implements Te
         loader.show();
         new Handler(Looper.getMainLooper()).post(() -> {
             setContentView(R.layout.activity_recharge_bill_payment);
+            isActivityPause = false;
             mDropDownDialog = new DropDownDialog(this);
+            gson = new Gson();
             requestOptions = ApiFintechUtilMethods.INSTANCE.getRequestOption_With_AppLogo_circleCrop();
             mAppPreferences = ApiFintechUtilMethods.INSTANCE.getAppPreferences(this);
             mLoginDataResponse = ApiFintechUtilMethods.INSTANCE.getLoginResponse(mAppPreferences);
@@ -1605,6 +1657,7 @@ public class RechargeBillPaymentActivity extends AppCompatActivity implements Te
                 commAmount = rechargeResponse.getCommAmount();
                 rechargeDialog(lattitude, longitude, mCommissionDisplay);
             }
+
             @Override
             public void onError(int error) {
 
@@ -1634,12 +1687,20 @@ public class RechargeBillPaymentActivity extends AppCompatActivity implements Te
             @Override
             public void onResetCallback(String pinPass, double requestedAmt) {
                 inputPinPass = pinPass;
-                Intent i = new Intent(RechargeBillPaymentActivity.this, AddMoneyActivity.class);
-                i.putExtra("IsFromRecharge", true);
-                /*i.putExtra("AMOUNT", (requestedAmt % 1) == 0?(int)(requestedAmt):(int)(requestedAmt+1));*/
-                i.putExtra("AMOUNT", requestedAmt);
-                i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                startActivityForResult(i, INTENT_ADD_MONEY);
+                int amt;
+                if (requestedAmt % 1 != 0) {
+                    amt = (int) (requestedAmt + 1);
+                } else {
+                    amt = (int) requestedAmt;
+                }
+                requestedAmtPay = amt;
+                new Handler(Looper.myLooper()).post(() -> {
+                    mOperatorListResponse = ApiFintechUtilMethods.INSTANCE.getOperatorListResponse(mAppPreferences);
+                    isUpi = mAppPreferences.getBoolean(ApplicationConstant.INSTANCE.isUpi);
+                    isPaymentGatway = mAppPreferences.getBoolean(ApplicationConstant.INSTANCE.isPaymentGatway);
+                    HitCommissionApi();
+                });
+
 
             }
 
@@ -1651,6 +1712,414 @@ public class RechargeBillPaymentActivity extends AppCompatActivity implements Te
 
 
     }
+
+    private void HitCommissionApi() {
+        if (ApiFintechUtilMethods.INSTANCE.isNetworkAvialable(this)) {
+            isApiCalling = true;
+            ApiFintechUtilMethods.INSTANCE.MyCommission(this, false, loader, mLoginDataResponse, deviceId, deviceSerialNum, mAppPreferences, new ApiFintechUtilMethods.ApiResponseCallBack() {
+                @Override
+                public void onSucess(Object object) {
+                    isApiCalling = false;
+                    SlabCommissionResponse mSlabCommissionResponse = (SlabCommissionResponse) object;
+                    if (mSlabCommissionResponse != null && mSlabCommissionResponse.getSlabDetailDisplayLvl() != null && mSlabCommissionResponse.getSlabDetailDisplayLvl().size() > 0) {
+                        setUiData(mSlabCommissionResponse);
+                    } else {
+                        if (operatorArray != null && operatorArray.size() > 0) {
+//                            noDataView.setVisibility(View.GONE);
+//                            noNetworkView.setVisibility(View.GONE);
+                        } else {
+//                            noDataView.setVisibility(View.VISIBLE);
+//                            noNetworkView.setVisibility(View.GONE);
+                        }
+                    }
+                }
+
+                @Override
+                public void onError(int error) {
+                    isApiCalling = false;
+                    if (operatorArray != null && operatorArray.size() > 0) {
+//                        noDataView.setVisibility(View.GONE);
+//                        noNetworkView.setVisibility(View.GONE);
+                    } else {
+                        if (error == ApiFintechUtilMethods.INSTANCE.ERROR_NETWORK) {
+//                            noDataView.setVisibility(View.GONE);
+//                            noNetworkView.setVisibility(View.VISIBLE);
+                        } else {
+//                            noDataView.setVisibility(View.VISIBLE);
+//                            noNetworkView.setVisibility(View.GONE);
+                        }
+                    }
+                }
+            });
+
+        } else {
+            if (loader != null && loader.isShowing()) {
+                loader.dismiss();
+            }
+            if (operatorArray != null && operatorArray.size() > 0) {
+//                noDataView.setVisibility(View.GONE);
+//                noNetworkView.setVisibility(View.GONE);
+            } else {
+//                noDataView.setVisibility(View.GONE);
+//                noNetworkView.setVisibility(View.VISIBLE);
+            }
+        }
+    }
+
+    private void setUiData(SlabCommissionResponse mOperatorListResponse) {
+
+        if (isUpi && !isPaymentGatway) {
+            getOpId(mOperatorListResponse, 50);
+        } else if (isUpi && isPaymentGatway) {
+            getOperator(mOperatorListResponse, 50, 37);
+        } else if (!isUpi && isPaymentGatway) {
+            getOperator(mOperatorListResponse, 37, -1);
+        }
+    }
+
+    private void getOpId(SlabCommissionResponse mSlabCommissionResponse, int op_Type) {
+        if (mSlabCommissionResponse != null && mSlabCommissionResponse.getSlabDetailDisplayLvl() != null && mSlabCommissionResponse.getSlabDetailDisplayLvl().size() > 0 && mOperatorListResponse != null && mOperatorListResponse.getOperators() != null && mOperatorListResponse.getOperators().size() > 0) {
+            operatorArray.clear();
+            for (SlabDetailDisplayLvl slab : mSlabCommissionResponse.getSlabDetailDisplayLvl()) {
+                if (slab.getOpTypeId() == op_Type) {
+                    for (OperatorList op : mOperatorListResponse.getOperators()) {
+                        if (slab.getOid() == op.getOid() && op.isActive()) {
+                            selectedOPId = slab.getOid();
+                            selectedMethod = slab.getOperator();
+                            selectedOperator = slab;
+                            break;
+                        }
+                    }
+                }
+            }
+
+        } else {
+            if (mSlabCommissionResponse != null && mSlabCommissionResponse.getSlabDetailDisplayLvl() != null && mSlabCommissionResponse.getSlabDetailDisplayLvl().size() > 0) {
+                for (SlabDetailDisplayLvl op : mSlabCommissionResponse.getSlabDetailDisplayLvl()) {
+                    if (op.getOpTypeId() == op_Type) {
+                        selectedOPId = op.getOid();
+                        selectedMethod = op.getOperator();
+                        selectedOperator = op;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+
+    private void getOperator(SlabCommissionResponse mSlabCommissionResponse, int op_Type1, int op_Type2) {
+        if (mSlabCommissionResponse != null && mSlabCommissionResponse.getSlabDetailDisplayLvl() != null && mSlabCommissionResponse.getSlabDetailDisplayLvl().size() > 0 && mOperatorListResponse != null && mOperatorListResponse.getOperators() != null && mOperatorListResponse.getOperators().size() > 0) {
+            operatorArray.clear();
+            for (SlabDetailDisplayLvl slab : mSlabCommissionResponse.getSlabDetailDisplayLvl()) {
+                if (slab.getOpTypeId() == op_Type1 || slab.getOpTypeId() == op_Type2) {
+                    for (OperatorList op : mOperatorListResponse.getOperators()) {
+                        if (slab.getOid() == op.getOid() && op.isActive()) {
+                            operatorArray.add(slab);
+                            break;
+                        }
+                    }
+                }
+            }
+        } else {
+            if (mSlabCommissionResponse != null && mSlabCommissionResponse.getSlabDetailDisplayLvl() != null && mSlabCommissionResponse.getSlabDetailDisplayLvl().size() > 0) {
+                operatorArray.clear();
+                for (SlabDetailDisplayLvl slab : mSlabCommissionResponse.getSlabDetailDisplayLvl()) {
+                    if ((slab.getOpTypeId() == op_Type1 || slab.getOpTypeId() == op_Type2)) {
+                        operatorArray.add(slab);
+                    }
+                }
+            } else {
+                if (!isApiCalling) {
+                    loader.show();
+                    HitCommissionApi();
+                }
+            }
+        }
+        if (operatorArray != null && operatorArray.size() == 1) {
+            paymentTypeClick(operatorArray.get(0));
+        } else {
+            Intent i = new Intent(RechargeBillPaymentActivity.this, AddMoneyActivity.class);
+            i.putExtra("IsFromRecharge", true);
+//                i.putExtra("AMOUNT", (requestedAmt % 1) == 0?(int)(requestedAmt):(int)(requestedAmt+1));
+            i.putExtra("AMOUNT", requestedAmtPay);
+            i.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivityForResult(i, INTENT_ADD_MONEY);
+        }
+    }
+
+    public void paymentTypeClick(SlabDetailDisplayLvl operator) {
+        selectedMethod = operator.getOperator();
+        selectedOPId = operator.getOid();
+        selectedOperator = operator;
+        if (operator.getOpTypeId() == 50) {
+            ChoosePaymentGateway(true);
+        } else {
+            if (pgList != null && pgList.size() > 0) {
+                if (pgList.size() == 1) {
+                    startGateway(pgList.get(0));
+                } else {
+                    showPopupGateWay();
+                }
+            } else {
+                ChoosePaymentGateway(false);
+            }
+        }
+    }
+
+    public void ChoosePaymentGateway(boolean isUPI) {
+        try {
+            loader.show();
+            FintechEndPointInterface git = ApiClient.getClient().create(FintechEndPointInterface.class);
+            Call<AppUserListResponse> call = git.ChoosePaymentGateway(new ChoosePaymentGatwayRequest(isUPI, mLoginDataResponse.getData().getUserID(), mLoginDataResponse.getData().getLoginTypeID(), ApplicationConstant.INSTANCE.APP_ID, deviceId, "", BuildConfig.VERSION_NAME, deviceSerialNum, mLoginDataResponse.getData().getSessionID(), mLoginDataResponse.getData().getSession()));
+
+            call.enqueue(new Callback<AppUserListResponse>() {
+                @Override
+                public void onResponse(Call<AppUserListResponse> call, final retrofit2.Response<AppUserListResponse> response) {
+                    try {
+                        if (response.isSuccessful()) {
+                            if (response.body() != null && response.body().getStatuscode() == 1) {
+                                if (response.body().getpGs() != null && response.body().getpGs().size() > 0) {
+                                    pgList = response.body().getpGs();
+                                    if (response.body().getpGs().size() == 1) {
+                                        if (response.body().getpGs().get(0).getPgType() == 3) {
+//                                            initUpi();
+                                        } else {
+                                            pgList = response.body().getpGs();
+                                            startGateway(pgList.get(0));
+                                        }
+                                    } else {
+                                        pgList = response.body().getpGs();
+                                        showPopupGateWay();
+                                    }
+                                } else {
+                                    ApiFintechUtilMethods.INSTANCE.Processing(RechargeBillPaymentActivity.this, "Service is currently down.");
+                                }
+
+                            }
+                        } else {
+                            ApiFintechUtilMethods.INSTANCE.apiErrorHandle(RechargeBillPaymentActivity.this, response.code(), response.message());
+                        }
+                        if (loader != null && loader.isShowing()) {
+                            loader.dismiss();
+                        }
+                    } catch (Exception e) {
+                        if (loader != null && loader.isShowing()) {
+                            loader.dismiss();
+                        }
+                        ApiFintechUtilMethods.INSTANCE.Error(RechargeBillPaymentActivity.this, e.getMessage() + "");
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<AppUserListResponse> call, Throwable t) {
+                    try {
+                        if (loader != null && loader.isShowing()) {
+                            loader.dismiss();
+                        }
+                        ApiFintechUtilMethods.INSTANCE.apiFailureError(RechargeBillPaymentActivity.this, t);
+
+                    } catch (IllegalStateException ise) {
+                        if (loader != null && loader.isShowing()) {
+                            loader.dismiss();
+                        }
+
+                        ApiFintechUtilMethods.INSTANCE.Error(RechargeBillPaymentActivity.this, getString(R.string.some_thing_error));
+                    }
+
+                }
+            });
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (loader != null && loader.isShowing()) {
+                loader.dismiss();
+            }
+            ApiFintechUtilMethods.INSTANCE.Error(RechargeBillPaymentActivity.this, e.getMessage() + "");
+        }
+    }
+
+    private void showPopupGateWay() {
+        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE); // or (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View viewMyLayout = inflater.inflate(R.layout.dialog_select_gateway, null);
+        RecyclerView recyclerView = viewMyLayout.findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        View closeBtn = viewMyLayout.findViewById(R.id.closeBtn);
+        GatewayTypeAdapter gatewayTypeAdapter = new GatewayTypeAdapter(pgList, RechargeBillPaymentActivity.this);
+        recyclerView.setAdapter(gatewayTypeAdapter);
+        gatewayDialog = new Dialog(this, R.style.Theme_AppCompat_Dialog_Alert);
+        gatewayDialog.setCancelable(false);
+        gatewayDialog.setContentView(viewMyLayout);
+        gatewayDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gatewayDialog.dismiss();
+            }
+        });
+        gatewayDialog.show();
+        // Window window = dialog.getWindow();
+        //window.setLayout(Toolbar.LayoutParams.MATCH_PARENT, Toolbar.LayoutParams.MATCH_PARENT);
+
+    }
+
+    public void startGateway(PaymentGatewayType paymentGatewayType) {
+        if (gatewayDialog != null && gatewayDialog.isShowing()) {
+            gatewayDialog.dismiss();
+        }
+        this.paymentGatewayType = paymentGatewayType;
+        GatewayTransaction(paymentGatewayType);
+    }
+
+    public void GatewayTransaction(final PaymentGatewayType paymentGatewayType) {
+        try {
+            loader.show();
+            FintechEndPointInterface git = ApiClient.getClient().create(FintechEndPointInterface.class);
+            Call<AppUserListResponse> call = git.GatewayTransaction(new GatewayTransactionRequest(requestedAmtPay + "", paymentGatewayType.getId() + "", selectedWalletId + "", selectedOPId + "", mLoginDataResponse.getData().getUserID(), mLoginDataResponse.getData().getLoginTypeID(), ApplicationConstant.INSTANCE.APP_ID, deviceId, "", BuildConfig.VERSION_NAME, deviceSerialNum, mLoginDataResponse.getData().getSessionID(), mLoginDataResponse.getData().getSession()));
+            call.enqueue(new Callback<AppUserListResponse>() {
+                @Override
+                public void onResponse(Call<AppUserListResponse> call, final retrofit2.Response<AppUserListResponse> response) {
+
+                    try {
+                        if (response.isSuccessful()) {
+                            if (response.body() != null) {
+                                if (response.body().getStatuscode() == 1) {
+                                    if (response.body().getpGModelForApp() != null) {
+                                        if (response.body().getpGModelForApp().getStatuscode() == 1) {
+                                            requestAmount = requestedAmtPay + "";
+                                            currentPGId = response.body().getpGModelForApp().getPgid();
+                                            if (currentPGId == 12 || paymentGatewayType.getPgType() == 12) {
+                                                if (response.body().getpGModelForApp().getUpiGatewayRequest() != null) {
+                                                    if (response.body().getpGModelForApp().getUpiGatewayRequest().getStatuscode() == 1) {
+                                                        upiTID = response.body().getpGModelForApp().getTid() + "";
+                                                        if (response.body().getpGModelForApp().getUpiGatewayRequest().isIntentAllowed() && response.body().getpGModelForApp().getUpiGatewayRequest().getIntentString() != null && response.body().getpGModelForApp().getUpiGatewayRequest().getIntentString().contains("upi://pay?")) {
+                                                            openUpiIntent(Uri.parse(response.body().getpGModelForApp().getUpiGatewayRequest().getIntentString()));
+                                                        } else {
+                                                            if (response.body().getpGModelForApp().getUpiGatewayRequest().getUrl() != null && URLUtil.isValidUrl(response.body().getpGModelForApp().getUpiGatewayRequest().getUrl())) {
+                                                                showUPIWebview(response.body().getpGModelForApp().getUpiGatewayRequest().getUrl());
+                                                                // openUpiWeb(response.body().getpGModelForApp().getUpiGatewayRequest().getUrl());
+                                                            } else {
+                                                                ApiFintechUtilMethods.INSTANCE.Error(RechargeBillPaymentActivity.this, "Url is not available");
+                                                            }
+                                                        }
+                                                    } else {
+                                                        ApiFintechUtilMethods.INSTANCE.Error(RechargeBillPaymentActivity.this, response.body().getpGModelForApp().getUpiGatewayRequest().getMsg() + "");
+                                                    }
+
+                                                } else {
+                                                    ApiFintechUtilMethods.INSTANCE.Error(RechargeBillPaymentActivity.this, "Data is not available");
+                                                }
+                                            } else {
+                                                ApiFintechUtilMethods.INSTANCE.Error(RechargeBillPaymentActivity.this, "SDK is not available");
+
+                                            }
+                                        } else {
+                                            ApiFintechUtilMethods.INSTANCE.Error(RechargeBillPaymentActivity.this, response.body().getpGModelForApp().getMsg() + "");
+                                        }
+                                    } else {
+                                        ApiFintechUtilMethods.INSTANCE.Error(RechargeBillPaymentActivity.this, response.body().getMsg() + " " + getString(R.string.some_thing_error));
+                                    }
+                                } else {
+                                    ApiFintechUtilMethods.INSTANCE.Error(RechargeBillPaymentActivity.this, response.body().getMsg() + "");
+                                }
+
+                            } else {
+                                ApiFintechUtilMethods.INSTANCE.Error(RechargeBillPaymentActivity.this, getString(R.string.some_thing_error));
+                            }
+                        } else {
+                            ApiFintechUtilMethods.INSTANCE.apiErrorHandle(RechargeBillPaymentActivity.this, response.code(), response.message());
+                        }
+                        if (loader != null && loader.isShowing()) {
+                            loader.dismiss();
+                        }
+                    } catch (Exception e) {
+                        if (loader != null && loader.isShowing()) {
+                            loader.dismiss();
+                        }
+                        ApiFintechUtilMethods.INSTANCE.Error(RechargeBillPaymentActivity.this, e.getMessage() + "");
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<AppUserListResponse> call, Throwable t) {
+                    try {
+                        if (loader != null && loader.isShowing()) {
+                            loader.dismiss();
+                        }
+
+                        ApiFintechUtilMethods.INSTANCE.apiFailureError(RechargeBillPaymentActivity.this, t);
+
+                    } catch (IllegalStateException ise) {
+                        if (loader != null && loader.isShowing()) {
+                            loader.dismiss();
+                        }
+                        ApiFintechUtilMethods.INSTANCE.Error(RechargeBillPaymentActivity.this, getString(R.string.some_thing_error));
+                    }
+                }
+            });
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (loader != null && loader.isShowing()) {
+                loader.dismiss();
+            }
+            ApiFintechUtilMethods.INSTANCE.Error(RechargeBillPaymentActivity.this, e.getMessage() + "");
+        }
+    }
+
+    private void showUPIWebview(String url) {
+
+        if (uiWebViewDialog != null && uiWebViewDialog.isShowing()) {
+            return;
+        }
+        isAllUpiDialogCanceled = false;
+        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE); // or (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View viewMyLayout = inflater.inflate(R.layout.dialog_upi_webview, null);
+        WebView webView = viewMyLayout.findViewById(R.id.webView);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setSupportMultipleWindows(true);
+        webView.setWebViewClient(new MyWebViewClient());
+        webView.setWebChromeClient(new MyWebChromeViewClient());
+        webView.loadUrl(url);
+        View closeBtn = viewMyLayout.findViewById(R.id.closeIv);
+        uiWebViewDialog = new Dialog(this, R.style.Theme_AppCompat_Dialog_Alert);
+        uiWebViewDialog.setCancelable(false);
+        uiWebViewDialog.setContentView(viewMyLayout);
+        /* dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));*/
+        uiWebViewDialog.getWindow().setLayout(Toolbar.LayoutParams.MATCH_PARENT, Toolbar.LayoutParams.MATCH_PARENT);
+        uiWebViewDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                isAllUpiDialogCanceled = true;
+                uiWebViewDialog.dismiss();
+            }
+        });
+        uiWebViewDialog.setOnDismissListener(dialogInterface -> {
+//            loader.show();
+            if (currentPGId == 12) {
+                addMoneyRechargeStatusDialog(this, false, upiTID, "success");
+            } else {
+                addMoneyRechargeStatusDialog(this, upiTID, requestedAmtPay + "", isUpi);
+            }
+        });
+        uiWebViewDialog.show();
+        // Window window = dialog.getWindow();
+        //window.setLayout(Toolbar.LayoutParams.MATCH_PARENT, Toolbar.LayoutParams.MATCH_PARENT);
+    }
+
+    void openUpiIntent(Uri Upi) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Upi);
+        Intent chooser = Intent.createChooser(intent, "Pay with...");
+        if (null != chooser.resolveActivity(getPackageManager())) {
+            startActivityForResult(chooser, INTENT_UPI);
+        } else {
+            Toast.makeText(this, "No UPI app found, please install one to continue", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
     void rechargeApi(String pgRefId, double lattitude, double longitude, String pinPass) {
         if (ApiFintechUtilMethods.INSTANCE.isNetworkAvialable(RechargeBillPaymentActivity.this)) {
@@ -2803,8 +3272,6 @@ public class RechargeBillPaymentActivity extends AppCompatActivity implements Te
                 boolean isStatus = data.getBooleanExtra("cashfree", true);
                 double rqstedAmt = data.getDoubleExtra("AMOUNT", 0);
                 boolean isUpi = data.getBooleanExtra("ISUPI", false);
-
-
                 if (balanceCheckResponse.isRechargeWithPG()) {
                     addMoneyRechargeStatusDialog(this, isFromUpi, tid, status);
 
@@ -2817,86 +3284,48 @@ public class RechargeBillPaymentActivity extends AppCompatActivity implements Te
                 ApiFintechUtilMethods.INSTANCE.Error(this, getString(R.string.some_thing_error));
             }
 
-        }
-       /* else if (requestCode == PICK_CONTACT && resultCode == RESULT_OK) {
-            Uri contactData = data.getData();
-            Cursor c = this.managedQuery(contactData, null, null, null, null);
-            if (c.moveToFirst()) {
-                String id = c.getString(c.getColumnIndexOrThrow(ContactsContract.Contacts._ID));
-                String hasPhone = c.getString(c.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER));
-                String number = null;
-                if (hasPhone.equalsIgnoreCase("1")) {
-                    Cursor phones = this.getContentResolver().query(
-                            ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null,
-                            ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = " + id,
-                            null, null);
-                    phones.moveToFirst();
-                    etNumber.setText("");
-                    // <------------------------------------------------------------------>
-                    if (phones != null && phones.moveToFirst()) {
-                        number = phones.getString(phones.getColumnIndex("data1"));
-                        phones.close();
-                    }
-                }
-                String Name = c.getString(c.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
-                if (!number.equals("")) {
-                    if (!Name.equals("")) {
-                        tvNumberName.setText(Name);
-                        tvNumberName.setVisibility(View.VISIBLE);
-                    } else {
-                        tvNumberName.setVisibility(View.GONE);
-                    }
-                    //Set the Number Without space and +91..
-                    SetNumber(number, etNumber);
+        } else if (requestCode == INTENT_UPI && resultCode == RESULT_OK) {
+            if (data != null) {
+                boolean isFromUpi = true;
+                String tid = upiTID;
+                final String paymentResponse, txnId, status, txnRef, ApprovalRefNo, TrtxnRef, responseCode, bleTxId;
+                paymentResponse = data.getStringExtra("response");
+                txnId = data.getStringExtra("txnId");
+                status = data.getStringExtra("Status");
+                txnRef = data.getStringExtra("txnRef");
+                ApprovalRefNo = data.getStringExtra("ApprovalRefNo");
+                TrtxnRef = data.getStringExtra("TrtxnRef");
+                responseCode = data.getStringExtra("responseCode");
+                bleTxId = data.getStringExtra("bleTxId");
+                if (balanceCheckResponse.isRechargeWithPG()) {
+                    addMoneyRechargeStatusDialog(this, isFromUpi, tid, status);
+                    // rechargeApi(tid, ApiFintechUtilMethods.INSTANCE.getLattitude, ApiFintechUtilMethods.INSTANCE.getLongitude, inputPinPass);
                 } else {
-                    Toast.makeText(this, "Please select a valid number", Toast.LENGTH_SHORT).show();
+                    addMoneyRechargeStatusDialog(this, txnId, requestedAmtPay + "", isUpi);
                 }
-
+            } else {
+                ApiFintechUtilMethods.INSTANCE.Error(this, getString(R.string.some_thing_error));
             }
-        }
-        else if (requestCode == INTENT_PERMISSION && resultCode == RESULT_OK) {
-            openPhoneBook(PICK_CONTACT, INTENT_PERMISSION);
-        }
-        else if (requestCode == PICK_CUSTOMER_CONTACT && resultCode == RESULT_OK) {
-            Uri contactData = data.getData();
-            Cursor c = this.managedQuery(contactData, null, null, null, null);
-            if (c.moveToFirst()) {
-                String id = c.getString(c.getColumnIndexOrThrow(ContactsContract.Contacts._ID));
-                String hasPhone = c.getString(c.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER));
-                String number = null;
-                if (hasPhone.equalsIgnoreCase("1")) {
-                    Cursor phones = this.getContentResolver().query(
-                            ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null,
-                            ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = " + id,
-                            null, null);
-                    phones.moveToFirst();
-                    etCustNumber.setText("");
-                    // <------------------------------------------------------------------>
-                    if (phones != null && phones.moveToFirst()) {
-                        number = phones.getString(phones.getColumnIndex("data1"));
-                        phones.close();
-                    }
-                }
-                String Name = c.getString(c.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
-                if (!number.equals("")) {
-                    if (!Name.equals("")) {
-                        tvName.setText(Name);
-                        tvName.setVisibility(View.VISIBLE);
-                    } else {
-                        tvName.setVisibility(View.GONE);
-                    }
-                    //Set the Number Without space and +91..
-                    SetNumber(number, etCustNumber);
+
+        } else if (requestCode == INTENT_UPI_WEB) {
+            if (data != null && resultCode == RESULT_OK) {
+                boolean isFromUpi = true;
+                String tid = upiTID;
+                String paymentResponse = data.getStringExtra("response");
+                String txnId = data.getStringExtra("txnId");
+                String status = data.getStringExtra("Status");
+                String txnRef = data.getStringExtra("txnRef");
+                String ApprovalRefNo = data.getStringExtra("ApprovalRefNo");
+                String TrtxnRef = data.getStringExtra("TrtxnRef");
+                String responseCode = data.getStringExtra("responseCode");
+                String bleTxId = data.getStringExtra("bleTxId");/*TrtxnRef*/
+                if (balanceCheckResponse.isRechargeWithPG()) {
+                    addMoneyRechargeStatusDialog(this, isFromUpi, tid, status);
                 } else {
-                    Toast.makeText(this, "Please select a valid number", Toast.LENGTH_SHORT).show();
+                    addMoneyRechargeStatusDialog(this, txnId, requestedAmtPay + "", isUpi);
                 }
-
             }
-        }
-        else if (requestCode == INTENT_CUSTOMER_PERMISSION && resultCode == RESULT_OK) {
-            openPhoneBook(PICK_CUSTOMER_CONTACT, INTENT_CUSTOMER_PERMISSION);
-        }*/
-        else if (requestCode == INTENT_SELECT_ZONE && resultCode == RESULT_OK) {
+        } else if (requestCode == INTENT_SELECT_ZONE && resultCode == RESULT_OK) {
             String circle = data.getExtras().getString("selectedCircleName");
             operatorRefCircleID = data.getExtras().getString("selectedCircleId");
             if (operatorSelectedId != 0 && operatorRefCircleID != null && !operatorRefCircleID.isEmpty()) {
@@ -2950,24 +3379,15 @@ public class RechargeBillPaymentActivity extends AppCompatActivity implements Te
         if (alertDialogAddMoneyConfirm != null && alertDialogAddMoneyConfirm.isShowing()) {
             return;
         }
-
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context, R.style.full_screen_withoutbg_dialog);
-
         alertDialogAddMoneyConfirm = dialogBuilder.create();
         alertDialogAddMoneyConfirm.setCancelable(true);
-
         // alertDialogAddMoneyConfirm.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-
-
         LayoutInflater inflater = context.getLayoutInflater();
         View dialogView = inflater.inflate(R.layout.dialog_payment_confiorm, null);
         alertDialogAddMoneyConfirm.setView(dialogView);
-
-
         TextView serviceName = dialogView.findViewById(R.id.serviceName);
         serviceName.setText(from);
-
-
         View closeBtn = dialogView.findViewById(R.id.closeBtn);
         ImageView check1 = dialogView.findViewById(R.id.check1);
         ImageView check2 = dialogView.findViewById(R.id.check2);
@@ -2985,8 +3405,6 @@ public class RechargeBillPaymentActivity extends AppCompatActivity implements Te
         requestOptions.diskCacheStrategy(DiskCacheStrategy.ALL);
 
         Glide.with(context).load(ApplicationConstant.INSTANCE.baseIconUrl + Icon).apply(RequestOptions.circleCropTransform()).apply(RequestOptions.placeholderOf(R.drawable.placeholder_square)).into(logoIv);
-
-
         closeBtn.setOnClickListener(v -> {
             alertDialogAddMoneyConfirm.dismiss();
 
@@ -3000,7 +3418,90 @@ public class RechargeBillPaymentActivity extends AppCompatActivity implements Te
     }
 
     private void callStatusCheckApi(boolean isFromUpi, String tid, String status, ImageView check1, TextView paymentMsg) {
-        if (isFromUpi) {
+        if (currentPGId == 12) {
+            FintechEndPointInterface git = ApiClient.getClient().create(FintechEndPointInterface.class);
+            Call<GatwayStatusCheckResponse> call = git.AllUPIStatusCheck(upiTID);
+            call.enqueue(new Callback<GatwayStatusCheckResponse>() {
+                @Override
+                public void onResponse(Call<GatwayStatusCheckResponse> call, Response<GatwayStatusCheckResponse> response) {
+                    if (response.isSuccessful() && response.body() != null) {
+                        GatwayStatusCheckResponse apiData = response.body();
+                        if (apiData.getStatuscode() == 1 && !apiData.getStatus().equalsIgnoreCase("0")) {
+                            if (apiData.getStatus().equalsIgnoreCase("1")) {
+                                if (isAllUpiDialogCanceled) {
+                                    isAllUpiDialogCanceled = false;
+                                    if (alertDialogAddMoneyConfirm != null && alertDialogAddMoneyConfirm.isShowing()) {
+                                        alertDialogAddMoneyConfirm.dismiss();
+                                    }
+                                    ApiFintechUtilMethods.INSTANCE.ErrorWithTitle(RechargeBillPaymentActivity.this, "TXN CANCEL", "Transaction cancelled by user");
+                                } else if (timeCounter < 60) {
+                                    new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                                        timeCounter = timeCounter + 3;
+                                        callStatusCheckApi(isFromUpi, tid, status, check1, paymentMsg);
+                                    }, 3000);
+                                } else {
+                                    if (alertDialogAddMoneyConfirm != null && alertDialogAddMoneyConfirm.isShowing()) {
+                                        alertDialogAddMoneyConfirm.dismiss();
+                                    }
+                                    ApiFintechUtilMethods.INSTANCE.Processing(RechargeBillPaymentActivity.this, "Your transaction under process, please wait 48 Hour to confirmation.");
+                                }
+                            } else if (apiData.getStatus().equalsIgnoreCase("2") ||
+                                    apiData.getStatus().toLowerCase().equalsIgnoreCase("success")) {
+                                check1.setImageResource(R.drawable.ic_check_mark_fill);
+                                paymentMsg.setText("Payment successfully confirmed from the bank|wallet side");
+                                paymentMsg.setTextColor(Color.BLACK);
+                                rechargeApi(tid, ApiFintechUtilMethods.INSTANCE.getLattitude, ApiFintechUtilMethods.INSTANCE.getLongitude, inputPinPass);
+                            } else {
+                                if (alertDialogAddMoneyConfirm != null && alertDialogAddMoneyConfirm.isShowing()) {
+                                    alertDialogAddMoneyConfirm.dismiss();
+                                }
+                                ApiFintechUtilMethods.INSTANCE.Error(RechargeBillPaymentActivity.this, apiData.getMsg() + "");
+                            }
+                        } else {
+                            if (apiData.getStatuscode() == 1) {
+                                if (isAllUpiDialogCanceled) {
+                                    isAllUpiDialogCanceled = false;
+                                    if (alertDialogAddMoneyConfirm != null && alertDialogAddMoneyConfirm.isShowing()) {
+                                        alertDialogAddMoneyConfirm.dismiss();
+                                    }
+                                    ApiFintechUtilMethods.INSTANCE.ErrorWithTitle(RechargeBillPaymentActivity.this, "TXN CANCEL", "Transaction cancelled by user");
+                                } else if (timeCounter < 60) {
+                                    new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                                        timeCounter = timeCounter + 3;
+                                        callStatusCheckApi(isFromUpi, tid, status, check1, paymentMsg);
+                                    }, 3000);
+                                } else {
+                                    if (alertDialogAddMoneyConfirm != null && alertDialogAddMoneyConfirm.isShowing()) {
+                                        alertDialogAddMoneyConfirm.dismiss();
+                                    }
+                                    ApiFintechUtilMethods.INSTANCE.Processing(RechargeBillPaymentActivity.this, "Your transaction under process, please wait 48 Hour to confirmation.");
+                                }
+                            } else if (apiData.getStatuscode() == 2) {
+                                check1.setImageResource(R.drawable.ic_check_mark_fill);
+                                paymentMsg.setText("Payment successfully confirmed from the bank|wallet side");
+                                paymentMsg.setTextColor(Color.BLACK);
+                                rechargeApi(tid, ApiFintechUtilMethods.INSTANCE.getLattitude, ApiFintechUtilMethods.INSTANCE.getLongitude, inputPinPass);
+
+                            } else {
+                                if (alertDialogAddMoneyConfirm != null && alertDialogAddMoneyConfirm.isShowing()) {
+                                    alertDialogAddMoneyConfirm.dismiss();
+                                }
+                                ApiFintechUtilMethods.INSTANCE.Error(RechargeBillPaymentActivity.this, apiData.getMsg() + "");
+                            }
+                        }
+                    } else {
+                        ApiFintechUtilMethods.INSTANCE.apiErrorHandle(RechargeBillPaymentActivity.this, response.code(), response.message());
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<GatwayStatusCheckResponse> call, Throwable t) {
+                    if (alertDialogAddMoneyConfirm != null && alertDialogAddMoneyConfirm.isShowing()) {
+                        alertDialogAddMoneyConfirm.dismiss();
+                    }
+                }
+            });
+        } else if (isFromUpi) {
             ApiFintechUtilMethods.INSTANCE.UPIPaymentUpdate(RechargeBillPaymentActivity.this, tid, status, null, mLoginDataResponse, deviceId, deviceSerialNum, new ApiFintechUtilMethods.ApiResponseCallBack() {
                 @Override
                 public void onSucess(Object object) {
@@ -3144,15 +3645,10 @@ public class RechargeBillPaymentActivity extends AppCompatActivity implements Te
 
         alertDialog = dialogBuilder.create();
         alertDialog.setCancelable(true);
-
         // alertDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-
-
         LayoutInflater inflater = context.getLayoutInflater();
         View dialogView = inflater.inflate(R.layout.dialog_money_add_recharge_status, null);
         alertDialog.setView(dialogView);
-
-
         TextView balanceTv = dialogView.findViewById(R.id.balance);
         TextView requestedAmtTv = dialogView.findViewById(R.id.requestedAmt);
         balanceTv.setText("\u20B9 " + currentBalance);
@@ -3194,7 +3690,6 @@ public class RechargeBillPaymentActivity extends AppCompatActivity implements Te
         if (balanceHandler != null && balanceRunnable != null) {
             balanceHandler.removeCallbacks(balanceRunnable);
         }
-
         checkBalance(new CheckBalanceCallback() {
             @Override
             public void Sucsess(BalanceResponse mBalanceResponse) {
@@ -4358,5 +4853,163 @@ public class RechargeBillPaymentActivity extends AppCompatActivity implements Te
         }
         super.onDestroy();
 
+    }
+
+    private class MyWebViewClient extends WebViewClient {
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            if (url.toLowerCase().contains("upi://pay")) {
+                try {
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse(url));
+                    Intent chooser = Intent.createChooser(intent, "Pay with...");
+                    if (null != chooser.resolveActivity(getPackageManager())) {
+                        startActivityForResult(chooser, INTENT_UPI_WEB);
+                    } else {
+                        Toast.makeText(RechargeBillPaymentActivity.this, "No UPI app found, please install one to continue", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (ActivityNotFoundException anfe) {
+                    try {
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                        Intent chooser = Intent.createChooser(intent, "Pay with...");
+                        startActivityForResult(chooser, INTENT_UPI_WEB);
+                    } catch (ActivityNotFoundException anfe1) {
+                        Toast.makeText(RechargeBillPaymentActivity.this, "No UPI app found, please install one to continue", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                return true;
+            } else {
+                view.loadUrl(url);
+                return false;
+            }
+
+        }
+
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            super.onPageStarted(view, url, favicon);
+            loader.show();
+        }
+
+        @Override
+        public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+            super.onReceivedError(view, errorCode, description, failingUrl);
+        }
+
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            super.onPageFinished(view, url);
+            loader.dismiss();
+
+            if (url.toLowerCase().contains("pgcallback/upigatewayredirectnew") || url.toLowerCase().contains(ApplicationConstant.INSTANCE.Domain + "/allupireturn?")) {
+
+                if (uiWebViewDialog != null && uiWebViewDialog.isShowing()) {
+                    uiWebViewDialog.dismiss();
+                    loader.show();
+                    //  callUPIWebUpdate(false);
+                }
+
+            }
+        }
+
+    }
+
+    private class MyWebChromeViewClient extends WebChromeClient {
+
+        @Override
+        public boolean onConsoleMessage(ConsoleMessage consoleMessage) {
+            if (consoleMessage.message().contains("qrCodeImage data:image/png;base64,")) {
+                byte[] decodedString = Base64.decode(consoleMessage.message().substring(consoleMessage.message().indexOf(",")), Base64.DEFAULT);
+                Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+                saveBitmap(decodedByte);
+            }
+            return super.onConsoleMessage(consoleMessage);
+        }
+
+        @Override
+        public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
+            result.cancel();
+            return true;
+        }
+    }
+
+    private void saveBitmap(Bitmap bitmap) {
+        if (android.os.Build.VERSION.SDK_INT >= 30) {
+            ContentValues values = contentValues();
+            values.put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/" + getString(R.string.app_name));
+            values.put(MediaStore.Images.Media.IS_PENDING, true);
+            values.put(MediaStore.Images.Media.DISPLAY_NAME, System.currentTimeMillis() + ".png");
+
+            Uri uri = this.getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
+            if (uri != null) {
+                try {
+                    saveImageToStream(bitmap, this.getContentResolver().openOutputStream(uri));
+                    values.put(MediaStore.Images.Media.IS_PENDING, false);
+                    this.getContentResolver().update(uri, values, null, null);
+
+
+                    sendImage(uri);
+
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        } else {
+            File directory = new File(Environment.getExternalStorageDirectory().toString() + "/Pictures/" + getString(R.string.app_name));
+
+            if (!directory.exists()) {
+                directory.mkdirs();
+            }
+            String fileName = System.currentTimeMillis() + ".png";
+            File file = new File(directory, fileName);
+            try {
+                saveImageToStream(bitmap, new FileOutputStream(file));
+                ContentValues values = new ContentValues();
+                values.put(MediaStore.Images.Media.DATA, file.getAbsolutePath());
+                this.getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
+
+                sendImage(Uri.parse("file://" + file));
+
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
+
+    private ContentValues contentValues() {
+        ContentValues values = new ContentValues();
+        values.put(MediaStore.Images.Media.MIME_TYPE, "image/png");
+        values.put(MediaStore.Images.Media.DATE_ADDED, System.currentTimeMillis() / 1000);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            values.put(MediaStore.Images.Media.DATE_TAKEN, System.currentTimeMillis());
+        }
+        return values;
+    }
+
+    private void saveImageToStream(Bitmap bitmap, OutputStream outputStream) {
+        if (outputStream != null) {
+            try {
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
+                outputStream.close();
+            } catch (FileNotFoundException e) {
+                Log.e("GREC", e.getMessage(), e);
+            } catch (IOException e) {
+                Log.e("GREC", e.getMessage(), e);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void sendImage(Uri myUri) {
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "QR Image");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "QR Image");
+        emailIntent.setType("image/png");
+        emailIntent.putExtra(Intent.EXTRA_STREAM, myUri);
+        startActivity(Intent.createChooser(emailIntent, "Share via..."));
     }
 }

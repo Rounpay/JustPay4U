@@ -14004,6 +14004,7 @@ public enum ApiFintechUtilMethods {
                 okTv.setVisibility(View.GONE);
                 forPgDetails.setVisibility(View.GONE);
                 requestedAmt = (enteredAmount - mBalanceResponse.getBalanceData().get(0).getBalance());
+
                 requiredAmtWallet.setText(Utility.INSTANCE.formatedAmountWithRupees(requestedAmt + ""));
             } else {
                 walletView.setVisibility(View.GONE);
