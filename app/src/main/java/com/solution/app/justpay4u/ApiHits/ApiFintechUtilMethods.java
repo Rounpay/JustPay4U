@@ -293,6 +293,7 @@ public enum ApiFintechUtilMethods {
     public RankListResponse mRankListResponse;
     public DashboardDownlineData singleDataResponse;
     private double requestedAmt;
+    private BottomSheetDialog bottomSheetDialog;
 
     public AppPreferences getAppPreferences(Context mContext) {
         if (mAppPreferences != null) {
@@ -13885,18 +13886,20 @@ public enum ApiFintechUtilMethods {
     public void rechargeConfiormDialog(Activity context,double commAmount, HashMap<String, IncentiveDetails> incentiveMap, CommissionDisplay mCommissionDisplay, final boolean isReal,
                                        final boolean isPinPass, String logo, String number, String operator, String amount, boolean isBBPS,
                                        final DialogCallBack mDialogCallBack) {
-        if (alertDialogMobile != null && alertDialogMobile.isShowing()) {
+        if (bottomSheetDialog != null && bottomSheetDialog.isShowing()) {
             return;
         }
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context);
 
-        alertDialogMobile = dialogBuilder.create();
-        alertDialogMobile.setCancelable(true);
-
-        alertDialogMobile.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-        LayoutInflater inflater = context.getLayoutInflater();
+        bottomSheetDialog = new BottomSheetDialog(context);
+        LayoutInflater inflater = LayoutInflater.from(context);
         View dialogView = inflater.inflate(R.layout.dialog_recharge_confiorm, null);
-        alertDialogMobile.setView(dialogView);
+
+        bottomSheetDialog.setContentView(dialogView);
+        bottomSheetDialog.setCancelable(true);
+
+        bottomSheetDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+
+        bottomSheetDialog.show();
         LinearLayout commView = dialogView.findViewById(R.id.commView);
         LinearLayout lapuView = dialogView.findViewById(R.id.lapuView);
         LinearLayout realView = dialogView.findViewById(R.id.realView);
@@ -13912,6 +13915,10 @@ public enum ApiFintechUtilMethods {
         LinearLayout walletView = dialogView.findViewById(R.id.walletView);
         TextView commAmountLabel = dialogView.findViewById(R.id.commAmountLabel);
         TextView commAmountText = dialogView.findViewById(R.id.commAmount);
+        TextView rechargeAmountLabel = dialogView.findViewById(R.id.rechargeAmountLabel);
+        TextView rechAmountWallet = dialogView.findViewById(R.id.rechAmountWallet);
+        TextView UseAmtWalletLabel = dialogView.findViewById(R.id.UseAmtWalletLabel);
+        TextView useAmtWallet = dialogView.findViewById(R.id.useAmtWallet);
 
         // TextView realAmt = dialogView.findViewById(R.id.realAmt);
 
@@ -13935,8 +13942,10 @@ public enum ApiFintechUtilMethods {
         } else {
             commView.setVisibility(View.GONE);
         }
+
         AppCompatTextView amountTv = dialogView.findViewById(R.id.amount);
         amountTv.setText(context.getResources().getString(R.string.rupiya) + " " + amount);
+        rechAmountWallet.setText(context.getResources().getString(R.string.rupiya) + " " + amount);
         walletAmountTv.setText(context.getResources().getString(R.string.rupiya) + " " + mBalanceResponse.getBalanceData().get(0).getBalance());
         balanceAmt.setText("Your Remaining Balance : "+Utility.INSTANCE.formatedAmountWithRupees(mBalanceResponse.getBalanceData().get(0).getBalance()+""));
         final View pinPassView = dialogView.findViewById(R.id.pinPassView);
@@ -13962,7 +13971,6 @@ public enum ApiFintechUtilMethods {
 
             }
         }
-
         AppCompatTextView cancelTv = dialogView.findViewById(R.id.cancel);
         AppCompatTextView okTv = dialogView.findViewById(R.id.ok);
         AppCompatTextView addMoneyTv = dialogView.findViewById(R.id.addMoney);
@@ -14001,17 +14009,21 @@ public enum ApiFintechUtilMethods {
                 addMoneyTv.setVisibility(View.VISIBLE);
                 requiredAmtWalletLabel.setVisibility(View.VISIBLE);
                 requiredAmtWallet.setVisibility(View.VISIBLE);
+                UseAmtWalletLabel.setVisibility(View.VISIBLE);
+                useAmtWallet.setVisibility(View.VISIBLE);
                 okTv.setVisibility(View.GONE);
                 forPgDetails.setVisibility(View.GONE);
+                useAmtWallet.setText(Utility.INSTANCE.formatedAmountWithRupees(mBalanceResponse.getBalanceData().get(0).getBalance()+""));
                 requestedAmt = (enteredAmount - mBalanceResponse.getBalanceData().get(0).getBalance());
-
                 requiredAmtWallet.setText(Utility.INSTANCE.formatedAmountWithRupees(requestedAmt + ""));
             } else {
-                walletView.setVisibility(View.GONE);
+                walletView.setVisibility(View.VISIBLE);
                 forPgDetails.setVisibility(View.GONE);
                 addMoneyTv.setVisibility(View.GONE);
                 requiredAmtWalletLabel.setVisibility(View.GONE);
                 requiredAmtWallet.setVisibility(View.GONE);
+                UseAmtWalletLabel.setVisibility(View.GONE);
+                useAmtWallet.setVisibility(View.GONE);
                 okTv.setVisibility(View.VISIBLE);
             }
             if(commAmount!=0){
@@ -14035,13 +14047,13 @@ public enum ApiFintechUtilMethods {
                 pinPassEt.requestFocus();
                 return;
             }
-            alertDialogMobile.dismiss();
+            bottomSheetDialog.dismiss();
             if (mDialogCallBack != null) {
                 mDialogCallBack.onPositiveClick(pinPassEt.getText().toString());
             }
         });
         cancelTv.setOnClickListener(v -> {
-            alertDialogMobile.dismiss();
+            bottomSheetDialog.dismiss();
             if (mDialogCallBack != null) {
                 mDialogCallBack.onCancelClick();
             }
@@ -14052,14 +14064,14 @@ public enum ApiFintechUtilMethods {
                 pinPassEt.requestFocus();
                 return;
             }
-            alertDialogMobile.dismiss();
+            bottomSheetDialog.dismiss();
             if (mDialogCallBack != null) {
                 mDialogCallBack.onResetCallback(pinPassEt.getText().toString(), requestedAmt);
             }
         });
 
-        alertDialogMobile.show();
-        alertDialogMobile.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        bottomSheetDialog.show();
+        bottomSheetDialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
     }
 
 

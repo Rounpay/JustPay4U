@@ -313,6 +313,8 @@ PSA shall take written approval from UTI before organizing any PAN Card camp.</s
     <string name="install_app">Install App</string>
     <string name="rank">Rank:</string>
     <string name="rank_">Rank :</string>
+    <string name="_200">200</string>
+    <string name="total_pay_from_upi">Total Pay From UPI</string>
     <integer name="viewfinder_border_width">4</integer>
     <integer name="viewfinder_border_length">60</integer>
 </resources>

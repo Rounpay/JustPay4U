@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:scrollbars="vertical"
+        android:layout_marginBottom="@dimen/_50sdp"
+        android:layout_height="wrap_content">
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/_10sdp"
-        android:layout_marginRight="@dimen/_10sdp"
         app:cardCornerRadius="@dimen/_5sdp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
             android:gravity="center"
             android:orientation="vertical"
             android:paddingTop="@dimen/_10sdp">
@@ -32,7 +39,6 @@
                     android:layout_centerVertical="true"
                     android:layout_marginTop="@dimen/_10sdp" />
 
-
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -48,7 +54,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-condensed-medium"
-                        android:text="200"
+                        android:text="@string/_200"
                         android:textStyle="bold" />
 
                     <androidx.appcompat.widget.AppCompatTextView
@@ -72,11 +78,12 @@
                     android:layout_marginLeft="@dimen/_4sdp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:text="200"
+                    android:visibility="gone"
                     android:textColor="@android:color/holo_red_dark" />
             </RelativeLayout>
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/forPgDetails"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
@@ -195,6 +202,7 @@
 
             <LinearLayout
                 android:id="@+id/commView"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_10sdp"
@@ -252,31 +260,6 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/pinPassView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginRight="@dimen/_10sdp"
-                android:layout_marginBottom="@dimen/_5sdp"
-                android:elevation="@dimen/_3sdp"
-                app:cardBackgroundColor="@color/aboutpagecolour"
-                app:cardCornerRadius="@dimen/_5sdp">
-
-                <EditText
-                    android:id="@+id/pinPassEt"
-                    style="@style/TextAppearance.AppCompat.Body2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:ellipsize="end"
-                    android:gravity="center_vertical"
-                    android:hint="Enter Pin Password"
-                    android:padding="@dimen/_10sdp"
-                    android:singleLine="true"
-                    android:textColor="@android:color/black" />
-            </androidx.cardview.widget.CardView>
 
             <LinearLayout
                 android:id="@+id/walletView"
@@ -286,7 +269,7 @@
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginRight="@dimen/_10sdp"
                 android:orientation="vertical"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -340,7 +323,6 @@
                     android:fontFamily="sans-serif-condensed-medium"
                     android:text="Your current wallet balance is low, please add money before transaction"
                     android:textColor="@color/color_red" />
-
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -351,6 +333,33 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:id="@+id/rechargeAmountLabel"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Recharge Amount"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintEnd_toStartOf="@id/rechAmountWallet"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/rechAmountWallet"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:text="₹0"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/rechargeAmountLabel"
+                    app:layout_constraintStart_toEndOf="@id/rechargeAmountLabel"
+                    app:layout_constraintTop_toTopOf="@id/rechargeAmountLabel" />
+
+                <TextView
                     android:id="@+id/commAmountWalletLabel"
                     style="@style/TextAppearance.AppCompat.Body1"
                     android:layout_width="0dp"
@@ -358,10 +367,10 @@
                     android:layout_marginTop="@dimen/_7sdp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:text="Commission Amount"
-                    android:textColor="@android:color/holo_green_dark"
+                    android:textColor="@android:color/black"
                     app:layout_constraintEnd_toStartOf="@id/commAmountWallet"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@id/rechAmountWallet" />
 
                 <TextView
                     android:id="@+id/commAmountWallet"
@@ -371,11 +380,37 @@
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center"
                     android:text="₹0"
-                    android:textColor="@android:color/holo_green_dark"
+                    android:textColor="@android:color/black"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toBottomOf="@id/commAmountWalletLabel"
                     app:layout_constraintStart_toEndOf="@id/commAmountWalletLabel"
                     app:layout_constraintTop_toTopOf="@id/commAmountWalletLabel" />
+
+                <TextView
+                    android:id="@+id/UseAmtWalletLabel"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:fontFamily="sans-serif-condensed-medium"                    android:text="Use Wallet"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintEnd_toStartOf="@id/useAmtWallet"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/commAmountWalletLabel" />
+
+                <TextView
+                    android:id="@+id/useAmtWallet"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:gravity="center"
+                    android:text="₹0"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/UseAmtWalletLabel"
+                    app:layout_constraintStart_toEndOf="@id/UseAmtWalletLabel"
+                    app:layout_constraintTop_toTopOf="@id/UseAmtWalletLabel" />
 
                 <TextView
                     android:id="@+id/requiredAmtWalletLabel"
@@ -384,11 +419,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:fontFamily="sans-serif-condensed-medium"
-                    android:text="You have to pay"
-                    android:textColor="@android:color/holo_red_dark"
+                    android:text="@string/total_pay_from_upi"
+                    android:textColor="@android:color/black"
                     app:layout_constraintEnd_toStartOf="@id/requiredAmtWallet"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/commAmountWalletLabel" />
+                    app:layout_constraintTop_toBottomOf="@id/useAmtWallet" />
 
                 <TextView
                     android:id="@+id/requiredAmtWallet"
@@ -398,7 +433,7 @@
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center"
                     android:text="₹0"
-                    android:textColor="@android:color/holo_red_dark"
+                    android:textColor="@android:color/black"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toBottomOf="@id/requiredAmtWalletLabel"
                     app:layout_constraintStart_toEndOf="@id/requiredAmtWalletLabel"
@@ -407,6 +442,31 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+            <androidx.cardview.widget.CardView
+                android:id="@+id/pinPassView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:elevation="@dimen/_3sdp"
+                app:cardBackgroundColor="@color/aboutpagecolour"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <EditText
+                    android:id="@+id/pinPassEt"
+                    style="@style/TextAppearance.AppCompat.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:hint="Enter Pin Password"
+                    android:padding="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/black" />
+            </androidx.cardview.widget.CardView>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -489,4 +549,6 @@
             </RelativeLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-</LinearLayout>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

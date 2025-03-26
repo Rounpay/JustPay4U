@@ -111,12 +111,9 @@ public interface NetworkingEndPointInterface {
     @POST("GetOPIDListByUserId")
     Call<FindUserDetailsByIdResponse> GetOPIDListByUserId(@Body FindUserDetailsByIdRequest request);
 
-
-
     @Headers("Content-Type: application/json")
     @POST("ActivateUserByApp")
     Call<BasicResponse> ActivateUser(@Body ActivateUserRequest request);
-
 
     @Headers("Content-Type: application/json")
     @POST("GetEPinList")
