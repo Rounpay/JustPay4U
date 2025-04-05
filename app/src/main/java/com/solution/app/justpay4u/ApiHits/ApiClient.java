@@ -1,5 +1,8 @@
 package com.solution.app.justpay4u.ApiHits;
+
+import static android.util.Log.VERBOSE;
 import static com.roundpay.emoneylib.Network.AC.getUnsafeOkHttpClient;
+
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
@@ -19,7 +22,10 @@ import com.solution.app.justpay4u.BuildConfig;
 import com.solution.app.justpay4u.R;
 import com.solution.app.justpay4u.Util.CustomAlertDialog;
 import com.solution.app.justpay4u.Util.RootedCheck.RootBeer;
+import com.therockakash.shaketrace.logger.Level;
+import com.therockakash.shaketrace.logger.PrettyLoggingInterceptor;
 
+import java.io.File;
 import java.net.NetworkInterface;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,28 +46,51 @@ public class ApiClient {
 
     private static final int REQUEST_PERMISSIONS = 324;
     private static Retrofit retrofit = null, retrofitTest = null;
+    private static OkHttpClient.Builder okHttpClient;
+    private static HttpLoggingInterceptor interceptor;
 
     public static Retrofit getClient() {
         if (retrofit == null) {
             Dispatcher dispatcher = new Dispatcher();
             dispatcher.setMaxRequests(1);
             dispatcher.setMaxRequestsPerHost(1);
-            HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-            OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                    .addInterceptor(interceptor.setLevel(BuildConfig.DEBUG ? HttpLoggingInterceptor.Level.BODY : HttpLoggingInterceptor.Level.NONE))
-                    .readTimeout(10, TimeUnit.MINUTES)
-                    .connectTimeout(10, TimeUnit.MINUTES)
-                    .writeTimeout(10, TimeUnit.MINUTES)
-                    .dispatcher(dispatcher)
-                    .retryOnConnectionFailure(false)
-                    .build();
-            ////////////////////////////////////////////////////
-            retrofit = new Retrofit.Builder()
-                    .baseUrl(ApplicationConstant.INSTANCE.baseUrl)
-                    .addConverterFactory(ScalarsConverterFactory.create())
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .client(okHttpClient)
-                    .build();
+            interceptor = new HttpLoggingInterceptor();
+            okHttpClient = new OkHttpClient.Builder();
+            if (BuildConfig.DEBUG) {
+                PrettyLoggingInterceptor.Builder prettyInterceptor = new PrettyLoggingInterceptor.Builder()
+                        .setLevel(Level.BASIC)
+                        .log(VERBOSE)
+                        .setCashDir(new File("/data/user/0/com.solution.app.justpay4u/cache"));
+                interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+                okHttpClient.addNetworkInterceptor(prettyInterceptor.build());
+                // okHttpClient.addInterceptor(interceptor);
+                retrofit = new Retrofit.Builder()
+                        .baseUrl(ApplicationConstant.INSTANCE.baseUrl)
+                        .addConverterFactory(ScalarsConverterFactory.create())
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .client(okHttpClient.build())
+                        .build();
+                return retrofit;
+            } else {
+                HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+                OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                        .addInterceptor(interceptor.setLevel(BuildConfig.DEBUG ? HttpLoggingInterceptor.Level.BODY : HttpLoggingInterceptor.Level.NONE))
+                        .readTimeout(10, TimeUnit.MINUTES)
+                        .connectTimeout(10, TimeUnit.MINUTES)
+                        .writeTimeout(10, TimeUnit.MINUTES)
+                        .dispatcher(dispatcher)
+                        .retryOnConnectionFailure(false)
+                        .build();
+                ////////////////////////////////////////////////////
+                retrofit = new Retrofit.Builder()
+                        .baseUrl(ApplicationConstant.INSTANCE.baseUrl)
+                        .addConverterFactory(ScalarsConverterFactory.create())
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .client(okHttpClient)
+                        .build();
+                return retrofit;
+            }
+
         }
         return retrofit;
 

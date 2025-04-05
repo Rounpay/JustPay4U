@@ -257,14 +257,13 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
     }
 
     private void setUiData(SlabCommissionResponse mOperatorListResponse) {
-
         if (isUpi && !isPaymentGatway) {
             upiBtn.setVisibility(View.VISIBLE);
             msgView.setVisibility(View.VISIBLE);
             bhimLogo.setVisibility(View.VISIBLE);
             recyclerView.setVisibility(View.GONE);
             getOpId(mOperatorListResponse, 50);
-        } else if (isUpi && isPaymentGatway) {
+        } else if (isUpi && isPaymentGatway){
             upiBtn.setVisibility(View.GONE);
             msgView.setVisibility(View.GONE);
             bhimLogo.setVisibility(View.GONE);
@@ -284,7 +283,6 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
     }
 
     void findViews() {
-
         upiBtn = findViewById(R.id.upiBtn);
         bhimLogo = findViewById(R.id.bhimLogo);
         msgView = findViewById(R.id.msg);

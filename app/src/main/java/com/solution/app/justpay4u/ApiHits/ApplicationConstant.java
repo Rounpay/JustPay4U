@@ -7,7 +7,7 @@ public enum ApplicationConstant {
     public final String CFStage = "PROD";
     public final String CFStageTset = "TEST";
     public String Domain = "justpay4u.com"/*"scompay.com" *//*"roundpay.net"*//*"moneycenteronline.com"*/;
-    public String baseUrl = "http://" + Domain + "/";
+    public String baseUrl = "https://" + Domain + "/";
     public String baseProfilePicUrl = baseUrl + "Image/Profile/";
     public String inviteUrl = baseUrl + "InviteApp/";
     public String genelogyUrl = baseUrl + "GetTreeView?Id=";

@@ -92,7 +92,7 @@
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
 
     <application
-        android:name="androidx.multidex.MultiDexApplication"
+        android:name=".Application"
         android:allowBackup="false"
         android:allowClearUserData="true"
         android:icon="@mipmap/ic_launcher"
@@ -102,7 +102,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
-        tools:replace="android:icon,allowBackup">
+        tools:replace="android:icon,allowBackup,name">
 
         <activity
             android:name=".Networking.Activity.PoolTeamNetworkingActivity"

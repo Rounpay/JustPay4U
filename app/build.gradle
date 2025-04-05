@@ -16,7 +16,7 @@ android {
 
     defaultConfig {
         applicationId "com.solution.app.justpay4u"
-        minSdkVersion 22
+        minSdkVersion 24
         targetSdkVersion 34
         versionCode 2
         versionName "1.1"
@@ -167,6 +167,8 @@ dependencies {
     implementation 'com.mikepenz:community-material-typeface:1.3.41.1@aar'
    // implementation 'com.romandanylyk:pageindicatorview:1.0.0'
     implementation 'com.github.Foysalofficial:PageIndicatorView:16.0'
+
+    implementation 'com.github.theRockAkash:ShakeTrace:1.4.0'
 
 }
 apply plugin: 'com.google.gms.google-services'

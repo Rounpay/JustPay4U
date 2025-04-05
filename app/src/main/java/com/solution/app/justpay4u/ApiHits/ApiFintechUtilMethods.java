@@ -302,7 +302,6 @@ public enum ApiFintechUtilMethods {
             mAppPreferences = new AppPreferences(mContext);
             return mAppPreferences;
         }
-
     }
 
     public RequestOptions getRequestOption_With_Placeholder() {
@@ -13908,6 +13907,7 @@ public enum ApiFintechUtilMethods {
         TextView realTitle = dialogView.findViewById(R.id.realTitle);
         TextView walletAmountTv = dialogView.findViewById(R.id.walletAmountTv);
         TextView balanceAmt = dialogView.findViewById(R.id.balanceAmt);
+        TextView msgWallet = dialogView.findViewById(R.id.msgWallet);
         TextView walletAmt = dialogView.findViewById(R.id.walletAmt);
         TextView requiredAmtTv = dialogView.findViewById(R.id.requiredAmt);
         TextView requiredAmtWallet = dialogView.findViewById(R.id.requiredAmtWallet);
@@ -13965,10 +13965,8 @@ public enum ApiFintechUtilMethods {
             incentive.setVisibility(View.VISIBLE);
             if (incentiveMap.get(amount).isAmtType()) {
                 incentive.setText("You are eligible for " + "\u20B9 " + incentiveMap.get(amount).getComm() + " Cash Back");
-
             } else {
                 incentive.setText("You are eligible for " + incentiveMap.get(amount).getComm() + " % Cash Back");
-
             }
         }
         AppCompatTextView cancelTv = dialogView.findViewById(R.id.cancel);
@@ -13979,7 +13977,6 @@ public enum ApiFintechUtilMethods {
         TextView commAmountWallet = dialogView.findViewById(R.id.commAmountWallet);
         RequestOptions requestOptions = new RequestOptions();
         requestOptions.diskCacheStrategy(DiskCacheStrategy.ALL);
-
         double enteredAmount = Double.parseDouble(amount);
         if (mBalanceResponse.isRechargeWithPG()) {
             walletView.setVisibility(View.GONE);
@@ -14004,7 +14001,7 @@ public enum ApiFintechUtilMethods {
 
             }
         } else {
-            if (enteredAmount > mBalanceResponse.getBalanceData().get(0).getBalance()) {
+            if ((enteredAmount-commAmount) > mBalanceResponse.getBalanceData().get(0).getBalance()) {
                 walletView.setVisibility(View.VISIBLE);
                 addMoneyTv.setVisibility(View.VISIBLE);
                 requiredAmtWalletLabel.setVisibility(View.VISIBLE);
@@ -14014,7 +14011,8 @@ public enum ApiFintechUtilMethods {
                 okTv.setVisibility(View.GONE);
                 forPgDetails.setVisibility(View.GONE);
                 useAmtWallet.setText(Utility.INSTANCE.formatedAmountWithRupees(mBalanceResponse.getBalanceData().get(0).getBalance()+""));
-                requestedAmt = (enteredAmount - mBalanceResponse.getBalanceData().get(0).getBalance());
+                requestedAmt = ((enteredAmount-commAmount) - mBalanceResponse.getBalanceData().get(0).getBalance());
+                msgWallet.setVisibility(View.VISIBLE);
                 requiredAmtWallet.setText(Utility.INSTANCE.formatedAmountWithRupees(requestedAmt + ""));
             } else {
                 walletView.setVisibility(View.VISIBLE);
@@ -14022,8 +14020,9 @@ public enum ApiFintechUtilMethods {
                 addMoneyTv.setVisibility(View.GONE);
                 requiredAmtWalletLabel.setVisibility(View.GONE);
                 requiredAmtWallet.setVisibility(View.GONE);
-                UseAmtWalletLabel.setVisibility(View.GONE);
-                useAmtWallet.setVisibility(View.GONE);
+                UseAmtWalletLabel.setVisibility(View.VISIBLE);
+                useAmtWallet.setText(Utility.INSTANCE.formatedAmountWithRupees(enteredAmount-commAmount+""));
+                msgWallet.setVisibility(View.GONE);
                 okTv.setVisibility(View.VISIBLE);
             }
             if(commAmount!=0){
@@ -14032,10 +14031,7 @@ public enum ApiFintechUtilMethods {
                 commAmountLabel.setVisibility(View.GONE);
                 commAmountText.setVisibility(View.GONE);
             }
-
         }
-
-
         Glide.with(context)
                 .load(logo)
                 .apply(getRequestOption_With_AppLogo_circleCrop())
