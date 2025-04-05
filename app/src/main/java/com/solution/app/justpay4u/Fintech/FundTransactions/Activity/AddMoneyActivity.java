@@ -207,7 +207,7 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
             isFromCart = getIntent().getBooleanExtra("isFromCart", false);
             findViews();
 
-            walletView.setOnClickListener(v -> showPopupWindow(v));
+//            walletView.setOnClickListener(v -> showPopupWindow(v));
             upiBtn.setOnClickListener(v -> {
                 amountEt.setError(null);
                 if (selectedOPId != -1 || selectedOperator != null) {
@@ -379,11 +379,11 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
                 }
             }
 
+
             if (mBalanceDataList != null && mBalanceDataList.size() > 0) {
                 walletTv.setText(mBalanceDataList.get(0).getWalletType());
                 walletAmountTv.setText(Utility.INSTANCE.formatedAmountWithRupees(mBalanceDataList.get(0).getBalance() + ""));
                 selectedWalletId = mBalanceDataList.get(0).getId();
-
                 if (mBalanceDataList.size() == 1) {
                     arrowIv.setVisibility(View.GONE);
                     walletView.setClickable(false);
@@ -397,7 +397,6 @@ public class AddMoneyActivity extends AppCompatActivity implements PaymentResult
                 setWalletIds();
             }
         } else {
-
             balanceCheckResponse = ApiFintechUtilMethods.INSTANCE.getBalanceResponse(mAppPreferences);
             if (balanceCheckResponse != null) {
                 showWalletListPopupWindow();
