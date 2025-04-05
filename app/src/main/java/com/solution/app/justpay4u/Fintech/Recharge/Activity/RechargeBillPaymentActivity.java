@@ -4947,18 +4947,14 @@ public class RechargeBillPaymentActivity extends AppCompatActivity implements Te
                     saveImageToStream(bitmap, this.getContentResolver().openOutputStream(uri));
                     values.put(MediaStore.Images.Media.IS_PENDING, false);
                     this.getContentResolver().update(uri, values, null, null);
-
-
                     sendImage(uri);
 
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
-
             }
         } else {
             File directory = new File(Environment.getExternalStorageDirectory().toString() + "/Pictures/" + getString(R.string.app_name));
-
             if (!directory.exists()) {
                 directory.mkdirs();
             }
