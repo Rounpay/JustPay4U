@@ -54,43 +54,22 @@ public class ApiClient {
             Dispatcher dispatcher = new Dispatcher();
             dispatcher.setMaxRequests(1);
             dispatcher.setMaxRequestsPerHost(1);
-            interceptor = new HttpLoggingInterceptor();
-            okHttpClient = new OkHttpClient.Builder();
-            if (BuildConfig.DEBUG) {
-                PrettyLoggingInterceptor.Builder prettyInterceptor = new PrettyLoggingInterceptor.Builder()
-                        .setLevel(Level.BASIC)
-                        .log(VERBOSE)
-                        .setCashDir(new File("/data/user/0/com.solution.app.justpay4u/cache"));
-                interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-                okHttpClient.addNetworkInterceptor(prettyInterceptor.build());
-                // okHttpClient.addInterceptor(interceptor);
-                retrofit = new Retrofit.Builder()
-                        .baseUrl(ApplicationConstant.INSTANCE.baseUrl)
-                        .addConverterFactory(ScalarsConverterFactory.create())
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .client(okHttpClient.build())
-                        .build();
-                return retrofit;
-            } else {
-                HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-                OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                        .addInterceptor(interceptor.setLevel(BuildConfig.DEBUG ? HttpLoggingInterceptor.Level.BODY : HttpLoggingInterceptor.Level.NONE))
-                        .readTimeout(10, TimeUnit.MINUTES)
-                        .connectTimeout(10, TimeUnit.MINUTES)
-                        .writeTimeout(10, TimeUnit.MINUTES)
-                        .dispatcher(dispatcher)
-                        .retryOnConnectionFailure(false)
-                        .build();
-                ////////////////////////////////////////////////////
-                retrofit = new Retrofit.Builder()
-                        .baseUrl(ApplicationConstant.INSTANCE.baseUrl)
-                        .addConverterFactory(ScalarsConverterFactory.create())
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .client(okHttpClient)
-                        .build();
-                return retrofit;
-            }
-
+            HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+            OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                    .addInterceptor(interceptor.setLevel(BuildConfig.DEBUG ? HttpLoggingInterceptor.Level.BODY : HttpLoggingInterceptor.Level.NONE))
+                    .readTimeout(10, TimeUnit.MINUTES)
+                    .connectTimeout(10, TimeUnit.MINUTES)
+                    .writeTimeout(10, TimeUnit.MINUTES)
+                    .dispatcher(dispatcher)
+                    .retryOnConnectionFailure(false)
+                    .build();
+            ////////////////////////////////////////////////////
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(ApplicationConstant.INSTANCE.baseUrl)
+                    .addConverterFactory(ScalarsConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .client(okHttpClient)
+                    .build();
         }
         return retrofit;
 

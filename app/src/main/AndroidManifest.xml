@@ -92,7 +92,7 @@
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
 
     <application
-        android:name=".Application"
+        android:name="androidx.multidex.MultiDexApplication"
         android:allowBackup="false"
         android:allowClearUserData="true"
         android:icon="@mipmap/ic_launcher"
